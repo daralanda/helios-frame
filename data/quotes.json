@@ -1,0 +1,7 @@
+[
+  { "no": "TKL-2026-00412", "company": "Başkent Yazılım Çözümleri", "createdAt": "2026-10-19", "validUntil": "2026-11-03", "total": 96000, "status": "Beklemede" },
+  { "no": "TKL-2026-00398", "company": "Güneş Enerji Sistemleri", "createdAt": "2026-10-12", "validUntil": "2026-10-27", "total": 238500, "status": "Onaylandı" },
+  { "no": "TKL-2026-00377", "company": "Ege Tekstil San. Tic.", "createdAt": "2026-10-03", "validUntil": "2026-10-18", "total": 41200, "status": "Reddedildi" },
+  { "no": "TKL-2026-00361", "company": "Anadolu Gıda Tic. Ltd. Şti.", "createdAt": "2026-09-24", "validUntil": "2026-10-09", "total": 67800, "status": "Onaylandı" },
+  { "no": "TKL-2026-00340", "company": "Akdeniz Turizm A.Ş.", "createdAt": "2026-09-10", "validUntil": "2026-09-25", "total": 15400, "status": "Beklemede" }
+]

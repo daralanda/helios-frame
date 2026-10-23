@@ -1,0 +1,15 @@
+{
+  "name": "helios-frame",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Helios Diji - hafif Vanilla JS front-end framework. Bu dosya YALNIZCA geliştirme testleri içindir; canlı sitede Node.js gerekmez.",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/smoke.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0"
+  },
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,9 @@
+{
+  "kpis": { "revenue": 1842500, "orders": 312, "customers": 148, "openQuotes": 17 },
+  "monthly": {
+    "labels": ["Kas", "Ara", "Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki"],
+    "revenue": [1210000, 1385000, 1120000, 1240000, 1395000, 1470000, 1560000, 1610000, 1525000, 1690000, 1745000, 1842500],
+    "orders": [214, 240, 198, 221, 249, 262, 281, 290, 276, 301, 305, 312]
+  },
+  "quoteStatus": { "Beklemede": 17, "Onaylandı": 42, "Reddedildi": 9 }
+}

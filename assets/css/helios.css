@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Helios Frame - marka katmanı
+   Bootstrap'ten SONRA yüklenir (bkz. src/core/loader.js) ve onun üzerine yazar.
+   Tüm çatı sınıfları "hf-" önekiyle başlar -> harici kütüphanelerle çakışmaz.
+   ========================================================================== */
+
+:root {
+  --hf-brand: #e67700;
+  --hf-brand-dark: #b85f00;
+  --hf-ink: #1f2328;
+  --hf-surface: #fff7ed;
+  --hf-radius: .75rem;
+
+  /* Bootstrap marka rengi */
+  --bs-primary: #e67700;
+  --bs-primary-rgb: 230, 119, 0;
+  --bs-link-color: #c96a00;
+  --bs-link-color-rgb: 201, 106, 0;
+  --bs-link-hover-color: #b85f00;
+  --bs-link-hover-color-rgb: 184, 95, 0;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--hf-brand);
+  --bs-btn-border-color: var(--hf-brand);
+  --bs-btn-hover-bg: #cc6a00;
+  --bs-btn-hover-border-color: #cc6a00;
+  --bs-btn-active-bg: var(--hf-brand-dark);
+  --bs-btn-active-border-color: var(--hf-brand-dark);
+  --bs-btn-disabled-bg: var(--hf-brand);
+  --bs-btn-disabled-border-color: var(--hf-brand);
+  --bs-btn-focus-shadow-rgb: 230, 119, 0;
+}
+.btn-outline-primary {
+  --bs-btn-color: #c96a00;
+  --bs-btn-border-color: var(--hf-brand);
+  --bs-btn-hover-bg: var(--hf-brand);
+  --bs-btn-hover-border-color: var(--hf-brand);
+  --bs-btn-active-bg: var(--hf-brand-dark);
+  --bs-btn-active-border-color: var(--hf-brand-dark);
+  --bs-btn-focus-shadow-rgb: 230, 119, 0;
+}
+.form-control:focus, .form-select:focus, .form-check-input:focus {
+  border-color: #f0a24d;
+  box-shadow: 0 0 0 .25rem rgba(230, 119, 0, .2);
+}
+.form-check-input:checked { background-color: var(--hf-brand); border-color: var(--hf-brand); }
+.page-item.active .page-link { background-color: var(--hf-brand); border-color: var(--hf-brand); }
+.page-link { color: #c96a00; }
+.nav-pills .nav-link.active { background-color: var(--hf-brand); }
+
+/* ---- Kabuk ---- */
+body { min-height: 100vh; }
+.hf-host { display: contents; }               /* bileşen kök elementi düzeni etkilemez */
+.hf-outlet.hf-loading { opacity: .5; transition: opacity .15s; }
+.hf-topbar { background: #fff; border-bottom: 1px solid rgba(0, 0, 0, .08); }
+.hf-footer { border-top: 1px solid rgba(0, 0, 0, .08); margin-top: 3rem; }
+
+.hf-brand { display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; color: var(--hf-ink); text-decoration: none; }
+.hf-sun {
+  width: 1.1rem; height: 1.1rem; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffd43b, var(--hf-brand));
+  box-shadow: 0 0 0 3px rgba(230, 119, 0, .18);
+}
+
+/* ---- Açılış (boot) göstergesi ---- */
+.hf-boot { min-height: 60vh; display: grid; place-content: center; justify-items: center; gap: 1rem; font-family: system-ui, sans-serif; color: #6c757d; }
+.hf-boot-spinner { width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 3px solid rgba(230, 119, 0, .2); border-top-color: var(--hf-brand); animation: hf-spin .8s linear infinite; }
+@keyframes hf-spin { to { transform: rotate(360deg); } }
+
+/* ---- Yükleniyor iskeleti ---- */
+.hf-skeleton {
+  height: 21rem; border-radius: var(--hf-radius);
+  background: linear-gradient(90deg, #f1f3f5 25%, #e9ecef 37%, #f1f3f5 63%);
+  background-size: 400% 100%; animation: hf-shimmer 1.4s ease infinite;
+}
+@keyframes hf-shimmer { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
+
+/* ---- E-ticaret ---- */
+.hf-product { border-radius: var(--hf-radius); overflow: hidden; transition: transform .15s, box-shadow .15s; }
+.hf-product:hover { transform: translateY(-2px); box-shadow: 0 .5rem 1.25rem rgba(0, 0, 0, .08); }
+.hf-product-thumb {
+  display: grid; place-content: center; height: 9rem; font-size: 3.5rem;
+  background: var(--hf-surface);
+}
+.hf-product-thumb-lg { height: 18rem; font-size: 7rem; border-radius: var(--hf-radius); }
+
+.hf-steps { display: flex; gap: 1rem; padding: 0; list-style: none; flex-wrap: wrap; }
+.hf-steps li { display: flex; align-items: center; gap: .5rem; color: #868e96; font-weight: 500; }
+.hf-steps li span { display: inline-grid; place-content: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: #e9ecef; font-size: .85rem; }
+.hf-steps li.is-current { color: var(--hf-ink); }
+.hf-steps li.is-current span { background: var(--hf-brand); color: #fff; }
+.hf-steps li.is-done span { background: #2f9e44; color: #fff; }
+
+/* ---- B2B kabuğu ---- */
+.hf-b2b { display: grid; grid-template-columns: 15rem 1fr; min-height: 100vh; }
+.hf-b2b-side { border-right: 1px solid rgba(0, 0, 0, .08); background: #fff; }
+.hf-sidebar { position: sticky; top: 0; height: 100vh; }
+.hf-b2b-main { background: #f8f9fa; min-width: 0; }
+.hf-chart { position: relative; }
+.hf-login { min-height: 100vh; display: grid; place-content: center; padding: 1rem; background: var(--hf-surface); }
+.hf-login .card { width: min(24rem, 92vw); border-radius: var(--hf-radius); }
+
+@media (max-width: 767.98px) {
+  .hf-b2b { grid-template-columns: 1fr; }
+  .hf-sidebar { position: static; height: auto; }
+}
+
+/* ---- Toast ---- */
+.hf-toasts { position: fixed; right: 1rem; bottom: 1rem; display: grid; gap: .5rem; z-index: 2000; }
+.hf-toast {
+  padding: .65rem 1rem; border-radius: .5rem; color: #fff; background: #343a40;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2); animation: hf-toast-in .2s ease;
+}
+.hf-toast-success { background: #2f9e44; }
+.hf-toast-error { background: #e03131; }
+.hf-toast-out { opacity: 0; transform: translateY(.5rem); transition: .25s; }
+@keyframes hf-toast-in { from { opacity: 0; transform: translateY(.5rem); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

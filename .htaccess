@@ -1,0 +1,51 @@
+# ==========================================================================
+# Helios Frame - Apache (GoDaddy cPanel / paylaşımlı hosting) ayarları
+# Varsayılan router modu "hash" olduğundan bu dosya OPSİYONELDİR.
+# config.js içinde router.mode = 'history' yaparsanız aşağıdaki rewrite kuralı ŞARTTIR.
+# ==========================================================================
+
+# ES modülleri için doğru MIME türü (aksi halde tarayıcı modülü reddeder)
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType application/json .json
+</IfModule>
+
+# ---- History modu: var olmayan yolları index.html'e yönlendir ----
+# Uygulamayı alt klasöre (örn. /magaza/) koyarsanız RewriteBase'i buna göre değiştirin.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# ---- Sıkıştırma ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript application/json image/svg+xml
+</IfModule>
+
+# ---- Önbellek ----
+# Derleme/hash olmadığından JS/CSS kısa süreli önbelleğe alınır; sürüm yükseltirken
+# dosya adlarına ?v=... eklemek yerine süreyi düşük tutmak en basit yoldur.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/javascript "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 hour"
+  ExpiresByType application/json "access plus 5 minutes"
+  ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+# ---- Güvenlik başlıkları ----
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Gizli dosyaları koru
+<FilesMatch "^\.(git|env|htaccess)">
+  Require all denied
+</FilesMatch>
