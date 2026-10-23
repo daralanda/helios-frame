@@ -21,6 +21,16 @@ python3 -m http.server 8080      # veya: npx serve
 
 **Test (yalnızca geliştirme):** `npm install && npm test`. jsdom ile uygulamayı başlatıp ana akışları (liste, sepet, ödeme, guard, tablo, grafik, teklif formu, kütüphane yükleyici) gezer. Canlı sitede Node gerekmez.
 
+## GitHub Pages
+
+`main` dalına her push'ta `.github/workflows/pages.yml` siteyi otomatik yayınlar (yalnızca statik dosyalar).
+
+- Adres: `https://daralanda.github.io/helios-frame/` · kılavuz: `/docs/`
+- **İlk kurulum (bir kez, elle):** repo → Settings → Pages → *Build and deployment* → Source: **GitHub Actions**.
+- **Private repo notu:** Pages'in private repoda çalışması ücretli plan (Pro/Team/Enterprise) gerektirir. Ücretsiz planda repo public olmalıdır.
+- Proje alt yolda (`/helios-frame/`) yayınlandığı için varsayılan `hash` router modu sorunsuz çalışır. `history` modunda `404.html` (index.html kopyası) derin bağlantıları uygulamaya düşürür, ancak yeniden yükleme sırasında kısa süreli 404 durum kodu döner; kritikse `hash` modunda kalın.
+- Özel alan adı: repo köküne `CNAME` dosyası ekleyip Settings → Pages'ten alan adını girin.
+
 ## Klasör yapısı
 
 ```
