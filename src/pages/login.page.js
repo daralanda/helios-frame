@@ -1,9 +1,12 @@
-import { Component } from '../../core/component.js';
-import { html } from '../../core/dom.js';
-import { validate, formValues } from '../../core/forms.js';
-import { formField } from '../../ui/form-field.js';
+import { Component } from '../core/component.js';
+import { html } from '../core/dom.js';
+import { validate, formValues } from '../core/forms.js';
+import { formField } from '../ui/form-field.js';
 
 export default class LoginPage extends Component {
+  static layout = 'blank';
+  static meta = { title: 'Giriş' };
+
   state = { busy: false, error: '', errors: {} };
   email = '';
 

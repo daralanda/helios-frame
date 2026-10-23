@@ -4,6 +4,9 @@ import { addItem } from '../../store/cart.js';
 import { stars } from '../../components/product-card.js';
 
 export default class ProductDetailPage extends Component {
+  static layout = 'shop';
+  static meta = { title: 'Ürün Detayı' };
+
   state = { loading: true, error: null, product: null };
 
   beforeMount() {

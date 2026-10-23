@@ -57,25 +57,51 @@ helios-frame/
    │  ├─ forms.js             Doğrulama yardımcıları
    │  ├─ dom.js               html`` (otomatik escape), debounce, format
    │  └─ events.js            Event bus
+   ├─ routes.js               Layout tanımları + elle yazılan rotalar (yönlendirme vb.)
+   ├─ routes.generated.js     OTOMATİK: src/pages/ dosyalarından üretilir
    ├─ services/               REST servis katmanı (mock <-> gerçek API)
    ├─ store/                  Uygulama durumu + sepet eylemleri
    ├─ layouts/                default, shop, b2b, blank
    ├─ components/             ProductCard, DataTable, LineChart/DonutChart, ShopHeader, B2BSidebar
    ├─ ui/                     toast, formField
-   └─ pages/                  home, shop/*, b2b/*, not-found
+   └─ pages/                  Sayfalar: dosya adı = adres (index, [slug], 404 ...)
 ```
 
 `core/` çatıdır, geri kalanı sizin uygulamanızdır. Yeni bir proje için `core/`'u olduğu gibi alıp `pages/`, `routes.js`, `services/` ve `layouts/`'u değiştirmeniz yeterlidir.
 
-## Router
+## Sayfalar ve Router (dosya tabanlı, Next.js `pages/` mantığı)
+
+`src/pages/` altındaki her `*.page.js` dosyası bir sayfadır ve **dosya yolu adres olur**:
+
+| Dosya | Adres |
+|---|---|
+| `index.page.js` | `/` |
+| `shop/index.page.js` | `/shop` |
+| `shop/cart.page.js` | `/shop/cart` |
+| `shop/[slug].page.js` | `/shop/:slug` (`this.props.params.slug`) |
+| `docs/[...rest].page.js` | `/docs/*` (kalan yollar) |
+| `404.page.js` | bulunamadı sayfası |
+
+`_` ile başlayan dosya/klasörler yok sayılır. Sıra otomatiktir (sabit > parametre > joker).
+
+Layout ve yetki sayfa sınıfında tanımlanır:
 
 ```js
-// src/routes.js
-{ path: '/shop/:slug', component: () => import('./pages/shop/detail.page.js'), layout: 'shop', meta: { title: 'Ürün', auth: false } }
+export default class CustomersPage extends Component {
+  static layout = 'b2b';
+  static meta = { title: 'Müşteriler', auth: true };
+}
 ```
 
-- `component`: sınıf ya da `() => import(...)` (yalnızca ziyaret edilince indirilir).
-- `:param`, sondaki `*` (joker), `redirect`, `meta` desteklenir. Sıra önemlidir (özel yollar parametreli olanlardan önce).
+Tarayıcıda dizin taranamadığı için rota listesi geliştirme sırasında üretilip repoya eklenir (canlıda Node gerekmez):
+
+```bash
+npm run routes          # sayfa ekleyince/silince/adlandırınca src/routes.generated.js'i yeniden üret
+npm run routes:check    # güncel mi? (test de denetler)
+```
+
+Node yoksa ya da yönlendirme gibi özel durumlarda `src/routes.js` içindeki `manualRoutes` dizisine elle yazın (öncelikli).
+
 - Guard: `router.beforeEach((to, from) => true | false | '/yonlendir')` (bkz. `app.js`).
 - Sayfa içinde: `this.props.params`, `this.props.query`, `this.ctx.router.navigate('/yol')`, `this.href('/yol')`, `router.setQuery({...})` (sayfayı yeniden yüklemeden URL filtresi).
 - Mod: `config.router.mode = 'hash'` (varsayılan) ya da `'history'` (temiz URL; `.htaccess` kuralı hazır, alt klasörde `RewriteBase`'i düzenleyin).
@@ -83,8 +109,8 @@ helios-frame/
 ## Component yaşam döngüsü
 
 ```js
-import { Component } from '../core/component.js';
-import { html } from '../core/dom.js';
+import { Component } from '../../core/component.js';
+import { html } from '../../core/dom.js';
 
 export default class ExamplePage extends Component {
   static libs = [{ global: 'Chart', js: ['https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.js'] }];  // ilk mount'tan önce, yalnızca bu sayfada yüklenir
@@ -179,7 +205,7 @@ store.subscribe(fn, (s) => s.cart.items.length)     // yalnızca seçilen değer
 
 ## Yol haritası
 
-- Dosya tabanlı rota üretimi (Next.js tarzı `pages/` taraması için isteğe bağlı küçük script, canlıda yine statik)
+- İç içe (nested) layout'lar ve klasör bazlı ortak layout/meta
 - Render optimizasyonu: DOM diff (morph) ile kısmi güncelleme
 - i18n modülü, tema (açık/koyu) ve erişilebilirlik denetimleri
 - Gerçek API için örnek PHP/Node arka uç şablonları

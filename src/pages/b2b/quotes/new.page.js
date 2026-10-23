@@ -1,7 +1,7 @@
-import { Component } from '../../core/component.js';
-import { html, formatMoney } from '../../core/dom.js';
-import { validate, minLength } from '../../core/forms.js';
-import { formField } from '../../ui/form-field.js';
+import { Component } from '../../../core/component.js';
+import { html, formatMoney } from '../../../core/dom.js';
+import { validate, minLength } from '../../../core/forms.js';
+import { formField } from '../../../ui/form-field.js';
 
 const SCHEMA = {
   company: ['required', minLength(2)],
@@ -20,6 +20,9 @@ const inDays = (n) => new Date(Date.now() + n * 864e5).toISOString().slice(0, 10
  * Performans/odak için: yazarken yeniden çizim YOK; yalnızca satır ekle/sil ve doğrulama hatasında render edilir.
  */
 export default class QuoteFormPage extends Component {
+  static layout = 'b2b';
+  static meta = { title: 'Yeni Teklif', auth: true };
+
   state = { items: [newItem()], errors: {}, busy: false };
   values = { company: '', taxNo: '', contact: '', email: '', phone: '', validUntil: inDays(15), notes: '' };
 

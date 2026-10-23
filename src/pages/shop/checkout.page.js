@@ -26,6 +26,9 @@ const SCHEMA = {
 
 /** Üç adımlı ödeme akışı. Form değerleri `this.values` içinde tutulur: adımlar arası kaybolmaz, yazarken yeniden çizim olmaz. */
 export default class CheckoutPage extends Component {
+  static layout = 'shop';
+  static meta = { title: 'Ödeme' };
+
   state = { step: 1, errors: {}, busy: false };
   values = { name: '', email: '', phone: '', city: '', address: '', shipping: 'standard', payment: 'cod' };
 

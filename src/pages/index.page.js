@@ -2,6 +2,9 @@ import { Component } from '../core/component.js';
 import { html } from '../core/dom.js';
 
 export default class HomePage extends Component {
+  static layout = 'default';
+  static meta = { title: 'Ana Sayfa' };
+
   render() {
     const { brand, version } = this.ctx.config;
     return html`

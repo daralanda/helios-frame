@@ -1,18 +1,21 @@
 /**
  * İstemci tarafı yönlendirici (hash veya History API).
  *
- * Rota tanımı:
- *   { path: '/shop/:slug', component: () => import('./pages/x.js'),   // tembel yükleme (code-splitting)
- *     layout: 'shop', meta: { title: 'Ürün', auth: true } }
+ * Rota tanımı (çoğunlukla src/pages/ dosyalarından tools/generate-routes.mjs ile üretilir):
+ *   { path: '/shop/:slug', component: () => import('./pages/shop/%5Bslug%5D.page.js') }   // tembel yükleme
  *   - path:  ':param' ve sondaki '*' (joker) desteklenir. Sıra önemlidir: ilk eşleşen kazanır.
  *   - component: Component alt sınıfı YA DA `() => import(...)` (modülün default export'u kullanılır).
  *   - redirect: '/baska/yol'
+ *   - layout / meta: rota üzerinde verilebilir; ancak sayfa sınıfındaki `static layout` ve
+ *     `static meta` DAHA ÖNCELİKLİDİR (Next.js'te sayfa dosyasının kendi ayarını taşıması gibi).
  *
  * Guard:
  *   router.beforeEach((to, from) => true | false | '/yonlendirilecek/yol')
+ *   (guard çalışırken sayfa sınıfı yüklenmiştir, böylece `to.meta` sayfanın static meta'sını içerir)
  *
- * Sayfa yaşam döngüsü: yeni rota -> guard'lar -> sınıf/layout yüklenir -> eski sayfa destroy() ->
- * (layout değiştiyse eski layout destroy()) -> yeni sayfa mount(). Yarış durumları nav-id ile elenir.
+ * Sayfa yaşam döngüsü: yeni rota -> sayfa sınıfı yüklenir -> guard'lar -> layout yüklenir ->
+ * eski sayfa destroy() -> (layout değiştiyse eski layout destroy()) -> yeni sayfa mount().
+ * Yarış durumları nav-id ile elenir.
  */
 import { Component } from './component.js';
 import { escapeHtml } from './dom.js';
@@ -154,25 +157,31 @@ export class Router {
     if (!found) return this.#showError(new Error(`Sayfa bulunamadı: ${path}`));
 
     const { route, params } = found;
-    const to = { path, params, query: Object.fromEntries(new URLSearchParams(query)), route, meta: route.meta ?? {} };
     const from = this.current;
 
     if (route.redirect) return this.navigate(route.redirect, { replace: true });
 
-    for (const guard of this.#guards) {
-      let result;
-      try { result = await guard(to, from); } catch (err) { console.error('[router] guard hatası', err); result = false; }
-      if (id !== this.#nav) return;
-      if (typeof result === 'string') return this.navigate(result, { replace: true });
-      if (result === false) {
-        if (from) this.navigate(from.path, { replace: true });
-        return;
-      }
-    }
-
     try {
       const PageClass = await this.#classOf(route.component);
-      const layoutKey = route.layout ?? 'default';
+      if (id !== this.#nav) return;
+
+      // Sayfa sınıfındaki static meta/layout, rota tanımındakilerin önüne geçer.
+      const meta = { ...route.meta, ...PageClass.meta };
+      const layoutKey = PageClass.layout ?? route.layout ?? 'default';
+      const to = { path, params, query: Object.fromEntries(new URLSearchParams(query)), route, meta, layout: layoutKey };
+
+      for (const guard of this.#guards) {
+        let result;
+        try { result = await guard(to, from); } catch (err) { console.error('[router] guard hatası', err); result = false; }
+        if (id !== this.#nav) return;
+        if (typeof result === 'string') return this.navigate(result, { replace: true });
+        if (result === false) {
+          if (from) this.navigate(from.path, { replace: true });
+          return;
+        }
+      }
+
+      if (!this.#layouts[layoutKey]) throw new Error(`Layout bulunamadı: "${layoutKey}" (src/routes.js -> layouts)`);
       const LayoutClass = layoutKey !== this.#layoutKey ? await this.#classOf(this.#layouts[layoutKey]) : null;
       if (id !== this.#nav) return;
 

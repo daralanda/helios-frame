@@ -6,6 +6,9 @@ const STATUS_COLORS = { Beklemede: '#f59f00', Onaylandı: '#2f9e44', Reddedildi:
 
 /** Grafikler harici kütüphane olmadan (saf SVG) çizilir: bkz. components/charts.js */
 export default class DashboardPage extends Component {
+  static layout = 'b2b';
+  static meta = { title: 'Panel', auth: true };
+
   state = { loading: true, error: null, data: null };
 
   async afterMount() {

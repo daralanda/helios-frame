@@ -16,6 +16,9 @@ const PER_PAGE = 8;
  * Filtreler URL'e yazılır (router.setQuery) -> paylaşılabilir, F5 ve geri tuşu dostu.
  */
 export default class ShopListPage extends Component {
+  static layout = 'shop';
+  static meta = { title: 'Ürünler' };
+
   state = { loading: true, error: null, items: [], total: 0, categories: [], q: '', category: '', sort: 'featured', page: 1 };
   #request = 0;
 

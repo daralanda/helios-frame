@@ -76,7 +76,7 @@
       <li><a href="#baslangic">1. Hızlı başlangıç</a></li>
       <li><a href="#yapi">2. Klasör yapısı</a></li>
       <li><a href="#ayarlar">3. Ayarlar (config)</a></li>
-      <li><a href="#router">4. Router</a></li>
+      <li><a href="#router">4. Sayfalar ve Router</a></li>
       <li><a href="#component">5. Component</a></li>
       <li><a href="#layout">6. Layout</a></li>
       <li><a href="#store">7. Store (durum)</a></li>
@@ -137,20 +137,22 @@ npm test</code></pre></div>
 ├─ data/                      Mock veri: products, customers, quotes, stats
 ├─ vendor/                    Yerel dosyalar için (şimdilik boş, JS kütüphanesi yok)
 ├─ docs/index.html            Bu kılavuz
+├─ tools/generate-routes.mjs  Rota üretici (yalnızca geliştirme aracı)
 ├─ tests/smoke.mjs            Duman testi
 └─ src/
    ├─ main.js                 Açılış: UI çatısını yükler, boot() çağırır
    ├─ app.js                  ctx kurulumu, yetki kontrolü, router başlatma
    ├─ config.js               Tüm ayarlar
    ├─ libs.js                 Kütüphane kayıt defteri (yalnızca UI CSS; JS kütüphanesi yok)
-   ├─ routes.js               Rota ve layout tanımları
+   ├─ routes.js               Layout tanımları + elle yazılan rotalar (yönlendirme vb.)
+   ├─ routes.generated.js     OTOMATİK: src/pages/ dosyalarından üretilir
    ├─ core/                   Çatı çekirdeği (component, router, store, http, loader...)
    ├─ services/               REST servis katmanı
    ├─ store/                  Uygulama durumu, sepet eylemleri
    ├─ layouts/                default, shop, b2b, blank
    ├─ components/             Yeniden kullanılabilir bileşenler
    ├─ ui/                     toast, formField
-   └─ pages/                  Sayfalar (home, shop/*, b2b/*)</code></pre></div>
+   └─ pages/                  Sayfalar: dosya adı = adres (Next.js mantığı)</code></pre></div>
       <div class="box ok"><p><b>Kural:</b> <code>src/core/</code> çatıdır, dokunmadan kullanın. Kendi uygulamanız <code>pages/</code>, <code>routes.js</code>, <code>services/</code>, <code>layouts/</code> ve <code>components/</code> içinde yaşar.</p></div>
     </section>
 
@@ -175,36 +177,63 @@ npm test</code></pre></div>
 
     <!-- ===================================================================== -->
     <section id="router">
-      <h2>4. Router</h2>
-      <h3>Rota tanımı</h3>
-      <p>Rotalar <code>src/routes.js</code> içinde tanımlanır. Sayfalar <code>import()</code> ile tembel yüklenir, yani yalnızca ziyaret edilince indirilir.</p>
-      <div class="code"><div class="cap">src/routes.js</div><pre><code>export const routes = [
-  { path: '/', component: () =&gt; import('./pages/home.page.js'), layout: 'default', meta: { title: 'Ana Sayfa' } },
+      <h2>4. Sayfalar ve Router</h2>
+      <h3>Dosya tabanlı rota (Next.js <code>pages/</code> mantığı)</h3>
+      <p>Adres tanımlamak için ayrı bir dosyaya yazmanıza gerek yoktur. <code>src/pages/</code> altına <code>.page.js</code> uzantılı bir dosya oluşturursunuz, <b>dosya yolu adres olur</b>.</p>
+      <table>
+        <tr><th>Dosya (<code>src/pages/</code> altında)</th><th>Adres</th></tr>
+        <tr><td><code>index.page.js</code></td><td><code>/</code></td></tr>
+        <tr><td><code>shop/index.page.js</code></td><td><code>/shop</code></td></tr>
+        <tr><td><code>shop/cart.page.js</code></td><td><code>/shop/cart</code></td></tr>
+        <tr><td><code>shop/[slug].page.js</code></td><td><code>/shop/:slug</code> (dinamik parametre, <code>this.props.params.slug</code>)</td></tr>
+        <tr><td><code>shop/order/[id].page.js</code></td><td><code>/shop/order/:id</code></td></tr>
+        <tr><td><code>docs/[...rest].page.js</code></td><td><code>/docs/*</code> (kalan tüm yollar, <code>params.wildcard</code>)</td></tr>
+        <tr><td><code>404.page.js</code></td><td>Bulunamadı sayfası (joker)</td></tr>
+        <tr><td><code>_yardimci.js</code>, <code>_klasor/</code></td><td><code>_</code> ile başlayanlar yok sayılır (sayfa olmayan yardımcı modüller için)</td></tr>
+      </table>
+      <div class="box ok"><p><b>Sıralama otomatiktir:</b> sabit yollar parametrelilerden, parametreliler jokerden önce eşleşir. Bu yüzden <code>/shop/cart</code>, <code>/shop/[slug]</code> ile karışmaz.</p></div>
 
-  // Parametreli yol: /shop/helios-kablosuz-kulaklik -&gt; params.slug
-  { path: '/shop/:slug', component: () =&gt; import('./pages/shop/detail.page.js'), layout: 'shop' },
+      <h3>Sayfanın kendi ayarları: layout, başlık, yetki</h3>
+      <p>Next.js'te sayfa dosyası kendi ayarını taşıdığı gibi, burada da ayarlar <b>sayfa sınıfındaki static alanlarda</b> durur:</p>
+      <div class="code"><div class="cap">src/pages/b2b/customers.page.js</div><pre><code>export default class CustomersPage extends Component {
+  static layout = 'b2b';                                   // layouts içindeki anahtar (varsayılan: 'default')
+  static meta = { title: 'Müşteriler', auth: true };      // sekme başlığı + giriş zorunluluğu
 
-  // Giriş gerektiren sayfa
-  { path: '/b2b/customers', component: () =&gt; import('./pages/b2b/customers.page.js'),
-    layout: 'b2b', meta: { title: 'Müşteriler', auth: true } },
-
-  // Yönlendirme
-  { path: '/b2b', redirect: '/b2b/dashboard' },
-
-  // Joker: en sona koyun, 404 sayfası olur
-  { path: '*', component: () =&gt; import('./pages/not-found.page.js'), layout: 'default' },
-];</code></pre></div>
-      <div class="box warn"><p><b>Sıra önemlidir.</b> İlk eşleşen rota kazanır. <code>/shop/cart</code> gibi özel yolları <code>/shop/:slug</code> gibi parametreli yollardan <b>önce</b> yazın.</p></div>
-
+  // ...
+}</code></pre></div>
       <table>
         <tr><th>Alan</th><th>Açıklama</th></tr>
-        <tr><td><code>path</code></td><td><code>:param</code> ve sondaki <code>*</code> desteklenir.</td></tr>
-        <tr><td><code>component</code></td><td>Sınıf ya da <code>() =&gt; import(...)</code> (modülün <code>default</code> export'u kullanılır).</td></tr>
-        <tr><td><code>layout</code></td><td><code>layouts</code> içindeki anahtar: <code>default</code>, <code>shop</code>, <code>b2b</code>, <code>blank</code>.</td></tr>
-        <tr><td><code>meta.title</code></td><td>Sekme başlığı. Metin ya da <code>(to) =&gt; metin</code> olabilir.</td></tr>
-        <tr><td><code>meta.auth</code></td><td><code>true</code> ise giriş yapılmamışsa <code>/login</code>'e yönlendirilir.</td></tr>
-        <tr><td><code>redirect</code></td><td>Bu yola gidenleri başka bir yola yönlendirir.</td></tr>
+        <tr><td><code>static layout</code></td><td><code>default</code>, <code>shop</code>, <code>b2b</code>, <code>blank</code> ya da kendi layout'unuz.</td></tr>
+        <tr><td><code>static meta.title</code></td><td>Sekme başlığı. Metin ya da <code>(to) =&gt; metin</code> olabilir.</td></tr>
+        <tr><td><code>static meta.auth</code></td><td><code>true</code> ise giriş yapılmamışsa <code>/login</code>'e yönlendirilir.</td></tr>
       </table>
+      <p>Aynı ayarlar birden çok sayfada tekrarlanıyorsa ortak bir taban sınıf yazın (<code>_</code> ile başlayan dosya sayfa sayılmaz):</p>
+      <div class="code"><pre><code>// src/pages/b2b/_base.js
+import { Component } from '../../core/component.js';
+export class B2BPage extends Component {
+  static layout = 'b2b';
+  static meta = { auth: true };
+}
+
+// src/pages/b2b/raporlar.page.js
+import { B2BPage } from './_base.js';
+export default class RaporlarPage extends B2BPage {
+  static meta = { ...B2BPage.meta, title: 'Raporlar' };
+}</code></pre></div>
+
+      <h3>Rota dosyasını güncelleme</h3>
+      <p>Tarayıcıda dizin taranamadığı için dosya listesi, geliştirme sırasında küçük bir araçla <code>src/routes.generated.js</code> dosyasına yazılır. Bu dosya repoya eklenir ve sitenizle birlikte yüklenir (sunucuda Node.js gerekmez).</p>
+      <div class="code"><div class="cap">terminal (yeni sayfa ekledikten / sildikten / yeniden adlandırdıktan sonra)</div><pre><code>npm run routes           # src/routes.generated.js dosyasını yeniden üretir
+npm run routes:check     # dosya güncel değilse hata verir (test de bunu denetler)</code></pre></div>
+      <div class="box"><p><code>.js</code> import adreslerinde <code>[</code> ve <code>]</code> karakterleri otomatik olarak <code>%5B</code> / <code>%5D</code> biçimine çevrilir, böylece hosting'de sorun çıkmaz. <code>routes.generated.js</code> dosyasını elle düzenlemeyin.</p></div>
+
+      <h3>Elle rota (yönlendirme, özel durumlar)</h3>
+      <p>Dosyadan türetilemeyen rotalar <code>src/routes.js</code> içindeki <code>manualRoutes</code> dizisine yazılır ve önceliklidir. Bilgisayarınızda Node.js yoksa yeni sayfayı da buraya elle ekleyebilirsiniz.</p>
+      <div class="code"><div class="cap">src/routes.js</div><pre><code>export const manualRoutes = [
+  { path: '/b2b', redirect: '/b2b/dashboard' },                                   // yönlendirme
+  { path: '/hakkimizda', component: () =&gt; import('./pages/hakkimizda.page.js') },  // Node'suz elle ekleme
+];</code></pre></div>
+      <p>Elle rotada <code>layout</code> ve <code>meta</code> de verilebilir, ancak sayfa sınıfındaki <code>static</code> alanlar daha önceliklidir.</p>
 
       <h3>Sayfada rota bilgisi</h3>
       <div class="code"><pre><code>// /shop/helios-kablosuz-kulaklik?ref=mail
@@ -400,7 +429,7 @@ export default class ShopLayout extends Layout {
   // ...
   admin: () =&gt; import('./layouts/admin.layout.js'),
 };
-// rota: { path: '/admin', component: ..., layout: 'admin' }</code></pre></div>
+// sayfada: static layout = 'admin';</code></pre></div>
     </section>
 
     <!-- ===================================================================== -->
@@ -814,11 +843,15 @@ export class BlogService {
 // return { ... } içine ekleyin:
 blog: new BlogService(deps),</code></pre></div>
 
-      <h3>Adım 3: Sayfa</h3>
-      <div class="code"><div class="cap">src/pages/blog.page.js</div><pre><code>import { Component } from '../core/component.js';
-import { html } from '../core/dom.js';
+      <h3>Adım 3: Sayfa dosyası (adres otomatik olur)</h3>
+      <p><code>src/pages/blog/index.page.js</code> dosyası <code>/blog</code> adresi demektir. Layout ve başlık sayfanın içinde yazılır.</p>
+      <div class="code"><div class="cap">src/pages/blog/index.page.js</div><pre><code>import { Component } from '../../core/component.js';
+import { html } from '../../core/dom.js';
 
 export default class BlogPage extends Component {
+  static layout = 'default';
+  static meta = { title: 'Blog' };
+
   state = { loading: true, error: null, posts: [] };
 
   async afterMount() {
@@ -843,9 +876,9 @@ export default class BlogPage extends Component {
   }
 }</code></pre></div>
 
-      <h3>Adım 4: Rota</h3>
-      <div class="code"><div class="cap">src/routes.js</div><pre><code>// '*' rotasından ÖNCE ekleyin
-{ path: '/blog', component: () =&gt; import('./pages/blog.page.js'), layout: 'default', meta: { title: 'Blog' } },</code></pre></div>
+      <h3>Adım 4: Rotaları güncelle</h3>
+      <div class="code"><div class="cap">terminal</div><pre><code>npm run routes</code></pre></div>
+      <p>Bu komut <code>src/routes.generated.js</code> dosyasına <code>/blog</code> rotasını ekler. <code>routes.js</code> dosyasını düzenlemeniz gerekmez. Node.js yoksa <code>manualRoutes</code> içine elle yazın (bölüm 4).</p>
 
       <h3>Adım 5: Menüye bağlantı</h3>
       <div class="code"><pre><code>html`&lt;a href="${this.href('/blog')}"&gt;Blog&lt;/a&gt;`</code></pre></div>
@@ -883,6 +916,7 @@ export default class BlogPage extends Component {
       <h2>14. Yayına alma (GoDaddy / paylaşımlı hosting)</h2>
       <ol>
         <li>cPanel → <b>Dosya Yöneticisi</b> ya da FTP ile projeyi <code>public_html</code> altına yükleyin. <code>node_modules</code> ve <code>tests</code> klasörleri gerekmez.</li>
+        <li>Yüklemeden önce <code>npm run routes:check</code> ile <code>src/routes.generated.js</code> dosyasının güncel olduğundan emin olun.</li>
         <li>Varsayılan <code>hash</code> modunda başka ayar gerekmez. Adres: <code>https://siteniz.com/#/shop</code>.</li>
         <li><b>Temiz adres</b> (<code>/shop</code>) isterseniz <code>config.js</code> içinde <code>router.mode: 'history'</code> yapın. <code>.htaccess</code> içindeki yönlendirme kuralı hazırdır.</li>
         <li>Alt klasöre (<code>/magaza/</code>) yüklerseniz <code>.htaccess</code> içindeki <code>RewriteBase</code> değerini <code>/magaza/</code> yapın.</li>
@@ -905,6 +939,7 @@ export default class BlogPage extends Component {
         <tr><td>Sayfa içeriği layout içinde kayboluyor</td><td>Layout içinde <code>setState</code> çağırıyorsunuz. Dinamik parçaları alt bileşene taşıyın.</td></tr>
         <tr><td>Alt bileşenin durumu sıfırlanıyor</td><td>Ebeveyn yeniden çizilince alt bileşenler yeniden kurulur. Veriyi ebeveyne ya da store'a taşıyın.</td></tr>
         <tr><td>Yazarken input odağı kayboluyor</td><td>Input'a <code>id</code>, <code>name</code> veya <code>data-key</code> verin ya da değerleri state yerine <code>this.values</code> gibi bir alanda tutun.</td></tr>
+        <tr><td>Yeni eklediğim sayfa açılmıyor (404)</td><td><code>npm run routes</code> çalıştırmayı unuttunuz; dosya adı <code>.page.js</code> ile bitmiyor ya da <code>_</code> ile başlıyor. Node.js yoksa <code>manualRoutes</code> içine elle ekleyin.</td></tr>
         <tr><td>Bir tıklama iki kez çalışıyor</td><td><code>this.on()</code>'u <code>render()</code> içinde değil <code>beforeMount()</code> içinde çağırın.</td></tr>
         <tr><td>"Bilinmeyen kütüphane" hatası</td><td><code>static libs</code> içinde bir <b>ad</b> yazdınız ama <code>src/libs.js</code> kayıt defterinde yok. Adı kayda ekleyin ya da satır içi tanım (<code>{ global, js }</code>) kullanın.</td></tr>
         <tr><td>Eski sepet verisi bozuk görünüyor</td><td>Durum yapısını değiştirdiyseniz <code>app.js</code> içinde <code>version</code> değerini arttırın. Geliştirme sırasında konsoldan <code>localStorage.clear()</code> da çalışır.</td></tr>
@@ -936,8 +971,8 @@ this.href('/yol')
 this.ctx.router.navigate('/yol')
 this.ctx.services.xxx.list()
 this.ctx.toast.success('..')</code></pre></div>
-        <div class="card"><h3>Dosya eklerken</h3><pre><code>1. pages/x.page.js
-2. routes.js  (* öncesine)
+        <div class="card"><h3>Dosya eklerken</h3><pre><code>1. pages/x.page.js (static layout/meta)
+2. npm run routes
 3. services/ (gerekirse)
 4. data/*.json (mock için)
 5. static libs (yeni kütüphane)</code></pre></div>

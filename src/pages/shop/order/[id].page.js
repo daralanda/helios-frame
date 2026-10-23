@@ -1,7 +1,10 @@
-import { Component } from '../../core/component.js';
-import { html, formatMoney } from '../../core/dom.js';
+import { Component } from '../../../core/component.js';
+import { html, formatMoney } from '../../../core/dom.js';
 
 export default class OrderPage extends Component {
+  static layout = 'shop';
+  static meta = { title: 'Sipariş' };
+
   state = { loading: true, error: null, order: null };
 
   async afterMount() {

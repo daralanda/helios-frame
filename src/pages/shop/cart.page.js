@@ -3,6 +3,9 @@ import { html, formatMoney } from '../../core/dom.js';
 import { cartTotals, setQty, removeItem, clearCart } from '../../store/cart.js';
 
 export default class CartPage extends Component {
+  static layout = 'shop';
+  static meta = { title: 'Sepet' };
+
   beforeMount() {
     this.watch(this.ctx.store, (s) => s.cart, () => this.update());
 

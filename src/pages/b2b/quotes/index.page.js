@@ -1,6 +1,6 @@
-import { Component } from '../../core/component.js';
-import { html, formatMoney, formatDate } from '../../core/dom.js';
-import { DataTable } from '../../components/data-table.js';
+import { Component } from '../../../core/component.js';
+import { html, formatMoney, formatDate } from '../../../core/dom.js';
+import { DataTable } from '../../../components/data-table.js';
 
 const STATUS_CLASS = { Beklemede: 'warning', Onaylandı: 'success', Reddedildi: 'danger' };
 
@@ -14,6 +14,9 @@ const COLUMNS = [
 ];
 
 export default class QuotesPage extends Component {
+  static layout = 'b2b';
+  static meta = { title: 'Teklifler', auth: true };
+
   state = { loading: true, error: null, rows: [] };
 
   async afterMount() {

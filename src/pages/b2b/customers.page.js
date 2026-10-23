@@ -23,6 +23,9 @@ const COLUMNS = [
 ];
 
 export default class CustomersPage extends Component {
+  static layout = 'b2b';
+  static meta = { title: 'Müşteriler', auth: true };
+
   state = { loading: true, error: null, rows: [], status: '' };
 
   beforeMount() {

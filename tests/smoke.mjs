@@ -8,6 +8,7 @@ import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -56,6 +57,19 @@ const type = (el, value) => { el.value = value; el.dispatchEvent(new window.Even
 const click = (el) => el.dispatchEvent(new window.MouseEvent('click', { bubbles: true, cancelable: true }));
 let passed = 0;
 const ok = (name) => { passed++; console.log(`  ✓ ${name}`); };
+
+// Dosya tabanlı rota üretici
+const gen = await import('../tools/generate-routes.mjs');
+const cases = {
+  'index.page.js': '/', '404.page.js': '*', 'shop/index.page.js': '/shop', 'shop/cart.page.js': '/shop/cart',
+  'shop/[slug].page.js': '/shop/:slug', 'shop/order/[id].page.js': '/shop/order/:id', 'docs/[...rest].page.js': '/docs/*',
+};
+for (const [file, expected] of Object.entries(cases)) assert.equal(gen.fileToRoutePath(file), expected, file);
+const order = gen.buildRoutes().map((r) => r.path);
+assert.ok(order.indexOf('/shop/cart') < order.indexOf('/shop/:slug'), 'sabit yol parametreliden önce gelmeli');
+assert.equal(order.at(-1), '*', 'joker en sonda olmalı');
+execFileSync(process.execPath, ['tools/generate-routes.mjs', '--check'], { cwd: root, stdio: 'pipe' });
+ok('rota üretici: dosya adı -> yol kuralları, sıralama ve routes.generated.js güncelliği');
 
 // ---- Uygulamayı başlat ----
 const { boot } = await import('../src/app.js');
@@ -189,6 +203,12 @@ $('form').dispatchEvent(new window.Event('submit', { bubbles: true, cancelable: 
 await until(() => location.hash === '#/b2b/quotes', 'teklif kaydı sonrası liste', 4000);
 await until(() => $$('tbody tr').length === 6, 'yeni teklif listede (5 seed + 1)');
 ok('teklif kaydedildi ve listede göründü (5 seed + 1)');
+
+// Dinamik rota: /shop/[slug] (sabit /shop/cart ile karışmamalı)
+go('/shop/bluetooth-hoparlor-mini');
+await until(() => $('h1')?.textContent === 'Bluetooth Hoparlör Mini', 'ürün detay sayfası (dinamik rota)');
+assert.equal($$('[data-hf=ProductDetailPage]').length, 1);
+ok('dinamik rota: /shop/:slug detay sayfasını açtı, static layout (shop) sayfadan okundu');
 
 // 404
 go('/olmayan/sayfa');
