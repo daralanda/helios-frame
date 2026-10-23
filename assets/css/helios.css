@@ -97,7 +97,6 @@ body { min-height: 100vh; }
 .hf-b2b-side { border-right: 1px solid rgba(0, 0, 0, .08); background: #fff; }
 .hf-sidebar { position: sticky; top: 0; height: 100vh; }
 .hf-b2b-main { background: #f8f9fa; min-width: 0; }
-.hf-chart { position: relative; }
 .hf-login { min-height: 100vh; display: grid; place-content: center; padding: 1rem; background: var(--hf-surface); }
 .hf-login .card { width: min(24rem, 92vw); border-radius: var(--hf-radius); }
 
@@ -120,3 +119,9 @@ body { min-height: 100vh; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* ---- Kütüphanesiz bileşenler (tablo, SVG grafik) ---- */
+.hf-th-btn { all: unset; cursor: pointer; font-weight: 600; white-space: nowrap; }
+.hf-th-btn:hover, .hf-th-btn:focus-visible { color: var(--hf-brand-dark); }
+.hf-th-btn:focus-visible { outline: 2px solid var(--hf-brand); outline-offset: 2px; border-radius: .25rem; }
+.hf-chart-svg { display: block; width: 100%; height: auto; color: var(--bs-body-color, #212529); }

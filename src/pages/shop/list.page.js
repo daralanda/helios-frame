@@ -95,7 +95,7 @@ export default class ShopListPage extends Component {
 
       ${error ? html`<div class="alert alert-danger">${error}</div>` : ''}
 
-      <div class="row g-3 ${loading && items.length ? 'opacity-50' : ''}" aria-busy="${loading}">
+      <div class="row g-3 ${loading && items.length ? 'opacity-50' : ''}" aria-busy="${String(loading)}">
         ${loading && !items.length
           ? Array.from({ length: PER_PAGE }, () => html`<div class="col-6 col-md-4 col-xl-3"><div class="hf-skeleton"></div></div>`)
           : items.map((p) => html`<div class="col-6 col-md-4 col-xl-3" data-product="${p.id}"></div>`)}

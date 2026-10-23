@@ -21,6 +21,11 @@ export const config = {
   // 'local' -> kütüphaneler vendor/ klasöründen (offline / KVKK / hız için)
   libMode: 'cdn',
 
+  // Tüm sitede, uygulama açılmadan önce yüklenecek JS kütüphaneleri (Next.js'teki _app/_document gibi).
+  // Örn: [{ global: 'dayjs', js: ['https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js'] }]
+  // Yalnızca belirli sayfada gerekenleri burada değil, o sayfanın `static libs` alanında referans verin.
+  globalLibs: [],
+
   api: {
     baseURL: '/api',      // gerçek REST API adresi (mock: false iken kullanılır)
     mock: true,           // true: data/*.json + localStorage ile çalışır (backend gerekmez)

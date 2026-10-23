@@ -8,6 +8,7 @@ const root = document.getElementById('app');
 try {
   // UI çatısını (Bootstrap/Tailwind) uygulama açılmadan önce yükle -> stilsiz içerik flaşı olmaz.
   if (config.ui !== 'none') await loader.load(config.ui);
+  if (config.globalLibs.length) await loader.load(config.globalLibs);
   root.innerHTML = '';
   await boot(root);
 } catch (err) {

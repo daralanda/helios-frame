@@ -1,33 +1,28 @@
 import { Component } from '../../core/component.js';
-import { html, escapeHtml, formatMoney, formatDate } from '../../core/dom.js';
-import { DataTableView } from '../../components/data-table-view.js';
+import { html, formatMoney, formatDate } from '../../core/dom.js';
+import { DataTable } from '../../components/data-table.js';
 
 const STATUS_CLASS = { Aktif: 'success', Pasif: 'secondary', Potansiyel: 'warning' };
 
 const COLUMNS = [
-  { title: 'Firma', data: 'company', render: (d, t) => (t === 'display' ? `<strong>${escapeHtml(d)}</strong>` : d) },
-  { title: 'Yetkili', data: 'contact' },
-  { title: 'Şehir', data: 'city' },
-  { title: 'Sektör', data: 'sector' },
-  { title: 'Bakiye', data: 'balance', className: 'text-end', render: (d, t) => (t === 'display' ? formatMoney(d) : d) },
-  { title: 'Son sipariş', data: 'lastOrder', render: (d, t) => (t === 'display' ? formatDate(d) : d) },
+  { key: 'company', title: 'Firma', render: (r) => html`<strong>${r.company}</strong>` },
+  { key: 'contact', title: 'Yetkili' },
+  { key: 'city', title: 'Şehir' },
+  { key: 'sector', title: 'Sektör' },
+  { key: 'balance', title: 'Bakiye', class: 'text-end', render: (r) => formatMoney(r.balance) },
+  { key: 'lastOrder', title: 'Son sipariş', render: (r) => formatDate(r.lastOrder) || '—' },
+  { key: 'status', title: 'Durum', render: (r) => html`<span class="badge text-bg-${STATUS_CLASS[r.status] ?? 'secondary'}">${r.status}</span>` },
   {
-    title: 'Durum',
-    data: 'status',
-    render: (d, t) => (t === 'display' ? `<span class="badge text-bg-${STATUS_CLASS[d] ?? 'secondary'}">${escapeHtml(d)}</span>` : d),
-  },
-  {
+    key: 'actions',
     title: '',
-    data: 'id',
-    orderable: false,
+    sortable: false,
     searchable: false,
-    className: 'text-end',
-    render: (id) => `<button class="btn btn-sm btn-outline-primary" data-quote="${escapeHtml(id)}">Teklif hazırla</button>`,
+    class: 'text-end',
+    render: (r) => html`<button class="btn btn-sm btn-outline-primary" data-quote="${r.id}">Teklif hazırla</button>`,
   },
 ];
 
 export default class CustomersPage extends Component {
-  static libs = ['datatables'];
   state = { loading: true, error: null, rows: [], status: '' };
 
   beforeMount() {
@@ -65,10 +60,10 @@ export default class CustomersPage extends Component {
   afterRender() {
     const { loading, error, rows, status } = this.state;
     if (loading || error) return;
-    this.mountChild(DataTableView, '[data-slot=table]', {
+    this.mountChild(DataTable, '[data-slot=table]', {
       columns: COLUMNS,
-      data: status ? rows.filter((r) => r.status === status) : rows,
-      options: { order: [[0, 'asc']] },
+      rows: status ? rows.filter((r) => r.status === status) : rows,
+      initial: { sortKey: 'company' },
     });
   }
 }

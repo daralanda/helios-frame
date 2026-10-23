@@ -1,5 +1,5 @@
 import { Component } from '../../core/component.js';
-import { html, formatMoney } from '../../core/dom.js';
+import { html, raw, formatMoney } from '../../core/dom.js';
 import { validate, minLength } from '../../core/forms.js';
 import { formField } from '../../ui/form-field.js';
 import { cartTotals, clearCart } from '../../store/cart.js';
@@ -88,7 +88,7 @@ export default class CheckoutPage extends Component {
     const stepper = html`
       <ol class="hf-steps mb-4" aria-label="Adımlar">
         ${STEPS.map((label, i) => html`
-          <li class="${i + 1 === step ? 'is-current' : ''} ${i + 1 < step ? 'is-done' : ''}" ${i + 1 === step ? 'aria-current="step"' : ''}>
+          <li class="${i + 1 === step ? 'is-current' : ''} ${i + 1 < step ? 'is-done' : ''}" ${i + 1 === step ? raw('aria-current="step"') : ''}>
             <span>${i + 1}</span> ${label}
           </li>`)}
       </ol>`;

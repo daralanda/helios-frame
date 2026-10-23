@@ -1,16 +1,16 @@
-# vendor/ (yerel kütüphane modu)
+# vendor/
 
-`src/config.js` içinde `libMode: 'local'` yaptığınızda kütüphaneler CDN yerine buradan okunur.
-Dosya yolları `src/libs.js` içindeki `local` bölümlerinde tanımlıdır. Beklenen yapı:
+Şimdilik **boş**: projeye dahil hiçbir JS kütüphanesi yoktur.
 
+Bir kütüphaneyi kendi sunucunuzdan servis etmek istediğinizde dosyayı buraya koyun ve referans verin:
+
+```js
+// Next.js'te `import x from 'paket'` yazmak gibi, doğrudan ES modülü olarak:
+import foo from '../../vendor/foo.js';
+
+// Ya da klasik (UMD) script ise, ihtiyaç duyulan sayfada:
+static libs = [{ global: 'Foo', js: ['vendor/foo/foo.min.js'] }];
 ```
-vendor/
-  bootstrap/   bootstrap.min.css, bootstrap.bundle.min.js
-  jquery/      jquery.min.js
-  datatables/  dataTables.min.js, dataTables.bootstrap5.min.js, dataTables.bootstrap5.min.css
-  chartjs/     chart.umd.js
-  tailwind/    tailwind.css   (Tailwind CLI ile üretilmiş statik çıktı)
-```
 
-Dosyaları ilgili paketlerin dağıtım klasöründen (npm paketinin `dist/` dizini) kopyalayın.
-Yeni bir kütüphane eklemek için `src/libs.js` kaydına `cdn` ve `local` yollarını yazmanız yeterlidir.
+`libMode: 'local'` ayarı yalnızca `src/libs.js` kayıt defterindeki `local` yollarını seçer
+(şu an yalnızca Bootstrap CSS: `vendor/bootstrap/bootstrap.min.css`).

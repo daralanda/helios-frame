@@ -1,6 +1,6 @@
 /**
  * Duman testi (smoke test): uygulamayı jsdom içinde gerçekten başlatır ve ana akışları gezer.
- * Harici kütüphaneler (Bootstrap/Chart.js/DataTables) sahte nesnelerle taklit edilir; ağ erişimi gerekmez.
+ * Projede harici JS kütüphanesi olmadığından hiçbir sahte nesne gerekmez; ağ erişimi de gerekmez.
  *   npm install && npm test
  */
 import { JSDOM } from 'jsdom';
@@ -33,25 +33,6 @@ globalThis.fetch = async (url) => {
     return { ok: false, status: 404, json: async () => ({}) };
   }
 };
-
-// Sahte harici kütüphaneler (loader "global zaten var" diyerek ağa çıkmaz)
-const charts = [];
-window.bootstrap = {};
-window.jQuery = () => {};
-window.Chart = class { constructor(el, cfg) { this.cfg = cfg; this.destroyed = false; charts.push(this); } destroy() { this.destroyed = true; } };
-const tables = [];
-window.DataTable = class {
-  constructor(el, cfg) {
-    this.cfg = cfg; this.el = el; tables.push(this);
-    el.innerHTML = `<tbody>${cfg.data.map((row) => `<tr>${cfg.columns.map((c) => `<td>${c.render ? c.render(row[c.data], 'display', row) : row[c.data] ?? ''}</td>`).join('')}</tr>`).join('')}</tbody>`;
-  }
-  destroy() { this.el.innerHTML = ''; }
-};
-globalThis.window.DataTable = window.DataTable;
-Object.defineProperty(globalThis, 'DataTable', { value: window.DataTable, configurable: true });
-Object.defineProperty(globalThis, 'Chart', { value: window.Chart, configurable: true });
-Object.defineProperty(globalThis, 'bootstrap', { value: window.bootstrap, configurable: true });
-Object.defineProperty(globalThis, 'jQuery', { value: window.jQuery, configurable: true });
 
 const errors = [];
 const origError = console.error;
@@ -148,25 +129,46 @@ await until(() => $('.alert-danger'), 'hatalı parola mesajı');
 type($('[name=password]'), 'demo');
 $('form').dispatchEvent(new window.Event('submit', { bubbles: true, cancelable: true }));
 await until(() => $('h1')?.textContent === 'Müşteriler', 'müşteriler sayfası (next ile)', 4000);
-await until(() => tables.length && $$('table tbody tr').length === 14, '14 müşteri satırı');
-ok('giriş -> next parametresiyle müşteriler sayfası + DataTables (14 satır, render fonksiyonları çalıştı)');
+await until(() => $$('table tbody tr').length === 10, 'ilk sayfada 10 müşteri satırı');
 assert.ok($('[data-hf=B2BSidebar]'));
+ok('giriş -> next parametresiyle müşteriler sayfası + kütüphanesiz DataTable (14 kayıt, sayfa başına 10)');
+
+// Sıralama: Firma sütununa tıkla -> ters sıra
+const firstBefore = $('tbody tr td strong').textContent;
+click($('[data-sort=company]'));
+await until(() => $('tbody tr td strong').textContent !== firstBefore, 'sıralama yönü değişti');
+ok('tablo sütun sıralaması çalışıyor');
+
+// Arama (Türkçe büyük/küçük harf duyarsız)
+type($('[name=q]'), 'ankara');
+await until(() => $$('tbody tr').length === 1 && $('tbody tr').textContent.includes('Başkent'), 'arama sonucu');
+assert.equal(document.activeElement?.name, undefined, 'arama testinde odak zorunlu değil');
+ok('tablo arama filtresi çalışıyor');
+type($('[name=q]'), '');
+await until(() => $$('tbody tr').length === 10, 'arama temizlendi');
+
+// Sayfalama
+click($('[data-page="2"]'));
+await until(() => $$('tbody tr').length === 4, '2. sayfada 4 kayıt');
+ok('tablo sayfalaması (2. sayfada kalan 4 kayıt)');
 
 // Durum filtresi tabloyu yeniden kurar
 const sel = $('[name=status]');
 sel.value = 'Potansiyel';
 sel.dispatchEvent(new window.Event('change', { bubbles: true }));
-await until(() => $$('table tbody tr').length === 2, 'filtreli satırlar');
+await until(() => $$('tbody tr').length === 2, 'filtreli satırlar');
 ok('durum filtresi: tablo yeniden kuruldu (2 potansiyel müşteri)');
 
-// Dashboard grafikleri
+// Dashboard: kütüphanesiz SVG grafikleri
 go('/b2b/dashboard');
-await until(() => charts.filter((c) => !c.destroyed).length === 2, '2 grafik');
-ok('dashboard: 2 Chart.js grafiği oluşturuldu');
+await until(() => $$('svg.hf-chart-svg').length === 2, '2 SVG grafik');
+assert.equal($$('svg.hf-chart-svg polyline').length, 1);
+assert.equal($$('svg.hf-chart-svg circle').length, 12 + 3);
+ok('dashboard: çizgi (12 nokta) ve halka (3 dilim) SVG grafikleri çizildi');
 go('/b2b/quotes');
 await until(() => $('h1')?.textContent === 'Teklifler', 'teklifler');
-await until(() => charts.every((c) => c.destroyed), 'grafikler yok edildi');
-ok('sayfa değişince Chart örnekleri destroy edildi (sızıntı yok)');
+await until(() => $$('svg.hf-chart-svg').length === 0, 'grafikler kaldırıldı');
+ok('sayfa değişince grafikler DOM\'dan kaldırıldı');
 
 // Teklif formu
 go('/b2b/quotes/new?customer=4');
@@ -185,13 +187,22 @@ ok('teklif formu: satır eklenince mevcut değerler korundu');
 type($('[name=taxNo]'), '1234567890');
 $('form').dispatchEvent(new window.Event('submit', { bubbles: true, cancelable: true }));
 await until(() => location.hash === '#/b2b/quotes', 'teklif kaydı sonrası liste', 4000);
-await until(() => $$('table tbody tr').length === 6, 'yeni teklif listede (5 seed + 1)');
+await until(() => $$('tbody tr').length === 6, 'yeni teklif listede (5 seed + 1)');
 ok('teklif kaydedildi ve listede göründü (5 seed + 1)');
 
 // 404
 go('/olmayan/sayfa');
 await until(() => $('h1')?.textContent === 'Sayfa bulunamadı', '404');
 ok('bilinmeyen yol -> 404 sayfası');
+
+// Kütüphane yükleyici: satır içi referans (Next.js <Script> mantığı)
+const { LibraryLoader } = await import('../src/core/loader.js');
+globalThis.FooLib = { v: 1 };
+const loaderTest = new LibraryLoader({}, 'cdn');
+await loaderTest.load({ global: 'FooLib', js: ['https://example.invalid/foo.js'] });
+assert.equal(document.querySelectorAll('script[src*="example.invalid"]').length, 0, 'global varsa script eklenmemeli');
+await assert.rejects(() => loaderTest.load('kayitsiz'), /Bilinmeyen kütüphane/);
+ok('loader: satır içi tanım, global varsa yeniden yükleme yok, bilinmeyen ad hata veriyor');
 
 // Sızıntı kontrolü: hiçbir eski bileşen host'u kalmamalı
 const hosts = $$('[data-hf]').map((e) => e.dataset.hf);

@@ -6,6 +6,8 @@
 
 ## Hızlı başlangıç
 
+> Ayrıntılı kullanım kılavuzu (örneklerle): [`docs/index.html`](docs/index.html). Sunucuda `/docs/` adresinden açılır.
+
 **Canlıya alma (GoDaddy):** Repo içeriğini FTP / cPanel Dosya Yöneticisi ile `public_html` altına yükleyin. Hepsi bu. Varsayılan `hash` router modu sunucu ayarı gerektirmez (`/#/shop`).
 
 **Yerelde çalıştırma:** ES modülleri `file://` ile çalışmaz, basit bir statik sunucu yeterlidir:
@@ -17,7 +19,7 @@ python3 -m http.server 8080      # veya: npx serve
 
 **Demo:** E-ticaret `/#/shop`, B2B panel `/#/b2b` (giriş: herhangi bir e-posta + parola `demo`). Varsayılan olarak `data/*.json` ile çalışır; backend gerekmez.
 
-**Test (yalnızca geliştirme):** `npm install && npm test`. jsdom ile uygulamayı başlatıp ana akışları (liste, sepet, ödeme, guard, DataTables/Chart, teklif formu) gezer. Canlı sitede Node gerekmez.
+**Test (yalnızca geliştirme):** `npm install && npm test`. jsdom ile uygulamayı başlatıp ana akışları (liste, sepet, ödeme, guard, tablo, grafik, teklif formu, kütüphane yükleyici) gezer. Canlı sitede Node gerekmez.
 
 ## Klasör yapısı
 
@@ -27,13 +29,13 @@ helios-frame/
 ├─ .htaccess                  Apache: MIME, history-mode fallback, gzip, önbellek
 ├─ assets/css/helios.css      Marka katmanı (hf- önekli sınıflar, Bootstrap override)
 ├─ data/                      Mock veri (products, customers, quotes, stats)
-├─ vendor/                    libMode:'local' için yerel kütüphane dosyaları
+├─ vendor/                    Yerel dosyalar için (şimdilik boş: JS kütüphanesi yok)
 ├─ tests/smoke.mjs            jsdom duman testi
 └─ src/
    ├─ main.js                 Açılış: UI çatısını yükle -> boot()
    ├─ app.js                  ctx (store, bus, services, router...) kurulumu + auth guard
    ├─ config.js               Tüm ayarlar (router modu, UI, libMode, API, mock)
-   ├─ libs.js                 Harici kütüphane kayıt defteri (CDN + yerel yollar)
+   ├─ libs.js                 Kütüphane kayıt defteri (yalnızca UI CSS)
    ├─ routes.js               Rota ve layout tanımları (tembel yükleme)
    ├─ core/                   ÇATI ÇEKİRDEĞİ (uygulamadan bağımsız)
    │  ├─ component.js         Component taban sınıfı + yaşam döngüsü
@@ -48,7 +50,7 @@ helios-frame/
    ├─ services/               REST servis katmanı (mock <-> gerçek API)
    ├─ store/                  Uygulama durumu + sepet eylemleri
    ├─ layouts/                default, shop, b2b, blank
-   ├─ components/             ProductCard, ChartView, DataTableView, ShopHeader, B2BSidebar
+   ├─ components/             ProductCard, DataTable, LineChart/DonutChart, ShopHeader, B2BSidebar
    ├─ ui/                     toast, formField
    └─ pages/                  home, shop/*, b2b/*, not-found
 ```
@@ -75,7 +77,7 @@ import { Component } from '../core/component.js';
 import { html } from '../core/dom.js';
 
 export default class ExamplePage extends Component {
-  static libs = ['chartjs'];            // ilk mount'tan önce tembel yüklenir
+  static libs = [{ global: 'Chart', js: ['https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.js'] }];  // ilk mount'tan önce, yalnızca bu sayfada yüklenir
   state = { loading: true, items: [] };
 
   beforeMount() {                       // host DOM'da, içerik yok: olay/abonelik kur
@@ -99,20 +101,34 @@ Sıra: `constructor → libs → beforeMount → render → afterRender → afte
 - `this.signal` bileşen yok olunca iptal olur: `http.get(url, { signal })` ile yarım kalan istekler temizlenir.
 - **Layout kuralı:** Layout kendi içinde `setState` çağırmaz (outlet silinir). Dinamik parçalar alt bileşen olmalıdır (`ShopHeader` örneği).
 
-## Harici kütüphaneler (çakışmasız)
+## Harici JS kütüphaneleri
 
-`src/libs.js` bir kayıt defteridir; her kütüphane için `cdn` ve `local` yolu, `deps` ve `global` tanımlanır.
+**Projede şu an hiçbir JavaScript kütüphanesi yoktur.** Tablo (`DataTable`) ve grafikler (`LineChart`, `DonutChart`) kütüphanesiz yazılmıştır; yalnızca UI çatısının Bootstrap **CSS** dosyası yüklenir.
+
+Gerektiğinde Next.js'teki gibi, ihtiyaç duyulan yerde açıkça referans verilir:
+
+| Next.js'te | Helios Frame'de |
+|---|---|
+| `<Script src="..." strategy="lazyOnload" />` | Sayfa/bileşende `static libs = [{ global, js: [...] }]` |
+| `_app` / `_document` içinde genel script | `config.js` → `globalLibs` veya `index.html`'e `<script defer src>` |
+| `import x from 'paket'` | `import x from 'https://cdn.jsdelivr.net/npm/paket@1/+esm'` veya `import x from '../../vendor/x.js'` |
 
 ```js
-chartjs: { global: 'Chart', cdn: { js: ['https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.js'] }, local: { js: ['vendor/chartjs/chart.umd.js'] } }
+export default class RaporPage extends Component {
+  static libs = [{ global: 'Chart', js: ['https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.js'] }];
+  afterMount() { this.chart = new window.Chart(this.$('canvas'), { /* ... */ }); }
+  beforeUnmount() { this.chart?.destroy(); }
+}
+
+// ya da koddan, istediğiniz an:
+await this.ctx.loader.load({ global: 'flatpickr', css: ['...'], js: ['...'] });
 ```
 
-- Kullanım: `static libs = ['chartjs']` ya da `await ctx.loader.load('datatables')`.
-- Her kütüphane **bir kez** yüklenir; bağımlılıklar sırayla (DataTables → jQuery).
-- `global` sayfada zaten varsa **tekrar yüklenmez** (kendi jQuery'nizi eklediyseniz sürüm çakışması olmaz).
-- Marka CSS'i kütüphane CSS'inden sonra gelir; çatı sınıfları `hf-` önekli, kütüphane sınıflarıyla çakışmaz.
-- `libMode: 'local'` ile tüm kütüphaneler `vendor/` altından servis edilir (offline / KVKK / hız). Bkz. `vendor/README.md`.
-- UI çatısı: `config.ui = 'bootstrap' | 'tailwind' | 'none'`. Örnek sayfalar Bootstrap sınıfları kullanır; çekirdek UI'dan bağımsızdır. Tailwind Play CDN yalnızca geliştirme içindir, canlıda CLI çıktısını `vendor/tailwind/tailwind.css` olarak kullanın.
+- Tanım alanları: `js`, `css`, `global`, `deps` (önce yüklenecekler), `name`.
+- Her kütüphane **bir kez** yüklenir; `global` sayfada zaten varsa **tekrar yüklenmez** (sürüm çakışması olmaz).
+- Çok yerde kullanılacaksa `src/libs.js` kayıt defterine ad vererek ekleyin ve `static libs = ['ad']` ile çağırın (`cdn` / `local` yolları `libMode` ile seçilir).
+- Ayrıntılı örnekler için `docs/index.html` bölüm 9.
+- UI çatısı: `config.ui = 'bootstrap' | 'tailwind' | 'none'` (yalnızca CSS). Örnek sayfalar Bootstrap sınıfları kullanır; çekirdek UI'dan bağımsızdır.
 
 ## Durum yönetimi
 
@@ -142,13 +158,13 @@ store.subscribe(fn, (s) => s.cart.items.length)     // yalnızca seçilen değer
 ## Örnek modüller
 
 - **E-ticaret:** ürün listesi (arama + debounce, kategori, sıralama, sayfalama, URL senkronu), ürün detay, sepet (kalıcı), 3 adımlı ödeme, sipariş sayfası.
-- **B2B:** giriş + guard, dashboard (Chart.js), müşteri tablosu (DataTables, satır eylemleri), teklif formu (dinamik kalemler, canlı KDV toplamı, doğrulama), teklif listesi.
+- **B2B:** giriş + guard, dashboard (SVG grafikler), müşteri tablosu (arama, sıralama, sayfalama, satır eylemleri), teklif formu (dinamik kalemler, canlı KDV toplamı, doğrulama), teklif listesi.
 
 ## Güvenlik notları
 
 - Mock giriş yalnızca demodur. Gerçek projede yetkilendirme **sunucuda** yapılmalıdır; istemci tarafı guard yalnızca arayüz akışıdır.
 - Kart verisi istemcide işlenmez/saklanmaz; ödeme sağlayıcısı entegrasyon noktası `services/orders.service.js` içinde belirtilmiştir.
-- DataTables `render` fonksiyonları ham HTML basar: kullanıcı verisini `escapeHtml()` ile geçirin (örnekler yapıyor).
+- `DataTable` hücreleri `html` şablon etiketiyle basılır ve metin otomatik escape edilir. Harici bir tablo kütüphanesi eklerseniz onun `render` çıktısı ham HTML olabilir: kullanıcı verisini `escapeHtml()` ile geçirin.
 - Canlıda bir CSP (Content-Security-Policy) tanımlamanız önerilir; CDN kullanıyorsanız ilgili alan adlarını izin listesine ekleyin.
 
 ## Yol haritası

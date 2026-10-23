@@ -1,13 +1,11 @@
 import { Component } from '../../core/component.js';
 import { html, formatMoney } from '../../core/dom.js';
-import { ChartView } from '../../components/chart-view.js';
+import { LineChart, DonutChart } from '../../components/charts.js';
 
-const BRAND = '#e67700';
 const STATUS_COLORS = { Beklemede: '#f59f00', Onaylandı: '#2f9e44', Reddedildi: '#e03131' };
 
+/** Grafikler harici kütüphane olmadan (saf SVG) çizilir: bkz. components/charts.js */
 export default class DashboardPage extends Component {
-  static libs = ['chartjs']; // sayfa açılmadan önce Chart.js hazır olur
-
   state = { loading: true, error: null, data: null };
 
   async afterMount() {
@@ -63,30 +61,15 @@ export default class DashboardPage extends Component {
     const { data } = this.state;
     if (!data) return;
 
-    this.mountChild(ChartView, '[data-slot=revenue]', {
-      type: 'line',
-      data: {
-        labels: data.monthly.labels,
-        datasets: [{
-          label: 'Ciro (₺)',
-          data: data.monthly.revenue,
-          borderColor: BRAND,
-          backgroundColor: 'rgba(230,119,0,.15)',
-          fill: true,
-          tension: 0.35,
-        }],
-      },
-      options: { plugins: { legend: { display: false } } },
+    this.mountChild(LineChart, '[data-slot=revenue]', {
+      labels: data.monthly.labels,
+      values: data.monthly.revenue,
+      label: 'Aylık ciro grafiği',
+      format: (v) => formatMoney(v),
     });
 
-    const statuses = Object.keys(data.quoteStatus);
-    this.mountChild(ChartView, '[data-slot=quotes]', {
-      type: 'doughnut',
-      data: {
-        labels: statuses,
-        datasets: [{ data: statuses.map((s) => data.quoteStatus[s]), backgroundColor: statuses.map((s) => STATUS_COLORS[s] ?? '#868e96') }],
-      },
-      options: { plugins: { legend: { position: 'bottom' } } },
+    this.mountChild(DonutChart, '[data-slot=quotes]', {
+      items: Object.entries(data.quoteStatus).map(([label, value]) => ({ label, value, color: STATUS_COLORS[label] ?? '#868e96' })),
     });
   }
 }

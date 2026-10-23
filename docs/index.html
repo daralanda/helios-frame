@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helios Frame · Kullanım Kılavuzu</title>
+  <meta name="description" content="Helios Frame: Vanilla JS front-end framework kullanım kılavuzu ve örnekler.">
+  <style>
+    :root {
+      --brand: #e67700; --brand-dark: #b85f00; --bg: #fff; --bg-soft: #f8f9fa; --ink: #1f2328; --muted: #656d76;
+      --line: #e3e6ea; --code-bg: #1e2227; --code-ink: #e6e6e6; --note: #fff4e5; --warn: #fdecea; --ok: #e9f7ef;
+      --radius: .6rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #14171a; --bg-soft: #1b1f23; --ink: #e6e8ea; --muted: #9aa4ad; --line: #2c3238; --note: #2d2415; --warn: #33201f; --ok: #16281e; }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+    body { margin: 0; font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); }
+    a { color: var(--brand-dark); }
+    @media (prefers-color-scheme: dark) { a { color: #ffa94d; } }
+    .layout { display: grid; grid-template-columns: 17rem minmax(0, 1fr); min-height: 100vh; }
+    nav.toc { position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 1.25rem 1rem; background: var(--bg-soft); border-right: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: .5rem; font-weight: 700; font-size: 1.05rem; margin-bottom: 1rem; }
+    .sun { width: 1.1rem; height: 1.1rem; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ffd43b, var(--brand)); box-shadow: 0 0 0 3px rgba(230,119,0,.2); }
+    nav.toc ol { list-style: none; margin: 0; padding: 0; }
+    nav.toc a { display: block; padding: .3rem .6rem; border-radius: .4rem; color: var(--ink); text-decoration: none; font-size: .93rem; }
+    nav.toc a:hover { background: rgba(230,119,0,.1); }
+    nav.toc a.active { background: var(--brand); color: #fff; }
+    main { padding: 2rem clamp(1rem, 4vw, 3.5rem) 4rem; max-width: 62rem; }
+    h1 { font-size: 2rem; margin: 0 0 .25rem; }
+    h2 { font-size: 1.5rem; margin: 3rem 0 .75rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+    h3 { font-size: 1.1rem; margin: 1.75rem 0 .5rem; }
+    p.lead { color: var(--muted); font-size: 1.1rem; margin-top: 0; }
+    code { font: .9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--bg-soft); border: 1px solid var(--line); padding: .05em .35em; border-radius: .3rem; }
+    .code { position: relative; margin: 1rem 0; }
+    .code .cap { font-size: .78rem; color: var(--muted); margin-bottom: .2rem; font-family: ui-monospace, Menlo, Consolas, monospace; }
+    pre { margin: 0; padding: 1rem; background: var(--code-bg); color: var(--code-ink); border-radius: var(--radius); overflow-x: auto; font-size: .86rem; line-height: 1.55; }
+    pre code { background: none; border: 0; padding: 0; color: inherit; font-size: inherit; }
+    .copy { position: absolute; top: 1.4rem; right: .5rem; font-size: .72rem; padding: .2rem .55rem; border: 1px solid #4a5159; border-radius: .35rem; background: #2a2f35; color: #d0d4d8; cursor: pointer; }
+    .copy:hover { background: #383e45; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .93rem; display: block; overflow-x: auto; }
+    th, td { text-align: left; padding: .5rem .7rem; border: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--bg-soft); }
+    .box { padding: .8rem 1rem; border-radius: var(--radius); border-left: 4px solid var(--brand); background: var(--note); margin: 1rem 0; }
+    .box.warn { border-color: #e03131; background: var(--warn); }
+    .box.ok { border-color: #2f9e44; background: var(--ok); }
+    .box p { margin: .25rem 0; }
+    .tag { display: inline-block; font-size: .75rem; padding: .05rem .5rem; border-radius: 99px; background: var(--brand); color: #fff; vertical-align: middle; }
+    .tree { white-space: pre; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; }
+    .card { border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; background: var(--bg-soft); }
+    .card h3 { margin-top: 0; }
+    footer { margin-top: 4rem; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+    .menu-btn { display: none; }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      nav.toc { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+      nav.toc ol { display: none; }
+      nav.toc.open ol { display: block; }
+      .menu-btn { display: inline-block; margin-left: auto; padding: .25rem .7rem; border: 1px solid var(--line); border-radius: .4rem; background: var(--bg); color: var(--ink); cursor: pointer; }
+      nav.toc .brand { margin-bottom: 0; }
+      nav.toc .head { display: flex; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <nav class="toc" id="toc" aria-label="İçindekiler">
+    <div class="head">
+      <div class="brand"><span class="sun" aria-hidden="true"></span> Helios Frame</div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="tocList">İçindekiler</button>
+    </div>
+    <ol id="tocList">
+      <li><a href="#baslangic">1. Hızlı başlangıç</a></li>
+      <li><a href="#yapi">2. Klasör yapısı</a></li>
+      <li><a href="#ayarlar">3. Ayarlar (config)</a></li>
+      <li><a href="#router">4. Router</a></li>
+      <li><a href="#component">5. Component</a></li>
+      <li><a href="#layout">6. Layout</a></li>
+      <li><a href="#store">7. Store (durum)</a></li>
+      <li><a href="#servis">8. Servis ve HTTP</a></li>
+      <li><a href="#kutuphane">9. Harici kütüphaneler</a></li>
+      <li><a href="#form">10. Form ve doğrulama</a></li>
+      <li><a href="#hazir">11. Hazır bileşenler</a></li>
+      <li><a href="#tarif">12. Adım adım: yeni sayfa</a></li>
+      <li><a href="#api">13. Gerçek API'ye geçiş</a></li>
+      <li><a href="#yayin">14. Yayına alma (GoDaddy)</a></li>
+      <li><a href="#sorun">15. Sorun giderme</a></li>
+      <li><a href="#referans">16. Hızlı başvuru</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <header>
+      <span class="tag">v0.1.0</span>
+      <h1>Helios Frame Kullanım Kılavuzu</h1>
+      <p class="lead">Derleme adımı ve Node.js gerektirmeyen, paylaşımlı hosting'de çalışan Vanilla JS (ES6+) ön yüz çatısı. Bu kılavuz kurulumdan yeni sayfa eklemeye kadar tüm temel konuları örneklerle anlatır.</p>
+    </header>
+
+    <!-- ===================================================================== -->
+    <section id="baslangic">
+      <h2>1. Hızlı başlangıç</h2>
+      <p>Proje tamamen statik dosyalardan oluşur. Tek giriş noktası <code>index.html</code> dosyasıdır ve uygulama <code>&lt;script type="module"&gt;</code> ile başlar.</p>
+
+      <h3>Yerelde çalıştırma</h3>
+      <p>ES modülleri <code>file://</code> ile (dosyaya çift tıklayarak) çalışmaz. Basit bir statik sunucu yeterlidir:</p>
+      <div class="code"><div class="cap">terminal</div><pre><code>python3 -m http.server 8080
+# veya
+npx serve
+
+# tarayıcı: http://localhost:8080</code></pre></div>
+
+      <h3>Demo sayfalar</h3>
+      <table>
+        <tr><th>Adres</th><th>Ne gösterir</th></tr>
+        <tr><td><code>/#/</code></td><td>Ana sayfa</td></tr>
+        <tr><td><code>/#/shop</code></td><td>E-ticaret: ürün listesi, sepet, ödeme</td></tr>
+        <tr><td><code>/#/b2b</code></td><td>B2B panel (giriş: herhangi bir e-posta + parola <code>demo</code>)</td></tr>
+      </table>
+      <div class="box"><p>Varsayılan olarak veriler <code>data/*.json</code> dosyalarından ve <code>localStorage</code>'dan gelir (mock mod). Arka uç (backend) gerekmez.</p></div>
+
+      <h3>Test (yalnızca geliştirme)</h3>
+      <div class="code"><div class="cap">terminal</div><pre><code>npm install
+npm test</code></pre></div>
+      <p>Test, uygulamayı jsdom içinde başlatıp ana akışları (liste, sepet, ödeme, yetki kontrolü, tablo, grafik, teklif formu) gezer. Canlı sitede Node.js gerekmez.</p>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="yapi">
+      <h2>2. Klasör yapısı</h2>
+      <div class="code"><pre><code class="tree">helios-frame/
+├─ index.html                 Tek giriş noktası
+├─ .htaccess                  Apache ayarları (MIME, history modu, gzip, önbellek)
+├─ assets/css/helios.css      Marka stilleri (hf- önekli sınıflar)
+├─ data/                      Mock veri: products, customers, quotes, stats
+├─ vendor/                    Yerel dosyalar için (şimdilik boş, JS kütüphanesi yok)
+├─ docs/index.html            Bu kılavuz
+├─ tests/smoke.mjs            Duman testi
+└─ src/
+   ├─ main.js                 Açılış: UI çatısını yükler, boot() çağırır
+   ├─ app.js                  ctx kurulumu, yetki kontrolü, router başlatma
+   ├─ config.js               Tüm ayarlar
+   ├─ libs.js                 Kütüphane kayıt defteri (yalnızca UI CSS; JS kütüphanesi yok)
+   ├─ routes.js               Rota ve layout tanımları
+   ├─ core/                   Çatı çekirdeği (component, router, store, http, loader...)
+   ├─ services/               REST servis katmanı
+   ├─ store/                  Uygulama durumu, sepet eylemleri
+   ├─ layouts/                default, shop, b2b, blank
+   ├─ components/             Yeniden kullanılabilir bileşenler
+   ├─ ui/                     toast, formField
+   └─ pages/                  Sayfalar (home, shop/*, b2b/*)</code></pre></div>
+      <div class="box ok"><p><b>Kural:</b> <code>src/core/</code> çatıdır, dokunmadan kullanın. Kendi uygulamanız <code>pages/</code>, <code>routes.js</code>, <code>services/</code>, <code>layouts/</code> ve <code>components/</code> içinde yaşar.</p></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="ayarlar">
+      <h2>3. Ayarlar (config)</h2>
+      <p>Tüm ayarlar <code>src/config.js</code> dosyasındadır. Derleme olmadığı için değişiklik, sayfayı yenileyince geçerli olur.</p>
+      <table>
+        <tr><th>Anahtar</th><th>Değerler</th><th>Açıklama</th></tr>
+        <tr><td><code>router.mode</code></td><td><code>'hash'</code> | <code>'history'</code></td><td><code>hash</code>: <code>/#/shop</code>, sunucu ayarı gerekmez. <code>history</code>: <code>/shop</code>, <code>.htaccess</code> kuralı şart.</td></tr>
+        <tr><td><code>ui</code></td><td><code>'bootstrap'</code> | <code>'tailwind'</code> | <code>'none'</code></td><td>Açılışta yüklenen UI çatısının <b>CSS</b> dosyası (JavaScript'i yüklenmez). Örnek sayfalar Bootstrap sınıfları kullanır.</td></tr>
+        <tr><td><code>libMode</code></td><td><code>'cdn'</code> | <code>'local'</code></td><td>Kayıt defteri girdilerini CDN'den veya <code>vendor/</code> klasöründen seçer.</td></tr>
+        <tr><td><code>globalLibs</code></td><td>dizi</td><td>Tüm sitede, uygulama açılmadan önce yüklenecek JS kütüphaneleri (varsayılan: boş). Bkz. bölüm 9.</td></tr>
+        <tr><td><code>api.mock</code></td><td><code>true</code> | <code>false</code></td><td><code>true</code>: <code>data/*.json</code> + localStorage. <code>false</code>: gerçek REST API.</td></tr>
+        <tr><td><code>api.baseURL</code></td><td>metin</td><td>Gerçek API adresi (örn. <code>https://api.firma.com</code>).</td></tr>
+        <tr><td><code>api.mockDelay</code></td><td>ms</td><td>Mock yanıt gecikmesi (yükleme durumlarını görmek için).</td></tr>
+        <tr><td><code>shop.*</code></td><td>sayı</td><td>Para birimi, ücretsiz kargo eşiği, kargo ücreti, hızlı kargo ücreti.</td></tr>
+        <tr><td><code>b2b.vatRate</code></td><td><code>0.2</code></td><td>Teklif formundaki KDV oranı.</td></tr>
+      </table>
+      <p>Kodda kullanım: bileşen içinde <code>this.ctx.config.shop.currency</code>.</p>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="router">
+      <h2>4. Router</h2>
+      <h3>Rota tanımı</h3>
+      <p>Rotalar <code>src/routes.js</code> içinde tanımlanır. Sayfalar <code>import()</code> ile tembel yüklenir, yani yalnızca ziyaret edilince indirilir.</p>
+      <div class="code"><div class="cap">src/routes.js</div><pre><code>export const routes = [
+  { path: '/', component: () =&gt; import('./pages/home.page.js'), layout: 'default', meta: { title: 'Ana Sayfa' } },
+
+  // Parametreli yol: /shop/helios-kablosuz-kulaklik -&gt; params.slug
+  { path: '/shop/:slug', component: () =&gt; import('./pages/shop/detail.page.js'), layout: 'shop' },
+
+  // Giriş gerektiren sayfa
+  { path: '/b2b/customers', component: () =&gt; import('./pages/b2b/customers.page.js'),
+    layout: 'b2b', meta: { title: 'Müşteriler', auth: true } },
+
+  // Yönlendirme
+  { path: '/b2b', redirect: '/b2b/dashboard' },
+
+  // Joker: en sona koyun, 404 sayfası olur
+  { path: '*', component: () =&gt; import('./pages/not-found.page.js'), layout: 'default' },
+];</code></pre></div>
+      <div class="box warn"><p><b>Sıra önemlidir.</b> İlk eşleşen rota kazanır. <code>/shop/cart</code> gibi özel yolları <code>/shop/:slug</code> gibi parametreli yollardan <b>önce</b> yazın.</p></div>
+
+      <table>
+        <tr><th>Alan</th><th>Açıklama</th></tr>
+        <tr><td><code>path</code></td><td><code>:param</code> ve sondaki <code>*</code> desteklenir.</td></tr>
+        <tr><td><code>component</code></td><td>Sınıf ya da <code>() =&gt; import(...)</code> (modülün <code>default</code> export'u kullanılır).</td></tr>
+        <tr><td><code>layout</code></td><td><code>layouts</code> içindeki anahtar: <code>default</code>, <code>shop</code>, <code>b2b</code>, <code>blank</code>.</td></tr>
+        <tr><td><code>meta.title</code></td><td>Sekme başlığı. Metin ya da <code>(to) =&gt; metin</code> olabilir.</td></tr>
+        <tr><td><code>meta.auth</code></td><td><code>true</code> ise giriş yapılmamışsa <code>/login</code>'e yönlendirilir.</td></tr>
+        <tr><td><code>redirect</code></td><td>Bu yola gidenleri başka bir yola yönlendirir.</td></tr>
+      </table>
+
+      <h3>Sayfada rota bilgisi</h3>
+      <div class="code"><pre><code>// /shop/helios-kablosuz-kulaklik?ref=mail
+this.props.params.slug     // 'helios-kablosuz-kulaklik'
+this.props.query.ref       // 'mail'
+this.props.route           // { path, params, query, route, meta }
+this.ctx.router.current    // şu anki rota (aynı yapı)</code></pre></div>
+
+      <h3>Bağlantı ve yönlendirme</h3>
+      <div class="code"><pre><code>// Bağlantı: href() hash/history moduna göre doğru adresi üretir
+html`&lt;a href="${this.href('/shop/cart')}"&gt;Sepet&lt;/a&gt;`
+
+// Koddan yönlendirme
+this.ctx.router.navigate('/shop');
+this.ctx.router.navigate('/login', { replace: true });  // geri tuşu geçmişine eklemez
+
+// Sayfayı yeniden yüklemeden URL parametresini güncelle (filtre, sayfalama)
+this.ctx.router.setQuery({ q: 'klavye', page: 2 });</code></pre></div>
+      <div class="box"><p>Bağlantıları elle <code>#/shop</code> diye yazmayın, her zaman <code>this.href()</code> kullanın. Böylece router modunu değiştirdiğinizde hiçbir şey bozulmaz.</p></div>
+
+      <h3>Yetki kontrolü (guard)</h3>
+      <p>Guard'lar <code>src/app.js</code> içinde tanımlanır. <code>true</code> devam, <code>false</code> iptal, metin ise o yola yönlendirme demektir.</p>
+      <div class="code"><div class="cap">src/app.js</div><pre><code>router.beforeEach((to, from) =&gt; {
+  const user = store.state.user;
+  if (to.meta.auth &amp;&amp; !user) return `/login?next=${encodeURIComponent(to.path)}`;
+  if (to.path === '/login' &amp;&amp; user) return '/b2b/dashboard';
+  return true;
+});</code></pre></div>
+      <div class="box warn"><p>İstemci tarafı guard yalnızca arayüz akışıdır, güvenlik sağlamaz. Gerçek yetkilendirme sunucuda yapılmalıdır.</p></div>
+
+      <h3>Rota değişikliğini dinleme</h3>
+      <div class="code"><pre><code>this.onBus('route:change', (to, from) =&gt; {
+  console.log('Yeni sayfa:', to.path);
+});</code></pre></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="component">
+      <h2>5. Component</h2>
+      <p>Her sayfa ve bileşen <code>Component</code> sınıfından türer. Çatı, olayları, abonelikleri ve iptal sinyallerini bileşen yok olunca otomatik temizler.</p>
+
+      <h3>Yaşam döngüsü</h3>
+      <div class="code"><pre><code>constructor(props, ctx)
+  -&gt; static libs yüklenir
+  -&gt; beforeMount()     Host DOM'da, içerik yok. Olay/abonelik kurulumu burada.
+  -&gt; render()          html`` döndürür
+  -&gt; afterRender()     HER render sonrası. Alt bileşen / 3. parti widget burada.
+  -&gt; afterMount()      Yalnızca ilk render sonrası. Veri yükleme burada.
+
+setState(patch)
+  -&gt; shouldUpdate(next, prev)  false ise çizim atlanır
+  -&gt; render() -&gt; afterRender()
+
+destroy()
+  -&gt; beforeUnmount()   Elle temizlik gerektiren şeyler (Chart.destroy gibi)
+  -&gt; iptal sinyali, alt bileşenler, dinleyiciler ve abonelikler otomatik temizlenir</code></pre></div>
+
+      <h3>Örnek: veri yükleyen sayfa</h3>
+      <div class="code"><div class="cap">src/pages/example.page.js</div><pre><code>import { Component } from '../core/component.js';
+import { html } from '../core/dom.js';
+
+export default class ExamplePage extends Component {
+  state = { loading: true, error: null, items: [] };
+
+  async afterMount() {
+    try {
+      const res = await this.ctx.services.products.list({ perPage: 4, signal: this.signal });
+      this.setState({ items: res.items, loading: false });
+    } catch (err) {
+      if (err.name === 'AbortError') return;   // sayfa terk edildi, sorun değil
+      this.setState({ error: err.message, loading: false });
+    }
+  }
+
+  render() {
+    const { loading, error, items } = this.state;
+    if (loading) return html`&lt;p&gt;Yükleniyor…&lt;/p&gt;`;
+    if (error) return html`&lt;div class="alert alert-danger"&gt;${error}&lt;/div&gt;`;
+    return html`
+      &lt;h1&gt;Ürünler&lt;/h1&gt;
+      &lt;ul&gt;${items.map((p) =&gt; html`&lt;li&gt;${p.name}&lt;/li&gt;`)}&lt;/ul&gt;`;
+  }
+}</code></pre></div>
+
+      <h3>State (durum)</h3>
+      <p>Her bileşenin kendi yerel durumu <code>this.state</code> içindedir. Değiştirmek için <code>setState</code> kullanılır, doğrudan atama yapılmaz.</p>
+      <div class="code"><pre><code>this.setState({ loading: true });                       // nesne ile
+this.setState((prev) =&gt; ({ count: prev.count + 1 }));   // önceki duruma göre
+this.update();                                          // state değişmeden yeniden çiz</code></pre></div>
+      <table>
+        <tr><th></th><th>Bileşen state'i</th><th>Store</th></tr>
+        <tr><td>Kapsam</td><td>Yalnızca o bileşen</td><td>Tüm uygulama</td></tr>
+        <tr><td>Kalıcılık</td><td>Bileşen yok olunca silinir</td><td><code>persistKeys</code> ile localStorage'da kalır</td></tr>
+        <tr><td>Örnek</td><td>yükleniyor, filtre, form adımı</td><td>sepet, giriş yapan kullanıcı</td></tr>
+      </table>
+
+      <h3>HTML şablonu ve güvenlik</h3>
+      <p><code>html``</code> içine yerleştirilen her değer otomatik <b>escape</b> edilir (XSS koruması). İç içe <code>html``</code> sonuçları ve diziler olduğu gibi birleştirilir.</p>
+      <div class="code"><pre><code>import { html, raw } from '../core/dom.js';
+
+const isim = '&lt;script&gt;alert(1)&lt;/script&gt;';
+html`&lt;p&gt;${isim}&lt;/p&gt;`;                  // güvenli: metin olarak gösterilir
+html`&lt;ul&gt;${[1, 2].map((n) =&gt; html`&lt;li&gt;${n}&lt;/li&gt;`)}&lt;/ul&gt;`;   // dizi birleştirilir
+html`&lt;div&gt;${raw('&lt;b&gt;kalın&lt;/b&gt;')}&lt;/div&gt;`;       // escape EDİLMEZ: yalnızca kendi ürettiğiniz içerik için</code></pre></div>
+      <div class="box warn"><p><code>render()</code> düz bir metin döndürürse HTML olarak yorumlanır. Kullanıcı verisini asla düz metin birleştirerek basmayın, daima <code>html``</code> kullanın.</p></div>
+
+      <h3>Olaylar</h3>
+      <p><code>this.on()</code> olayı bileşenin kök elementi üzerinde <b>delege</b> eder. Yeniden çizimlerden sonra tekrar kurmanız gerekmez ve bileşen yok olunca otomatik silinir.</p>
+      <div class="code"><pre><code>beforeMount() {
+  this.on('click', '[data-add]', (e, el) =&gt; {
+    const id = Number(el.dataset.add);          // el: tıklanan [data-add] elementi
+    addItem(this.ctx.store, this.state.items.find((p) =&gt; p.id === id));
+  });
+  this.on('input', '[name=q]', (e, el) =&gt; this.search(el.value));
+  this.on('submit', 'form', (e) =&gt; { e.preventDefault(); this.save(); });
+
+  this.listen(window, 'resize', () =&gt; this.measure());   // document/window olayları
+}</code></pre></div>
+
+      <h3>Abonelikler ve temizlik</h3>
+      <div class="code"><pre><code>// Store aboneliği: yalnızca seçilen değer değişince çalışır
+this.watch(this.ctx.store, (s) =&gt; s.cart, () =&gt; this.update());
+
+// Olay yolu (bus)
+this.onBus('route:change', (to) =&gt; this.setState({ path: to.path }));
+
+// Kendi temizlik işiniz (zamanlayıcı vb.)
+const t = setInterval(() =&gt; this.tick(), 1000);
+this.addCleanup(() =&gt; clearInterval(t));</code></pre></div>
+
+      <h3>İptal sinyali</h3>
+      <p><code>this.signal</code> bileşen yok olunca iptal edilir. İstekte kullanırsanız kullanıcı sayfadan ayrıldığında yarım kalan istek de iptal olur.</p>
+      <div class="code"><pre><code>await this.ctx.services.http.get('/products', { signal: this.signal });</code></pre></div>
+
+      <h3>Alt bileşenler</h3>
+      <p>Alt bileşenleri <code>afterRender()</code> içinde <code>mountChild()</code> ile bağlayın. Ebeveyn yeniden çizilince alt bileşenler yok edilip yeniden kurulur.</p>
+      <div class="code"><pre><code>render() {
+  return html`${this.state.items.map((p) =&gt; html`&lt;div data-product="${p.id}"&gt;&lt;/div&gt;`)}`;
+}
+
+afterRender() {
+  const byId = new Map(this.state.items.map((p) =&gt; [String(p.id), p]));
+  this.$$('[data-product]').forEach((slot) =&gt; {
+    this.mountChild(ProductCard, slot, { product: byId.get(slot.dataset.product) });
+  });
+}</code></pre></div>
+      <div class="box"><p>Alt bileşen ebeveyn içinde yeniden kurulduğunda kendi state'i sıfırlanır. Korunması gereken veriyi ebeveynin state'ine ya da store'a koyun.</p></div>
+
+      <h3>Yazarken yeniden çizim</h3>
+      <p>Her <code>setState</code> bileşenin içeriğini yeniden kurar. Çok yazılan formlarda bu istenmez. Çözüm: değerleri state yerine sıradan bir alanda tutun (örnek: <code>quote-form.page.js</code> ve <code>checkout.page.js</code>).</p>
+      <div class="code"><pre><code>values = { company: '', email: '' };          // state DEĞİL, yeniden çizimi tetiklemez
+
+beforeMount() {
+  this.on('input', '[name]', (e, el) =&gt; { this.values[el.name] = el.value; });
+}</code></pre></div>
+      <p>Ayrıca yeniden çizimde <code>id</code>, <code>data-key</code> veya <code>name</code> özniteliği olan input'un odağı ve imleç konumu otomatik geri yüklenir.</p>
+
+      <h3>Yardımcı metotlar</h3>
+      <table>
+        <tr><th>Metot</th><th>Ne yapar</th></tr>
+        <tr><td><code>this.$(sel)</code> / <code>this.$$(sel)</code></td><td>Bileşen içinde <code>querySelector</code> / <code>querySelectorAll</code></td></tr>
+        <tr><td><code>this.href(path)</code></td><td>Router moduna uygun bağlantı adresi</td></tr>
+        <tr><td><code>this.ctx</code></td><td><code>config, store, bus, loader, toast, services, router</code></td></tr>
+        <tr><td><code>this.destroyed</code></td><td>Bileşen yok edildi mi (asenkron işlerde kontrol için)</td></tr>
+        <tr><td><code>static libs</code></td><td>İlk mount'tan önce yüklenecek harici kütüphaneler (satır içi tanım ya da kayıt adı)</td></tr>
+        <tr><td><code>shouldUpdate(next, prev)</code></td><td><code>false</code> dönerse yeniden çizimi atlar</td></tr>
+      </table>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="layout">
+      <h2>6. Layout</h2>
+      <p>Layout, sayfalar arasında kalıcı olan kabuktur (üst menü, yan menü, alt bilgi). Sayfa, layout içindeki <code>data-outlet</code> elementine yerleşir. Sayfa değişirken layout aynı kalırsa yeniden kurulmaz.</p>
+      <div class="code"><div class="cap">src/layouts/shop.layout.js</div><pre><code>import { Layout } from '../core/layout.js';
+import { html } from '../core/dom.js';
+import { ShopHeader } from '../components/shop-header.js';
+
+export default class ShopLayout extends Layout {
+  render() {
+    return html`
+      &lt;div data-slot="header"&gt;&lt;/div&gt;
+      &lt;main data-outlet class="container py-4"&gt;&lt;/main&gt;      &lt;!-- sayfa buraya gelir --&gt;
+      &lt;footer&gt;© ${this.ctx.config.brand}&lt;/footer&gt;`;
+  }
+
+  afterRender() {
+    this.mountChild(ShopHeader, '[data-slot=header]');   // dinamik parça: alt bileşen
+  }
+}</code></pre></div>
+      <div class="box warn"><p><b>Önemli:</b> Layout kendi içinde <code>setState</code> / <code>update</code> çağırmamalıdır, aksi halde sayfanın yerleştiği alan silinir. Sepet rozeti gibi değişen parçaları <b>alt bileşen</b> yapın (<code>ShopHeader</code> örneği).</p></div>
+      <p>Yeni layout eklemek için dosyayı oluşturup <code>routes.js</code> içindeki <code>layouts</code> nesnesine kaydedin:</p>
+      <div class="code"><pre><code>export const layouts = {
+  // ...
+  admin: () =&gt; import('./layouts/admin.layout.js'),
+};
+// rota: { path: '/admin', component: ..., layout: 'admin' }</code></pre></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="store">
+      <h2>7. Store (durum yönetimi)</h2>
+      <p>Uygulama genelinde paylaşılan durum için küçük bir store vardır. Durum <b>değişmez</b> (immutable) kabul edilir: nesneleri yerinde değiştirmeyin, yenisini üretip verin.</p>
+      <div class="code"><pre><code>const store = this.ctx.store;
+
+store.state.user                                  // okuma
+store.set({ user: null });                        // kısmi güncelleme
+store.set((s) =&gt; ({ cart: { ...s.cart, items } })) // önceki duruma göre
+
+// Abonelik: dönen fonksiyon aboneliği iptal eder
+const stop = store.subscribe((count) =&gt; console.log(count), (s) =&gt; s.cart.items.length);</code></pre></div>
+      <p>Bileşen içinde <code>this.watch()</code> kullanırsanız abonelik otomatik iptal edilir.</p>
+
+      <h3>Kalıcılık (localStorage)</h3>
+      <p><code>src/app.js</code> içinde hangi anahtarların saklanacağı belirlenir. Sekmeler arası senkron <code>storage</code> olayıyla otomatik yapılır.</p>
+      <div class="code"><div class="cap">src/app.js</div><pre><code>const store = new Store(initialState, {
+  persistKey: `${config.storage.prefix}app`,
+  persistKeys: ['cart', 'user', 'prefs'],   // yalnızca bunlar kaydedilir
+  version: 1,                                // değişirse eski kayıtlar atılır
+});</code></pre></div>
+      <div class="box ok"><p>Durum yapısını değiştirdiğinizde (ör. sepet öğelerine yeni alan) <code>version</code> değerini arttırın. Böylece kullanıcıların tarayıcısındaki eski biçimli veriler sorun çıkarmaz.</p></div>
+
+      <h3>Yeni durum alanı ekleme</h3>
+      <div class="code"><pre><code>// 1) src/store/state.js
+export const initialState = { cart: { items: [] }, user: null, prefs: {}, favorites: [] };
+
+// 2) src/app.js -&gt; persistKeys: ['cart', 'user', 'prefs', 'favorites']
+
+// 3) eylem (saf fonksiyon, store'u parametre alır)
+export function toggleFavorite(store, id) {
+  store.set((s) =&gt; ({
+    favorites: s.favorites.includes(id) ? s.favorites.filter((x) =&gt; x !== id) : [...s.favorites, id],
+  }));
+}</code></pre></div>
+
+      <h3>Hazır sepet eylemleri</h3>
+      <div class="code"><div class="cap">src/store/cart.js</div><pre><code>import { addItem, setQty, removeItem, clearCart, cartCount, cartTotals, qtyInCart } from '../store/cart.js';
+
+addItem(store, product, 2);            // sepete 2 adet ekle
+setQty(store, product.id, 5);          // adedi 5 yap (0 ise kaldırır)
+removeItem(store, product.id);
+clearCart(store);
+
+cartCount(store.state);                // toplam adet
+qtyInCart(store.state, product.id);    // bu üründen kaç adet var
+cartTotals(store.state);               // { count, subtotal, shipping, total }</code></pre></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="servis">
+      <h2>8. Servis ve HTTP</h2>
+      <p>Bileşenler API'yi doğrudan çağırmaz, <code>this.ctx.services</code> üzerinden servislerle konuşur. Böylece mock'tan gerçek API'ye geçişte arayüz koduna dokunulmaz.</p>
+
+      <table>
+        <tr><th>Servis</th><th>Metotlar</th></tr>
+        <tr><td><code>products</code></td><td><code>list({ q, category, sort, page, perPage, signal })</code>, <code>categories()</code>, <code>bySlug(slug)</code></td></tr>
+        <tr><td><code>orders</code></td><td><code>create(payload)</code>, <code>get(id)</code></td></tr>
+        <tr><td><code>auth</code></td><td><code>login(email, password)</code>, <code>logout()</code></td></tr>
+        <tr><td><code>customers</code></td><td><code>list()</code>, <code>byId(id)</code></td></tr>
+        <tr><td><code>quotes</code></td><td><code>list()</code>, <code>create(payload)</code></td></tr>
+        <tr><td><code>reports</code></td><td><code>dashboard()</code></td></tr>
+        <tr><td><code>http</code></td><td>Ham istemci: <code>get / post / put / patch / delete</code></td></tr>
+      </table>
+
+      <h3>HttpClient kullanımı</h3>
+      <div class="code"><pre><code>const http = this.ctx.services.http;
+
+const urunler = await http.get('/products', { params: { q: 'kulaklık', page: 1 } });  // /products?q=...&amp;page=1
+const siparis = await http.post('/orders', { items: [...], total: 1299 });
+await http.put('/profile', { name: 'Ali' });
+await http.delete('/orders/12');
+
+// Hata yakalama
+import { HttpError } from '../core/http.js';
+try {
+  await http.get('/gizli');
+} catch (err) {
+  if (err instanceof HttpError) console.log(err.status, err.message, err.data);
+  else if (err.name === 'TimeoutError') console.log('Zaman aşımı');
+}</code></pre></div>
+      <p>İstek seçenekleri: <code>params</code>, <code>body</code> (nesne otomatik JSON olur, <code>FormData</code> olduğu gibi gider), <code>headers</code>, <code>signal</code>, <code>timeout</code>.</p>
+
+      <h3>Interceptor'lar</h3>
+      <div class="code"><div class="cap">src/services/index.js</div><pre><code>// Her isteğe token ekle
+http.useRequest(({ url, init }) =&gt; {
+  const token = store.state.user?.token;
+  if (token) init.headers.Authorization = `Bearer ${token}`;
+  return { url, init };
+});
+
+// 401 gelirse oturumu kapat
+http.useError((err) =&gt; {
+  if (err.status === 401) { store.set({ user: null }); ctx.router.navigate('/login'); }
+});</code></pre></div>
+
+      <h3>Yeni servis ekleme</h3>
+      <div class="code"><div class="cap">src/services/blog.service.js</div><pre><code>import { mockData } from './mock.js';
+
+export class BlogService {
+  constructor({ http, mock }) { this.http = http; this.mock = mock; }
+
+  list({ signal } = {}) {
+    return this.mock ? mockData('posts') : this.http.get('/posts', { signal });
+  }
+}</code></pre></div>
+      <div class="code"><div class="cap">src/services/index.js</div><pre><code>import { BlogService } from './blog.service.js';
+// ...
+return { http, auth: ..., blog: new BlogService(deps) };
+
+// Kullanım: await this.ctx.services.blog.list()</code></pre></div>
+      <p>Mock veri için <code>data/posts.json</code> dosyasını ekleyin; <code>mockData('posts')</code> onu okur.</p>
+
+      <h3>Bildirim (toast)</h3>
+      <div class="code"><pre><code>this.ctx.toast.success('Kaydedildi');
+this.ctx.toast.error('Bir hata oluştu');       // 5 sn kalır
+this.ctx.toast.info('Bilgi');
+this.ctx.toast.show('Özel', 'info', 8000);     // (mesaj, tür, süre ms)</code></pre></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="kutuphane">
+      <h2>9. Harici kütüphaneler</h2>
+      <div class="box ok"><p><b>Şu an projede hiçbir JavaScript kütüphanesi yoktur.</b> Tablo ve grafik bileşenleri kütüphanesiz yazılmıştır. Yalnızca UI çatısının (Bootstrap) CSS dosyası yüklenir, JavaScript'i yüklenmez.</p></div>
+      <p>Bir kütüphane gerektiğinde, Next.js'te olduğu gibi <b>ihtiyaç duyulan yerde açıkça referans verilir</b>. Derleyici olmadığı için <code>npm install</code> yerine CDN adresi ya da <code>vendor/</code> klasöründeki dosya kullanılır.</p>
+
+      <table>
+        <tr><th>Next.js'te</th><th>Helios Frame'de</th></tr>
+        <tr><td><code>&lt;Script src="..." strategy="lazyOnload" /&gt;</code> (sayfada)</td><td>Sayfa/bileşende <code>static libs = [{ global, js: [...] }]</code></td></tr>
+        <tr><td><code>_app</code> / <code>_document</code> içinde genel script</td><td><code>config.js</code> → <code>globalLibs</code> ya da <code>index.html</code>'e <code>&lt;script defer src&gt;</code></td></tr>
+        <tr><td><code>import x from 'paket'</code></td><td><code>import x from 'https://cdn.jsdelivr.net/npm/paket@1/+esm'</code> (ES modülü) veya <code>import x from '../../vendor/x.js'</code></td></tr>
+        <tr><td>Paketi kendi sunucundan servis etmek</td><td>Dosyayı <code>vendor/</code> altına koyup yolunu vermek</td></tr>
+      </table>
+
+      <h3>1) Sayfada/bileşende referans (önerilen)</h3>
+      <p>Kütüphane yalnızca bu sayfa açılınca, ilk çizimden <b>önce</b> yüklenir. Başka sayfalar etkilenmez.</p>
+      <div class="code"><div class="cap">src/pages/b2b/rapor.page.js</div><pre><code>import { Component } from '../../core/component.js';
+import { html } from '../../core/dom.js';
+
+export default class RaporPage extends Component {
+  static libs = [{
+    global: 'Chart',                                   // window.Chart varsa tekrar yüklenmez
+    js: ['https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.js'],
+  }];
+
+  render() {
+    return html`&lt;div style="height:300px"&gt;&lt;canvas&gt;&lt;/canvas&gt;&lt;/div&gt;`;
+  }
+
+  afterMount() {
+    this.chart = new window.Chart(this.$('canvas'), {
+      type: 'bar',
+      data: { labels: ['Oca', 'Şub'], datasets: [{ label: 'Satış', data: [120, 190] }] },
+      options: { responsive: true, maintainAspectRatio: false },
+    });
+  }
+
+  beforeUnmount() {
+    this.chart?.destroy();           // sayfadan çıkarken kütüphane nesnesini temizle
+  }
+}</code></pre></div>
+
+      <h3>2) Koddan, istediğiniz an</h3>
+      <div class="code"><pre><code>// Düğmeye basılınca yükle (tembel)
+this.on('click', '[data-takvim]', async () =&gt; {
+  await this.ctx.loader.load({
+    global: 'flatpickr',
+    css: ['https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css'],
+    js:  ['https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js'],
+  });
+  window.flatpickr(this.$('[name=tarih]'));
+});</code></pre></div>
+
+      <h3>3) Bağımlılığı olan kütüphane</h3>
+      <div class="code"><pre><code>static libs = [{
+  global: 'DataTable',
+  deps: [{ global: 'jQuery', js: ['https://code.jquery.com/jquery-3.7.1.min.js'] }],   // önce bu yüklenir
+  css: ['https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css'],
+  js:  ['https://cdn.datatables.net/2.1.8/js/dataTables.min.js'],
+}];</code></pre></div>
+
+      <h3>4) Tüm sitede gerekiyorsa</h3>
+      <div class="code"><div class="cap">src/config.js</div><pre><code>globalLibs: [
+  { global: 'dayjs', js: ['https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js'] },
+],</code></pre></div>
+      <p>Bu kütüphaneler uygulama açılmadan önce yüklenir. Yalnızca birkaç sayfada gerekenleri buraya koymayın, ilgili sayfanın <code>static libs</code> alanında referans verin.</p>
+
+      <h3>5) ES modülü olarak doğrudan import</h3>
+      <p>Tarayıcılar ES modüllerini URL'den doğrudan içe aktarabilir, derleyici gerekmez. Kütüphane bir <code>+esm</code> (ES modülü) sürümü sunuyorsa en sade yol budur.</p>
+      <div class="code"><pre><code>// CDN'den
+import confetti from 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/+esm';
+
+// Kendi sunucunuzdan (dosyayı vendor/ altına koyduysanız)
+import foo from '../../vendor/foo.js';            // src/pages/ içindeki bir dosyadan göreli yol
+
+confetti();</code></pre></div>
+
+      <h3>6) Birden çok yerde kullanılacaksa: kayıt defteri</h3>
+      <p>Aynı kütüphaneyi çok sayfada kullanıyorsanız adres tekrarı olmasın diye <code>src/libs.js</code> içine ad vererek ekleyin, sonra yalnızca adıyla çağırın.</p>
+      <div class="code"><div class="cap">src/libs.js</div><pre><code>export const registry = {
+  // ...
+  chartjs: {
+    global: 'Chart',
+    cdn:   { js: ['https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.js'] },
+    local: { js: ['vendor/chartjs/chart.umd.js'] },     // libMode: 'local' iken kullanılır
+  },
+};
+
+// Kullanım: static libs = ['chartjs'];</code></pre></div>
+
+      <h3>Tanım alanları</h3>
+      <table>
+        <tr><th>Alan</th><th>Açıklama</th></tr>
+        <tr><td><code>js</code></td><td>Yüklenecek script adresleri. Verilen sırayla yüklenir ve çalışır.</td></tr>
+        <tr><td><code>css</code></td><td>Yüklenecek stil dosyaları (marka CSS'inden önce eklenir, böylece sizin stilleriniz ezebilir).</td></tr>
+        <tr><td><code>global</code></td><td>Kütüphanenin tanımladığı <code>window</code> değişkeni. Zaten varsa kütüphane <b>yüklenmez</b>.</td></tr>
+        <tr><td><code>deps</code></td><td>Önce yüklenecek kütüphaneler (satır içi tanım ya da kayıt adı).</td></tr>
+        <tr><td><code>name</code></td><td>İsteğe bağlı ad. Verilmezse <code>global</code> ya da ilk adres anahtar olarak kullanılır.</td></tr>
+      </table>
+
+      <h3>Çakışmayı önleyen kurallar</h3>
+      <ul>
+        <li>Aynı kütüphane en fazla <b>bir kez</b> yüklenir, birden çok bileşen aynı anda istese bile.</li>
+        <li><code>global</code> sayfada zaten varsa (kendi <code>&lt;script&gt;</code> etiketinizle eklediyseniz) tekrar yüklenmez, sürüm çakışması olmaz.</li>
+        <li>Yükleme başarısız olursa bir sonraki istekte yeniden denenir.</li>
+        <li>Çatı sınıfları <code>hf-</code> önekli olduğundan kütüphane CSS'leriyle çakışmaz.</li>
+      </ul>
+      <div class="box"><p>Üçüncü parti widget oluşturan bileşenlerde nesneyi <code>afterMount()</code> içinde kurun ve <code>beforeUnmount()</code> içinde <code>destroy()</code> edin. Aksi halde sayfalar arası geçişte bellek sızar.</p></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="form">
+      <h2>10. Form ve doğrulama</h2>
+      <h3>validate()</h3>
+      <div class="code"><pre><code>import { validate, minLength, formValues } from '../core/forms.js';
+
+const errors = validate(values, {
+  name:  ['required', minLength(3)],
+  email: ['required', 'email'],
+  phone: ['phone'],                                  // boşsa hata vermez, doluysa biçim kontrolü
+  taxNo: ['required', 'taxNo'],
+  age:   [(v) =&gt; (Number(v) &gt;= 18 ? null : 'En az 18 olmalı')],   // özel kural
+});
+// errors =&gt; { email: 'Geçerli bir e-posta girin' }   (alan başına ilk hata)
+
+const values = formValues(formElement);            // FormData -&gt; düz nesne</code></pre></div>
+      <p>Hazır kurallar: <code>required</code>, <code>email</code>, <code>phone</code>, <code>taxNo</code> ve <code>minLength(n)</code>. Özel kural, hata metni ya da <code>null</code> döndüren bir fonksiyondur.</p>
+
+      <h3>formField()</h3>
+      <div class="code"><pre><code>import { formField } from '../ui/form-field.js';
+
+render() {
+  const { errors } = this.state;
+  return html`
+    &lt;form novalidate&gt;
+      &lt;div class="row g-3"&gt;
+        ${formField({ name: 'email', label: 'E-posta', type: 'email', value: this.values.email,
+                      error: errors.email, col: 'col-md-6', attrs: 'autocomplete="email"' })}
+        ${formField({ name: 'notes', label: 'Not', type: 'textarea', value: this.values.notes })}
+      &lt;/div&gt;
+      &lt;button class="btn btn-primary" type="submit"&gt;Gönder&lt;/button&gt;
+    &lt;/form&gt;`;
+}</code></pre></div>
+
+      <h3>Tam örnek: iletişim formu</h3>
+      <div class="code"><div class="cap">src/pages/contact.page.js</div><pre><code>import { Component } from '../core/component.js';
+import { html } from '../core/dom.js';
+import { validate, minLength } from '../core/forms.js';
+import { formField } from '../ui/form-field.js';
+
+export default class ContactPage extends Component {
+  state = { errors: {} };
+  values = { name: '', email: '', message: '' };      // state değil: yazarken yeniden çizim olmaz
+
+  beforeMount() {
+    this.on('input', '[name]', (e, el) =&gt; { this.values[el.name] = el.value; });
+    this.on('submit', 'form', (e) =&gt; {
+      e.preventDefault();
+      const errors = validate(this.values, {
+        name: ['required', minLength(3)],
+        email: ['required', 'email'],
+        message: ['required', minLength(10)],
+      });
+      this.setState({ errors });                       // hata varsa kutular kırmızı olur
+      if (!Object.keys(errors).length) this.ctx.toast.success('Mesajınız alındı');
+    });
+  }
+
+  render() {
+    const { errors } = this.state;
+    const v = this.values;
+    return html`
+      &lt;h1&gt;İletişim&lt;/h1&gt;
+      &lt;form class="row g-3" novalidate&gt;
+        ${formField({ name: 'name', label: 'Ad soyad', value: v.name, error: errors.name, col: 'col-md-6' })}
+        ${formField({ name: 'email', label: 'E-posta', type: 'email', value: v.email, error: errors.email, col: 'col-md-6' })}
+        ${formField({ name: 'message', label: 'Mesaj', type: 'textarea', value: v.message, error: errors.message })}
+        &lt;div class="col-12"&gt;&lt;button class="btn btn-primary"&gt;Gönder&lt;/button&gt;&lt;/div&gt;
+      &lt;/form&gt;`;
+  }
+}</code></pre></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="hazir">
+      <h2>11. Hazır bileşenler</h2>
+      <p>Tüm hazır bileşenler harici JS kütüphanesi olmadan çalışır.</p>
+      <div class="grid">
+        <div class="card"><h3>ProductCard</h3><p>Ürün kartı. Sepete ekler, sepetteki adedi canlı gösterir.</p><code>props: { product }</code></div>
+        <div class="card"><h3>DataTable</h3><p>Arama, sütuna göre sıralama ve sayfalama yapan veri tablosu.</p><code>props: { rows, columns, pageSize?, initial? }</code></div>
+        <div class="card"><h3>LineChart / DonutChart</h3><p>Saf SVG ile çizilen çizgi ve halka grafiği.</p><code>props: { labels, values } · { items }</code></div>
+      </div>
+
+      <h3>DataTable örneği</h3>
+      <div class="code"><pre><code>import { DataTable } from '../components/data-table.js';
+import { html, formatMoney } from '../core/dom.js';
+
+const COLUMNS = [
+  { key: 'company', title: 'Firma', render: (r) =&gt; html`&lt;strong&gt;${r.company}&lt;/strong&gt;` },
+  { key: 'city', title: 'Şehir' },
+  { key: 'balance', title: 'Bakiye', class: 'text-end', render: (r) =&gt; formatMoney(r.balance) },
+  { key: 'actions', title: '', sortable: false, searchable: false,
+    render: (r) =&gt; html`&lt;button class="btn btn-sm btn-outline-primary" data-detay="${r.id}"&gt;Detay&lt;/button&gt;` },
+];
+
+render() { return html`&lt;div data-slot="tablo"&gt;&lt;/div&gt;`; }
+
+afterRender() {
+  this.mountChild(DataTable, '[data-slot=tablo]', {
+    columns: COLUMNS,
+    rows: this.state.rows,
+    pageSize: 10,
+    initial: { sortKey: 'company', sortDir: 'asc' },   // ilk sıralama (isteğe bağlı)
+  });
+}
+
+beforeMount() {
+  // Satır düğmeleri tablo yeniden çizilse de çalışır (delege olay)
+  this.on('click', '[data-detay]', (e, el) =&gt; this.ctx.router.navigate(`/b2b/customers/${el.dataset.detay}`));
+}</code></pre></div>
+      <table>
+        <tr><th>Sütun alanı</th><th>Açıklama</th></tr>
+        <tr><td><code>key</code>, <code>title</code></td><td>Veri alanı ve başlık.</td></tr>
+        <tr><td><code>render(row)</code></td><td>Hücre içeriği. <code>html``</code> ya da metin döndürür. <b>Metin otomatik escape edilir</b> (güvenli).</td></tr>
+        <tr><td><code>value(row)</code></td><td>Sıralama ve arama için kullanılacak değer (render'dan farklıysa).</td></tr>
+        <tr><td><code>sortable</code>, <code>searchable</code></td><td><code>false</code> yapılırsa o sütun sıralanmaz / aramaya katılmaz.</td></tr>
+        <tr><td><code>class</code></td><td>Hücreye eklenecek sınıf (örn. <code>text-end</code>).</td></tr>
+      </table>
+
+      <h3>Grafik örnekleri</h3>
+      <div class="code"><pre><code>import { LineChart, DonutChart } from '../components/charts.js';
+
+render() {
+  return html`&lt;div data-slot="ciro"&gt;&lt;/div&gt;&lt;div data-slot="durum"&gt;&lt;/div&gt;`;
+}
+
+afterRender() {
+  this.mountChild(LineChart, '[data-slot=ciro]', {
+    labels: ['Oca', 'Şub', 'Mar'],
+    values: [120000, 190000, 150000],
+    height: 260,                                  // isteğe bağlı
+    color: '#e67700',                             // isteğe bağlı
+    format: (v) =&gt; formatMoney(v),                // fare üzerine gelince görünen metin
+    label: 'Aylık ciro grafiği',                  // erişilebilirlik etiketi
+  });
+
+  this.mountChild(DonutChart, '[data-slot=durum]', {
+    items: [
+      { label: 'Onaylandı', value: 42, color: '#2f9e44' },
+      { label: 'Beklemede', value: 17, color: '#f59f00' },
+    ],
+  });
+}</code></pre></div>
+      <div class="box"><p>Gelişmiş grafik (çubuk, pasta, etkileşim, animasyon) gerekirse Chart.js gibi bir kütüphaneyi bölüm 9'daki yöntemle yalnızca o sayfada referans verip kullanın.</p></div>
+
+      <h3>Yardımcı fonksiyonlar (<code>core/dom.js</code>)</h3>
+      <table>
+        <tr><th>Fonksiyon</th><th>Açıklama</th></tr>
+        <tr><td><code>html``</code></td><td>Otomatik escape'li şablon etiketi</td></tr>
+        <tr><td><code>raw(str)</code></td><td>Escape edilmeyen güvenli HTML</td></tr>
+        <tr><td><code>escapeHtml(str)</code></td><td>Metni HTML'e güvenli hale getirir</td></tr>
+        <tr><td><code>debounce(fn, ms)</code></td><td>Art arda çağrıları birleştirir (<code>.cancel()</code> var)</td></tr>
+        <tr><td><code>formatMoney(n, 'TRY')</code></td><td><code>1.299,90 ₺</code> biçimi</td></tr>
+        <tr><td><code>formatDate(tarih)</code></td><td>Yerel tarih biçimi</td></tr>
+        <tr><td><code>uid()</code>, <code>sleep(ms)</code></td><td>Rastgele kimlik, bekleme</td></tr>
+      </table>
+      <div class="box warn"><p><code>html``</code> içinde <code>aria-sort="..."</code> gibi tırnaklı bir öznitelik metnini değişken olarak koyarsanız tırnaklar escape edilir ve öznitelik bozulur. Böyle durumlarda <code>raw('aria-sort="asc"')</code> kullanın. Boolean değeri öznitelik metnine yazacaksanız <code>String(deger)</code> yapın (<code>false</code> boş metin olarak basılır).</p></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="tarif">
+      <h2>12. Adım adım: yeni sayfa ekleme</h2>
+      <p>Örnek: <code>/#/blog</code> adresinde yazı listesi gösteren bir sayfa.</p>
+
+      <h3>Adım 1: Mock veri</h3>
+      <div class="code"><div class="cap">data/posts.json</div><pre><code>[
+  { "id": 1, "title": "İlk yazı", "summary": "Merhaba dünya" },
+  { "id": 2, "title": "İkinci yazı", "summary": "Helios Frame ile hızlı geliştirme" }
+]</code></pre></div>
+
+      <h3>Adım 2: Servis</h3>
+      <div class="code"><div class="cap">src/services/blog.service.js</div><pre><code>import { mockData } from './mock.js';
+
+export class BlogService {
+  constructor({ http, mock }) { this.http = http; this.mock = mock; }
+  list({ signal } = {}) { return this.mock ? mockData('posts') : this.http.get('/posts', { signal }); }
+}</code></pre></div>
+      <div class="code"><div class="cap">src/services/index.js</div><pre><code>import { BlogService } from './blog.service.js';
+// return { ... } içine ekleyin:
+blog: new BlogService(deps),</code></pre></div>
+
+      <h3>Adım 3: Sayfa</h3>
+      <div class="code"><div class="cap">src/pages/blog.page.js</div><pre><code>import { Component } from '../core/component.js';
+import { html } from '../core/dom.js';
+
+export default class BlogPage extends Component {
+  state = { loading: true, error: null, posts: [] };
+
+  async afterMount() {
+    try {
+      const posts = await this.ctx.services.blog.list({ signal: this.signal });
+      this.setState({ posts, loading: false });
+    } catch (err) {
+      if (err.name !== 'AbortError') this.setState({ error: err.message, loading: false });
+    }
+  }
+
+  render() {
+    const { loading, error, posts } = this.state;
+    if (loading) return html`&lt;div class="hf-skeleton"&gt;&lt;/div&gt;`;
+    if (error) return html`&lt;div class="alert alert-danger"&gt;${error}&lt;/div&gt;`;
+    return html`
+      &lt;h1 class="h3 mb-4"&gt;Blog&lt;/h1&gt;
+      ${posts.map((p) =&gt; html`
+        &lt;article class="card mb-3"&gt;&lt;div class="card-body"&gt;
+          &lt;h2 class="h5"&gt;${p.title}&lt;/h2&gt;&lt;p class="mb-0 text-body-secondary"&gt;${p.summary}&lt;/p&gt;
+        &lt;/div&gt;&lt;/article&gt;`)}`;
+  }
+}</code></pre></div>
+
+      <h3>Adım 4: Rota</h3>
+      <div class="code"><div class="cap">src/routes.js</div><pre><code>// '*' rotasından ÖNCE ekleyin
+{ path: '/blog', component: () =&gt; import('./pages/blog.page.js'), layout: 'default', meta: { title: 'Blog' } },</code></pre></div>
+
+      <h3>Adım 5: Menüye bağlantı</h3>
+      <div class="code"><pre><code>html`&lt;a href="${this.href('/blog')}"&gt;Blog&lt;/a&gt;`</code></pre></div>
+      <div class="box ok"><p>Bitti: <code>/#/blog</code> adresini açın. Sayfa ilk ziyarette indirilir, sonraki ziyaretlerde önbellekten gelir.</p></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="api">
+      <h2>13. Gerçek API'ye geçiş</h2>
+      <ol>
+        <li><code>src/config.js</code> içinde <code>api.mock: false</code> yapın.</li>
+        <li><code>api.baseURL</code> alanına API adresini yazın.</li>
+        <li>API'nizin aşağıdaki sözleşmeye uyduğundan emin olun (her servis dosyasının başında da yazılıdır).</li>
+        <li>API farklı bir alan adındaysa sunucuda <b>CORS</b> izni verin.</li>
+      </ol>
+      <table>
+        <tr><th>Servis</th><th>Uç noktalar</th></tr>
+        <tr><td>products</td><td><code>GET /products?q&amp;category&amp;sort&amp;page&amp;perPage</code> → <code>{ items, total }</code><br><code>GET /products/categories</code> → <code>string[]</code><br><code>GET /products/:slug</code></td></tr>
+        <tr><td>orders</td><td><code>POST /orders</code> · <code>GET /orders/:id</code></td></tr>
+        <tr><td>auth</td><td><code>POST /auth/login</code> <code>{ email, password }</code> → <code>{ token, user }</code></td></tr>
+        <tr><td>customers</td><td><code>GET /customers</code> · <code>GET /customers/:id</code></td></tr>
+        <tr><td>quotes</td><td><code>GET /quotes</code> · <code>POST /quotes</code></td></tr>
+        <tr><td>reports</td><td><code>GET /reports/dashboard</code> → <code>{ kpis, monthly, quoteStatus }</code></td></tr>
+      </table>
+      <p>API şemanız farklıysa arayüze dokunmayın, yalnızca ilgili servis dosyasında alan adlarını eşleştirin:</p>
+      <div class="code"><pre><code>async list(opts) {
+  const res = await this.http.get('/urunler', { params: { arama: opts.q, sayfa: opts.page } });
+  return { items: res.data.map((u) =&gt; ({ id: u.id, slug: u.seo, name: u.ad, price: u.fiyat, /* ... */ })), total: res.toplam };
+}</code></pre></div>
+      <div class="box warn"><p><b>Güvenlik:</b> Mock giriş yalnızca demodur. Kart bilgisi istemcide işlenmez ve saklanmaz, ödeme sağlayıcısı entegrasyonu <code>orders.service.js</code> içindeki <code>create()</code> öncesinde yapılmalıdır.</p></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="yayin">
+      <h2>14. Yayına alma (GoDaddy / paylaşımlı hosting)</h2>
+      <ol>
+        <li>cPanel → <b>Dosya Yöneticisi</b> ya da FTP ile projeyi <code>public_html</code> altına yükleyin. <code>node_modules</code> ve <code>tests</code> klasörleri gerekmez.</li>
+        <li>Varsayılan <code>hash</code> modunda başka ayar gerekmez. Adres: <code>https://siteniz.com/#/shop</code>.</li>
+        <li><b>Temiz adres</b> (<code>/shop</code>) isterseniz <code>config.js</code> içinde <code>router.mode: 'history'</code> yapın. <code>.htaccess</code> içindeki yönlendirme kuralı hazırdır.</li>
+        <li>Alt klasöre (<code>/magaza/</code>) yüklerseniz <code>.htaccess</code> içindeki <code>RewriteBase</code> değerini <code>/magaza/</code> yapın.</li>
+        <li>Sitenizde HTTPS kullanın (CDN kaynakları ve güvenlik için).</li>
+      </ol>
+      <div class="box"><p>Dosyalar derlenmediği için JS/CSS adları değişmez. Yeni sürüm yüklediğinizde eski sürümün tarayıcı önbelleğinde kalmaması için <code>.htaccess</code> içinde önbellek süresi kısa tutulmuştur (JS/CSS için 1 saat). Acil güncellemede tarayıcıda <kbd>Ctrl</kbd>+<kbd>F5</kbd> yapın.</p></div>
+      <p><b>Güvenlik başlığı:</b> Canlıda bir <code>Content-Security-Policy</code> tanımlamanız önerilir. Bootstrap CSS'i ya da kendi eklediğiniz kütüphaneler için CDN kullanıyorsanız ilgili alan adlarını (örn. <code>cdn.jsdelivr.net</code>) izin listesine ekleyin. Hiç dış bağlantı istemiyorsanız dosyaları <code>vendor/</code> altına koyup <code>libMode: 'local'</code> kullanın.</p>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="sorun">
+      <h2>15. Sorun giderme</h2>
+      <table>
+        <tr><th>Belirti</th><th>Neden / çözüm</th></tr>
+        <tr><td>Sayfa boş, konsolda CORS veya "module" hatası</td><td><code>index.html</code> dosyasını çift tıklayarak açtınız. Bir sunucu üzerinden açın (<code>python3 -m http.server</code>).</td></tr>
+        <tr><td>"Failed to load module script: MIME type"</td><td>Sunucu <code>.js</code> dosyalarını doğru türde servis etmiyor. <code>.htaccess</code> dosyasının yüklendiğinden emin olun.</td></tr>
+        <tr><td><code>history</code> modunda sayfayı yenileyince 404</td><td><code>.htaccess</code> yönlendirme kuralı çalışmıyor. <code>mod_rewrite</code> açık mı ve <code>RewriteBase</code> doğru mu kontrol edin. Ya da <code>hash</code> moduna dönün.</td></tr>
+        <tr><td>Bootstrap stili ya da eklediğiniz kütüphane yüklenmiyor</td><td>CDN engelli olabilir. Dosyayı <code>vendor/</code> altına koyup yolunu verin (Bootstrap için <code>libMode: 'local'</code>).</td></tr>
+        <tr><td>Kütüphane yüklendi ama <code>window.X</code> tanımsız</td><td>Tanımdaki <code>global</code> adı yanlış olabilir. Kütüphanenin gerçekte tanımladığı değişkeni yazın ve <code>js</code> adresinin UMD/tarayıcı sürümü olduğundan emin olun.</td></tr>
+        <tr><td>Sayfa içeriği layout içinde kayboluyor</td><td>Layout içinde <code>setState</code> çağırıyorsunuz. Dinamik parçaları alt bileşene taşıyın.</td></tr>
+        <tr><td>Alt bileşenin durumu sıfırlanıyor</td><td>Ebeveyn yeniden çizilince alt bileşenler yeniden kurulur. Veriyi ebeveyne ya da store'a taşıyın.</td></tr>
+        <tr><td>Yazarken input odağı kayboluyor</td><td>Input'a <code>id</code>, <code>name</code> veya <code>data-key</code> verin ya da değerleri state yerine <code>this.values</code> gibi bir alanda tutun.</td></tr>
+        <tr><td>Bir tıklama iki kez çalışıyor</td><td><code>this.on()</code>'u <code>render()</code> içinde değil <code>beforeMount()</code> içinde çağırın.</td></tr>
+        <tr><td>"Bilinmeyen kütüphane" hatası</td><td><code>static libs</code> içinde bir <b>ad</b> yazdınız ama <code>src/libs.js</code> kayıt defterinde yok. Adı kayda ekleyin ya da satır içi tanım (<code>{ global, js }</code>) kullanın.</td></tr>
+        <tr><td>Eski sepet verisi bozuk görünüyor</td><td>Durum yapısını değiştirdiyseniz <code>app.js</code> içinde <code>version</code> değerini arttırın. Geliştirme sırasında konsoldan <code>localStorage.clear()</code> da çalışır.</td></tr>
+      </table>
+      <h3>Konsoldan inceleme</h3>
+      <p>Yerelde (localhost) <code>debug</code> açıktır. Tarayıcı konsolunda <code>__helios</code> nesnesi bulunur:</p>
+      <div class="code"><pre><code>__helios.store.state              // anlık durum
+__helios.router.current           // şu anki rota
+__helios.services.products.list() // servisi elle çağır</code></pre></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <section id="referans">
+      <h2>16. Hızlı başvuru</h2>
+      <div class="grid">
+        <div class="card"><h3>Sayfa iskeleti</h3><pre><code>export default class X extends Component {
+  state = {};
+  beforeMount() {}
+  async afterMount() {}
+  render() { return html``; }
+  afterRender() {}
+  beforeUnmount() {}
+}</code></pre></div>
+        <div class="card"><h3>Sık kullanılanlar</h3><pre><code>this.setState({ a: 1 })
+this.on('click', '[data-x]', fn)
+this.watch(store, sel, fn)
+this.mountChild(C, '[data-slot]', props)
+this.href('/yol')
+this.ctx.router.navigate('/yol')
+this.ctx.services.xxx.list()
+this.ctx.toast.success('..')</code></pre></div>
+        <div class="card"><h3>Dosya eklerken</h3><pre><code>1. pages/x.page.js
+2. routes.js  (* öncesine)
+3. services/ (gerekirse)
+4. data/*.json (mock için)
+5. static libs (yeni kütüphane)</code></pre></div>
+      </div>
+    </section>
+
+    <footer>
+      © Helios Diji · Helios Frame v0.1.0 · Bu kılavuz <code>docs/index.html</code> dosyasıdır; bağımsızdır, sunucuda doğrudan açılabilir.
+    </footer>
+  </main>
+</div>
+
+<script>
+  // Kod bloklarına "Kopyala" düğmesi
+  document.querySelectorAll('.code').forEach((box) => {
+    const btn = document.createElement('button');
+    btn.className = 'copy';
+    btn.type = 'button';
+    btn.textContent = 'Kopyala';
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(box.querySelector('pre').innerText);
+        btn.textContent = 'Kopyalandı ✓';
+      } catch {
+        btn.textContent = 'Kopyalanamadı';
+      }
+      setTimeout(() => { btn.textContent = 'Kopyala'; }, 1500);
+    });
+    box.append(btn);
+  });
+
+  // İçindekiler: görünen bölümü vurgula
+  const links = [...document.querySelectorAll('#tocList a')];
+  const map = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        links.forEach((a) => a.classList.remove('active'));
+        map.get(entry.target.id)?.classList.add('active');
+      }
+    });
+  }, { rootMargin: '0px 0px -75% 0px' });
+  document.querySelectorAll('main section[id]').forEach((s) => observer.observe(s));
+
+  // Mobil menü
+  const toc = document.getElementById('toc');
+  const btn = document.getElementById('menuBtn');
+  btn.addEventListener('click', () => {
+    const open = toc.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  });
+  links.forEach((a) => a.addEventListener('click', () => { toc.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }));
+</script>
+</body>
+</html>
