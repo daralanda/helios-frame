@@ -1,16 +1,572 @@
 [
-  { "id": 1, "company": "Anadolu Gıda Tic. Ltd. Şti.", "contact": "Selin Yıldız", "email": "selin@anadolugida.example", "phone": "0212 555 01 01", "city": "İstanbul", "sector": "Gıda", "balance": 48250.5, "lastOrder": "2026-10-14", "status": "Aktif" },
-  { "id": 2, "company": "Marmara Lojistik A.Ş.", "contact": "Kerem Aksoy", "email": "kerem@marmaralojistik.example", "phone": "0216 555 02 02", "city": "Kocaeli", "sector": "Lojistik", "balance": 0, "lastOrder": "2026-10-09", "status": "Aktif" },
-  { "id": 3, "company": "Ege Tekstil San. Tic.", "contact": "Derya Kaya", "email": "derya@egetekstil.example", "phone": "0232 555 03 03", "city": "İzmir", "sector": "Tekstil", "balance": 12980, "lastOrder": "2026-09-27", "status": "Aktif" },
-  { "id": 4, "company": "Başkent Yazılım Çözümleri", "contact": "Murat Demir", "email": "murat@baskentyazilim.example", "phone": "0312 555 04 04", "city": "Ankara", "sector": "Bilişim", "balance": 75400, "lastOrder": "2026-10-20", "status": "Aktif" },
-  { "id": 5, "company": "Karadeniz İnşaat Ltd.", "contact": "Hakan Çelik", "email": "hakan@karadenizinsaat.example", "phone": "0462 555 05 05", "city": "Trabzon", "sector": "İnşaat", "balance": 3200, "lastOrder": "2026-08-30", "status": "Pasif" },
-  { "id": 6, "company": "Akdeniz Turizm A.Ş.", "contact": "Elif Şahin", "email": "elif@akdenizturizm.example", "phone": "0242 555 06 06", "city": "Antalya", "sector": "Turizm", "balance": 21870, "lastOrder": "2026-10-02", "status": "Aktif" },
-  { "id": 7, "company": "Trakya Tarım Ürünleri", "contact": "Burak Öztürk", "email": "burak@trakyatarim.example", "phone": "0282 555 07 07", "city": "Tekirdağ", "sector": "Tarım", "balance": 0, "lastOrder": "2026-06-18", "status": "Pasif" },
-  { "id": 8, "company": "Güneş Enerji Sistemleri", "contact": "Ayşe Polat", "email": "ayse@gunesenerji.example", "phone": "0224 555 08 08", "city": "Bursa", "sector": "Enerji", "balance": 164000, "lastOrder": "2026-10-18", "status": "Aktif" },
-  { "id": 9, "company": "Doğu Makine Sanayi", "contact": "Emre Korkmaz", "email": "emre@dogumakine.example", "phone": "0442 555 09 09", "city": "Erzurum", "sector": "Makine", "balance": 9100, "lastOrder": "2026-09-05", "status": "Aktif" },
-  { "id": 10, "company": "Mavi Deniz Su Ürünleri", "contact": "Zeynep Arslan", "email": "zeynep@mavideniz.example", "phone": "0252 555 10 10", "city": "Muğla", "sector": "Gıda", "balance": 0, "lastOrder": null, "status": "Potansiyel" },
-  { "id": 11, "company": "Orta Anadolu Otomotiv", "contact": "Cem Yalçın", "email": "cem@ortaanadoluoto.example", "phone": "0332 555 11 11", "city": "Konya", "sector": "Otomotiv", "balance": 56300, "lastOrder": "2026-10-11", "status": "Aktif" },
-  { "id": 12, "company": "Yıldız Medikal Ltd. Şti.", "contact": "Gül Tekin", "email": "gul@yildizmedikal.example", "phone": "0322 555 12 12", "city": "Adana", "sector": "Sağlık", "balance": 0, "lastOrder": null, "status": "Potansiyel" },
-  { "id": 13, "company": "Kuzey Ambalaj San.", "contact": "Onur Erdem", "email": "onur@kuzeyambalaj.example", "phone": "0362 555 13 13", "city": "Samsun", "sector": "Ambalaj", "balance": 7450, "lastOrder": "2026-07-22", "status": "Pasif" },
-  { "id": 14, "company": "Ay Mobilya Dekorasyon", "contact": "Pınar Kurt", "email": "pinar@aymobilya.example", "phone": "0352 555 14 14", "city": "Kayseri", "sector": "Mobilya", "balance": 18600, "lastOrder": "2026-10-16", "status": "Aktif" }
+  {
+    "id": 1001,
+    "name": "Ilgaz Tekstil Ltd. Şti.",
+    "city": "Mersin",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 201744.06,
+    "orders": 24,
+    "lastActivity": "2026-09-17T05:00:00"
+  },
+  {
+    "id": 1002,
+    "name": "Pınar Otomasyon San. Tic.",
+    "city": "Bursa",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 97084.33,
+    "orders": 17,
+    "lastActivity": "2026-10-08T13:00:00"
+  },
+  {
+    "id": 1003,
+    "name": "Marmara Tarım Ltd. Şti.",
+    "city": "İstanbul",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 150269.0,
+    "orders": 15,
+    "lastActivity": "2026-09-11T22:00:00"
+  },
+  {
+    "id": 1004,
+    "name": "Ege Gıda A.Ş.",
+    "city": "Kayseri",
+    "segment": "Kurumsal",
+    "status": "Aktif",
+    "balance": 93167.54,
+    "orders": 138,
+    "lastActivity": "2026-10-29T12:00:00"
+  },
+  {
+    "id": 1005,
+    "name": "Pınar Makine San. Tic.",
+    "city": "Sakarya",
+    "segment": "Kurumsal",
+    "status": "Aktif",
+    "balance": 137032.04,
+    "orders": 48,
+    "lastActivity": "2026-09-16T01:00:00"
+  },
+  {
+    "id": 1006,
+    "name": "Yıldız Tarım San. Tic.",
+    "city": "Ankara",
+    "segment": "Bayi",
+    "status": "Pasif",
+    "balance": 35608.85,
+    "orders": 136,
+    "lastActivity": "2026-09-06T15:00:00"
+  },
+  {
+    "id": 1007,
+    "name": "Ilgaz Yapı San. Tic.",
+    "city": "Manisa",
+    "segment": "Distribütör",
+    "status": "Aktif",
+    "balance": 60937.09,
+    "orders": 46,
+    "lastActivity": "2026-10-07T23:00:00"
+  },
+  {
+    "id": 1008,
+    "name": "Marmara Plastik Ltd. Şti.",
+    "city": "Kayseri",
+    "segment": "Distribütör",
+    "status": "Aktif",
+    "balance": 176950.23,
+    "orders": 73,
+    "lastActivity": "2026-11-06T03:00:00"
+  },
+  {
+    "id": 1009,
+    "name": "Yıldız Tarım Ltd. Şti.",
+    "city": "İzmir",
+    "segment": "KOBİ",
+    "status": "Aktif",
+    "balance": 231982.96,
+    "orders": 107,
+    "lastActivity": "2026-11-11T22:00:00"
+  },
+  {
+    "id": 1010,
+    "name": "Marmara Tarım San. Tic.",
+    "city": "Denizli",
+    "segment": "KOBİ",
+    "status": "Aktif",
+    "balance": 167729.75,
+    "orders": 127,
+    "lastActivity": "2026-09-01T18:00:00"
+  },
+  {
+    "id": 1011,
+    "name": "Marmara Enerji Ltd. Şti.",
+    "city": "Gaziantep",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 177413.02,
+    "orders": 79,
+    "lastActivity": "2026-09-03T13:00:00"
+  },
+  {
+    "id": 1012,
+    "name": "Doğu Elektrik San. Tic.",
+    "city": "Konya",
+    "segment": "Bayi",
+    "status": "Beklemede",
+    "balance": 75975.31,
+    "orders": 29,
+    "lastActivity": "2026-08-26T08:00:00"
+  },
+  {
+    "id": 1013,
+    "name": "Ege Gıda Ltd. Şti.",
+    "city": "İzmir",
+    "segment": "Kurumsal",
+    "status": "Beklemede",
+    "balance": 85556.42,
+    "orders": 127,
+    "lastActivity": "2026-11-04T20:00:00"
+  },
+  {
+    "id": 1014,
+    "name": "Güney Yapı Ltd. Şti.",
+    "city": "Kayseri",
+    "segment": "KOBİ",
+    "status": "Aktif",
+    "balance": 201205.56,
+    "orders": 140,
+    "lastActivity": "2026-10-02T02:00:00"
+  },
+  {
+    "id": 1015,
+    "name": "Göktürk Lojistik San. Tic.",
+    "city": "Manisa",
+    "segment": "Distribütör",
+    "status": "Aktif",
+    "balance": 20748.64,
+    "orders": 45,
+    "lastActivity": "2026-10-23T19:00:00"
+  },
+  {
+    "id": 1016,
+    "name": "Çağdaş Gıda A.Ş.",
+    "city": "Gaziantep",
+    "segment": "Kurumsal",
+    "status": "Aktif",
+    "balance": 56121.3,
+    "orders": 37,
+    "lastActivity": "2026-09-08T02:00:00"
+  },
+  {
+    "id": 1017,
+    "name": "Kartal Lojistik San. Tic.",
+    "city": "Eskişehir",
+    "segment": "KOBİ",
+    "status": "Aktif",
+    "balance": 166433.29,
+    "orders": 131,
+    "lastActivity": "2026-11-09T09:00:00"
+  },
+  {
+    "id": 1018,
+    "name": "Mavi Tarım Ltd. Şti.",
+    "city": "Antalya",
+    "segment": "Distribütör",
+    "status": "Beklemede",
+    "balance": 7955.02,
+    "orders": 102,
+    "lastActivity": "2026-11-08T00:00:00"
+  },
+  {
+    "id": 1019,
+    "name": "Özgür Enerji A.Ş.",
+    "city": "Gaziantep",
+    "segment": "Kurumsal",
+    "status": "Aktif",
+    "balance": 71814.49,
+    "orders": 13,
+    "lastActivity": "2026-11-01T03:00:00"
+  },
+  {
+    "id": 1020,
+    "name": "Anadolu Plastik A.Ş.",
+    "city": "Kayseri",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 145709.06,
+    "orders": 18,
+    "lastActivity": "2026-10-14T03:00:00"
+  },
+  {
+    "id": 1021,
+    "name": "Toros Elektrik A.Ş.",
+    "city": "Mersin",
+    "segment": "KOBİ",
+    "status": "Aktif",
+    "balance": 142615.38,
+    "orders": 121,
+    "lastActivity": "2026-10-28T15:00:00"
+  },
+  {
+    "id": 1022,
+    "name": "Yıldız Yapı Ltd. Şti.",
+    "city": "Gaziantep",
+    "segment": "Distribütör",
+    "status": "Aktif",
+    "balance": 3188.86,
+    "orders": 26,
+    "lastActivity": "2026-09-21T03:00:00"
+  },
+  {
+    "id": 1023,
+    "name": "Atlas Yapı San. Tic.",
+    "city": "İzmir",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 236766.1,
+    "orders": 135,
+    "lastActivity": "2026-09-17T21:00:00"
+  },
+  {
+    "id": 1024,
+    "name": "Kuzey Tarım A.Ş.",
+    "city": "Denizli",
+    "segment": "KOBİ",
+    "status": "Aktif",
+    "balance": 167973.13,
+    "orders": 66,
+    "lastActivity": "2026-08-22T03:00:00"
+  },
+  {
+    "id": 1025,
+    "name": "Şahin Tekstil Ltd. Şti.",
+    "city": "Denizli",
+    "segment": "Kurumsal",
+    "status": "Pasif",
+    "balance": 126223.12,
+    "orders": 128,
+    "lastActivity": "2026-09-23T08:00:00"
+  },
+  {
+    "id": 1026,
+    "name": "Çağdaş Plastik A.Ş.",
+    "city": "Denizli",
+    "segment": "Kurumsal",
+    "status": "Beklemede",
+    "balance": 179765.72,
+    "orders": 58,
+    "lastActivity": "2026-10-15T12:00:00"
+  },
+  {
+    "id": 1027,
+    "name": "Çınar Yapı Ltd. Şti.",
+    "city": "Samsun",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 193330.82,
+    "orders": 120,
+    "lastActivity": "2026-10-05T09:00:00"
+  },
+  {
+    "id": 1028,
+    "name": "Özgür Plastik Ltd. Şti.",
+    "city": "Gaziantep",
+    "segment": "KOBİ",
+    "status": "Aktif",
+    "balance": 1745.29,
+    "orders": 26,
+    "lastActivity": "2026-10-10T21:00:00"
+  },
+  {
+    "id": 1029,
+    "name": "Demir Gıda Ltd. Şti.",
+    "city": "Bursa",
+    "segment": "Distribütör",
+    "status": "Pasif",
+    "balance": 246017.23,
+    "orders": 0,
+    "lastActivity": "2026-08-28T19:00:00"
+  },
+  {
+    "id": 1030,
+    "name": "Şahin Enerji San. Tic.",
+    "city": "Ankara",
+    "segment": "Distribütör",
+    "status": "Aktif",
+    "balance": 109068.84,
+    "orders": 45,
+    "lastActivity": "2026-09-05T13:00:00"
+  },
+  {
+    "id": 1031,
+    "name": "Ilgaz Enerji San. Tic.",
+    "city": "Antalya",
+    "segment": "Distribütör",
+    "status": "Beklemede",
+    "balance": 180705.23,
+    "orders": 21,
+    "lastActivity": "2026-10-22T12:00:00"
+  },
+  {
+    "id": 1032,
+    "name": "Güney Tekstil A.Ş.",
+    "city": "İzmir",
+    "segment": "Distribütör",
+    "status": "Aktif",
+    "balance": 145124.8,
+    "orders": 121,
+    "lastActivity": "2026-09-19T19:00:00"
+  },
+  {
+    "id": 1033,
+    "name": "Kuzey Tarım San. Tic.",
+    "city": "İzmir",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 195826.39,
+    "orders": 26,
+    "lastActivity": "2026-08-20T18:00:00"
+  },
+  {
+    "id": 1034,
+    "name": "Kuzey Elektrik A.Ş.",
+    "city": "Sakarya",
+    "segment": "Kurumsal",
+    "status": "Aktif",
+    "balance": 47995.4,
+    "orders": 74,
+    "lastActivity": "2026-08-25T02:00:00"
+  },
+  {
+    "id": 1035,
+    "name": "Çağdaş Plastik Ltd. Şti.",
+    "city": "Kocaeli",
+    "segment": "Distribütör",
+    "status": "Aktif",
+    "balance": -3555.78,
+    "orders": 90,
+    "lastActivity": "2026-09-01T10:00:00"
+  },
+  {
+    "id": 1036,
+    "name": "Pınar Tarım Ltd. Şti.",
+    "city": "Sakarya",
+    "segment": "Kurumsal",
+    "status": "Pasif",
+    "balance": 20995.82,
+    "orders": 130,
+    "lastActivity": "2026-11-15T10:00:00"
+  },
+  {
+    "id": 1037,
+    "name": "Mavi Tekstil San. Tic.",
+    "city": "İstanbul",
+    "segment": "Kurumsal",
+    "status": "Aktif",
+    "balance": 18220.92,
+    "orders": 30,
+    "lastActivity": "2026-11-08T02:00:00"
+  },
+  {
+    "id": 1038,
+    "name": "Ilgaz Tarım San. Tic.",
+    "city": "Kayseri",
+    "segment": "Distribütör",
+    "status": "Aktif",
+    "balance": 218471.51,
+    "orders": 14,
+    "lastActivity": "2026-10-07T05:00:00"
+  },
+  {
+    "id": 1039,
+    "name": "Özgür Makine A.Ş.",
+    "city": "Denizli",
+    "segment": "Bayi",
+    "status": "Pasif",
+    "balance": 102087.5,
+    "orders": 7,
+    "lastActivity": "2026-11-07T19:00:00"
+  },
+  {
+    "id": 1040,
+    "name": "Mavi Lojistik San. Tic.",
+    "city": "Kayseri",
+    "segment": "Kurumsal",
+    "status": "Aktif",
+    "balance": 102133.36,
+    "orders": 136,
+    "lastActivity": "2026-08-29T00:00:00"
+  },
+  {
+    "id": 1041,
+    "name": "Çınar Gıda San. Tic.",
+    "city": "Kayseri",
+    "segment": "KOBİ",
+    "status": "Pasif",
+    "balance": 221043.83,
+    "orders": 51,
+    "lastActivity": "2026-09-03T05:00:00"
+  },
+  {
+    "id": 1042,
+    "name": "Kuzey Elektrik A.Ş.",
+    "city": "Antalya",
+    "segment": "Distribütör",
+    "status": "Aktif",
+    "balance": -412.55,
+    "orders": 61,
+    "lastActivity": "2026-09-06T12:00:00"
+  },
+  {
+    "id": 1043,
+    "name": "Marmara Gıda San. Tic.",
+    "city": "Kocaeli",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 233666.26,
+    "orders": 93,
+    "lastActivity": "2026-10-25T05:00:00"
+  },
+  {
+    "id": 1044,
+    "name": "Atlas Tekstil Ltd. Şti.",
+    "city": "Bursa",
+    "segment": "Bayi",
+    "status": "Beklemede",
+    "balance": 218931.88,
+    "orders": 41,
+    "lastActivity": "2026-10-11T10:00:00"
+  },
+  {
+    "id": 1045,
+    "name": "Güney Elektrik San. Tic.",
+    "city": "Antalya",
+    "segment": "KOBİ",
+    "status": "Beklemede",
+    "balance": 32851.06,
+    "orders": 81,
+    "lastActivity": "2026-11-02T21:00:00"
+  },
+  {
+    "id": 1046,
+    "name": "Şahin Otomasyon Ltd. Şti.",
+    "city": "Kayseri",
+    "segment": "Distribütör",
+    "status": "Beklemede",
+    "balance": 169850.87,
+    "orders": 98,
+    "lastActivity": "2026-09-23T01:00:00"
+  },
+  {
+    "id": 1047,
+    "name": "Çınar Plastik Ltd. Şti.",
+    "city": "Kayseri",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 245972.48,
+    "orders": 58,
+    "lastActivity": "2026-10-31T17:00:00"
+  },
+  {
+    "id": 1048,
+    "name": "Marmara Makine Ltd. Şti.",
+    "city": "İstanbul",
+    "segment": "Kurumsal",
+    "status": "Aktif",
+    "balance": 184059.67,
+    "orders": 108,
+    "lastActivity": "2026-10-05T11:00:00"
+  },
+  {
+    "id": 1049,
+    "name": "Işık Tekstil San. Tic.",
+    "city": "Manisa",
+    "segment": "Distribütör",
+    "status": "Aktif",
+    "balance": 4154.8,
+    "orders": 14,
+    "lastActivity": "2026-10-18T08:00:00"
+  },
+  {
+    "id": 1050,
+    "name": "Göktürk Enerji Ltd. Şti.",
+    "city": "İstanbul",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 2610.48,
+    "orders": 56,
+    "lastActivity": "2026-11-07T06:00:00"
+  },
+  {
+    "id": 1051,
+    "name": "Atlas Enerji Ltd. Şti.",
+    "city": "İstanbul",
+    "segment": "KOBİ",
+    "status": "Pasif",
+    "balance": 92795.29,
+    "orders": 68,
+    "lastActivity": "2026-10-27T13:00:00"
+  },
+  {
+    "id": 1052,
+    "name": "Ege Tarım San. Tic.",
+    "city": "Bursa",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 50711.73,
+    "orders": 46,
+    "lastActivity": "2026-10-15T04:00:00"
+  },
+  {
+    "id": 1053,
+    "name": "Doğu Makine San. Tic.",
+    "city": "Denizli",
+    "segment": "Kurumsal",
+    "status": "Aktif",
+    "balance": 100335.46,
+    "orders": 45,
+    "lastActivity": "2026-10-03T10:00:00"
+  },
+  {
+    "id": 1054,
+    "name": "Şahin Otomasyon Ltd. Şti.",
+    "city": "İstanbul",
+    "segment": "Bayi",
+    "status": "Aktif",
+    "balance": 177931.7,
+    "orders": 48,
+    "lastActivity": "2026-08-22T20:00:00"
+  },
+  {
+    "id": 1055,
+    "name": "Demir Gıda Ltd. Şti.",
+    "city": "Ankara",
+    "segment": "Distribütör",
+    "status": "Beklemede",
+    "balance": 127394.69,
+    "orders": 100,
+    "lastActivity": "2026-08-24T03:00:00"
+  },
+  {
+    "id": 1056,
+    "name": "Doğu Gıda A.Ş.",
+    "city": "Konya",
+    "segment": "Kurumsal",
+    "status": "Aktif",
+    "balance": 89268.38,
+    "orders": 88,
+    "lastActivity": "2026-11-09T08:00:00"
+  },
+  {
+    "id": 1057,
+    "name": "Kuzey Otomasyon A.Ş.",
+    "city": "Mersin",
+    "segment": "KOBİ",
+    "status": "Beklemede",
+    "balance": 24076.56,
+    "orders": 21,
+    "lastActivity": "2026-09-14T14:00:00"
+  }
 ]

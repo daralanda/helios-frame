@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Soğuk oda sensör ağı",
+    "customer": "Kuzey Tarım A.Ş.",
+    "value": 368000.0,
+    "stage": "Teklif verildi",
+    "owner": "AY"
+  },
+  {
+    "id": 2,
+    "title": "Bina otomasyonu",
+    "customer": "Şahin Otomasyon Ltd. Şti.",
+    "value": 150400.0,
+    "stage": "Kazanıldı",
+    "owner": "MK"
+  },
+  {
+    "id": 3,
+    "title": "Soğuk oda sensör ağı",
+    "customer": "Pınar Otomasyon San. Tic.",
+    "value": 17100.0,
+    "stage": "Kazanıldı",
+    "owner": "SD"
+  },
+  {
+    "id": 4,
+    "title": "Sera iklim kontrolü",
+    "customer": "Demir Gıda Ltd. Şti.",
+    "value": 191600.0,
+    "stage": "Görüşülüyor",
+    "owner": "MK"
+  },
+  {
+    "id": 5,
+    "title": "Sera iklim kontrolü",
+    "customer": "Atlas Yapı San. Tic.",
+    "value": 199900.0,
+    "stage": "Teklif verildi",
+    "owner": "AY"
+  },
+  {
+    "id": 6,
+    "title": "Bina otomasyonu",
+    "customer": "Toros Elektrik A.Ş.",
+    "value": 505900.0,
+    "stage": "Yeni",
+    "owner": "AY"
+  },
+  {
+    "id": 7,
+    "title": "Fabrika enerji izleme",
+    "customer": "Şahin Otomasyon Ltd. Şti.",
+    "value": 542400.0,
+    "stage": "Teklif verildi",
+    "owner": "MK"
+  },
+  {
+    "id": 8,
+    "title": "Fabrika enerji izleme",
+    "customer": "Kuzey Tarım A.Ş.",
+    "value": 244800.0,
+    "stage": "Yeni",
+    "owner": "MK"
+  },
+  {
+    "id": 9,
+    "title": "Bina otomasyonu",
+    "customer": "Özgür Plastik Ltd. Şti.",
+    "value": 514700.0,
+    "stage": "Teklif verildi",
+    "owner": "AY"
+  },
+  {
+    "id": 10,
+    "title": "Bayi yıllık anlaşması",
+    "customer": "Ege Gıda A.Ş.",
+    "value": 182100.0,
+    "stage": "Görüşülüyor",
+    "owner": "AY"
+  },
+  {
+    "id": 11,
+    "title": "Sera iklim kontrolü",
+    "customer": "Mavi Tarım Ltd. Şti.",
+    "value": 313900.0,
+    "stage": "Görüşülüyor",
+    "owner": "MK"
+  },
+  {
+    "id": 12,
+    "title": "Sera iklim kontrolü",
+    "customer": "Atlas Enerji Ltd. Şti.",
+    "value": 532300.0,
+    "stage": "Kazanıldı",
+    "owner": "SD"
+  }
+]

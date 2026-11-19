@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /demo/panel/
+
+Sitemap: https://heliosdiji.com/sitemap.xml

@@ -1,0 +1,53 @@
+{
+  "$comment": "Tüm projelerin menüleri tek yerden yönetilir. href'ler framework köküne göredir. roles verilen öğeler yalnızca o rollere görünür (sunucu tarafı yetki kontrolünün yerini TUTMAZ).",
+  "menus": {
+    "site": [
+      { "label": "Ana sayfa", "href": "./", "icon": "home" },
+      { "label": "Bileşenler", "href": "./#bilesenler", "icon": "layers" },
+      { "label": "Demolar", "icon": "zap", "children": [
+        { "label": "B2B / CRM Panel", "href": "demo/panel/", "desc": "Dikey menü, tablo, grafik, kanban" },
+        { "label": "E-ticaret Mağaza", "href": "demo/shop/", "desc": "Yatay + mega menü, sepet, SEO" },
+        { "label": "Ödeme formu", "href": "demo/shop/odeme.html", "desc": "Doğrulama ve maskeler" }
+      ]},
+      { "label": "GitHub", "href": "https://github.com/daralanda/helios-frame", "icon": "globe", "external": true }
+    ],
+
+    "shop": [
+      { "label": "Tüm ürünler", "href": "demo/shop/" },
+      { "label": "Kategoriler", "mega": true, "children": [
+        { "label": "Sensörler", "href": "demo/shop/?k=sensor", "desc": "Sıcaklık, nem, hareket" },
+        { "label": "Ağ geçitleri", "href": "demo/shop/?k=gateway", "desc": "LoRaWAN, Wi-Fi, 4G" },
+        { "label": "Röle & kontrol", "href": "demo/shop/?k=kontrol", "desc": "Akıllı röle ve modüller" },
+        { "label": "Enerji", "href": "demo/shop/?k=enerji", "desc": "Sayaç ve izleme" },
+        { "label": "Aksesuar", "href": "demo/shop/?k=aksesuar", "desc": "Montaj ve güç" },
+        { "label": "Yazılım", "href": "demo/shop/?k=yazilim", "desc": "Bulut lisansları" }
+      ]},
+      { "label": "Kampanyalar", "href": "demo/shop/?k=kampanya", "badge": "Yeni" },
+      { "label": "Bayi girişi", "href": "demo/panel/" }
+    ],
+
+    "panel": [
+      { "group": "Genel", "items": [
+        { "label": "Gösterge paneli", "href": "demo/panel/#/", "icon": "dashboard" },
+        { "label": "Raporlar", "href": "demo/panel/#/raporlar", "icon": "chart", "roles": ["admin"] }
+      ]},
+      { "group": "Satış", "items": [
+        { "label": "Müşteriler", "href": "demo/panel/#/musteriler", "icon": "users" },
+        { "label": "Fırsatlar (CRM)", "href": "demo/panel/#/firsatlar", "icon": "briefcase", "badge": 4 },
+        { "label": "Teklifler", "icon": "file", "children": [
+          { "label": "Tüm teklifler", "href": "demo/panel/#/teklifler" },
+          { "label": "Yeni teklif", "href": "demo/panel/#/teklifler/yeni" }
+        ]},
+        { "label": "Siparişler", "href": "demo/panel/#/siparisler", "icon": "cart" }
+      ]},
+      { "group": "Katalog", "roles": ["admin"], "items": [
+        { "label": "Ürünler", "href": "demo/shop/", "icon": "box" },
+        { "label": "Kampanyalar", "href": "demo/shop/?k=kampanya", "icon": "tag" }
+      ]},
+      { "group": "Sistem", "items": [
+        { "label": "Ayarlar", "href": "demo/panel/#/ayarlar", "icon": "settings" },
+        { "label": "Vitrine dön", "href": "./", "icon": "home" }
+      ]}
+    ]
+  }
+}

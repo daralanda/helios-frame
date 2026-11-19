@@ -3,7 +3,6 @@ node_modules/
 Thumbs.db
 *.log
 .env
+.env.*
 .vscode/
 .idea/
-# Yerel test çıktıları
-tests/.tmp/

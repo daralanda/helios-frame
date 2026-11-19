@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://heliosdiji.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://heliosdiji.com/demo/shop/</loc><priority>0.9</priority></url>
+  <url><loc>https://heliosdiji.com/demo/shop/urun/sicaklik-nem-sensoru-ts100.html</loc><priority>0.8</priority><image:image><image:loc>https://heliosdiji.com/assets/img/products/sicaklik-nem-sensoru-ts100.svg</image:loc></image:image></url>
+  <url><loc>https://heliosdiji.com/demo/shop/urun/lorawan-ag-gecidi-gw400.html</loc><priority>0.8</priority><image:image><image:loc>https://heliosdiji.com/assets/img/products/lorawan-ag-gecidi-gw400.svg</image:loc></image:image></url>
+  <url><loc>https://heliosdiji.com/demo/shop/urun/akilli-role-modulu-rl2.html</loc><priority>0.8</priority><image:image><image:loc>https://heliosdiji.com/assets/img/products/akilli-role-modulu-rl2.svg</image:loc></image:image></url>
+  <url><loc>https://heliosdiji.com/demo/shop/urun/trifaze-enerji-analizoru-em3.html</loc><priority>0.8</priority><image:image><image:loc>https://heliosdiji.com/assets/img/products/trifaze-enerji-analizoru-em3.svg</image:loc></image:image></url>
+  <url><loc>https://heliosdiji.com/demo/shop/urun/hareket-sensoru-ms10.html</loc><priority>0.8</priority><image:image><image:loc>https://heliosdiji.com/assets/img/products/hareket-sensoru-ms10.svg</image:loc></image:image></url>
+  <url><loc>https://heliosdiji.com/demo/shop/urun/din-ray-guc-kaynagi-ps24.html</loc><priority>0.8</priority><image:image><image:loc>https://heliosdiji.com/assets/img/products/din-ray-guc-kaynagi-ps24.svg</image:loc></image:image></url>
+  <url><loc>https://heliosdiji.com/demo/shop/urun/helios-cloud-yillik-lisans.html</loc><priority>0.8</priority><image:image><image:loc>https://heliosdiji.com/assets/img/products/helios-cloud-yillik-lisans.svg</image:loc></image:image></url>
+  <url><loc>https://heliosdiji.com/demo/shop/urun/hava-kalitesi-sensoru-aq5.html</loc><priority>0.8</priority><image:image><image:loc>https://heliosdiji.com/assets/img/products/hava-kalitesi-sensoru-aq5.svg</image:loc></image:image></url>
+</urlset>

@@ -1,0 +1,121 @@
+/* Helios Frame · Uygulama kabuğu (dikey / yatay / ikisi birden menü) */
+
+@layer layout {
+  .hf-container { width: min(100% - 2 * var(--hf-gutter), var(--hf-container)); margin-inline: auto; }
+
+  /* JS yüklenmeden önce içerik okunur kalsın (SEO + FOUC koruması) */
+  /* JS çalışmadan önce de içerik okunur ve kabuğun yeri ayrılmış olur (CLS'yi azaltır) */
+  hd-shell:not(:defined) {
+    display: block;
+    padding: calc(var(--hf-topbar-height) + var(--hf-space-6)) var(--hf-gutter) var(--hf-space-12);
+  }
+  hd-shell:not(:defined) > * { max-width: var(--hf-container); margin-inline: auto; }
+  @media (min-width: 1024px) {
+    hd-shell[nav="vertical"]:not(:defined), hd-shell[nav="both"]:not(:defined) {
+      padding-inline-start: calc(var(--hf-sidebar-width) + var(--hf-gutter));
+    }
+  }
+
+  .hf-app {
+    --_side: var(--hf-sidebar-width);
+    display: grid;
+    min-height: 100dvh;
+    grid-template-columns: var(--_side) minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-areas: "side top" "side main" "side foot";
+  }
+  .hf-app[data-collapsed] { --_side: var(--hf-sidebar-collapsed); }
+  .hf-app[data-nav="horizontal"] {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "top" "main" "foot";
+  }
+  .hf-app[data-nav="horizontal"] > .hf-sidebar { display: none; }
+
+  /* ---------------- Kenar menü ---------------- */
+  .hf-sidebar {
+    grid-area: side;
+    position: sticky; top: 0; height: 100dvh;
+    display: flex; flex-direction: column;
+    background: var(--hf-nav-bg); color: var(--hf-nav-text);
+    border-inline-end: 1px solid var(--hf-nav-border);
+    overflow: hidden;
+    transition: width var(--hf-duration) var(--hf-ease);
+  }
+  .hf-sidebar__brand {
+    display: flex; align-items: center; gap: var(--hf-space-3);
+    height: var(--hf-topbar-height); padding-inline: var(--hf-space-5);
+    color: var(--hf-nav-text-active); text-decoration: none; font-weight: 700; font-size: var(--hf-text-lg);
+    border-bottom: 1px solid var(--hf-nav-border); flex: none;
+  }
+  .hf-sidebar__brand img, .hf-sidebar__brand svg { width: 32px; height: 32px; flex: none; }
+  .hf-sidebar__body { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: var(--hf-space-3); scrollbar-width: thin; }
+  .hf-sidebar__foot { padding: var(--hf-space-3); border-top: 1px solid var(--hf-nav-border); }
+  /* ---------------- Üst çubuk ---------------- */
+  .hf-topbar {
+    grid-area: top;
+    position: sticky; top: 0; z-index: var(--hf-z-sticky);
+    display: flex; align-items: center; gap: var(--hf-space-3);
+    min-height: var(--hf-topbar-height);
+    padding-inline: var(--hf-gutter);
+    background: color-mix(in oklch, var(--hf-surface), transparent 8%);
+    backdrop-filter: saturate(1.6) blur(10px);
+    border-bottom: 1px solid var(--hf-border);
+  }
+  .hf-topbar__brand { display: none; align-items: center; gap: var(--hf-space-2); font-weight: 700; color: var(--hf-text); text-decoration: none; font-size: var(--hf-text-lg); flex: none; }
+  .hf-topbar__brand img, .hf-topbar__brand svg { width: 30px; height: 30px; }
+  .hf-app[data-nav="horizontal"] .hf-topbar__brand { display: inline-flex; }
+  .hf-topbar__nav { flex: 1; min-width: 0; }
+  .hf-topbar__actions { display: flex; align-items: center; gap: var(--hf-space-1); margin-inline-start: auto; }
+  .hf-topbar__search { flex: 1; max-width: 520px; }
+
+  /* ---------------- İçerik ---------------- */
+  .hf-main { grid-area: main; min-width: 0; min-height: calc(100dvh - var(--hf-topbar-height)); padding-block: var(--hf-space-6) var(--hf-space-12); }
+  .hf-main > .hf-page { width: min(100% - 2 * var(--hf-gutter), var(--hf-container)); margin-inline: auto; }
+  .hf-app[data-nav="horizontal"] .hf-main { padding-top: var(--hf-space-8); }
+  .hf-page__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--hf-space-4); margin-bottom: var(--hf-space-6); }
+  .hf-page__title { font-size: var(--hf-text-2xl); }
+  .hf-page__desc { color: var(--hf-text-muted); margin-top: var(--hf-space-1); }
+
+  .hf-footer { grid-area: foot; border-top: 1px solid var(--hf-border); background: var(--hf-surface); padding-block: var(--hf-space-8); color: var(--hf-text-muted); font-size: var(--hf-text-sm); }
+  .hf-footer__grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--hf-space-4); }
+  .hf-footer a { color: inherit; }
+  .hf-footer ul { display: flex; flex-wrap: wrap; gap: var(--hf-space-4); list-style: none; padding: 0; }
+
+  .hf-backdrop { display: none; }
+  .hf-menu-toggle { display: none !important; }
+
+  /* ---------------- Mobil / tablet: menü çekmeceye dönüşür ---------------- */
+  @media (max-width: 1023.98px) {
+    .hf-app, .hf-app[data-collapsed] {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: "top" "main" "foot";
+      --_side: min(86vw, var(--hf-sidebar-width));
+    }
+    .hf-app > .hf-sidebar,
+    .hf-app[data-nav="horizontal"] > .hf-sidebar {
+      display: flex;
+      position: fixed; inset-block: 0; inset-inline-start: 0; z-index: var(--hf-z-drawer);
+      width: var(--_side);
+      translate: -100% 0;
+      transition: translate var(--hf-duration) var(--hf-ease);
+      visibility: hidden;
+    }
+    .hf-app[data-drawer-open] > .hf-sidebar { translate: 0 0; visibility: visible; box-shadow: var(--hf-shadow-lg); }
+    .hf-app[data-drawer-open] > .hf-backdrop {
+      display: block; position: fixed; inset: 0; z-index: calc(var(--hf-z-drawer) - 1);
+      background: var(--hf-overlay);
+    }
+    .hf-topbar__brand { display: inline-flex; }
+    .hf-topbar__nav { display: none; }
+    .hf-menu-toggle { display: inline-flex !important; }
+    .hf-collapse-toggle { display: none !important; }
+  }
+  @media (max-width: 639.98px) {
+    .hf-topbar__search { display: none; }
+    .hf-topbar__brand span { display: none; }
+  }
+  @media print {
+    .hf-sidebar, .hf-topbar, .hf-footer { display: none !important; }
+    .hf-app { display: block; }
+  }
+}

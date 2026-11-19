@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Helios Diji">
+  <rect width="64" height="64" rx="14" fill="#383e42"/>
+  <circle cx="32" cy="34" r="11" fill="#f47b20"/>
+  <g stroke="#f47b20" stroke-width="4" stroke-linecap="round">
+    <path d="M32 12v5M17.5 18.5l3.5 3.5M46.5 18.5 43 22M12 34h5M47 34h5"/>
+  </g>
+  <path d="M12 48h40" stroke="#c9ced3" stroke-width="3" stroke-linecap="round"/>
+</svg>

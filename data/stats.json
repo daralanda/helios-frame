@@ -1,9 +1,123 @@
 {
-  "kpis": { "revenue": 1842500, "orders": 312, "customers": 148, "openQuotes": 17 },
-  "monthly": {
-    "labels": ["Kas", "Ara", "Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki"],
-    "revenue": [1210000, 1385000, 1120000, 1240000, 1395000, 1470000, 1560000, 1610000, 1525000, 1690000, 1745000, 1842500],
-    "orders": [214, 240, 198, 221, 249, 262, 281, 290, 276, 301, 305, 312]
-  },
-  "quoteStatus": { "Beklemede": 17, "Onaylandı": 42, "Reddedildi": 9 }
+  "kpis": [
+    {
+      "label": "Bu ay ciro",
+      "value": 643372,
+      "format": "money",
+      "trend": 0.124,
+      "icon": "chart"
+    },
+    {
+      "label": "Açık teklifler",
+      "value": 38,
+      "format": "number",
+      "trend": 0.06,
+      "icon": "file"
+    },
+    {
+      "label": "Yeni müşteri",
+      "value": 17,
+      "format": "number",
+      "trend": -0.031,
+      "icon": "users"
+    },
+    {
+      "label": "Kritik stok",
+      "value": 5,
+      "format": "number",
+      "trend": 0.25,
+      "icon": "alert",
+      "invert": true
+    }
+  ],
+  "sales": [
+    {
+      "label": "Oca",
+      "value": 432664
+    },
+    {
+      "label": "Şub",
+      "value": 483189
+    },
+    {
+      "label": "Mar",
+      "value": 556801
+    },
+    {
+      "label": "Nis",
+      "value": 572318
+    },
+    {
+      "label": "May",
+      "value": 563434
+    },
+    {
+      "label": "Haz",
+      "value": 546734
+    },
+    {
+      "label": "Tem",
+      "value": 627072
+    },
+    {
+      "label": "Ağu",
+      "value": 608617
+    },
+    {
+      "label": "Eyl",
+      "value": 644863
+    },
+    {
+      "label": "Eki",
+      "value": 615210
+    },
+    {
+      "label": "Kas",
+      "value": 643372
+    }
+  ],
+  "categories": [
+    {
+      "label": "Sensör",
+      "value": 412
+    },
+    {
+      "label": "Ağ geçidi",
+      "value": 186
+    },
+    {
+      "label": "Röle",
+      "value": 301
+    },
+    {
+      "label": "Enerji",
+      "value": 144
+    },
+    {
+      "label": "Yazılım",
+      "value": 233
+    }
+  ],
+  "activity": [
+    {
+      "time": "2026-11-18T14:48:00",
+      "text": "Anadolu Otomasyon A.Ş. için TK-2026-118 teklifi onaylandı"
+    },
+    {
+      "time": "2026-11-18T13:25:00",
+      "text": "SP-26004 siparişi kargoya verildi"
+    },
+    {
+      "time": "2026-11-18T11:00:00",
+      "text": "Ege Enerji Ltd. Şti. bayi başvurusu alındı"
+    },
+    {
+      "time": "2026-11-17T15:00:00",
+      "text": "EM3 Trifaze Enerji Analizörü stoğu 25 adede düştü"
+    },
+    {
+      "time": "2026-11-16T14:40:00",
+      "text": "Kasım kampanyası yayına alındı"
+    }
+  ]
 }

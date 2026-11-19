@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Helios Frame · Tasarım token'ları
+   Tüm renk/boyut/gölge değerleri burada CSS değişkeni olarak tanımlanır.
+   Projeye özel değerler JS ile project.config.json -> theme bölümünden
+   runtime'da ezilir (core/theme.js). Bu dosya yalnızca varsayılanlardır.
+   ========================================================================== */
+
+@layer reset, tokens, base, layout, components, utilities, project;
+
+/* ---- Font: Inter (variable, sunucuda barındırılır, Google'a istek gitmez) ---- */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  /* Türkçe: Ğ ğ Ş ş İ bu dosyada (ı latin dosyasında) */
+  src: url("./fonts/inter-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@layer tokens {
+  :root {
+    color-scheme: light;
+
+    /* ---------- Marka (config ile değişir) ---------- */
+    --hf-brand: #f47b20;            /* Helios turuncu */
+    --hf-accent: #383e42;           /* Antrasit (RAL 7016) */
+    --hf-on-brand: #1c1f22;         /* theme.js kontrasta göre otomatik seçer */
+
+    /* Türetilmiş marka tonları (OKLCH karışımları, tarayıcı hesaplar) */
+    --hf-primary: var(--hf-brand);
+    --hf-primary-hover: color-mix(in oklch, var(--hf-primary), black 10%);
+    --hf-primary-active: color-mix(in oklch, var(--hf-primary), black 18%);
+    --hf-primary-soft: color-mix(in oklch, var(--hf-primary), var(--hf-surface) 88%);
+    --hf-primary-text: color-mix(in oklch, var(--hf-primary), black 32%); /* AA metin */
+    --hf-on-primary: var(--hf-on-brand);
+    --hf-focus: color-mix(in oklch, var(--hf-primary), transparent 45%);
+
+    /* ---------- Nötr zemin (antrasit tabanlı) ---------- */
+    --hf-bg: #f5f6f7;
+    --hf-surface: #ffffff;
+    --hf-surface-2: #f0f1f3;
+    --hf-surface-3: #e6e8eb;
+    --hf-border: #dfe2e6;
+    --hf-border-strong: #c5cad0;
+    --hf-text: #1c1f22;
+    --hf-text-muted: #5b636b;
+    --hf-text-subtle: #7d858d;
+    --hf-overlay: rgb(16 18 20 / 0.5);
+
+    /* Kenar menü (koyu antrasit, iki temada da) */
+    --hf-nav-bg: #2b3034;
+    --hf-nav-bg-hover: #363c41;
+    --hf-nav-text: #c9ced3;
+    --hf-nav-text-active: #ffffff;
+    --hf-nav-border: #3b4247;
+
+    /* ---------- Anlamsal renkler ---------- */
+    --hf-success: #16a34a;
+    --hf-warning: #d97706;
+    --hf-danger: #dc2626;
+    --hf-info: #2563eb;
+    --hf-success-soft: color-mix(in oklch, var(--hf-success), var(--hf-surface) 88%);
+    --hf-warning-soft: color-mix(in oklch, var(--hf-warning), var(--hf-surface) 88%);
+    --hf-danger-soft: color-mix(in oklch, var(--hf-danger), var(--hf-surface) 88%);
+    --hf-info-soft: color-mix(in oklch, var(--hf-info), var(--hf-surface) 88%);
+    --hf-success-text: color-mix(in oklch, var(--hf-success), black 25%);
+    --hf-warning-text: color-mix(in oklch, var(--hf-warning), black 35%);
+    --hf-danger-text: color-mix(in oklch, var(--hf-danger), black 20%);
+    --hf-info-text: color-mix(in oklch, var(--hf-info), black 15%);
+
+    /* ---------- Tipografi ---------- */
+    --hf-font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    --hf-font-mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+    /* Akışkan ölçek (360px -> 1280px) */
+    --hf-text-xs: 0.75rem;
+    --hf-text-sm: 0.875rem;
+    --hf-text-base: 1rem;
+    --hf-text-lg: clamp(1.0625rem, 1rem + 0.25vw, 1.125rem);
+    --hf-text-xl: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
+    --hf-text-2xl: clamp(1.375rem, 1.2rem + 0.75vw, 1.75rem);
+    --hf-text-3xl: clamp(1.625rem, 1.35rem + 1.2vw, 2.25rem);
+    --hf-text-4xl: clamp(2rem, 1.5rem + 2.2vw, 3.25rem);
+    --hf-leading: 1.55;
+    --hf-leading-tight: 1.2;
+    --hf-tracking-tight: -0.02em;
+
+    /* ---------- Boşluk (4px tabanlı) ---------- */
+    --hf-space-1: 0.25rem;
+    --hf-space-2: 0.5rem;
+    --hf-space-3: 0.75rem;
+    --hf-space-4: 1rem;
+    --hf-space-5: 1.25rem;
+    --hf-space-6: 1.5rem;
+    --hf-space-8: 2rem;
+    --hf-space-10: 2.5rem;
+    --hf-space-12: 3rem;
+    --hf-space-16: 4rem;
+    --hf-gutter: clamp(1rem, 0.6rem + 1.6vw, 2rem);
+
+    /* ---------- Köşe, gölge, hareket ---------- */
+    --hf-radius-sm: 6px;
+    --hf-radius: 10px;
+    --hf-radius-lg: 14px;
+    --hf-radius-xl: 20px;
+    --hf-radius-full: 999px;
+
+    --hf-shadow-xs: 0 1px 2px rgb(16 18 20 / 0.06);
+    --hf-shadow-sm: 0 1px 3px rgb(16 18 20 / 0.08), 0 1px 2px rgb(16 18 20 / 0.04);
+    --hf-shadow: 0 4px 12px -2px rgb(16 18 20 / 0.08), 0 2px 4px -2px rgb(16 18 20 / 0.05);
+    --hf-shadow-lg: 0 16px 32px -8px rgb(16 18 20 / 0.16), 0 4px 8px -4px rgb(16 18 20 / 0.06);
+
+    --hf-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    --hf-duration: 180ms;
+
+    /* ---------- Bileşen token'ları (config.theme.components ile ezilir) ---------- */
+    --hf-card-bg: var(--hf-surface);
+    --hf-card-radius: var(--hf-radius-lg);
+    --hf-card-padding: var(--hf-space-5);
+    --hf-card-shadow: var(--hf-shadow-sm);
+    --hf-card-border: 1px solid var(--hf-border);
+
+    --hf-button-radius: var(--hf-radius);
+    --hf-button-height: 2.5rem;
+    --hf-input-radius: var(--hf-radius);
+    --hf-input-height: 2.625rem;
+
+    --hf-sidebar-width: 264px;
+    --hf-sidebar-collapsed: 72px;
+    --hf-topbar-height: 64px;
+    --hf-container: 1280px;
+    --hf-touch: 44px;               /* asgari dokunma alanı */
+
+    --hf-z-sticky: 20;
+    --hf-z-drawer: 40;
+    --hf-z-dialog: 50;
+    --hf-z-toast: 60;
+  }
+
+  /* Sık (compact) yoğunluk: B2B tabloları/paneller için */
+  :root[data-density="compact"] {
+    --hf-button-height: 2.125rem;
+    --hf-input-height: 2.25rem;
+    --hf-card-padding: var(--hf-space-4);
+    --hf-topbar-height: 56px;
+  }
+
+  /* ---------- Koyu tema ---------- */
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --hf-bg: #121416;
+    --hf-surface: #1a1d20;
+    --hf-surface-2: #212529;
+    --hf-surface-3: #2a2f33;
+    --hf-border: #2d3236;
+    --hf-border-strong: #41484e;
+    --hf-text: #eceef0;
+    --hf-text-muted: #a3aab1;
+    --hf-text-subtle: #858d95;
+    --hf-overlay: rgb(0 0 0 / 0.6);
+    --hf-nav-bg: #16191b;
+    --hf-nav-bg-hover: #22272a;
+    --hf-nav-border: #262b2f;
+    --hf-primary-text: color-mix(in oklch, var(--hf-primary), white 18%);
+    --hf-primary-soft: color-mix(in oklch, var(--hf-primary), var(--hf-surface) 84%);
+    --hf-success-text: color-mix(in oklch, var(--hf-success), white 30%);
+    --hf-warning-text: color-mix(in oklch, var(--hf-warning), white 30%);
+    --hf-danger-text: color-mix(in oklch, var(--hf-danger), white 30%);
+    --hf-info-text: color-mix(in oklch, var(--hf-info), white 35%);
+    --hf-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --hf-shadow: 0 4px 14px -2px rgb(0 0 0 / 0.5);
+    --hf-shadow-lg: 0 18px 36px -8px rgb(0 0 0 / 0.6);
+  }
+
+  /* Modern tarayıcılarda: renk tonunu koruyarak yalnızca açıklığı ayarla (daha canlı, AA kontrast) */
+  @supports (color: oklch(from red l c h)) {
+    :root {
+      --hf-primary-text: oklch(from var(--hf-primary) min(l, 0.53) c h);
+      --hf-primary-hover: oklch(from var(--hf-primary) calc(l - 0.06) c h);
+      --hf-primary-active: oklch(from var(--hf-primary) calc(l - 0.11) c h);
+    }
+    :root[data-theme="dark"] { --hf-primary-text: oklch(from var(--hf-primary) max(l, 0.78) c h); }
+  }
+
+}

@@ -1,0 +1,93 @@
+{
+  "name": "helios-demo",
+  "locale": "tr-TR",
+  "currency": "TRY",
+  "timezone": "Europe/Istanbul",
+
+  "brand": {
+    "name": "Helios Diji",
+    "logo": "assets/img/logo.svg",
+    "home": "./"
+  },
+
+  "theme": {
+    "mode": "auto",
+    "density": "comfortable",
+    "colors": {
+      "brand": "#f47b20",
+      "accent": "#383e42"
+    },
+    "radius": "10px",
+    "font": null,
+    "components": {
+      "card": { "radius": "14px" },
+      "button": { "radius": "10px" }
+    }
+  },
+
+  "layout": {
+    "nav": "vertical",
+    "collapsible": true,
+    "search": false,
+    "searchUrl": "demo/shop/",
+    "themeToggle": true,
+    "footer": true
+  },
+
+  "menu": "config/menu.json",
+
+  "api": {
+    "baseURL": "/api/",
+    "timeout": 15000,
+    "csrf": { "meta": "csrf-token", "cookie": "XSRF-TOKEN", "header": "X-XSRF-TOKEN" }
+  },
+
+  "auth": {
+    "meEndpoint": null,
+    "demoUser": { "name": "Ayşe Yılmaz", "email": "ayse@heliosdiji.com", "roles": ["admin", "sales"] },
+    "loginUrl": null,
+    "logoutUrl": "./",
+    "userLinks": [
+      { "label": "Profilim", "href": "demo/panel/#/ayarlar", "icon": "user" },
+      { "label": "Ayarlar", "href": "demo/panel/#/ayarlar", "icon": "settings" }
+    ]
+  },
+
+  "shop": {
+    "checkoutUrl": "demo/shop/odeme.html",
+    "categories": {
+      "sensor": "Sensörler", "gateway": "Ağ geçitleri", "kontrol": "Röle & kontrol",
+      "enerji": "Enerji", "aksesuar": "Aksesuar", "yazilim": "Yazılım"
+    }
+  },
+
+  "footer": {
+    "copyright": "Helios Diji · Yazılım, Ar-Ge ve IoT otomasyon",
+    "links": [
+      { "label": "KVKK Aydınlatma Metni", "href": "#kvkk" },
+      { "label": "Çerez Politikası", "href": "#cerez" },
+      { "label": "İletişim", "href": "#iletisim" }
+    ]
+  },
+
+  "seo": {
+    "siteUrl": "https://heliosdiji.com",
+    "siteName": "Helios Diji",
+    "titleTemplate": "%s · Helios Diji",
+    "description": "Helios Diji: B2B, CRM ve e-ticaret projeleri için hafif, hızlı ve güvenli arayüz altyapısı.",
+    "defaultImage": "assets/img/og-default.svg",
+    "organization": {
+      "type": "Organization",
+      "name": "Helios Diji",
+      "url": "./",
+      "logo": "assets/img/logo.svg"
+    }
+  },
+
+  "i18n": {
+    "fallback": "tr",
+    "messages": {
+      "tr": {}
+    }
+  }
+}

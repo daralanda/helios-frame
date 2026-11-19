@@ -1,0 +1,30 @@
+/* Yalnızca demo sayfalarına özel küçük stiller (projelerde gerekmez). */
+@layer project {
+  .demo-hero { padding-block: clamp(1rem, 4vw, 3.5rem) var(--hf-space-4); max-width: 920px; }
+  .demo-hero h1 { font-size: var(--hf-text-4xl); margin-top: var(--hf-space-3); }
+  .demo-hero .hf-lead { margin-top: var(--hf-space-4); }
+  .demo-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--hf-space-4); margin-top: var(--hf-space-10); padding: 0; }
+  .demo-facts li { display: grid; gap: 2px; padding-inline-start: var(--hf-space-4); border-inline-start: 3px solid var(--hf-primary); }
+  .demo-facts strong { font-size: var(--hf-text-2xl); letter-spacing: var(--hf-tracking-tight); }
+  .demo-facts span { font-size: var(--hf-text-sm); color: var(--hf-text-muted); }
+  .demo-code { background: rgb(0 0 0 / 0.25); color: #f3f4f5; font-size: 0.8125rem; line-height: 1.6; margin: 0; white-space: pre-wrap; }
+
+  /* Mağaza */
+  .shop-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: var(--hf-space-6); align-items: start; }
+  .shop-filters { position: sticky; top: calc(var(--hf-topbar-height) + var(--hf-space-4)); }
+  .shop-filters fieldset { border: 0; padding: 0; display: grid; gap: var(--hf-space-1); }
+  .shop-filters legend { font-weight: 650; font-size: var(--hf-text-sm); margin-bottom: var(--hf-space-2); }
+  .shop-filters .hf-check { min-height: 36px; }
+  @media (max-width: 1023.98px) {
+    .shop-layout { grid-template-columns: minmax(0, 1fr); }
+    .shop-filters { position: static; }
+    .shop-filters .hf-card__body { display: flex; flex-wrap: wrap; gap: var(--hf-space-4); }
+  }
+  .pdp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.25rem, 3vw, 3rem); align-items: start; }
+  .pdp__media { border-radius: var(--hf-radius-xl); overflow: hidden; background: var(--hf-surface-2); aspect-ratio: 1; }
+  .pdp__media img { width: 100%; height: 100%; object-fit: cover; }
+  .pdp__buy { display: grid; gap: var(--hf-space-4); }
+  .pdp__usp { display: grid; gap: var(--hf-space-2); list-style: none; padding: 0; font-size: var(--hf-text-sm); color: var(--hf-text-muted); }
+  .pdp__usp li { display: flex; gap: var(--hf-space-2); align-items: center; }
+  @media (max-width: 767.98px) { .pdp { grid-template-columns: minmax(0, 1fr); } }
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "SP-26007",
+    "customer": "Kuzey Tarım San. Tic.",
+    "date": "2026-11-18T09:00:00",
+    "total": 9358.23,
+    "status": "Hazırlanıyor",
+    "items": 5
+  },
+  {
+    "id": "SP-26016",
+    "customer": "Pınar Otomasyon San. Tic.",
+    "date": "2026-11-16T20:00:00",
+    "total": 13337.38,
+    "status": "Teslim edildi",
+    "items": 4
+  },
+  {
+    "id": "SP-26019",
+    "customer": "Şahin Enerji San. Tic.",
+    "date": "2026-11-15T15:00:00",
+    "total": 71286.6,
+    "status": "İptal",
+    "items": 18
+  },
+  {
+    "id": "SP-26021",
+    "customer": "Ege Tarım San. Tic.",
+    "date": "2026-11-15T10:00:00",
+    "total": 80505.79,
+    "status": "Kargoda",
+    "items": 24
+  },
+  {
+    "id": "SP-26030",
+    "customer": "Anadolu Plastik A.Ş.",
+    "date": "2026-11-14T23:00:00",
+    "total": 88995.16,
+    "status": "Hazırlanıyor",
+    "items": 10
+  },
+  {
+    "id": "SP-26026",
+    "customer": "Mavi Tekstil San. Tic.",
+    "date": "2026-11-12T22:00:00",
+    "total": 1974.6,
+    "status": "Hazırlanıyor",
+    "items": 16
+  },
+  {
+    "id": "SP-26025",
+    "customer": "Özgür Makine A.Ş.",
+    "date": "2026-11-12T08:00:00",
+    "total": 32053.01,
+    "status": "Teslim edildi",
+    "items": 20
+  },
+  {
+    "id": "SP-26010",
+    "customer": "Demir Gıda Ltd. Şti.",
+    "date": "2026-11-12T00:00:00",
+    "total": 62740.61,
+    "status": "İptal",
+    "items": 13
+  },
+  {
+    "id": "SP-26022",
+    "customer": "Işık Tekstil San. Tic.",
+    "date": "2026-11-09T20:00:00",
+    "total": 22535.34,
+    "status": "Teslim edildi",
+    "items": 16
+  },
+  {
+    "id": "SP-26003",
+    "customer": "Marmara Enerji Ltd. Şti.",
+    "date": "2026-11-07T03:00:00",
+    "total": 42796.68,
+    "status": "Teslim edildi",
+    "items": 12
+  },
+  {
+    "id": "SP-26028",
+    "customer": "Güney Tekstil A.Ş.",
+    "date": "2026-11-06T05:00:00",
+    "total": 67575.64,
+    "status": "Teslim edildi",
+    "items": 15
+  },
+  {
+    "id": "SP-26011",
+    "customer": "Işık Tekstil San. Tic.",
+    "date": "2026-11-04T17:00:00",
+    "total": 68687.8,
+    "status": "Teslim edildi",
+    "items": 5
+  },
+  {
+    "id": "SP-26005",
+    "customer": "Güney Yapı Ltd. Şti.",
+    "date": "2026-11-03T09:00:00",
+    "total": 18034.63,
+    "status": "Teslim edildi",
+    "items": 13
+  },
+  {
+    "id": "SP-26023",
+    "customer": "Demir Gıda Ltd. Şti.",
+    "date": "2026-11-02T07:00:00",
+    "total": 8028.9,
+    "status": "Teslim edildi",
+    "items": 25
+  },
+  {
+    "id": "SP-26017",
+    "customer": "Şahin Tekstil Ltd. Şti.",
+    "date": "2026-10-30T08:00:00",
+    "total": 53413.27,
+    "status": "Hazırlanıyor",
+    "items": 21
+  },
+  {
+    "id": "SP-26029",
+    "customer": "Şahin Enerji San. Tic.",
+    "date": "2026-10-29T17:00:00",
+    "total": 73067.39,
+    "status": "İptal",
+    "items": 7
+  },
+  {
+    "id": "SP-26006",
+    "customer": "Yıldız Tarım San. Tic.",
+    "date": "2026-10-29T08:00:00",
+    "total": 27075.1,
+    "status": "Kargoda",
+    "items": 8
+  },
+  {
+    "id": "SP-26014",
+    "customer": "Kuzey Elektrik A.Ş.",
+    "date": "2026-10-28T02:00:00",
+    "total": 54350.77,
+    "status": "Hazırlanıyor",
+    "items": 22
+  },
+  {
+    "id": "SP-26001",
+    "customer": "Doğu Gıda A.Ş.",
+    "date": "2026-10-28T00:00:00",
+    "total": 63965.18,
+    "status": "Teslim edildi",
+    "items": 20
+  },
+  {
+    "id": "SP-26004",
+    "customer": "Yıldız Yapı Ltd. Şti.",
+    "date": "2026-10-26T06:00:00",
+    "total": 31276.89,
+    "status": "Hazırlanıyor",
+    "items": 10
+  },
+  {
+    "id": "SP-26008",
+    "customer": "Çağdaş Plastik A.Ş.",
+    "date": "2026-10-24T14:00:00",
+    "total": 4725.03,
+    "status": "Hazırlanıyor",
+    "items": 10
+  },
+  {
+    "id": "SP-26024",
+    "customer": "Marmara Tarım Ltd. Şti.",
+    "date": "2026-10-23T07:00:00",
+    "total": 60409.09,
+    "status": "Kargoda",
+    "items": 3
+  },
+  {
+    "id": "SP-26012",
+    "customer": "Özgür Enerji A.Ş.",
+    "date": "2026-10-23T05:00:00",
+    "total": 61391.27,
+    "status": "Hazırlanıyor",
+    "items": 23
+  },
+  {
+    "id": "SP-26013",
+    "customer": "Kuzey Tarım San. Tic.",
+    "date": "2026-10-22T20:00:00",
+    "total": 41234.85,
+    "status": "İptal",
+    "items": 5
+  },
+  {
+    "id": "SP-26009",
+    "customer": "Anadolu Plastik A.Ş.",
+    "date": "2026-10-22T18:00:00",
+    "total": 22730.66,
+    "status": "İptal",
+    "items": 17
+  },
+  {
+    "id": "SP-26020",
+    "customer": "Yıldız Tarım San. Tic.",
+    "date": "2026-10-21T11:00:00",
+    "total": 50348.27,
+    "status": "Teslim edildi",
+    "items": 9
+  },
+  {
+    "id": "SP-26027",
+    "customer": "Mavi Tarım Ltd. Şti.",
+    "date": "2026-10-20T22:00:00",
+    "total": 10174.7,
+    "status": "Kargoda",
+    "items": 22
+  },
+  {
+    "id": "SP-26018",
+    "customer": "Çağdaş Plastik Ltd. Şti.",
+    "date": "2026-10-20T13:00:00",
+    "total": 23837.52,
+    "status": "Teslim edildi",
+    "items": 1
+  },
+  {
+    "id": "SP-26015",
+    "customer": "Ilgaz Tarım San. Tic.",
+    "date": "2026-10-20T11:00:00",
+    "total": 90862.52,
+    "status": "Kargoda",
+    "items": 3
+  },
+  {
+    "id": "SP-26002",
+    "customer": "Çağdaş Gıda A.Ş.",
+    "date": "2026-10-20T01:00:00",
+    "total": 28406.11,
+    "status": "Teslim edildi",
+    "items": 6
+  }
+]

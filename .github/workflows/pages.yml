@@ -1,38 +1,50 @@
-# Helios Frame -> GitHub Pages
-# Derleme yok: yalnızca statik dosyalar yayınlanır (node_modules, tests, .git hariç).
-# Adres: https://<kullanici>.github.io/helios-frame/   (kılavuz: /docs/)
-name: Pages
+# Helios Frame -> test + GitHub Pages
+# Derleme yok: testler geçerse yalnızca statik dosyalar yayınlanır.
+name: CI ve Pages
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testler (bağımlılık yok, npm install gerekmez)
+        run: npm test
+      - name: Mağaza sayfaları güncel mi?
+        run: |
+          node tools/prerender-shop.mjs
+          git diff --exit-code -- demo/shop sitemap.xml robots.txt || (echo "::error::Üretilen sayfalar güncel değil: node tools/prerender-shop.mjs çalıştırıp commit edin" && exit 1)
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-
-      - name: Yayın klasörünü hazırla
+      - name: Yayın klasörünü hazırla (yalnızca çalışma zamanı dosyaları)
         run: |
           mkdir _site
-          cp -r index.html assets data docs src vendor .nojekyll _site/
-          # SPA (history modu) için derin bağlantılar 404 yerine uygulamaya düşsün
-          cp index.html _site/404.html
-
+          cp -r index.html 404.html robots.txt sitemap.xml assets components config core data demo theme .nojekyll _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

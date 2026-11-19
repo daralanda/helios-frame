@@ -1,0 +1,43 @@
+/* Helios Frame · Yardımcı sınıflar (bilinçli olarak az ve öngörülebilir) */
+
+@layer utilities {
+  /* Yerleşim */
+  .hf-stack { display: flex; flex-direction: column; gap: var(--_gap, var(--hf-space-4)); }
+  .hf-cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--_gap, var(--hf-space-3)); }
+  .hf-between { justify-content: space-between; }
+  .hf-grid { display: grid; gap: var(--_gap, var(--hf-space-5)); grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--_min, 260px)), 1fr)); }
+  .hf-grid--2 { --_min: 340px; }
+  .hf-grid--kpi { --_min: 220px; }
+  /* Ürün ızgarası auto-fill: filtrelenince kartlar aşırı genişlemez */
+  .hf-grid--products { --_min: 220px; grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--_min)), 1fr)); }
+  .hf-split { display: grid; gap: var(--hf-space-5); grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start; }
+  @media (max-width: 1023.98px) { .hf-split { grid-template-columns: minmax(0, 1fr); } }
+  .hf-gap-2 { --_gap: var(--hf-space-2); } .hf-gap-6 { --_gap: var(--hf-space-6); } .hf-gap-8 { --_gap: var(--hf-space-8); }
+  .hf-mt-2 { margin-top: var(--hf-space-2); } .hf-mt-4 { margin-top: var(--hf-space-4); }
+  .hf-mt-6 { margin-top: var(--hf-space-6); } .hf-mt-8 { margin-top: var(--hf-space-8); } .hf-mt-12 { margin-top: var(--hf-space-12); }
+  .hf-grow { flex: 1; min-width: 0; }
+  .hf-w-full { width: 100%; }
+  .hf-w-auto { width: auto; }
+
+  /* Metin */
+  .hf-muted { color: var(--hf-text-muted); }
+  .hf-subtle { color: var(--hf-text-subtle); }
+  .hf-text-sm { font-size: var(--hf-text-sm); } .hf-text-xs { font-size: var(--hf-text-xs); }
+  .hf-text-lg { font-size: var(--hf-text-lg); }
+  .hf-bold { font-weight: 650; }
+  .hf-mono { font-family: var(--hf-font-mono); }
+  .hf-num { font-variant-numeric: tabular-nums; }
+  .hf-truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .hf-center { text-align: center; }
+  .hf-brand-text { color: var(--hf-primary-text); }
+  .hf-eyebrow { font-size: var(--hf-text-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--hf-primary-text); }
+  .hf-lead { font-size: var(--hf-text-lg); color: var(--hf-text-muted); max-width: 62ch; }
+
+  /* Görünürlük (breakpoint) */
+  @media (max-width: 639.98px) { .hf-hide-sm { display: none !important; } }
+  @media (min-width: 640px) { .hf-only-sm { display: none !important; } }
+  @media (max-width: 1023.98px) { .hf-hide-md { display: none !important; } }
+
+  /* Performans: ekran dışı bölümleri geç işle */
+  .hf-defer { content-visibility: auto; contain-intrinsic-size: auto 600px; }
+}
