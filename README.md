@@ -165,6 +165,7 @@ CSS sınıfları `hf-` önekiyle gelir: `hf-btn(--primary|--soft|--ghost|--dange
 
 - **XSS:** DOM'a HTML yalnızca `render()` ile yazılır ve yalnızca `html``…`` şablonu kabul edilir. Tüm değerler escape edilir; `href`/`src` içindeki `javascript:`/`data:` adresleri etkisizleştirilir. Trusted Types politikası (`helios`) tek yetkili kaynaktır.
 - **CSP:** `script-src 'self'`, `style-src 'self'`; satır içi script, stil veya olay özniteliği yoktur. Testler bunu her commit'te denetler.
+- **HTTPS:** Panel, giriş ve ödeme sayfaları SSL olmadan canlıya alınmamalıdır. Sertifika kurulunca `.htaccess` içindeki HTTPS yönlendirmesini açın (IIS'te Plesk → "Permanent SEO-safe 301 redirect") ve CSP'ye `upgrade-insecure-requests` ekleyin. HSTS başlığı yalnızca HTTPS bağlantıda etkili olur.
 - **Başlıklar:** CSP, HSTS, nosniff, Referrer-Policy, Permissions-Policy, COOP, `frame-ancestors 'none'`. Tek kaynak `tools/headers.mjs`; `.htaccess` ve `web.config` ile aynı olduğu testle doğrulanır.
 - **CSRF:** `http.js`, token'ı (`meta[name=csrf-token]` veya `XSRF-TOKEN` çerezi) yalnızca **aynı origin'e** giden yazma isteklerine ekler. ASP.NET Core'da `AddAntiforgery(o => o.HeaderName = "X-XSRF-TOKEN")` ile eşleşir.
 - **Oturum:** Token'lar localStorage'a yazılmaz; HttpOnly + Secure + SameSite çerez kullanılmalıdır. localStorage'da yalnızca tema, menü tercihi ve sepet tutulur.

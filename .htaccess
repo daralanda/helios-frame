@@ -20,12 +20,13 @@ ErrorDocument 404 /404.html
   AddCharset utf-8 .js .css .json .svg .xml .txt
 </IfModule>
 
-# ---- HTTPS'e zorla ----
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTPS} !=on
-  RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # ---- HTTPS'e zorla: SSL sertifikası KURULDUKTAN SONRA aşağıdaki 3 satırın başındaki # işaretini kaldırın ----
+  # RewriteCond %{HTTPS} !=on
+  # RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # Geliştirme dosyalarını dışarıya kapat (yanlışlıkla yüklenirse)
   RewriteRule ^(tests|tools|node_modules|\.github)(/|$) - [R=404,L]
@@ -39,7 +40,7 @@ ErrorDocument 404 /404.html
 
 # ---- Güvenlik başlıkları ----
 <IfModule mod_headers.c>
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types helios"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; require-trusted-types-for 'script'; trusted-types helios"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"

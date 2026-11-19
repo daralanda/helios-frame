@@ -13,7 +13,7 @@ export const CSP = [
   "base-uri 'self'",
   "form-action 'self'",
   "frame-ancestors 'none'",
-  "upgrade-insecure-requests",
+  // SSL kurulduktan sonra eklenebilir: "upgrade-insecure-requests"
   "require-trusted-types-for 'script'",
   'trusted-types helios',
 ].join('; ');
@@ -27,8 +27,5 @@ export const SECURITY_HEADERS = {
   'X-Frame-Options': 'DENY',
 };
 
-/** Yerel http:// geliştirme için: upgrade-insecure-requests ve HSTS canlıya özeldir. */
-export const DEV_HEADERS = {
-  ...SECURITY_HEADERS,
-  'Content-Security-Policy': CSP.replace('upgrade-insecure-requests; ', ''),
-};
+/** Yerel geliştirme sunucusu da canlıyla aynı başlıkları kullanır. */
+export const DEV_HEADERS = SECURITY_HEADERS;
