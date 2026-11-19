@@ -37,7 +37,7 @@ export default {
     </dialog>`,
 
   async mount(el, app) {
-    const rows = await app.data.get('data/customers.json', { cache: 60000 });
+    const rows = await app.data.get('examples/data/customers.json', { cache: 60000 });
     const table = $('#customers', el);
     if (!table) return;
     table.columns = [

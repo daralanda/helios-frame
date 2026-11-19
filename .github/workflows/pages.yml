@@ -24,7 +24,7 @@ jobs:
       - name: Mağaza sayfaları güncel mi?
         run: |
           node tools/prerender-shop.mjs
-          git diff --exit-code -- demo/shop sitemap.xml robots.txt || (echo "::error::Üretilen sayfalar güncel değil: node tools/prerender-shop.mjs çalıştırıp commit edin" && exit 1)
+          git diff --exit-code -- examples/shop examples/sitemap.xml robots.txt || (echo "::error::Üretilen sayfalar güncel değil: node tools/prerender-shop.mjs çalıştırıp commit edin" && exit 1)
 
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
@@ -44,7 +44,7 @@ jobs:
       - name: Yayın klasörünü hazırla (yalnızca çalışma zamanı dosyaları)
         run: |
           mkdir _site
-          cp -r index.html 404.html robots.txt sitemap.xml assets components config core data demo theme .nojekyll _site/
+          cp -r index.html 404.html robots.txt assets components config core examples theme .nojekyll _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,0 +1,11 @@
+# Sade paket: GitHub "Download ZIP" / sürüm arşivleri ve `git archive` yalnızca çekirdeği içerir.
+# Örnekler, testler ve geliştirme araçları repoda kalır ama dağıtım paketine girmez.
+examples/          export-ignore
+tests/             export-ignore
+tools/             export-ignore
+.github/           export-ignore
+package.json       export-ignore
+.gitattributes     export-ignore
+
+* text=auto eol=lf
+*.woff2 binary

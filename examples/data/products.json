@@ -14,8 +14,8 @@
       "%13 indirim"
     ],
     "desc": "LoRaWAN uyumlu, 5 yıl pil ömürlü, IP65 endüstriyel sıcaklık ve nem sensörü.",
-    "image": "assets/img/products/sicaklik-nem-sensoru-ts100.svg",
-    "url": "demo/shop/urun/sicaklik-nem-sensoru-ts100.html"
+    "image": "examples/img/products/sicaklik-nem-sensoru-ts100.svg",
+    "url": "examples/shop/urun/sicaklik-nem-sensoru-ts100.html"
   },
   {
     "id": "HD-GW400",
@@ -32,8 +32,8 @@
       "Çok satan"
     ],
     "desc": "8 kanallı, Ethernet + 4G yedekli, dış ortam tipi LoRaWAN ağ geçidi.",
-    "image": "assets/img/products/lorawan-ag-gecidi-gw400.svg",
-    "url": "demo/shop/urun/lorawan-ag-gecidi-gw400.html"
+    "image": "examples/img/products/lorawan-ag-gecidi-gw400.svg",
+    "url": "examples/shop/urun/lorawan-ag-gecidi-gw400.html"
   },
   {
     "id": "HD-RL2",
@@ -48,8 +48,8 @@
     "stock": 180,
     "tags": [],
     "desc": "2 kanallı, Wi-Fi ve Modbus destekli, DIN ray montajlı akıllı röle.",
-    "image": "assets/img/products/akilli-role-modulu-rl2.svg",
-    "url": "demo/shop/urun/akilli-role-modulu-rl2.html"
+    "image": "examples/img/products/akilli-role-modulu-rl2.svg",
+    "url": "examples/shop/urun/akilli-role-modulu-rl2.html"
   },
   {
     "id": "HD-EM3",
@@ -66,8 +66,8 @@
       "Kampanya"
     ],
     "desc": "Gerçek zamanlı akım, gerilim ve harmonik ölçümlü trifaze enerji analizörü.",
-    "image": "assets/img/products/trifaze-enerji-analizoru-em3.svg",
-    "url": "demo/shop/urun/trifaze-enerji-analizoru-em3.html"
+    "image": "examples/img/products/trifaze-enerji-analizoru-em3.svg",
+    "url": "examples/shop/urun/trifaze-enerji-analizoru-em3.html"
   },
   {
     "id": "HD-MS10",
@@ -82,8 +82,8 @@
     "stock": 0,
     "tags": [],
     "desc": "PIR hareket ve manyetik kapı sensörü; Zigbee 3.0.",
-    "image": "assets/img/products/hareket-sensoru-ms10.svg",
-    "url": "demo/shop/urun/hareket-sensoru-ms10.html"
+    "image": "examples/img/products/hareket-sensoru-ms10.svg",
+    "url": "examples/shop/urun/hareket-sensoru-ms10.html"
   },
   {
     "id": "HD-PS24",
@@ -98,8 +98,8 @@
     "stock": 300,
     "tags": [],
     "desc": "24V 2.5A, kısa devre korumalı DIN ray güç kaynağı.",
-    "image": "assets/img/products/din-ray-guc-kaynagi-ps24.svg",
-    "url": "demo/shop/urun/din-ray-guc-kaynagi-ps24.html"
+    "image": "examples/img/products/din-ray-guc-kaynagi-ps24.svg",
+    "url": "examples/shop/urun/din-ray-guc-kaynagi-ps24.html"
   },
   {
     "id": "HD-CL1Y",
@@ -116,8 +116,8 @@
       "Yeni"
     ],
     "desc": "100 cihaza kadar izleme, alarm ve raporlama; KVKK uyumlu yurt içi barındırma.",
-    "image": "assets/img/products/helios-cloud-yillik-lisans.svg",
-    "url": "demo/shop/urun/helios-cloud-yillik-lisans.html"
+    "image": "examples/img/products/helios-cloud-yillik-lisans.svg",
+    "url": "examples/shop/urun/helios-cloud-yillik-lisans.html"
   },
   {
     "id": "HD-AQ5",
@@ -132,7 +132,7 @@
     "stock": 17,
     "tags": [],
     "desc": "CO₂, PM2.5, VOC ölçümlü iç ortam hava kalitesi sensörü.",
-    "image": "assets/img/products/hava-kalitesi-sensoru-aq5.svg",
-    "url": "demo/shop/urun/hava-kalitesi-sensoru-aq5.html"
+    "image": "examples/img/products/hava-kalitesi-sensoru-aq5.svg",
+    "url": "examples/shop/urun/hava-kalitesi-sensoru-aq5.html"
   }
 ]

@@ -1,5 +1,5 @@
 /**
- * <hd-shell nav="vertical|horizontal|both" menu="panel" top-menu="main" search cart>
+ * <hd-shell nav="vertical|horizontal|both" menu="panel" top-menu="main" width="normal" search cart>
  *   ...sayfa içeriği (HTML olarak kalır, SEO için)...
  *   <a slot="actions" ...>  -> üst çubuğun sağına taşınır
  * </hd-shell>
@@ -9,7 +9,7 @@
  */
 import { html, render, on, $ } from '../core/dom.js';
 import { url } from '../core/config.js';
-import { toggleMode } from '../core/theme.js';
+import { toggleMode, resolveWidth } from '../core/theme.js';
 import { app, icon, define, HdElement } from './base.js';
 
 const COLLAPSE_KEY = 'hf-nav-collapsed';
@@ -72,6 +72,9 @@ class HdShell extends HdElement {
     for (const el of actions) { el.removeAttribute('slot'); slot.prepend(el); }
 
     this.app = $('.hf-app', this);
+    // Sayfaya özel genişlik (yalnızca bu sayfa; kullanıcı tercihini değiştirmez)
+    const pageWidth = resolveWidth(this.getAttribute('width'));
+    if (pageWidth) this.app.style.setProperty('--hf-container', pageWidth);
     this.toggleBtn = $('[data-hf-drawer]', this);
     try { if (localStorage.getItem(COLLAPSE_KEY) === '1') this.setCollapsed(true, false); } catch { /* yok say */ }
 

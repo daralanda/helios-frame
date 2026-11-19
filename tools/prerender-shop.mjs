@@ -5,8 +5,9 @@
  *
  *   node tools/prerender-shop.mjs
  *
- * Girdi : data/products.json, config/project.config.json
- * Çıktı : demo/shop/index.html, demo/shop/urun/<slug>.html, sitemap.xml, robots.txt
+ * Örnek mağaza (examples/shop) için çalışır; kendi projenizde yolları uyarlayın.
+ * Girdi : examples/data/products.json, examples/config/project.config.json
+ * Çıktı : examples/shop/index.html, examples/shop/urun/<slug>.html, examples/sitemap.xml, robots.txt
  *
  * Gerçek projede ürünler .NET API'den geliyorsa iki seçenek vardır:
  *  1) Bu betiği API'den JSON çekecek şekilde uyarlayıp yayın öncesi (GitHub Actions) çalıştırmak,
@@ -23,10 +24,11 @@ import { productSchema, breadcrumbSchema, serializeJsonLd } from '../core/seo.js
 import { productCardTpl, ratingTpl, priceTpl, iconTpl } from '../components/templates.js';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
+const CONFIG = 'examples/config/project.config.json';
 const read = async (p) => JSON.parse(await readFile(join(ROOT, p), 'utf8'));
 
-const config = deepMerge(DEFAULTS, await read('config/project.config.json'));
-const products = await read('data/products.json');
+const config = deepMerge(DEFAULTS, await read(CONFIG));
+const products = await read('examples/data/products.json');
 const SITE = String(config.seo.siteUrl || 'https://example.com').replace(/\/+$/, '');
 const CATS = config.shop?.categories ?? {};
 const fmt = createFormat({ locale: config.locale, currency: config.currency });
@@ -57,6 +59,7 @@ function page({ prefix, title, description, canonical, type = 'website', image, 
   <meta property="og:image" content="${escapeHTML(abs(image || config.seo.defaultImage))}">
   <meta property="og:locale" content="${config.locale.replace('-', '_')}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="hf-config" content="${CONFIG}">
 ${extraHead}  <link rel="icon" href="${h.url('assets/img/logo.svg')}" type="image/svg+xml">
   <link rel="preload" href="${h.url('theme/fonts/inter-latin.woff2')}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="${h.url('theme/tokens.css')}">
@@ -64,7 +67,7 @@ ${extraHead}  <link rel="icon" href="${h.url('assets/img/logo.svg')}" type="imag
   <link rel="stylesheet" href="${h.url('theme/layout.css')}">
   <link rel="stylesheet" href="${h.url('theme/components.css')}">
   <link rel="stylesheet" href="${h.url('theme/utilities.css')}">
-  <link rel="stylesheet" href="${h.url('demo/demo.css')}">
+  <link rel="stylesheet" href="${h.url('examples/demo.css')}">
   <script src="${h.url('core/theme-boot.js')}"></script>
   <link rel="modulepreload" href="${h.url('core/app.js')}">
   <script type="module" src="${h.url('core/app.js')}"></script>
@@ -91,7 +94,7 @@ function breadcrumb(h, items) {
 async function listing() {
   const prefix = '../../';
   const h = helpers(prefix);
-  const crumbs = [{ name: 'Ana sayfa', href: './' }, { name: 'Mağaza', href: 'demo/shop/' }];
+  const crumbs = [{ name: 'Örnekler', href: 'examples/' }, { name: 'Mağaza', href: 'examples/shop/' }];
   const counts = Object.fromEntries(Object.keys(CATS).map((k) => [k, products.filter((p) => p.cat === k).length]));
   const body = html`
   ${breadcrumb(h, crumbs)}
@@ -125,16 +128,16 @@ async function listing() {
     </section>
   </div>`;
   const ld = [
-    breadcrumbSchema(crumbs.map((c) => ({ name: c.name, url: abs(c.href === './' ? '' : c.href) }))),
+    breadcrumbSchema(crumbs.map((c) => ({ name: c.name, url: abs(c.href) }))),
     {
       '@context': 'https://schema.org', '@type': 'ItemList',
       itemListElement: products.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(p.url), name: p.name })),
     },
   ];
   return page({
-    prefix, title: 'Endüstriyel IoT ürünleri', canonical: abs('demo/shop/'),
+    prefix, title: 'Endüstriyel IoT ürünleri', canonical: abs('examples/shop/'),
     description: 'Helios Diji mağaza: LoRaWAN sensörler, ağ geçitleri, akıllı röleler ve enerji analizörleri. Hızlı kargo, 2 yıl garanti.',
-    jsonld: ld, body, scripts: ['demo/shop/shop.js'],
+    jsonld: ld, body, scripts: ['examples/shop/shop.js'],
   });
 }
 
@@ -144,8 +147,8 @@ function detail(p) {
   const h = helpers(prefix);
   const catName = CATS[p.cat] ?? p.cat;
   const crumbs = [
-    { name: 'Ana sayfa', href: './' }, { name: 'Mağaza', href: 'demo/shop/' },
-    { name: catName, href: `demo/shop/?k=${p.cat}` }, { name: p.name, href: p.url },
+    { name: 'Örnekler', href: 'examples/' }, { name: 'Mağaza', href: 'examples/shop/' },
+    { name: catName, href: `examples/shop/?k=${p.cat}` }, { name: p.name, href: p.url },
   ];
   const related = products.filter((x) => x.id !== p.id && (x.cat === p.cat || x.stock > 0)).slice(0, 4);
   const inStock = p.stock > 0;
@@ -196,7 +199,7 @@ function detail(p) {
     extraHead: `  <meta property="product:price:amount" content="${Number(p.price).toFixed(2)}">\n  <meta property="product:price:currency" content="${config.currency}">\n`,
     jsonld: [
       productSchema({ ...p, sku: p.id, description: p.desc, url: productUrl, images: [abs(p.image)] }, config.currency),
-      breadcrumbSchema(crumbs.map((c) => ({ name: c.name, url: abs(c.href === './' ? '' : c.href) }))),
+      breadcrumbSchema(crumbs.map((c) => ({ name: c.name, url: abs(c.href) }))),
     ],
     body,
   });
@@ -206,25 +209,25 @@ function detail(p) {
 for (const p of products) {
   if (p.slug !== slugify(p.slug)) throw new Error(`Geçersiz slug: ${p.slug}`);
 }
-await rm(join(ROOT, 'demo/shop/urun'), { recursive: true, force: true });
-await mkdir(join(ROOT, 'demo/shop/urun'), { recursive: true });
-await writeFile(join(ROOT, 'demo/shop/index.html'), await listing());
-for (const p of products) await writeFile(join(ROOT, `demo/shop/urun/${p.slug}.html`), detail(p));
+await rm(join(ROOT, 'examples/shop/urun'), { recursive: true, force: true });
+await mkdir(join(ROOT, 'examples/shop/urun'), { recursive: true });
+await writeFile(join(ROOT, 'examples/shop/index.html'), await listing());
+for (const p of products) await writeFile(join(ROOT, `examples/shop/urun/${p.slug}.html`), detail(p));
 
 const urls = [
-  { loc: abs(''), priority: '1.0' },
-  { loc: abs('demo/shop/'), priority: '0.9' },
+  { loc: abs('examples/'), priority: '1.0' },
+  { loc: abs('examples/shop/'), priority: '0.9' },
   ...products.map((p) => ({ loc: abs(p.url), priority: '0.8', image: abs(p.image) })),
 ];
-await writeFile(join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+await writeFile(join(ROOT, 'examples/sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls.map((u) => `  <url><loc>${escapeHTML(u.loc)}</loc><priority>${u.priority}</priority>${u.image ? `<image:image><image:loc>${escapeHTML(u.image)}</image:loc></image:image>` : ''}</url>`).join('\n')}
 </urlset>
 `);
 await writeFile(join(ROOT, 'robots.txt'), `User-agent: *
 Allow: /
-Disallow: /demo/panel/
+Disallow: /examples/panel/
 
-Sitemap: ${abs('sitemap.xml')}
+Sitemap: ${abs('examples/sitemap.xml')}
 `);
-console.log(`Üretildi: mağaza listesi + ${products.length} ürün sayfası, sitemap.xml, robots.txt`);
+console.log(`Üretildi: examples/shop + ${products.length} ürün sayfası, examples/sitemap.xml, robots.txt`);

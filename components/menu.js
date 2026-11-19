@@ -8,7 +8,7 @@
  *
  * menu.json öğe şeması:
  *   { "label": "Müşteriler" | { "tr": "...", "en": "..." },
- *     "href": "demo/panel/#/musteriler", "icon": "users", "badge": 3,
+ *     "href": "panel/#/musteriler", "icon": "users", "badge": 3,
  *     "roles": ["admin"], "desc": "Kısa açıklama (mega menü)", "mega": true,
  *     "children": [ ...öğeler ] }
  * Gruplar: { "group": "Satış", "items": [ ...öğeler ] }

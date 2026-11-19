@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /demo/panel/
+Disallow: /examples/panel/
 
-Sitemap: https://heliosdiji.com/sitemap.xml
+Sitemap: https://heliosdiji.com/examples/sitemap.xml

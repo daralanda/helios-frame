@@ -9,7 +9,7 @@ export default {
     <div class="hf-kanban" id="board"></div>`,
 
   async mount(el, app) {
-    let deals = await app.data.get('data/deals.json', { cache: 60000 });
+    let deals = await app.data.get('examples/data/deals.json', { cache: 60000 });
     const board = $('#board', el);
     if (!board) return;
 

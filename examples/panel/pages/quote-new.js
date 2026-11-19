@@ -44,8 +44,8 @@ export default {
 
   async mount(el, app) {
     const [products, customers] = await Promise.all([
-      app.data.get('data/products.json', { cache: 60000 }),
-      app.data.get('data/customers.json', { cache: 60000 }),
+      app.data.get('examples/data/products.json', { cache: 60000 }),
+      app.data.get('examples/data/customers.json', { cache: 60000 }),
     ]);
     const form = $('#quote-form', el);
     if (!form) return;

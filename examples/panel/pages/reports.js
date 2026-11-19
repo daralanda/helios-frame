@@ -11,7 +11,7 @@ export default {
         <div class="hf-card__body"><hd-chart id="r2" type="line" label="Kategori bazlı adet"></hd-chart></div></section>
     </div>`,
   async mount(el, app) {
-    const s = await app.data.get('data/stats.json', { cache: 60000 });
+    const s = await app.data.get('examples/data/stats.json', { cache: 60000 });
     if (!$('#r1', el)) return;
     $('#r1', el).data = s.sales;
     $('#r2', el).data = s.categories;

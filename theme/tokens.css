@@ -141,7 +141,8 @@
     --hf-sidebar-width: 264px;
     --hf-sidebar-collapsed: 72px;
     --hf-topbar-height: 64px;
-    --hf-container: 1280px;
+    /* İçerik genişliği: config layout.width ile değişir (full | wide | normal | narrow | CSS değeri) */
+    --hf-container: 100%;
     --hf-touch: 44px;               /* asgari dokunma alanı */
 
     --hf-z-sticky: 20;

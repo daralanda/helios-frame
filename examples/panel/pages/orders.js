@@ -6,7 +6,7 @@ export default {
   render: () => html`${pageHead('Siparişler', 'Son 30 günün siparişleri.')}
     <hd-table id="orders" page-size="10" searchable caption="Siparişler"></hd-table>`,
   async mount(el, app) {
-    const rows = await app.data.get('data/orders.json', { cache: 60000 });
+    const rows = await app.data.get('examples/data/orders.json', { cache: 60000 });
     const t = $('#orders', el);
     if (!t) return;
     t.columns = [

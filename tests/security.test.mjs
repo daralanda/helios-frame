@@ -79,15 +79,15 @@ test('.htaccess ve web.config güvenlik başlıkları tools/headers.mjs ile ayn�
 });
 
 test('Panel ve ödeme sayfaları arama motorlarına kapalı (noindex)', async () => {
-  for (const p of ['demo/panel/index.html', 'demo/shop/odeme.html', '404.html']) {
+  for (const p of ['examples/panel/index.html', 'examples/shop/odeme.html', '404.html']) {
     const src = await readFile(join(ROOT, p), 'utf8');
     assert.match(src, /<meta name="robots" content="noindex/, p);
   }
 });
 
 test('Herkese açık sayfalarda title, description, canonical ve tek h1 var', async () => {
-  const files = [join(ROOT, 'index.html'), join(ROOT, 'demo/shop/index.html'),
-    ...(await walk(join(ROOT, 'demo/shop/urun'), ['.html']))];
+  const files = [join(ROOT, 'index.html'), join(ROOT, 'examples/index.html'), join(ROOT, 'examples/shop/index.html'),
+    ...(await walk(join(ROOT, 'examples/shop/urun'), ['.html']))];
   for (const f of files) {
     const src = await readFile(f, 'utf8');
     const rel = relative(ROOT, f);

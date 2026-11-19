@@ -51,7 +51,7 @@ async function boot() {
   const config = await loadConfig();
   const root = document.documentElement;
 
-  applyTheme(config.theme, root);
+  applyTheme(config.theme, root, { width: config.layout.width });
   if (!root.lang) root.lang = config.locale.split('-')[0];
 
   const { t, label, lang } = createI18n({ locale: config.locale, ...config.i18n });

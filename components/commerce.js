@@ -4,7 +4,7 @@
  *   <hd-cart-button></hd-cart-button>            sepet ikonu + adet rozeti, tıklayınca çekmece
  *   <hd-qty><input type="number" value="1" min="1" max="99"></hd-qty>   adet seçici
  *   <button data-cart-add data-id="SKU1" data-name="Ürün" data-price="1499.9"
- *           data-image="assets/img/p1.svg" data-url="demo/shop/urun.html" data-qty-from="#adet">
+ *           data-image="img/p1.svg" data-url="urun/p1.html" data-qty-from="#adet">
  *
  * GÜVENLİK: Sepetteki fiyatlar yalnızca gösterim içindir. Sipariş oluşturulurken ürün
  * fiyatı, stok ve indirimler SUNUCUDA ürün id'sinden yeniden hesaplanmalıdır.

@@ -8,14 +8,15 @@
 1. [Hızlı başlangıç](#hızlı-başlangıç)
 2. [Klasör yapısı](#klasör-yapısı)
 3. [Yeni proje kurulumu](#yeni-proje-kurulumu)
-4. [Tema](#tema)
-5. [Menü](#menü)
-6. [Bileşenler](#bileşenler)
-7. [SEO](#seo)
-8. [Güvenlik](#güvenlik)
-9. [Performans](#performans)
-10. [Geliştirme araçları ve test](#geliştirme-araçları-ve-test)
-11. [Lisans](#lisans)
+4. [İçerik genişliği](#içerik-genişliği)
+5. [Tema](#tema)
+6. [Menü](#menü)
+7. [Bileşenler](#bileşenler)
+8. [SEO](#seo)
+9. [Güvenlik](#güvenlik)
+10. [Performans](#performans)
+11. [Geliştirme araçları ve test](#geliştirme-araçları-ve-test)
+12. [Lisans](#lisans)
 
 ## Hızlı başlangıç
 
@@ -24,14 +25,31 @@ node tools/serve.mjs          # http://localhost:8080 (canlıdaki CSP başlıkla
 # veya herhangi bir statik sunucu: python3 -m http.server 8080
 ```
 
-| Demo | Adres | Gösterdiği |
+| Sayfa | Adres | Gösterdiği |
 |---|---|---|
-| Vitrin | `/` | Tema stüdyosu, tüm bileşenler, yatay menü |
-| B2B / CRM panel | `/demo/panel/` | Dikey menü, rol filtresi, tablo, grafik, kanban, teklif formu (SPA) |
-| Mağaza | `/demo/shop/` | Yatay + mega menü, filtre, sepet, statik ürün sayfaları (SEO) |
-| Ödeme | `/demo/shop/odeme.html` | Doğrulama (TCKN, telefon), maskeler, sepet özeti |
+| Başlangıç şablonu | `/` | Yeni projenin ilk sayfası (sade) |
+| Vitrin | `/examples/` | Tema stüdyosu, tüm bileşenler, yatay menü |
+| B2B / CRM panel | `/examples/panel/` | Dikey menü, rol filtresi, tablo, grafik, kanban, teklif formu (SPA) |
+| Mağaza | `/examples/shop/` | Yatay + mega menü, filtre, sepet, statik ürün sayfaları (SEO) |
+| Ödeme | `/examples/shop/odeme.html` | Doğrulama (TCKN, telefon), maskeler, sepet özeti |
 
-**Canlıya alma:** Repodaki çalışma zamanı dosyalarını (`index.html`, `404.html`, `robots.txt`, `sitemap.xml`, `assets/`, `components/`, `config/`, `core/`, `data/`, `demo/`, `theme/` ve sunucuya göre `.htaccess` **veya** `web.config`) sitenin kök klasörüne yükleyin. `tests/`, `tools/` ve `package.json` sunucuya gerekmez; yüklenirse de sunucu ayarları bunları dışarıya kapatır.
+### Çekirdek ve örnekler ayrı
+
+| Klasör | Ne | Canlıda gerekli mi? |
+|---|---|---|
+| `core/`, `components/`, `theme/`, `assets/` | Framework çekirdeği | **Evet** |
+| `config/`, `index.html`, `404.html`, `robots.txt` | Projeye özel başlangıç dosyaları | **Evet** (düzenlenir) |
+| `.htaccess` (Linux/cPanel) veya `web.config` (Windows/Plesk) | Sunucu ayarları | **Evet** (hosting türüne göre biri) |
+| `examples/` | Vitrin, panel, mağaza örnekleri ve demo verileri | Hayır |
+| `tools/`, `tests/`, `package.json`, `.github/` | Geliştirme araçları (Node) | Hayır |
+
+**Sade paket:** `.gitattributes` sayesinde GitHub'ın "Download ZIP" / sürüm arşivleri ve `git archive` yalnızca çekirdeği içerir; `examples/`, `tools/`, `tests/` pakete girmez:
+
+```bash
+git archive --format=zip -o helios-frame.zip HEAD   # yalnızca canlıda gereken dosyalar
+```
+
+**Canlıya alma:** Sade paketi sitenin kök klasörüne açın. Git ile çekiyorsanız örnekler de gelir; zararsızdır ama istemiyorsanız `examples/` klasörünü sunucudan silebilirsiniz. `tools/` ve `tests/` sunucu ayarlarıyla dışarıya kapalıdır.
 
 ## Klasör yapısı
 
@@ -53,13 +71,17 @@ helios-frame/
 ├─ components/           hd-* Web Components ve şablonlar
 ├─ theme/                tokens.css · base.css · layout.css · components.css · utilities.css · fonts/
 ├─ config/               project.config.json · menu.json   ← projeye özel tek yer
-├─ assets/               icons.svg (sprite), img/
-├─ data/                 Demo JSON verileri
-├─ demo/                 Vitrin, panel ve mağaza örnekleri
+├─ assets/               icons.svg (sprite), img/ (logo, placeholder)
+├─ index.html            Başlangıç şablonu
+├─ examples/             Örnekler (canlıda gerekmez)
+│  ├─ index.html         Vitrin + tema stüdyosu
+│  ├─ panel/ · shop/     B2B/CRM panel, mağaza, ödeme
+│  ├─ config/ · data/ · img/   Örneklere ait ayar, veri ve görseller
 ├─ tools/                serve.mjs · prerender-shop.mjs · headers.mjs (yalnızca geliştirme)
+├─ .gitattributes        Sade paket: examples/tools/tests arşive girmez
 ├─ tests/                node --test (bağımlılık yok)
 ├─ .htaccess · web.config  Apache / IIS: güvenlik başlıkları, önbellek, sıkıştırma
-└─ 404.html · robots.txt · sitemap.xml
+└─ 404.html · robots.txt
 ```
 
 ## Yeni proje kurulumu
@@ -69,7 +91,7 @@ helios-frame/
    git submodule add https://github.com/daralanda/helios-frame wwwroot/lib/helios-frame
    cd wwwroot/lib/helios-frame && git checkout v2.0.0
    ```
-2. Projeye özel yalnızca iki dosya düzenlenir: `config/project.config.json` ve `config/menu.json`. Farklı bir dosya kullanmak için sayfaya `<meta name="hf-config" content="config/bayi.json">` ekleyin.
+2. Projeye özel yalnızca iki dosya düzenlenir: `config/project.config.json` ve `config/menu.json`. Dolu bir örnek için `examples/config/` klasörüne bakın. Farklı bir dosya kullanmak için sayfaya `<meta name="hf-config" content="config/bayi.json">` ekleyin.
 3. Sayfa şablonu:
    ```html
    <link rel="stylesheet" href="theme/tokens.css"> <!-- + base, layout, components, utilities -->
@@ -85,6 +107,26 @@ helios-frame/
    import { ready } from './core/app.js';
    const app = await ready; // { config, t, fmt, store, bus, http, data, user, can(), url() }
    ```
+
+## İçerik genişliği
+
+Varsayılan **tam genişlik**tir (kenarlarda yalnızca küçük bir boşluk kalır). `project.config.json` içinden değiştirilir:
+
+```json
+"layout": { "width": "full" }
+```
+
+| Değer | Genişlik |
+|---|---|
+| `full` | Ekranın tamamı (kenar boşluğu hariç) |
+| `wide` | 1600px |
+| `normal` | 1280px |
+| `narrow` | 1024px |
+| CSS değeri | `"1440px"`, `"92vw"`, `"90%"` … |
+
+- **Sayfa bazında:** `<hd-shell width="normal">` yalnızca o sayfayı etkiler (ör. ödeme formu dar, liste sayfaları geniş).
+- **Kullanıcı bazında:** Panelde **Ayarlar → İçerik genişliği** veya kodda `setWidth('wide')` (`core/theme.js`). Tercih tarayıcıda saklanır ve sayfa açılırken ilk boyamadan önce uygulanır.
+- Yatay menülü sayfalarda üst çubuk içeriği, seçilen genişliğe göre sayfa içeriğiyle hizalanır.
 
 ## Tema
 
@@ -106,7 +148,7 @@ Tüm görünüm `project.config.json → theme` ile yönetilir; değerler CSS de
 - `mode`: `light | dark | auto`. Kullanıcı seçimi tarayıcıda saklanır.
 - `density: compact`: B2B tabloları için sık yerleşim.
 - Varsayılan font **Inter** (değişken font, Türkçe karakterler dahil). Sunucuda barındırılır, Google'a istek gitmez.
-- Canlı deneme için vitrindeki **Tema stüdyosu**nu kullanın; çıkan JSON doğrudan config'e yapıştırılır.
+- Canlı deneme için `/examples/` sayfasındaki **Tema stüdyosu**nu kullanın (genişlik dahil); çıkan JSON doğrudan config'e yapıştırılır.
 - CSS `@layer reset, tokens, base, layout, components, utilities, project` sırasıyla yüklenir. Projeye özel stilleri `@layer project { … }` içine yazın; Bootstrap gibi bir kütüphaneyle birlikte kullanılsa da çakışma olmaz.
 
 ## Menü
@@ -116,8 +158,8 @@ Tüm menüler `config/menu.json` içindedir. Aynı menü dikey (kenar) veya yata
 ```json
 { "menus": { "panel": [
   { "group": "Satış", "items": [
-    { "label": "Müşteriler", "href": "demo/panel/#/musteriler", "icon": "users", "badge": 4 },
-    { "label": "Teklifler", "icon": "file", "children": [ { "label": "Yeni", "href": "demo/panel/#/teklifler/yeni" } ] },
+    { "label": "Müşteriler", "href": "panel/#/musteriler", "icon": "users", "badge": 4 },
+    { "label": "Teklifler", "icon": "file", "children": [ { "label": "Yeni", "href": "panel/#/teklifler/yeni" } ] },
     { "label": "Raporlar", "href": "…", "roles": ["admin"] }
   ]}
 ]}}
@@ -126,6 +168,7 @@ Tüm menüler `config/menu.json` içindedir. Aynı menü dikey (kenar) veya yata
 | Öznitelik | Açıklama |
 |---|---|
 | `<hd-shell nav="vertical\|horizontal\|both">` | Yerleşim (verilmezse `layout.nav`) |
+| `width="normal"` | Sayfaya özel içerik genişliği |
 | `menu="panel"` / `top-menu="main"` | Kenar ve üst menü adları (`both` modunda ikisi farklı olabilir) |
 | `search`, `cart` | Üst çubukta arama ve sepet |
 | `label` | Metin veya `{ "tr": "…", "en": "…" }` |
@@ -150,11 +193,11 @@ Aktif sayfa, açık alt menüler ve breadcrumb adrese göre otomatik hesaplanır
 | `data-dialog-open="#id"`, `popovertarget` | JS yazmadan diyalog ve açılır menü |
 | `<form data-hf-validate>` | `data-rule="email\|phone\|iban\|tckn\|vkn"`, `data-mask="phone\|iban\|digits"` |
 
-CSS sınıfları `hf-` önekiyle gelir: `hf-btn(--primary|--soft|--ghost|--danger)`, `hf-card`, `hf-stat`, `hf-badge`, `hf-alert`, `hf-input`, `hf-select`, `hf-switch`, `hf-dialog(--drawer)`, `hf-kanban`, `hf-timeline`, `hf-steps`, `hf-grid`, `hf-stack`, `hf-cluster`, `hf-split` vb. Bütün örnekler vitrin sayfasındadır.
+CSS sınıfları `hf-` önekiyle gelir: `hf-btn(--primary|--soft|--ghost|--danger)`, `hf-card`, `hf-stat`, `hf-badge`, `hf-alert`, `hf-input`, `hf-select`, `hf-switch`, `hf-dialog(--drawer)`, `hf-kanban`, `hf-timeline`, `hf-steps`, `hf-grid`, `hf-stack`, `hf-cluster`, `hf-split` vb. Bütün örnekler `/examples/` vitrin sayfasındadır.
 
 ## SEO
 
-- **Vitrin ve ürün sayfaları gerçek HTML'dir.** İçerik JS beklemeden okunur. `tools/prerender-shop.mjs` aynı kart şablonuyla (`components/templates.js`) liste ve ürün sayfalarını, `sitemap.xml` ve `robots.txt` dosyalarını üretir.
+- **Vitrin ve ürün sayfaları gerçek HTML'dir.** İçerik JS beklemeden okunur. `tools/prerender-shop.mjs` aynı kart şablonuyla (`components/templates.js`) örnek mağazanın liste ve ürün sayfalarını, `sitemap.xml` ve `robots.txt` dosyalarını üretir; kendi ürün verinize uyarlanır.
 - Her sayfada `title`, `description`, `canonical`, Open Graph ve Twitter etiketleri bulunur. Ürünlerde `Product` + `Offer` + `AggregateRating` ve `BreadcrumbList` JSON-LD verisi vardır.
 - Menüdeki tüm bağlantılar gerçek `<a href>` olduğu için botlar tarafından takip edilir. Filtre parametreleri canonical ile tekilleştirilir.
 - Panel ve ödeme sayfaları `noindex`; `robots.txt` panel klasörünü kapatır.
@@ -186,7 +229,7 @@ Node.js yalnızca geliştirme için gerekir (sürüm 20 veya üstü) ve `npm ins
 ```bash
 npm test              # birim + güvenlik + SEO denetimleri (node --test)
 npm run serve         # yerel sunucu, canlıdaki güvenlik başlıklarıyla
-npm run prerender     # data/products.json → mağaza HTML, sitemap.xml, robots.txt
+npm run prerender     # examples/data/products.json → mağaza HTML, sitemap.xml, robots.txt
 ```
 
 GitHub Actions (`.github/workflows/pages.yml`) her push ve PR'da testleri çalıştırır ve üretilen mağaza sayfalarının güncel olup olmadığını kontrol eder. `main` dalı GitHub Pages'e yayınlanır (private repoda ücretli plan gerekir).

@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { html, raw, escapeHTML, safeUrl, SafeHTML } from '../core/dom.js';
 import { createStore } from '../core/store.js';
 import { deepMerge, url } from '../core/config.js';
-import { themeToVars, readableOn, contrast, parseColor } from '../core/theme.js';
+import { themeToVars, readableOn, contrast, parseColor, resolveWidth } from '../core/theme.js';
 import { validators, masks } from '../core/validate.js';
 import { createFormat, slugify } from '../core/format.js';
 import { createI18n } from '../core/i18n.js';
@@ -94,6 +94,18 @@ test('tema: marka renginden kontrastlı yazı rengi ve bileşen değişkenleri',
   assert.equal(v['--hf-card-radius'], '18px');
   assert.equal(v['--hf-card-shadow'], 'none');
   assert.equal(v['--hf-card-bad'], undefined, 'url() içeren değer reddedilmeli');
+});
+
+test('içerik genişliği: hazır değerler, CSS uzunlukları, zararlı girdi', () => {
+  assert.equal(resolveWidth('full'), '100%');
+  assert.equal(resolveWidth('wide'), '1600px');
+  assert.equal(resolveWidth('1440px'), '1440px');
+  assert.equal(resolveWidth('92vw'), '92vw');
+  assert.equal(resolveWidth('constructor'), null);
+  assert.equal(resolveWidth('1px;}body{x'), null);
+  assert.equal(resolveWidth('-10px'), null);
+  assert.equal(resolveWidth(''), null);
+  assert.deepEqual(themeToVars({}, { width: 'normal' }), { '--hf-container': '1280px' });
 });
 
 test('doğrulayıcılar: TCKN, VKN, IBAN, telefon, e-posta', () => {

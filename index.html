@@ -3,18 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Helios Frame · B2B, CRM ve e-ticaret arayüz altyapısı</title>
-  <meta name="description" content="Helios Frame: derleme adımı gerektirmeyen, bağımlılıksız, dinamik temalı, %100 responsive ve güvenli B2B, CRM ve e-ticaret arayüz altyapısı.">
+  <title>Helios Frame · Başlangıç</title>
+  <meta name="description" content="Helios Frame kuruldu. Bu sayfa projenizin başlangıç şablonudur; içeriği kendi sayfanızla değiştirin.">
   <link rel="canonical" href="https://heliosdiji.com/">
-  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#ffffff">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Helios Diji">
-  <meta property="og:title" content="Helios Frame · B2B, CRM ve e-ticaret arayüz altyapısı">
-  <meta property="og:description" content="Bağımlılıksız, hızlı ve güvenli kurumsal arayüz altyapısı.">
-  <meta property="og:url" content="https://heliosdiji.com/">
-  <meta property="og:image" content="https://heliosdiji.com/assets/img/og-default.svg">
-  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 
   <link rel="preload" href="theme/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -23,241 +15,36 @@
   <link rel="stylesheet" href="theme/layout.css">
   <link rel="stylesheet" href="theme/components.css">
   <link rel="stylesheet" href="theme/utilities.css">
-  <link rel="stylesheet" href="demo/demo.css">
   <script src="core/theme-boot.js"></script>
   <link rel="modulepreload" href="core/app.js">
   <script type="module" src="core/app.js"></script>
-  <script type="module" src="demo/showcase.js"></script>
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"Helios Diji","url":"https://heliosdiji.com/"}
-  </script>
 </head>
 <body>
-<hd-shell nav="horizontal" menu="site">
-
-  <!-- ================= HERO ================= -->
-  <section class="demo-hero">
-    <p class="hf-eyebrow">HELIOS FRAME 2.0</p>
-    <h1>B2B, CRM ve e-ticaret için <span class="hf-brand-text">hafif ve güvenli</span> arayüz altyapısı</h1>
-    <p class="hf-lead">Derleme adımı yok, zorunlu kütüphane yok. HTML5, modern JavaScript (ES modülleri) ve CSS3 ile yazıldı. Paylaşımlı hostinge dosyaları kopyalamanız yeterli.</p>
-    <div class="hf-cluster hf-mt-6">
-      <a class="hf-btn hf-btn--primary hf-btn--lg" href="demo/panel/">B2B / CRM paneli</a>
-      <a class="hf-btn hf-btn--lg" href="demo/shop/">E-ticaret mağaza</a>
+<!-- Başlangıç şablonu: <hd-shell> içindeki içeriği kendi sayfanızla değiştirin. -->
+<hd-shell menu="main">
+  <header class="hf-page__head">
+    <div>
+      <p class="hf-eyebrow">HELIOS FRAME</p>
+      <h1 class="hf-mt-2">Kurulum tamam</h1>
+      <p class="hf-page__desc">Bu sayfa başlangıç şablonudur. Ayarlar <code>config/project.config.json</code>, menüler <code>config/menu.json</code> dosyasındadır.</p>
     </div>
-    <ul class="demo-facts" role="list">
-      <li><strong>0</strong><span>zorunlu bağımlılık</span></li>
-      <li><strong>1</strong><span>ayar dosyası / proje</span></li>
-      <li><strong>AA</strong><span>WCAG 2.2 hedefi</span></li>
-      <li><strong>CSP</strong><span>sıkı güvenlik politikası</span></li>
-    </ul>
-  </section>
+    <a class="hf-btn hf-btn--primary" href="examples/">Örnekleri incele</a>
+  </header>
 
-  <!-- ================= ÖZELLİKLER ================= -->
-  <section class="hf-mt-12" aria-labelledby="ozellikler">
-    <h2 id="ozellikler">Neden Helios Frame?</h2>
-    <div class="hf-grid hf-mt-6">
-      <article class="hf-card"><div class="hf-card__body hf-stack hf-gap-2">
-        <span class="hf-stat__icon"><svg class="hf-icon" aria-hidden="true"><use href="assets/icons.svg#i-zap"/></svg></span>
-        <h3 class="hf-card__title">Derleme yok</h3>
-        <p class="hf-muted">Native ES modülleri. Node.js, webpack ya da npm gerekmez; GoDaddy gibi paylaşımlı hostingde doğrudan çalışır.</p>
-      </div></article>
-      <article class="hf-card"><div class="hf-card__body hf-stack hf-gap-2">
-        <span class="hf-stat__icon"><svg class="hf-icon" aria-hidden="true"><use href="assets/icons.svg#i-palette"/></svg></span>
-        <h3 class="hf-card__title">Dinamik tema</h3>
-        <p class="hf-muted">Tek marka renginden tüm tonlar OKLCH ile türetilir. Köşe, gölge ve kart ayarları JSON'dan gelir; koyu tema hazır.</p>
-      </div></article>
-      <article class="hf-card"><div class="hf-card__body hf-stack hf-gap-2">
-        <span class="hf-stat__icon"><svg class="hf-icon" aria-hidden="true"><use href="assets/icons.svg#i-sidebar"/></svg></span>
-        <h3 class="hf-card__title">Tek yerden menü</h3>
-        <p class="hf-muted">Tüm menüler <code>config/menu.json</code> içinde. Dikey, yatay ya da ikisi birden; rol, rozet ve mega menü desteği.</p>
-      </div></article>
-      <article class="hf-card"><div class="hf-card__body hf-stack hf-gap-2">
-        <span class="hf-stat__icon"><svg class="hf-icon" aria-hidden="true"><use href="assets/icons.svg#i-layers"/></svg></span>
-        <h3 class="hf-card__title">%100 responsive</h3>
-        <p class="hf-muted">Mobile-first, container query ve akışkan tipografi. Tablolar dar ekranda karta, menü çekmeceye dönüşür.</p>
-      </div></article>
-      <article class="hf-card"><div class="hf-card__body hf-stack hf-gap-2">
-        <span class="hf-stat__icon"><svg class="hf-icon" aria-hidden="true"><use href="assets/icons.svg#i-shield"/></svg></span>
-        <h3 class="hf-card__title">Önce güvenlik</h3>
-        <p class="hf-muted">Otomatik escape eden şablon motoru, Trusted Types, inline script'siz yapı, CSRF ve güvenlik başlıkları.</p>
-      </div></article>
-      <article class="hf-card"><div class="hf-card__body hf-stack hf-gap-2">
-        <span class="hf-stat__icon"><svg class="hf-icon" aria-hidden="true"><use href="assets/icons.svg#i-globe"/></svg></span>
-        <h3 class="hf-card__title">SEO hazır</h3>
-        <p class="hf-muted">Vitrin sayfaları gerçek HTML; JSON-LD, Open Graph, sitemap üretimi ve Core Web Vitals odaklı yapı.</p>
-      </div></article>
-    </div>
-  </section>
-
-  <!-- ================= TEMA STÜDYOSU ================= -->
-  <section class="hf-mt-12 hf-defer" aria-labelledby="tema">
-    <div class="hf-page__head">
-      <div>
-        <h2 id="tema">Tema stüdyosu</h2>
-        <p class="hf-page__desc">Değerleri değiştirin; tüm sayfa anında güncellenir. Çıkan JSON'u projenin <code>project.config.json</code> dosyasına yapıştırın.</p>
-      </div>
-      <button type="button" class="hf-btn hf-btn--ghost" id="theme-reset">Varsayılana dön</button>
-    </div>
-    <div class="hf-split">
-      <form class="hf-card" id="theme-form"><div class="hf-card__body hf-form-grid">
-        <div class="hf-field">
-          <label class="hf-label" for="t-brand">Marka rengi</label>
-          <div class="hf-cluster hf-gap-2"><input class="hf-color-input" type="color" id="t-brand" name="brand" value="#f47b20">
-            <span class="hf-hint">Butonlar, vurgular, aktif menü</span></div>
-        </div>
-        <div class="hf-field">
-          <label class="hf-label" for="t-accent">İkincil renk</label>
-          <div class="hf-cluster hf-gap-2"><input class="hf-color-input" type="color" id="t-accent" name="accent" value="#383e42">
-            <span class="hf-hint">Koyu kartlar, bildirimler</span></div>
-        </div>
-        <div class="hf-field">
-          <label class="hf-label" for="t-radius">Köşe yuvarlaklığı: <output id="t-radius-out">10px</output></label>
-          <input type="range" id="t-radius" name="radius" min="0" max="20" step="1" value="10" class="hf-w-full">
-        </div>
-        <div class="hf-field">
-          <label class="hf-label" for="t-mode">Görünüm</label>
-          <select class="hf-select" id="t-mode" name="mode">
-            <option value="auto">Sistem</option><option value="light">Açık</option><option value="dark">Koyu</option>
-          </select>
-        </div>
-        <label class="hf-check"><input class="hf-switch" type="checkbox" name="compact" role="switch"> Sık yerleşim (compact)</label>
-        <label class="hf-check"><input class="hf-switch" type="checkbox" name="flat" role="switch"> Gölgesiz kartlar</label>
-      </div></form>
-      <div class="hf-card hf-card--brand"><div class="hf-card__body hf-stack hf-gap-2">
-        <p class="hf-card__subtitle">project.config.json → theme</p>
-        <pre class="demo-code" id="theme-json"></pre>
-      </div></div>
-    </div>
-  </section>
-
-  <!-- ================= BİLEŞENLER ================= -->
-  <section class="hf-mt-12" id="bilesenler" aria-labelledby="bilesen-baslik">
-    <h2 id="bilesen-baslik">Bileşenler</h2>
-    <p class="hf-muted hf-mt-2">Tümü <code>hf-</code> önekli sınıflar ve <code>hd-</code> önekli Web Components ile; framework bağımsız.</p>
-
-    <h3 class="hf-mt-8">KPI kartları</h3>
-    <div class="hf-grid hf-grid--kpi hf-mt-4" id="kpis"></div>
-
-    <div class="hf-grid hf-grid--2 hf-mt-6">
-      <div class="hf-card"><div class="hf-card__head"><div><h3 class="hf-card__title">Aylık ciro</h3><p class="hf-card__subtitle">Çizgi grafik · SVG, kütüphanesiz</p></div></div>
-        <div class="hf-card__body"><hd-chart id="sales-chart" type="line" format="money" label="Aylık ciro grafiği"></hd-chart></div></div>
-      <div class="hf-card"><div class="hf-card__head"><div><h3 class="hf-card__title">Kategori dağılımı</h3><p class="hf-card__subtitle">Çubuk grafik</p></div></div>
-        <div class="hf-card__body"><hd-chart id="cat-chart" type="bar" label="Kategori bazlı satış adedi"></hd-chart></div></div>
-    </div>
-
-    <h3 class="hf-mt-8">Butonlar ve rozetler</h3>
-    <div class="hf-card hf-mt-4"><div class="hf-card__body hf-stack">
-      <div class="hf-cluster">
-        <button class="hf-btn hf-btn--primary" type="button">Birincil</button>
-        <button class="hf-btn hf-btn--accent" type="button">İkincil</button>
-        <button class="hf-btn" type="button">Varsayılan</button>
-        <button class="hf-btn hf-btn--soft" type="button">Yumuşak</button>
-        <button class="hf-btn hf-btn--ghost" type="button">Hayalet</button>
-        <button class="hf-btn hf-btn--danger" type="button">Sil</button>
-        <button class="hf-btn hf-btn--primary" type="button" aria-busy="true">Yükleniyor</button>
-        <button class="hf-btn" type="button" disabled>Pasif</button>
-      </div>
-      <div class="hf-cluster">
-        <span class="hf-badge">Taslak</span>
-        <span class="hf-badge hf-badge--primary">Yeni</span>
-        <span class="hf-badge hf-badge--success hf-badge--dot">Aktif</span>
-        <span class="hf-badge hf-badge--warning hf-badge--dot">Beklemede</span>
-        <span class="hf-badge hf-badge--danger hf-badge--dot">İptal</span>
-        <span class="hf-badge hf-badge--info">Bilgi</span>
-        <span class="hf-avatar">AY</span><span class="hf-avatar">MK</span>
-      </div>
-      <div class="hf-cluster">
-        <button class="hf-btn" type="button" data-demo-toast="success">Başarılı bildirim</button>
-        <button class="hf-btn" type="button" data-demo-toast="danger">Hata bildirimi</button>
-        <button class="hf-btn" type="button" data-dialog-open="#demo-dialog">Diyalog aç</button>
-        <button class="hf-btn" type="button" id="demo-confirm">Onay iste</button>
-        <button class="hf-btn" type="button" popovertarget="demo-pop">Açılır menü ▾</button>
-        <div class="hf-popover" id="demo-pop" popover>
-          <a class="hf-menu-item" href="#bilesenler">Düzenle</a>
-          <a class="hf-menu-item" href="#bilesenler">Çoğalt</a>
-          <div class="hf-menu-sep"></div>
-          <a class="hf-menu-item" href="#bilesenler">Arşivle</a>
-        </div>
-      </div>
-    </div></div>
-
-    <dialog class="hf-dialog" id="demo-dialog" aria-labelledby="demo-dialog-title">
-      <div class="hf-dialog__head"><h2 class="hf-dialog__title" id="demo-dialog-title">Yeni not</h2>
-        <button type="button" class="hf-btn hf-btn--ghost hf-btn--icon" data-dialog-close aria-label="Kapat"><svg class="hf-icon" aria-hidden="true"><use href="assets/icons.svg#i-x"/></svg></button></div>
-      <div class="hf-dialog__body"><p>Native <code>&lt;dialog&gt;</code> öğesi: odak tuzağı, Esc ile kapanma ve erişilebilirlik tarayıcıdan gelir.</p></div>
-      <div class="hf-dialog__foot"><button type="button" class="hf-btn" data-dialog-close>Vazgeç</button><button type="button" class="hf-btn hf-btn--primary" data-dialog-close>Kaydet</button></div>
-    </dialog>
-
-    <h3 class="hf-mt-8">Form ve doğrulama</h3>
-    <form class="hf-card hf-mt-4" data-hf-validate novalidate id="demo-form">
-      <div class="hf-card__body hf-form-grid">
-        <div class="hf-field">
-          <label class="hf-label" for="f-company">Firma adı<span class="hf-req">*</span></label>
-          <input class="hf-input" id="f-company" name="company" required minlength="2" autocomplete="organization">
-        </div>
-        <div class="hf-field">
-          <label class="hf-label" for="f-email">E-posta<span class="hf-req">*</span></label>
-          <input class="hf-input" id="f-email" name="email" type="email" required autocomplete="email" data-rule="email">
-        </div>
-        <div class="hf-field">
-          <label class="hf-label" for="f-phone">Telefon</label>
-          <input class="hf-input" id="f-phone" name="phone" type="tel" inputmode="tel" data-rule="phone" data-mask="phone" placeholder="0532 123 45 67" autocomplete="tel">
-        </div>
-        <div class="hf-field">
-          <label class="hf-label" for="f-vkn">Vergi numarası</label>
-          <input class="hf-input" id="f-vkn" name="vkn" inputmode="numeric" maxlength="10" data-rule="vkn" data-mask="digits">
-          <p class="hf-hint">10 haneli VKN algoritmayla kontrol edilir.</p>
-        </div>
-        <div class="hf-field">
-          <label class="hf-label" for="f-segment">Segment</label>
-          <select class="hf-select" id="f-segment" name="segment" required>
-            <option value="">Seçiniz</option><option>Bayi</option><option>Kurumsal</option><option>KOBİ</option>
-          </select>
-        </div>
-        <div class="hf-field">
-          <span class="hf-label" id="f-qty-label">Adet</span>
-          <hd-qty><input type="number" id="f-qty" name="qty" value="1" min="1" max="99" aria-labelledby="f-qty-label"></hd-qty>
-        </div>
-        <div class="hf-field hf-span-full">
-          <label class="hf-label" for="f-note">Not</label>
-          <textarea class="hf-textarea" id="f-note" name="note" maxlength="500"></textarea>
-        </div>
-        <label class="hf-check hf-span-full"><input type="checkbox" name="kvkk" required> KVKK aydınlatma metnini okudum.</label>
-      </div>
-      <div class="hf-card__foot"><button class="hf-btn" type="reset">Temizle</button><button class="hf-btn hf-btn--primary" type="submit">Gönder</button></div>
-    </form>
-
-    <h3 class="hf-mt-8">Uyarılar ve ilerleme</h3>
-    <div class="hf-stack hf-mt-4">
-      <div class="hf-alert" role="note"><svg class="hf-icon" aria-hidden="true"><use href="assets/icons.svg#i-info"/></svg><span>Yeni sürüm hazır: tema motoru artık OKLCH kullanıyor.</span></div>
-      <div class="hf-alert hf-alert--success"><svg class="hf-icon" aria-hidden="true"><use href="assets/icons.svg#i-check"/></svg><span>Sipariş SP-26012 başarıyla oluşturuldu.</span></div>
-      <div class="hf-alert hf-alert--warning"><svg class="hf-icon" aria-hidden="true"><use href="assets/icons.svg#i-alert"/></svg><span>EM3 ürününde stok kritik seviyede.</span></div>
-      <div class="hf-progress" role="progressbar" aria-label="Hedef gerçekleşme" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"><span data-hf-value="72"></span></div>
-    </div>
-
-    <h3 class="hf-mt-8">Sekmeler ve akordeon</h3>
-    <div class="hf-grid hf-grid--2 hf-mt-4">
-      <div class="hf-card"><div class="hf-card__body">
-        <hd-tabs label="Ürün bilgileri">
-          <section data-tab="Açıklama"><p class="hf-muted">Sekme içerikleri HTML'de kalır; arama motorları tüm sekmeleri okur. Klavye ile ←/→ gezinilir.</p></section>
-          <section data-tab="Özellikler"><p class="hf-muted">IP65, LoRaWAN, 5 yıl pil ömrü.</p></section>
-          <section data-tab="Yorumlar"><p class="hf-muted">128 değerlendirme · 4,7/5</p></section>
-        </hd-tabs>
-      </div></div>
-      <div class="hf-accordion">
-        <details open><summary>Kurulum için Node.js gerekir mi?</summary><p>Hayır. Dosyaları sunucuya kopyalamanız yeterlidir. Node yalnızca isteğe bağlı geliştirme araçları (test, sitemap) içindir.</p></details>
-        <details><summary>Bootstrap ile birlikte kullanılabilir mi?</summary><p>Evet. Tüm sınıflar <code>hf-</code> önekli ve CSS katmanları (<code>@layer</code>) içinde olduğu için çakışma olmaz.</p></details>
-        <details><summary>Birden çok proje nasıl yönetilir?</summary><p>Her proje yalnızca kendi <code>project.config.json</code> ve <code>menu.json</code> dosyasını taşır.</p></details>
-      </div>
-    </div>
-
-    <h3 class="hf-mt-8">Veri tablosu</h3>
-    <p class="hf-muted hf-text-sm hf-mt-2">Sıralama, Türkçe duyarlı arama, sayfalama. Dar ekranda kart görünümüne geçer.</p>
-    <hd-table class="hf-mt-4" src="data/customers.json" page-size="5" searchable caption="Müşteri listesi"
-      columns='[{"key":"name","label":"Firma"},{"key":"city","label":"Şehir"},{"key":"segment","label":"Segment"},{"key":"status","label":"Durum","type":"badge","badges":{"Aktif":"success","Beklemede":"warning","Pasif":"danger"}},{"key":"balance","label":"Bakiye","type":"money"}]'></hd-table>
-  </section>
-
+  <div class="hf-grid">
+    <article class="hf-card"><div class="hf-card__body hf-stack hf-gap-2">
+      <h2 class="hf-card__title">1. Ayarla</h2>
+      <p class="hf-muted">Marka rengi, köşe, içerik genişliği (<code>layout.width</code>) ve menü yerleşimini config dosyasından değiştirin.</p>
+    </div></article>
+    <article class="hf-card"><div class="hf-card__body hf-stack hf-gap-2">
+      <h2 class="hf-card__title">2. Sayfa ekle</h2>
+      <p class="hf-muted">Bu dosyayı kopyalayın; içeriği <code>&lt;hd-shell&gt;</code> içine yazın. CSS ve JS bağlantıları aynı kalır.</p>
+    </div></article>
+    <article class="hf-card"><div class="hf-card__body hf-stack hf-gap-2">
+      <h2 class="hf-card__title">3. Yayınla</h2>
+      <p class="hf-muted">Dosyaları sunucuya kopyalayın. <code>examples/</code>, <code>tests/</code> ve <code>tools/</code> klasörleri canlıda gerekmez.</p>
+    </div></article>
+  </div>
 </hd-shell>
 </body>
 </html>

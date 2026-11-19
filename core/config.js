@@ -31,6 +31,7 @@ export const DEFAULTS = Object.freeze({
     components: {},          // { card: { radius: "18px", shadow: "none" } } -> --hf-card-radius
   },
   layout: {
+    width: 'full',           // full | wide | normal | narrow | CSS değeri ("1440px", "92vw")
     nav: 'vertical',         // vertical | horizontal | both
     collapsible: true,
     search: false,

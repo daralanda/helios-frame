@@ -31,8 +31,8 @@ export default {
   async mount(el, app) {
     const ctrl = new AbortController();
     const [stats, orders] = await Promise.all([
-      app.data.get('data/stats.json', { cache: 60000, signal: ctrl.signal }),
-      app.data.get('data/orders.json', { cache: 60000, signal: ctrl.signal }),
+      app.data.get('examples/data/stats.json', { cache: 60000, signal: ctrl.signal }),
+      app.data.get('examples/data/orders.json', { cache: 60000, signal: ctrl.signal }),
     ]);
     if (!el.isConnected || !$('#kpis', el)) return () => ctrl.abort();
     render($('#kpis', el), html`${stats.kpis.map((k) => kpiCard(k, app))}`);

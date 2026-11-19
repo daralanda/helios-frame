@@ -9,7 +9,7 @@ export default {
     <hd-table id="quotes" page-size="10" searchable caption="Teklifler"></hd-table>`,
 
   async mount(el, app) {
-    const customers = await app.data.get('data/customers.json', { cache: 60000 });
+    const customers = await app.data.get('examples/data/customers.json', { cache: 60000 });
     const t = $('#quotes', el);
     if (!t) return;
     const states = ['Taslak', 'Gönderildi', 'Onaylandı', 'Reddedildi'];

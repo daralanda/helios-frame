@@ -1,11 +1,11 @@
 /**
- * <hd-table src="data/customers.json" page-size="10" searchable
+ * <hd-table src="data/musteriler.json" page-size="10" searchable
  *           columns='[{"key":"name","label":"Firma"},{"key":"balance","label":"Bakiye","type":"money"}]'>
  * </hd-table>
  *
  * JS ile:  table.columns = [...]; table.data = rows;
  * Sütun:   { key, label, type: text|number|money|date|relative|badge|link,
- *            sortable (varsayılan true), align: 'end', href: 'demo/x/{id}',
+ *            sortable (varsayılan true), align: 'end', href: 'musteri.html?id={id}',
  *            badges: { "Aktif": "success" }, render: (row) => html`...` }
  * Olay:    'hd-row' -> e.detail.row  (satıra tıklanınca / Enter)
  *

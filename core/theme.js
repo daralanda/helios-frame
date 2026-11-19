@@ -10,6 +10,10 @@
  */
 
 const MODE_KEY = 'hf-theme-mode';
+const WIDTH_KEY = 'hf-width';
+
+/** İçerik genişliği hazır değerleri. Bunların dışında geçerli her CSS uzunluğu kabul edilir (ör. "1440px", "92vw"). */
+export const WIDTH_PRESETS = Object.freeze({ full: '100%', wide: '1600px', normal: '1280px', narrow: '1024px' });
 const VARS_KEY = 'hf-theme-vars';
 const COLOR_VARS = {
   brand: '--hf-brand', accent: '--hf-accent', onBrand: '--hf-on-brand',
@@ -22,6 +26,16 @@ const UNSAFE = /[;{}<>\\]|\/\*|url\s*\(|expression/i;
 
 const isColor = (v) => typeof v === 'string' && (globalThis.CSS?.supports?.('color', v) ?? /^#[0-9a-f]{3,8}$/i.test(v));
 const isSafeValue = (v) => (typeof v === 'string' || typeof v === 'number') && String(v).length < 200 && !UNSAFE.test(String(v));
+
+/** "wide" -> "1600px", "1440px" -> "1440px", geçersiz -> null */
+export function resolveWidth(width) {
+  if (width == null || width === '') return null;
+  if (Object.hasOwn(WIDTH_PRESETS, width)) return WIDTH_PRESETS[width];
+  const s = String(width).trim();
+  if (!isSafeValue(s)) return null;
+  const ok = globalThis.CSS?.supports?.('width', s) ?? /^\d+(?:\.\d+)?(?:px|rem|em|vw|%)$/.test(s);
+  return ok && !/^-/.test(s) ? s : null;
+}
 
 /** "#f47b20" / "rgb(...)" -> [r,g,b] (0-255). Okunamazsa null. */
 export function parseColor(value) {
@@ -64,8 +78,10 @@ export function readableOn(color) {
 }
 
 /** Tema nesnesini CSS değişkenlerine çevirir (saf fonksiyon, test edilebilir). */
-export function themeToVars(theme = {}) {
+export function themeToVars(theme = {}, { width } = {}) {
   const vars = {};
+  const w = resolveWidth(width);
+  if (w) vars['--hf-container'] = w;
   const colors = theme.colors ?? {};
   for (const [k, name] of Object.entries(COLOR_VARS)) {
     if (isColor(colors[k])) vars[name] = colors[k];
@@ -104,9 +120,12 @@ function resolveMode(mode) {
 function storageGet(k) { try { return localStorage.getItem(k); } catch { return null; } }
 function storageSet(k, v) { try { localStorage.setItem(k, v); } catch { /* yok say */ } }
 
-/** Temayı uygular. root: genellikle document.documentElement */
-export function applyTheme(theme = {}, root = document.documentElement) {
-  const vars = themeToVars(theme);
+/**
+ * Temayı uygular. root: genellikle document.documentElement
+ * layout.width verilirse içerik genişliği de ayarlanır; kullanıcının kayıtlı tercihi önceliklidir.
+ */
+export function applyTheme(theme = {}, root = document.documentElement, { width } = {}) {
+  const vars = themeToVars(theme, { width: storageGet(WIDTH_KEY) || width });
   // Daha önce uygulanmış ama artık olmayan değişkenleri temizle
   let previous = {};
   try { previous = JSON.parse(storageGet(VARS_KEY) || '{}') || {}; } catch { previous = {}; }
@@ -123,6 +142,27 @@ export function applyTheme(theme = {}, root = document.documentElement) {
   setMode(userMode || theme.mode || 'auto', { persist: false, root });
   return vars;
 }
+
+/** Kullanıcının içerik genişliği tercihi (full | wide | normal | narrow | CSS değeri). null: config'e dön. */
+export function setWidth(width, { persist = true, fallback = null, root = document.documentElement } = {}) {
+  if (width == null) {
+    try { localStorage.removeItem(WIDTH_KEY); } catch { /* yok say */ }
+    width = fallback;
+  }
+  const v = resolveWidth(width);
+  if (!v) return null;
+  root.style.setProperty('--hf-container', v);
+  if (persist && width !== fallback) storageSet(WIDTH_KEY, String(width));
+  // theme-boot.js sonraki açılışta ilk boyamadan önce uygulasın
+  let cache = {};
+  try { cache = JSON.parse(storageGet(VARS_KEY) || '{}') || {}; } catch { cache = {}; }
+  cache['--hf-container'] = v;
+  storageSet(VARS_KEY, JSON.stringify(cache));
+  root.dispatchEvent(new CustomEvent('hf:width', { detail: { width, value: v } }));
+  return v;
+}
+
+export const getWidth = () => storageGet(WIDTH_KEY);
 
 /** light | dark | auto */
 export function setMode(mode, { persist = true, root = document.documentElement } = {}) {
