@@ -2,7 +2,7 @@
 
 **Helios Diji** için B2B, CRM ve e-ticaret projelerinde ortak kullanılan, derleme adımı ve zorunlu kütüphane gerektirmeyen arayüz altyapısı. HTML5, modern JavaScript (ES modülleri) ve CSS3 ile yazıldı; paylaşımlı hostinge (GoDaddy cPanel veya Plesk/IIS) dosyaları kopyalamak yeterlidir.
 
-> Durum: v2.0.0 · Özel (private) · Lisans: tüm hakları saklıdır.
+> Durum: v2.0.0 · Lisans: [MIT](LICENSE)
 
 ## İçindekiler
 1. [Hızlı başlangıç](#hızlı-başlangıç)
@@ -15,6 +15,7 @@
 8. [Güvenlik](#güvenlik)
 9. [Performans](#performans)
 10. [Geliştirme araçları ve test](#geliştirme-araçları-ve-test)
+11. [Lisans](#lisans)
 
 ## Hızlı başlangıç
 
@@ -188,3 +189,9 @@ npm run prerender     # data/products.json → mağaza HTML, sitemap.xml, robots
 ```
 
 GitHub Actions (`.github/workflows/pages.yml`) her push ve PR'da testleri çalıştırır ve üretilen mağaza sayfalarının güncel olup olmadığını kontrol eder. `main` dalı GitHub Pages'e yayınlanır (private repoda ücretli plan gerekir).
+
+## Lisans
+
+Helios Frame [MIT lisansı](LICENSE) ile dağıtılır. © 2026 Helios Diji.
+
+Projede kullanılan Inter yazı tipi [SIL Open Font License 1.1](theme/fonts/OFL-Inter.txt) ile lisanslıdır. Demo görselleri, ikonlar ve logo projeye özgüdür.
