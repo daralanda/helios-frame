@@ -1,0 +1,222 @@
+{
+ "week": "17–23 Kasım 2026",
+ "days": [
+  "Pzt 17",
+  "Sal 18",
+  "Çar 19",
+  "Per 20",
+  "Cum 21",
+  "Cmt 22",
+  "Paz 23"
+ ],
+ "rows": [
+  {
+   "name": "Onur Demir",
+   "dept": "Üretim",
+   "week": [
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "İzin"
+   ]
+  },
+  {
+   "name": "Mustafa Şimşek",
+   "dept": "Depo ve lojistik",
+   "week": [
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "İzin",
+    "İzin"
+   ]
+  },
+  {
+   "name": "Esra Yıldırım",
+   "dept": "Depo ve lojistik",
+   "week": [
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "İzin",
+    "Sabah"
+   ]
+  },
+  {
+   "name": "Can Aksoy",
+   "dept": "Üretim",
+   "week": [
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "İzin"
+   ]
+  },
+  {
+   "name": "Emre Özkan",
+   "dept": "Üretim",
+   "week": [
+    "Akşam",
+    "Akşam",
+    "Akşam",
+    "Akşam",
+    "Akşam",
+    "Akşam",
+    "İzin"
+   ]
+  },
+  {
+   "name": "Merve Yıldırım",
+   "dept": "Depo ve lojistik",
+   "week": [
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "İzin",
+    "Gece"
+   ]
+  },
+  {
+   "name": "Burak Koç",
+   "dept": "Üretim",
+   "week": [
+    "Akşam",
+    "Akşam",
+    "Akşam",
+    "Akşam",
+    "Akşam",
+    "İzin",
+    "İzin"
+   ]
+  },
+  {
+   "name": "Onur Kurt",
+   "dept": "Depo ve lojistik",
+   "week": [
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece"
+   ]
+  },
+  {
+   "name": "Gizem Koç",
+   "dept": "Üretim",
+   "week": [
+    "Akşam",
+    "Akşam",
+    "Akşam",
+    "Akşam",
+    "Akşam",
+    "İzin",
+    "İzin"
+   ]
+  },
+  {
+   "name": "Onur Aydın",
+   "dept": "Depo ve lojistik",
+   "week": [
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "İzin"
+   ]
+  },
+  {
+   "name": "Tuğba Yıldırım",
+   "dept": "Üretim",
+   "week": [
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece"
+   ]
+  },
+  {
+   "name": "Kemal Yıldız",
+   "dept": "Depo ve lojistik",
+   "week": [
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece"
+   ]
+  },
+  {
+   "name": "Fatma Kaya",
+   "dept": "Depo ve lojistik",
+   "week": [
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "İzin",
+    "İzin"
+   ]
+  },
+  {
+   "name": "Deniz Aydın",
+   "dept": "Depo ve lojistik",
+   "week": [
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "Sabah",
+    "İzin",
+    "Sabah"
+   ]
+  },
+  {
+   "name": "Murat Aydın",
+   "dept": "Üretim",
+   "week": [
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece"
+   ]
+  },
+  {
+   "name": "Derya Özkan",
+   "dept": "Depo ve lojistik",
+   "week": [
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece",
+    "Gece"
+   ]
+  }
+ ]
+}

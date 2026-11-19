@@ -7,6 +7,8 @@
   .demo-facts li { display: grid; gap: 2px; padding-inline-start: var(--hf-space-4); border-inline-start: 3px solid var(--hf-primary); }
   .demo-facts strong { font-size: var(--hf-text-2xl); letter-spacing: var(--hf-tracking-tight); }
   .demo-facts span { font-size: var(--hf-text-sm); color: var(--hf-text-muted); }
+  .demo-app { color: inherit; text-decoration: none; }
+  .demo-app:hover { text-decoration: none; }
   .demo-code { background: rgb(0 0 0 / 0.25); color: #f3f4f5; font-size: 0.8125rem; line-height: 1.6; margin: 0; white-space: pre-wrap; }
 
   /* Mağaza */
@@ -27,4 +29,23 @@
   .pdp__usp { display: grid; gap: var(--hf-space-2); list-style: none; padding: 0; font-size: var(--hf-text-sm); color: var(--hf-text-muted); }
   .pdp__usp li { display: flex; gap: var(--hf-space-2); align-items: center; }
   @media (max-width: 767.98px) { .pdp { grid-template-columns: minmax(0, 1fr); } }
+}
+
+/* ---- İK demosu: puantaj ızgarası ve organizasyon ---- */
+@layer project {
+  .ts-grid { font-size: var(--hf-text-xs); }
+  .ts-grid th, .ts-grid td { padding: 6px 4px; text-align: center; }
+  .ts-grid .ts-name { text-align: start; min-width: 170px; position: sticky; inset-inline-start: 0; background: var(--hf-surface); z-index: 1; padding-inline: var(--hf-space-3); }
+  .ts-grid thead .ts-name { background: var(--hf-surface-2); }
+  .ts-grid .ts-weekend { background: color-mix(in oklch, var(--hf-surface-2), transparent 30%); }
+  .ts-code { display: inline-grid; place-items: center; min-width: 26px; height: 22px; padding: 0 4px; border-radius: 6px; font-weight: 700; font-size: 0.6875rem; background: var(--hf-surface-3); color: var(--hf-text-muted); }
+  .ts-N { background: var(--hf-success-soft); color: var(--hf-success-text); }
+  .ts-FM { background: var(--hf-primary-soft); color: var(--hf-primary-text); }
+  .ts-G { background: var(--hf-warning-soft); color: var(--hf-warning-text); }
+  .ts-İ { background: var(--hf-info-soft); color: var(--hf-info-text); }
+  .ts-R { background: color-mix(in oklch, var(--hf-info), var(--hf-surface) 80%); color: var(--hf-info-text); }
+  .ts-Y { background: var(--hf-danger-soft); color: var(--hf-danger-text); }
+  .ts-H { background: transparent; color: var(--hf-text-subtle); }
+  .org__root { max-width: 360px; margin-inline: auto; }
+  .org__depts { margin-top: var(--hf-space-6); position: relative; }
 }

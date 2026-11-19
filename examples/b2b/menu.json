@@ -1,0 +1,511 @@
+{
+ "$comment": "HeliosB2b menülerinden uyarlandı (Views/Shared/Menus/_AdminMenu.cshtml, Infrastructure/Navigation/DealerMenu.cs).",
+ "menus": {
+  "b2b-admin": [
+   {
+    "group": "Ana menü",
+    "items": [
+     {
+      "label": "Özet",
+      "href": "examples/b2b/admin/#/",
+      "icon": "dashboard"
+     },
+     {
+      "label": "Bildirimler",
+      "href": "examples/b2b/admin/#/bildirimler",
+      "icon": "bell",
+      "badge": 3
+     },
+     {
+      "label": "Onay bekleyenler",
+      "href": "examples/b2b/admin/#/onaylar",
+      "icon": "check",
+      "badge": 14
+     }
+    ]
+   },
+   {
+    "group": "Satış",
+    "items": [
+     {
+      "label": "Siparişler",
+      "icon": "cart",
+      "children": [
+       {
+        "label": "Tüm siparişler",
+        "href": "examples/b2b/admin/#/siparisler"
+       },
+       {
+        "label": "Sevk bekleyenler",
+        "href": "examples/b2b/admin/#/sevk-bekleyenler"
+       },
+       {
+        "label": "Sevkiyatlar",
+        "href": "examples/b2b/admin/#/sevkiyatlar"
+       }
+      ]
+     },
+     {
+      "label": "Teklifler",
+      "href": "examples/b2b/admin/#/teklifler",
+      "icon": "file"
+     },
+     {
+      "label": "İadeler",
+      "href": "examples/b2b/admin/#/iadeler",
+      "icon": "undo"
+     },
+     {
+      "label": "Kargo",
+      "icon": "truck",
+      "children": [
+       {
+        "label": "Kargo firmaları",
+        "href": "examples/b2b/admin/#/kargo"
+       },
+       {
+        "label": "Kargo ücreti kuralları",
+        "href": "examples/b2b/admin/#/kargo-ucretleri"
+       }
+      ]
+     },
+     {
+      "label": "Pazaryeri",
+      "href": "examples/b2b/admin/#/pazaryeri",
+      "icon": "globe"
+     }
+    ]
+   },
+   {
+    "group": "Müşteriler",
+    "items": [
+     {
+      "label": "Bayiler",
+      "href": "examples/b2b/admin/#/bayiler",
+      "icon": "users"
+     },
+     {
+      "label": "Bayi başvuruları",
+      "href": "examples/b2b/admin/#/basvurular",
+      "icon": "user",
+      "badge": 2
+     },
+     {
+      "label": "Müşteri grupları",
+      "href": "examples/b2b/admin/#/musteri-gruplari",
+      "icon": "layers"
+     },
+     {
+      "label": "Bayi kullanıcı limitleri",
+      "href": "examples/b2b/admin/#/bayi-limitleri",
+      "icon": "shield"
+     },
+     {
+      "label": "Destek talepleri",
+      "href": "examples/b2b/admin/#/destek",
+      "icon": "lifebuoy"
+     },
+     {
+      "label": "Duyurular",
+      "href": "examples/b2b/admin/#/duyurular",
+      "icon": "bell"
+     }
+    ]
+   },
+   {
+    "group": "CRM",
+    "items": [
+     {
+      "label": "CRM gösterge paneli",
+      "href": "examples/b2b/admin/#/crm",
+      "icon": "chart"
+     },
+     {
+      "label": "Ziyaretler",
+      "href": "examples/b2b/admin/#/ziyaretler",
+      "icon": "map-pin"
+     }
+    ]
+   },
+   {
+    "group": "Pazarlama",
+    "items": [
+     {
+      "label": "Kampanyalar",
+      "href": "examples/b2b/admin/#/kampanyalar",
+      "icon": "tag"
+     },
+     {
+      "label": "Sadakat",
+      "href": "examples/b2b/admin/#/sadakat",
+      "icon": "award"
+     },
+     {
+      "label": "Terk edilmiş sepetler",
+      "href": "examples/b2b/admin/#/terk-sepetler",
+      "icon": "cart"
+     }
+    ]
+   },
+   {
+    "group": "Finans",
+    "items": [
+     {
+      "label": "Faturalar",
+      "icon": "file",
+      "children": [
+       {
+        "label": "Faturalar",
+        "href": "examples/b2b/admin/#/faturalar"
+       },
+       {
+        "label": "Faturalanmamış irsaliyeler",
+        "href": "examples/b2b/admin/#/irsaliyeler"
+       },
+       {
+        "label": "Gönderilmemiş e-belgeler",
+        "href": "examples/b2b/admin/#/e-belgeler"
+       }
+      ]
+     },
+     {
+      "label": "Tahsilat",
+      "icon": "card",
+      "children": [
+       {
+        "label": "Kartlı ödemeler",
+        "href": "examples/b2b/admin/#/odemeler"
+       },
+       {
+        "label": "Ödeme linkleri",
+        "href": "examples/b2b/admin/#/odeme-linkleri"
+       },
+       {
+        "label": "Banka POS hesapları",
+        "href": "examples/b2b/admin/#/pos"
+       },
+       {
+        "label": "Kart komisyonları",
+        "href": "examples/b2b/admin/#/komisyonlar"
+       }
+      ]
+     },
+     {
+      "label": "Banka",
+      "icon": "wallet",
+      "children": [
+       {
+        "label": "Banka hesapları",
+        "href": "examples/b2b/admin/#/banka"
+       },
+       {
+        "label": "Gelen havaleler",
+        "href": "examples/b2b/admin/#/havaleler"
+       },
+       {
+        "label": "Çek / senet",
+        "href": "examples/b2b/admin/#/cekler"
+       }
+      ]
+     },
+     {
+      "label": "Cari hesaplar",
+      "href": "examples/b2b/admin/#/cari",
+      "icon": "briefcase"
+     },
+     {
+      "label": "Cari mutabakat",
+      "href": "examples/b2b/admin/#/mutabakat",
+      "icon": "check"
+     },
+     {
+      "label": "Dönem kapama",
+      "href": "examples/b2b/admin/#/donem",
+      "icon": "calendar"
+     }
+    ],
+    "roles": [
+     "admin",
+     "finance"
+    ]
+   },
+   {
+    "group": "Stok ve depo",
+    "items": [
+     {
+      "label": "Stok",
+      "href": "examples/b2b/admin/#/stok",
+      "icon": "box"
+     },
+     {
+      "label": "Depolar",
+      "href": "examples/b2b/admin/#/depolar",
+      "icon": "building"
+     },
+     {
+      "label": "Transferler",
+      "href": "examples/b2b/admin/#/transferler",
+      "icon": "truck"
+     },
+     {
+      "label": "Sayımlar",
+      "href": "examples/b2b/admin/#/sayimlar",
+      "icon": "layers"
+     },
+     {
+      "label": "SKT uyarıları",
+      "href": "examples/b2b/admin/#/skt",
+      "icon": "alert"
+     },
+     {
+      "label": "Satın alma",
+      "icon": "cart",
+      "children": [
+       {
+        "label": "Tedarikçiler",
+        "href": "examples/b2b/admin/#/tedarikciler"
+       },
+       {
+        "label": "Satın alma siparişleri",
+        "href": "examples/b2b/admin/#/satin-alma"
+       },
+       {
+        "label": "Alış faturaları",
+        "href": "examples/b2b/admin/#/alis-faturalari"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "group": "Katalog",
+    "items": [
+     {
+      "label": "Ürünler",
+      "href": "examples/b2b/admin/#/urunler",
+      "icon": "box"
+     },
+     {
+      "label": "Kategoriler",
+      "href": "examples/b2b/admin/#/kategoriler",
+      "icon": "layers"
+     },
+     {
+      "label": "Markalar",
+      "href": "examples/b2b/admin/#/markalar",
+      "icon": "tag"
+     },
+     {
+      "label": "Fiyat listeleri",
+      "href": "examples/b2b/admin/#/fiyat-listeleri",
+      "icon": "wallet"
+     },
+     {
+      "label": "Döviz kurları",
+      "href": "examples/b2b/admin/#/kurlar",
+      "icon": "globe"
+     },
+     {
+      "label": "Medya kütüphanesi",
+      "href": "examples/b2b/admin/#/medya",
+      "icon": "palette"
+     }
+    ]
+   },
+   {
+    "group": "Raporlar",
+    "items": [
+     {
+      "label": "Raporlar",
+      "icon": "chart",
+      "children": [
+       {
+        "label": "Genel özet",
+        "href": "examples/b2b/admin/#/raporlar"
+       },
+       {
+        "label": "Satış raporu",
+        "href": "examples/b2b/admin/#/raporlar/satis"
+       },
+       {
+        "label": "Kârlılık",
+        "href": "examples/b2b/admin/#/raporlar/karlilik"
+       },
+       {
+        "label": "Temsilci bazlı satış",
+        "href": "examples/b2b/admin/#/raporlar/temsilci"
+       },
+       {
+        "label": "Kritik stok",
+        "href": "examples/b2b/admin/#/raporlar/kritik-stok"
+       }
+      ]
+     },
+     {
+      "label": "Hedef ve prim",
+      "href": "examples/b2b/admin/#/hedefler",
+      "icon": "award"
+     }
+    ]
+   },
+   {
+    "group": "Yönetim",
+    "items": [
+     {
+      "label": "Firma ayarları",
+      "href": "examples/b2b/admin/#/ayarlar",
+      "icon": "settings"
+     },
+     {
+      "label": "Kullanıcılar",
+      "href": "examples/b2b/admin/#/kullanicilar",
+      "icon": "users"
+     },
+     {
+      "label": "Yetki grupları",
+      "href": "examples/b2b/admin/#/yetki-gruplari",
+      "icon": "shield"
+     },
+     {
+      "label": "Güvenlik ayarları",
+      "href": "examples/b2b/admin/#/guvenlik",
+      "icon": "shield"
+     },
+     {
+      "label": "Modüller ve lisans",
+      "href": "examples/b2b/admin/#/moduller",
+      "icon": "layers"
+     },
+     {
+      "label": "Veri aktarımı",
+      "href": "examples/b2b/admin/#/aktarim",
+      "icon": "download"
+     },
+     {
+      "label": "Giriş kayıtları",
+      "href": "examples/b2b/admin/#/giris-kayitlari",
+      "icon": "eye"
+     },
+     {
+      "label": "Vitrine dön",
+      "href": "examples/",
+      "icon": "home"
+     }
+    ],
+    "roles": [
+     "admin"
+    ]
+   }
+  ],
+  "b2b-dealer": [
+   {
+    "label": "Özet",
+    "href": "examples/b2b/bayi/#/",
+    "icon": "home"
+   },
+   {
+    "label": "Alışveriş",
+    "icon": "cart",
+    "mega": true,
+    "children": [
+     {
+      "label": "Katalog",
+      "href": "examples/b2b/bayi/#/katalog",
+      "desc": "Bayi fiyatlarıyla tüm ürünler"
+     },
+     {
+      "label": "Sepetim",
+      "href": "examples/b2b/bayi/#/sepet",
+      "desc": "Siparişe dönüştür"
+     },
+     {
+      "label": "Hızlı sipariş",
+      "href": "examples/b2b/bayi/#/hizli-siparis",
+      "desc": "Ürün koduyla toplu giriş"
+     },
+     {
+      "label": "Siparişlerim",
+      "href": "examples/b2b/bayi/#/siparislerim",
+      "desc": "Durum ve kargo takibi"
+     },
+     {
+      "label": "Tekliflerim",
+      "href": "examples/b2b/bayi/#/tekliflerim",
+      "desc": "Onay bekleyen teklifler"
+     },
+     {
+      "label": "İadelerim",
+      "href": "examples/b2b/bayi/#/iadelerim",
+      "desc": "İade talepleri"
+     }
+    ]
+   },
+   {
+    "label": "Finans",
+    "icon": "wallet",
+    "children": [
+     {
+      "label": "Cari hesabım",
+      "href": "examples/b2b/bayi/#/cari"
+     },
+     {
+      "label": "Faturalarım",
+      "href": "examples/b2b/bayi/#/faturalarim"
+     },
+     {
+      "label": "Ödeme yap",
+      "href": "examples/b2b/bayi/#/odeme"
+     },
+     {
+      "label": "Ödemelerim",
+      "href": "examples/b2b/bayi/#/odemelerim"
+     },
+     {
+      "label": "Çek / senet",
+      "href": "examples/b2b/bayi/#/ceklerim"
+     },
+     {
+      "label": "Mutabakatlarım",
+      "href": "examples/b2b/bayi/#/mutabakat"
+     },
+     {
+      "label": "Limitlerim",
+      "href": "examples/b2b/bayi/#/limitler"
+     }
+    ]
+   },
+   {
+    "label": "Hizmet",
+    "icon": "lifebuoy",
+    "children": [
+     {
+      "label": "Sadakat puanım",
+      "href": "examples/b2b/bayi/#/sadakat"
+     },
+     {
+      "label": "Destek taleplerim",
+      "href": "examples/b2b/bayi/#/destek"
+     },
+     {
+      "label": "Duyurular",
+      "href": "examples/b2b/bayi/#/duyurular"
+     }
+    ]
+   },
+   {
+    "label": "Hesabım",
+    "icon": "user",
+    "children": [
+     {
+      "label": "Kullanıcılarım",
+      "href": "examples/b2b/bayi/#/kullanicilar"
+     },
+     {
+      "label": "Adreslerim",
+      "href": "examples/b2b/bayi/#/adresler"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "$comment": "Helios HR demo yapılandırması",
+ "name": "helios-hr",
+ "locale": "tr-TR",
+ "currency": "TRY",
+ "timezone": "Europe/Istanbul",
+ "brand": {
+  "name": "Helios HR",
+  "logo": "assets/img/logo.svg",
+  "home": "examples/"
+ },
+ "theme": {
+  "mode": "auto",
+  "density": "comfortable",
+  "colors": {
+   "brand": "#f47b20",
+   "accent": "#383e42"
+  },
+  "radius": "10px",
+  "font": null,
+  "components": {
+   "card": {
+    "radius": "14px"
+   },
+   "button": {
+    "radius": "10px"
+   }
+  }
+ },
+ "layout": {
+  "width": "full",
+  "nav": "vertical",
+  "collapsible": true,
+  "search": true,
+  "themeToggle": true,
+  "footer": false
+ },
+ "menu": "examples/hr/menu.json",
+ "auth": {
+  "demoUser": {
+   "name": "Selin Demir",
+   "email": "selin@heliosdiji.com",
+   "roles": [
+    "admin",
+    "hr",
+    "payroll"
+   ]
+  },
+  "logoutUrl": "examples/",
+  "userLinks": [
+   {
+    "label": "Vitrine dön",
+    "href": "examples/",
+    "icon": "home"
+   }
+  ]
+ },
+ "seo": {
+  "siteName": "Helios HR",
+  "titleTemplate": "%s · Helios HR"
+ }
+}

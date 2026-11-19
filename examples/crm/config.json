@@ -1,0 +1,61 @@
+{
+ "$comment": "Helios CRM demo yapılandırması",
+ "name": "helios-crm",
+ "locale": "tr-TR",
+ "currency": "TRY",
+ "timezone": "Europe/Istanbul",
+ "brand": {
+  "name": "Helios CRM",
+  "logo": "assets/img/logo.svg",
+  "home": "examples/"
+ },
+ "theme": {
+  "mode": "auto",
+  "density": "comfortable",
+  "colors": {
+   "brand": "#f47b20",
+   "accent": "#383e42"
+  },
+  "radius": "10px",
+  "font": null,
+  "components": {
+   "card": {
+    "radius": "14px"
+   },
+   "button": {
+    "radius": "10px"
+   }
+  }
+ },
+ "layout": {
+  "width": "full",
+  "nav": "vertical",
+  "collapsible": true,
+  "search": true,
+  "themeToggle": true,
+  "footer": false
+ },
+ "menu": "examples/crm/menu.json",
+ "auth": {
+  "demoUser": {
+   "name": "Murat Kaya",
+   "email": "murat@heliosdiji.com",
+   "roles": [
+    "admin",
+    "sales"
+   ]
+  },
+  "logoutUrl": "examples/",
+  "userLinks": [
+   {
+    "label": "Vitrine dön",
+    "href": "examples/",
+    "icon": "home"
+   }
+  ]
+ },
+ "seo": {
+  "siteName": "Helios CRM",
+  "titleTemplate": "%s · Helios CRM"
+ }
+}

@@ -1,0 +1,128 @@
+[
+ {
+  "id": "ON-301",
+  "kind": "Vade uzatma",
+  "dealer": "Çağdaş Tesisat A.Ş.",
+  "amount": 17784.05,
+  "requester": "Emre Çelik",
+  "date": "2026-11-17T06:45",
+  "step": "Genel müdür"
+ },
+ {
+  "id": "ON-302",
+  "kind": "İade talebi",
+  "dealer": "Toros Mühendislik San. Tic.",
+  "amount": 212243.61,
+  "requester": "Ayşe Yılmaz",
+  "date": "2026-11-17T18:30",
+  "step": "Satış müdürü"
+ },
+ {
+  "id": "ON-303",
+  "kind": "Vade uzatma",
+  "dealer": "Anadolu Enerji San. Tic.",
+  "amount": 115083.21,
+  "requester": "Murat Kaya",
+  "date": "2026-11-16T21:42",
+  "step": "Satış müdürü"
+ },
+ {
+  "id": "ON-304",
+  "kind": "Bayi başvurusu",
+  "dealer": "Pınar Endüstri A.Ş.",
+  "amount": 221734.29,
+  "requester": "Ayşe Yılmaz",
+  "date": "2026-11-17T00:47",
+  "step": "Satış müdürü"
+ },
+ {
+  "id": "ON-305",
+  "kind": "Fiyat istisnası",
+  "dealer": "Doğu Makine A.Ş.",
+  "amount": 96620.56,
+  "requester": "Emre Çelik",
+  "date": "2026-11-18T22:17",
+  "step": "Finans"
+ },
+ {
+  "id": "ON-306",
+  "kind": "Limit aşımı ile sipariş",
+  "dealer": "Pınar Endüstri A.Ş.",
+  "amount": 83077.79,
+  "requester": "Ayşe Yılmaz",
+  "date": "2026-11-17T11:39",
+  "step": "Satış müdürü"
+ },
+ {
+  "id": "ON-307",
+  "kind": "Limit aşımı ile sipariş",
+  "dealer": "Çağdaş Tesisat A.Ş.",
+  "amount": 75285.45,
+  "requester": "Emre Çelik",
+  "date": "2026-11-18T14:29",
+  "step": "Genel müdür"
+ },
+ {
+  "id": "ON-308",
+  "kind": "Bayi başvurusu",
+  "dealer": "Göktürk Teknik San. Tic.",
+  "amount": 155760.32,
+  "requester": "Ayşe Yılmaz",
+  "date": "2026-11-19T06:50",
+  "step": "Finans"
+ },
+ {
+  "id": "ON-309",
+  "kind": "İskonto onayı",
+  "dealer": "Demir Mühendislik A.Ş.",
+  "amount": 139457.04,
+  "requester": "Emre Çelik",
+  "date": "2026-11-18T18:15",
+  "step": "Finans"
+ },
+ {
+  "id": "ON-310",
+  "kind": "Vade uzatma",
+  "dealer": "Pınar Yapı San. Tic.",
+  "amount": 34852.84,
+  "requester": "Murat Kaya",
+  "date": "2026-11-17T00:06",
+  "step": "Genel müdür"
+ },
+ {
+  "id": "ON-311",
+  "kind": "Bayi başvurusu",
+  "dealer": "Uğur Endüstri Ltd. Şti.",
+  "amount": 20387.75,
+  "requester": "Emre Çelik",
+  "date": "2026-11-19T07:11",
+  "step": "Genel müdür"
+ },
+ {
+  "id": "ON-312",
+  "kind": "Fiyat istisnası",
+  "dealer": "Atlas Teknik Ltd. Şti.",
+  "amount": 64274.84,
+  "requester": "Murat Kaya",
+  "date": "2026-11-17T17:39",
+  "step": "Finans"
+ },
+ {
+  "id": "ON-313",
+  "kind": "Fiyat istisnası",
+  "dealer": "Atlas Yapı A.Ş.",
+  "amount": 91439.93,
+  "requester": "Emre Çelik",
+  "date": "2026-11-18T07:51",
+  "step": "Genel müdür"
+ },
+ {
+  "id": "ON-314",
+  "kind": "Limit aşımı ile sipariş",
+  "dealer": "Kardelen Otomasyon A.Ş.",
+  "amount": 133253.72,
+  "requester": "Selin Demir",
+  "date": "2026-11-19T00:11",
+  "step": "Genel müdür"
+ }
+]

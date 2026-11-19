@@ -1,0 +1,61 @@
+{
+ "$comment": "Helios B2B demo yapılandırması",
+ "name": "helios-b2b-admin",
+ "locale": "tr-TR",
+ "currency": "TRY",
+ "timezone": "Europe/Istanbul",
+ "brand": {
+  "name": "Helios B2B",
+  "logo": "assets/img/logo.svg",
+  "home": "examples/"
+ },
+ "theme": {
+  "mode": "auto",
+  "density": "comfortable",
+  "colors": {
+   "brand": "#f47b20",
+   "accent": "#383e42"
+  },
+  "radius": "10px",
+  "font": null,
+  "components": {
+   "card": {
+    "radius": "14px"
+   },
+   "button": {
+    "radius": "10px"
+   }
+  }
+ },
+ "layout": {
+  "width": "full",
+  "nav": "vertical",
+  "collapsible": true,
+  "search": true,
+  "themeToggle": true,
+  "footer": false
+ },
+ "menu": "examples/b2b/menu.json",
+ "auth": {
+  "demoUser": {
+   "name": "Ayşe Yılmaz",
+   "email": "ayse@heliosdiji.com",
+   "roles": [
+    "admin",
+    "finance"
+   ]
+  },
+  "logoutUrl": "examples/",
+  "userLinks": [
+   {
+    "label": "Vitrine dön",
+    "href": "examples/",
+    "icon": "home"
+   }
+  ]
+ },
+ "seo": {
+  "siteName": "Helios B2B",
+  "titleTemplate": "%s · Helios B2B"
+ }
+}

@@ -1,0 +1,252 @@
+[
+ {
+  "id": 1,
+  "name": "Ahmet Güneş",
+  "dept": "Üretim",
+  "type": "Doğum günü izni",
+  "start": "2026-12-21",
+  "end": "2026-12-29",
+  "days": 9,
+  "status": "Onay bekliyor"
+ },
+ {
+  "id": 2,
+  "name": "Hasan Kara",
+  "dept": "Satış",
+  "type": "Babalık izni",
+  "start": "2026-12-11",
+  "end": "2026-12-19",
+  "days": 9,
+  "status": "Onay bekliyor"
+ },
+ {
+  "id": 3,
+  "name": "Murat Aydın",
+  "dept": "Üretim",
+  "type": "Doğum günü izni",
+  "start": "2026-12-22",
+  "end": "2026-12-22",
+  "days": 1,
+  "status": "Onay bekliyor"
+ },
+ {
+  "id": 4,
+  "name": "Onur Demir",
+  "dept": "Üretim",
+  "type": "Doğum günü izni",
+  "start": "2026-11-19",
+  "end": "2026-11-20",
+  "days": 2,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 5,
+  "name": "Esra Kara",
+  "dept": "Finans",
+  "type": "Ücretsiz izin",
+  "start": "2026-12-21",
+  "end": "2026-12-27",
+  "days": 7,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 6,
+  "name": "İbrahim Çetin",
+  "dept": "Kalite",
+  "type": "Yıllık izin",
+  "start": "2026-11-09",
+  "end": "2026-11-10",
+  "days": 2,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 7,
+  "name": "Ahmet Kurt",
+  "dept": "Üretim",
+  "type": "Doğum günü izni",
+  "start": "2026-12-16",
+  "end": "2026-12-21",
+  "days": 6,
+  "status": "Reddedildi"
+ },
+ {
+  "id": 8,
+  "name": "Oğuz Yıldız",
+  "dept": "Finans",
+  "type": "Mazeret izni",
+  "start": "2026-11-23",
+  "end": "2026-12-02",
+  "days": 10,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 9,
+  "name": "Ahmet Aksoy",
+  "dept": "Bakım",
+  "type": "Doğum günü izni",
+  "start": "2026-12-15",
+  "end": "2026-12-15",
+  "days": 1,
+  "status": "Onay bekliyor"
+ },
+ {
+  "id": 10,
+  "name": "Can Demir",
+  "dept": "Üretim",
+  "type": "Yıllık izin",
+  "start": "2026-11-15",
+  "end": "2026-11-23",
+  "days": 9,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 11,
+  "name": "Serkan Aksoy",
+  "dept": "Kalite",
+  "type": "Doğum günü izni",
+  "start": "2026-11-16",
+  "end": "2026-11-24",
+  "days": 9,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 12,
+  "name": "Deniz Aydın",
+  "dept": "Üretim",
+  "type": "Ücretsiz izin",
+  "start": "2026-11-25",
+  "end": "2026-12-02",
+  "days": 8,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 13,
+  "name": "Esra Kurt",
+  "dept": "Depo ve lojistik",
+  "type": "Ücretsiz izin",
+  "start": "2026-12-27",
+  "end": "2027-01-01",
+  "days": 6,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 14,
+  "name": "Hasan Doğan",
+  "dept": "Üretim",
+  "type": "Yıllık izin",
+  "start": "2026-11-10",
+  "end": "2026-11-17",
+  "days": 8,
+  "status": "Onay bekliyor"
+ },
+ {
+  "id": 15,
+  "name": "Ali Kurt",
+  "dept": "Finans",
+  "type": "Babalık izni",
+  "start": "2026-12-19",
+  "end": "2026-12-22",
+  "days": 4,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 16,
+  "name": "Ceren Çelik",
+  "dept": "Finans",
+  "type": "Hastalık raporu",
+  "start": "2026-12-05",
+  "end": "2026-12-10",
+  "days": 6,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 17,
+  "name": "Hasan Kurt",
+  "dept": "Bilgi teknolojileri",
+  "type": "Yıllık izin",
+  "start": "2026-11-24",
+  "end": "2026-11-28",
+  "days": 5,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 18,
+  "name": "Serkan Aksoy",
+  "dept": "Kalite",
+  "type": "Mazeret izni",
+  "start": "2026-11-13",
+  "end": "2026-11-21",
+  "days": 9,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 19,
+  "name": "Esra Kara",
+  "dept": "Finans",
+  "type": "Doğum günü izni",
+  "start": "2026-11-22",
+  "end": "2026-12-01",
+  "days": 10,
+  "status": "Onay bekliyor"
+ },
+ {
+  "id": 20,
+  "name": "Selin Kara",
+  "dept": "Satış",
+  "type": "Mazeret izni",
+  "start": "2026-12-10",
+  "end": "2026-12-13",
+  "days": 4,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 21,
+  "name": "Hasan Kurt",
+  "dept": "Bilgi teknolojileri",
+  "type": "Mazeret izni",
+  "start": "2026-11-22",
+  "end": "2026-11-25",
+  "days": 4,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 22,
+  "name": "Oğuz Kara",
+  "dept": "Üretim",
+  "type": "Yıllık izin",
+  "start": "2026-12-01",
+  "end": "2026-12-03",
+  "days": 3,
+  "status": "Onay bekliyor"
+ },
+ {
+  "id": 23,
+  "name": "Mehmet Güneş",
+  "dept": "Finans",
+  "type": "Hastalık raporu",
+  "start": "2026-12-22",
+  "end": "2026-12-29",
+  "days": 8,
+  "status": "Onay bekliyor"
+ },
+ {
+  "id": 24,
+  "name": "Onur Çetin",
+  "dept": "Satış",
+  "type": "Doğum günü izni",
+  "start": "2026-11-11",
+  "end": "2026-11-18",
+  "days": 8,
+  "status": "Onaylandı"
+ },
+ {
+  "id": 25,
+  "name": "Gizem Polat",
+  "dept": "Satış",
+  "type": "Ücretsiz izin",
+  "start": "2026-12-15",
+  "end": "2026-12-19",
+  "days": 5,
+  "status": "Onay bekliyor"
+ }
+]

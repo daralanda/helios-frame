@@ -75,6 +75,13 @@
   .hf-form-grid { display: grid; gap: var(--hf-space-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
   .hf-form-grid > .hf-span-full { grid-column: 1 / -1; }
 
+  /* Seçilebilir kart (radyo/checkbox seçenekleri: taksit, kargo, paket…) */
+  .hf-option { display: flex; gap: var(--hf-space-3); align-items: flex-start; padding: var(--hf-space-3) var(--hf-space-4); border: 1px solid var(--hf-border-strong); border-radius: var(--hf-radius); background: var(--hf-surface); cursor: pointer; transition: border-color var(--hf-duration), background var(--hf-duration); }
+  .hf-option:hover { border-color: var(--hf-text-subtle); }
+  .hf-option:has(input:checked) { border-color: var(--hf-primary); box-shadow: 0 0 0 1px var(--hf-primary); background: var(--hf-primary-soft); }
+  .hf-option:has(input:focus-visible) { box-shadow: 0 0 0 3px var(--hf-focus); }
+  .hf-option input { margin: 3px 0 0; accent-color: var(--hf-primary); flex: none; }
+
   /* Adet seçici */
   .hf-qty { display: inline-flex; align-items: center; border: 1px solid var(--hf-border-strong); border-radius: var(--hf-input-radius); overflow: hidden; background: var(--hf-surface); }
   .hf-qty button { width: var(--hf-touch); height: 2.5rem; display: grid; place-items: center; color: var(--hf-text-muted); }
@@ -119,6 +126,9 @@
   .hf-badge--warning { background: var(--hf-warning-soft); color: var(--hf-warning-text); }
   .hf-badge--danger { background: var(--hf-danger-soft); color: var(--hf-danger-text); }
   .hf-badge--info { background: var(--hf-info-soft); color: var(--hf-info-text); }
+  .hf-swatch { display: inline-block; width: 0.75rem; height: 0.75rem; border-radius: 50%; background: var(--_c, var(--hf-primary)); flex: none; }
+  .hf-badge--color { background: color-mix(in oklch, var(--_c, var(--hf-primary)), var(--hf-surface) 85%); color: color-mix(in oklch, var(--_c, var(--hf-primary)), var(--hf-text) 35%); }
+  .hf-kanban__col[data-hf-color] { border-top: 3px solid var(--_c); }
   .hf-badge--dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
   .hf-avatar { width: 2.25rem; height: 2.25rem; border-radius: 50%; display: inline-grid; place-items: center; background: var(--hf-primary-soft); color: var(--hf-primary-text); font-weight: 650; font-size: var(--hf-text-sm); overflow: hidden; flex: none; }
@@ -348,7 +358,6 @@
   .hf-chart__line { fill: none; stroke: var(--hf-primary); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
   .hf-chart__area { fill: var(--hf-primary); opacity: 0.12; }
   .hf-chart__bar { fill: var(--hf-primary); }
-  .hf-chart__bar:nth-child(even) { fill: color-mix(in oklch, var(--hf-primary), var(--hf-accent) 35%); }
   .hf-chart__dot { fill: var(--hf-surface); stroke: var(--hf-primary); stroke-width: 2; }
   .hf-chart__bar:hover, .hf-chart__dot:hover { opacity: 0.8; }
 

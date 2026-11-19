@@ -1,0 +1,642 @@
+[
+ {
+  "sicil": "P1001",
+  "name": "Onur Demir",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "Personel girişi"
+ },
+ {
+  "sicil": "P1002",
+  "name": "Murat Aydın",
+  "dept": "Satış",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1003",
+  "name": "Mustafa Şimşek",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "Personel girişi"
+ },
+ {
+  "sicil": "P1004",
+  "name": "Esra Yıldırım",
+  "dept": "Depo ve lojistik",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1005",
+  "name": "Can Aksoy",
+  "dept": "Üretim",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1006",
+  "name": "Emre Özkan",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1007",
+  "name": "Ceren Koç",
+  "dept": "Bakım",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1008",
+  "name": "Merve Yıldırım",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "Personel girişi"
+ },
+ {
+  "sicil": "P1009",
+  "name": "Burak Koç",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:02",
+  "door": "Personel girişi"
+ },
+ {
+  "sicil": "P1010",
+  "name": "Onur Kurt",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:46",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1011",
+  "name": "Mehmet Güneş",
+  "dept": "Finans",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1012",
+  "name": "Serkan Çelik",
+  "dept": "Satış",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1013",
+  "name": "Gizem Koç",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:35",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1014",
+  "name": "Emre Aksoy",
+  "dept": "Bilgi teknolojileri",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:00",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1015",
+  "name": "Onur Aydın",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:41",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1016",
+  "name": "Tuğba Yıldırım",
+  "dept": "Üretim",
+  "state": "Gelmedi",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1017",
+  "name": "Kemal Özkan",
+  "dept": "Finans",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:59",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1018",
+  "name": "Oğuz Aydın",
+  "dept": "İnsan kaynakları",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1019",
+  "name": "Kemal Yıldız",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:04",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1020",
+  "name": "Fatma Kaya",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:50",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1021",
+  "name": "Deniz Aydın",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:03",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1022",
+  "name": "Murat Aydın",
+  "dept": "Üretim",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1023",
+  "name": "Fatma Çelik",
+  "dept": "Finans",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1024",
+  "name": "Derya Özkan",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:45",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1025",
+  "name": "Selin Kara",
+  "dept": "Satış",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1026",
+  "name": "Ahmet Güneş",
+  "dept": "Üretim",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1027",
+  "name": "Emre Koç",
+  "dept": "Bakım",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:37",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1028",
+  "name": "Mustafa Kurt",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:35",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1029",
+  "name": "Ayşe Kara",
+  "dept": "Kalite",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "Personel girişi"
+ },
+ {
+  "sicil": "P1030",
+  "name": "İbrahim Öztürk",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:07",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1031",
+  "name": "Murat Arslan",
+  "dept": "Üretim",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1032",
+  "name": "Esra Kurt",
+  "dept": "Depo ve lojistik",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1033",
+  "name": "Can Erdoğan",
+  "dept": "Kalite",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1034",
+  "name": "Hasan Kurt",
+  "dept": "Bilgi teknolojileri",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1035",
+  "name": "Ahmet Arslan",
+  "dept": "Üretim",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1036",
+  "name": "Oğuz Yıldız",
+  "dept": "Finans",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:31",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1037",
+  "name": "Ali Şahin",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:46",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1038",
+  "name": "Onur Aslan",
+  "dept": "Finans",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1039",
+  "name": "Murat Erdoğan",
+  "dept": "Bilgi teknolojileri",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1040",
+  "name": "Kemal Özkan",
+  "dept": "Satış",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1041",
+  "name": "Ceren Çelik",
+  "dept": "Finans",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:38",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1042",
+  "name": "Büşra Şimşek",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:09",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1043",
+  "name": "Mustafa Aslan",
+  "dept": "Depo ve lojistik",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1044",
+  "name": "Serkan Aksoy",
+  "dept": "Kalite",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:03",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1045",
+  "name": "Serkan Polat",
+  "dept": "Finans",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:02",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1046",
+  "name": "Esra Kara",
+  "dept": "Finans",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1047",
+  "name": "Derya Yılmaz",
+  "dept": "Kalite",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1048",
+  "name": "Hüseyin Yıldız",
+  "dept": "Finans",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1049",
+  "name": "Ali Kurt",
+  "dept": "Finans",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:51",
+  "door": "Personel girişi"
+ },
+ {
+  "sicil": "P1050",
+  "name": "Ceren Polat",
+  "dept": "Satış",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:42",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1051",
+  "name": "Tuğba Kılıç",
+  "dept": "Finans",
+  "state": "Geç kaldı",
+  "inTime": "2026-11-19T08:28",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1052",
+  "name": "Ahmet Aksoy",
+  "dept": "Bakım",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:58",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1053",
+  "name": "Onur Özkan",
+  "dept": "Bilgi teknolojileri",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1054",
+  "name": "Emine Yıldız",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:51",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1055",
+  "name": "Mustafa Yıldız",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1056",
+  "name": "Deniz Kaya",
+  "dept": "Üretim",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1057",
+  "name": "Ayşe Güneş",
+  "dept": "Bilgi teknolojileri",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:11",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1058",
+  "name": "Büşra Kurt",
+  "dept": "Bilgi teknolojileri",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:06",
+  "door": "Personel girişi"
+ },
+ {
+  "sicil": "P1059",
+  "name": "Merve Özdemir",
+  "dept": "Finans",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1060",
+  "name": "Fatma Erdoğan",
+  "dept": "Bakım",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:38",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1061",
+  "name": "İbrahim Şahin",
+  "dept": "Bakım",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:58",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1062",
+  "name": "Kemal Doğan",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1063",
+  "name": "Hasan Koç",
+  "dept": "Kalite",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1064",
+  "name": "Gizem Polat",
+  "dept": "Satış",
+  "state": "Raporlu",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1065",
+  "name": "Can Demir",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1066",
+  "name": "Mehmet Yıldız",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:33",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1067",
+  "name": "İbrahim Çetin",
+  "dept": "Kalite",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:47",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1068",
+  "name": "Can Aksoy",
+  "dept": "Finans",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1069",
+  "name": "Merve Koç",
+  "dept": "Finans",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:06",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1070",
+  "name": "Onur Çetin",
+  "dept": "Satış",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:47",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1071",
+  "name": "Mustafa Aksoy",
+  "dept": "Depo ve lojistik",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:12",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1072",
+  "name": "Ahmet Kurt",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1073",
+  "name": "Elif Yıldırım",
+  "dept": "Satış",
+  "state": "Geç kaldı",
+  "inTime": "2026-11-19T08:48",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1074",
+  "name": "Deniz Aydın",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:50",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1075",
+  "name": "Can Kurt",
+  "dept": "Kalite",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:49",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1076",
+  "name": "Hasan Doğan",
+  "dept": "Üretim",
+  "state": "Geç kaldı",
+  "inTime": "2026-11-19T08:32",
+  "door": "B kapısı turnike"
+ },
+ {
+  "sicil": "P1077",
+  "name": "Hasan Kara",
+  "dept": "Satış",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "Yükleme alanı"
+ },
+ {
+  "sicil": "P1078",
+  "name": "Burak Özkan",
+  "dept": "Finans",
+  "state": "İzinli",
+  "inTime": null,
+  "door": null
+ },
+ {
+  "sicil": "P1079",
+  "name": "Derya Öztürk",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T08:09",
+  "door": "A kapısı turnike"
+ },
+ {
+  "sicil": "P1080",
+  "name": "Oğuz Kara",
+  "dept": "Üretim",
+  "state": "İçeride",
+  "inTime": "2026-11-19T07:45",
+  "door": "A kapısı turnike"
+ }
+]

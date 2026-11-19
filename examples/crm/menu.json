@@ -1,0 +1,136 @@
+{
+ "$comment": "HeliosCrm menüsünden uyarlandı (Views/Shared/_Menu.cshtml).",
+ "menus": {
+  "crm": [
+   {
+    "group": "Ana menü",
+    "items": [
+     {
+      "label": "Gösterge paneli",
+      "href": "examples/crm/#/",
+      "icon": "dashboard"
+     },
+     {
+      "label": "Firmalar",
+      "href": "examples/crm/#/firmalar",
+      "icon": "building"
+     },
+     {
+      "label": "Kişiler",
+      "href": "examples/crm/#/kisiler",
+      "icon": "users"
+     },
+     {
+      "label": "Lead'ler",
+      "href": "examples/crm/#/leadler",
+      "icon": "user",
+      "badge": 12
+     },
+     {
+      "label": "Satış hunisi",
+      "href": "examples/crm/#/huni",
+      "icon": "briefcase"
+     },
+     {
+      "label": "Aktiviteler",
+      "href": "examples/crm/#/aktiviteler",
+      "icon": "calendar"
+     },
+     {
+      "label": "Teklifler",
+      "href": "examples/crm/#/teklifler",
+      "icon": "file"
+     },
+     {
+      "label": "Raporlar",
+      "href": "examples/crm/#/raporlar",
+      "icon": "chart"
+     },
+     {
+      "label": "Kullanım kılavuzu",
+      "href": "examples/crm/#/kilavuz",
+      "icon": "info"
+     }
+    ]
+   },
+   {
+    "group": "Yönetim",
+    "items": [
+     {
+      "label": "Ürün ve hizmetler",
+      "href": "examples/crm/#/urunler",
+      "icon": "box"
+     },
+     {
+      "label": "Etiketler",
+      "href": "examples/crm/#/etiketler",
+      "icon": "tag"
+     },
+     {
+      "label": "Kampanyalar",
+      "href": "examples/crm/#/kampanyalar",
+      "icon": "mail"
+     },
+     {
+      "label": "İçe aktar",
+      "href": "examples/crm/#/ice-aktar",
+      "icon": "download"
+     },
+     {
+      "label": "Satış aşamaları",
+      "href": "examples/crm/#/asamalar",
+      "icon": "layers"
+     },
+     {
+      "label": "Özel alanlar",
+      "href": "examples/crm/#/ozel-alanlar",
+      "icon": "edit"
+     },
+     {
+      "label": "Web formu",
+      "href": "examples/crm/#/web-formu",
+      "icon": "globe"
+     },
+     {
+      "label": "İş akışları",
+      "href": "examples/crm/#/is-akislari",
+      "icon": "zap"
+     },
+     {
+      "label": "Gelen kutusu",
+      "href": "examples/crm/#/gelen-kutusu",
+      "icon": "mail"
+     },
+     {
+      "label": "Değişiklik geçmişi",
+      "href": "examples/crm/#/gecmis",
+      "icon": "clock"
+     },
+     {
+      "label": "Uygulama logları",
+      "href": "examples/crm/#/loglar",
+      "icon": "file"
+     },
+     {
+      "label": "Kullanıcılar",
+      "href": "examples/crm/#/kullanicilar",
+      "icon": "users"
+     }
+    ],
+    "roles": [
+     "admin"
+    ]
+   },
+   {
+    "group": "Diğer",
+    "items": [
+     {
+      "label": "Vitrine dön",
+      "href": "examples/",
+      "icon": "home"
+     }
+    ]
+   }
+  ]
+ }
+}

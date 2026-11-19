@@ -1,0 +1,134 @@
+[
+ {
+  "id": "SP-261040",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2030",
+  "date": "2026-11-17T23:24",
+  "items": 2,
+  "total": 179747.74,
+  "status": "Teslim edildi",
+  "channel": "Pazaryeri",
+  "cargo": "HepsiJet"
+ },
+ {
+  "id": "SP-261039",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2015",
+  "date": "2026-11-17T10:04",
+  "items": 24,
+  "total": 141306.02,
+  "status": "Teslim edildi",
+  "channel": "Hızlı sipariş",
+  "cargo": "HepsiJet"
+ },
+ {
+  "id": "SP-261012",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2001",
+  "date": "2026-11-17T03:51",
+  "items": 30,
+  "total": 109743.56,
+  "status": "Teslim edildi",
+  "channel": "Pazaryeri",
+  "cargo": "HepsiJet"
+ },
+ {
+  "id": "SP-261051",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2028",
+  "date": "2026-11-17T01:14",
+  "items": 10,
+  "total": 108673.2,
+  "status": "İptal",
+  "channel": "Temsilci",
+  "cargo": "Yurtiçi"
+ },
+ {
+  "id": "SP-261048",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2044",
+  "date": "2026-11-16T08:06",
+  "items": 3,
+  "total": 149971.28,
+  "status": "Kargoda",
+  "channel": "B2B portal",
+  "cargo": "HepsiJet"
+ },
+ {
+  "id": "SP-261001",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2003",
+  "date": "2026-11-16T06:41",
+  "items": 8,
+  "total": 114162.24,
+  "status": "Teslim edildi",
+  "channel": "Temsilci",
+  "cargo": "Yurtiçi"
+ },
+ {
+  "id": "SP-261025",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2032",
+  "date": "2026-11-14T23:16",
+  "items": 8,
+  "total": 159875.79,
+  "status": "Onay bekliyor",
+  "channel": "B2B portal",
+  "cargo": "HepsiJet"
+ },
+ {
+  "id": "SP-261032",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2022",
+  "date": "2026-11-13T15:53",
+  "items": 26,
+  "total": 102277.17,
+  "status": "Hazırlanıyor",
+  "channel": "B2B portal",
+  "cargo": "Depodan teslim"
+ },
+ {
+  "id": "SP-261014",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2044",
+  "date": "2026-11-13T04:02",
+  "items": 21,
+  "total": 18843.76,
+  "status": "İptal",
+  "channel": "B2B portal",
+  "cargo": "HepsiJet"
+ },
+ {
+  "id": "SP-261042",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2021",
+  "date": "2026-11-12T15:24",
+  "items": 3,
+  "total": 24025.2,
+  "status": "Teslim edildi",
+  "channel": "Hızlı sipariş",
+  "cargo": "Depodan teslim"
+ },
+ {
+  "id": "SP-261060",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2004",
+  "date": "2026-11-12T05:29",
+  "items": 25,
+  "total": 111784.12,
+  "status": "Hazırlanıyor",
+  "channel": "B2B portal",
+  "cargo": "HepsiJet"
+ },
+ {
+  "id": "SP-261035",
+  "dealer": "Kuzey Otomasyon A.Ş.",
+  "dealerId": "C2017",
+  "date": "2026-11-11T10:50",
+  "items": 4,
+  "total": 119498.79,
+  "status": "İptal",
+  "channel": "B2B portal",
+  "cargo": "Yurtiçi"
+ }
+]

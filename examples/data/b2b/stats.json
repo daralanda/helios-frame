@@ -1,0 +1,103 @@
+{
+ "kpis": [
+  {
+   "label": "Bugünkü sipariş",
+   "value": 14,
+   "format": "number",
+   "trend": 0.08,
+   "icon": "cart"
+  },
+  {
+   "label": "Sevk bekleyen",
+   "value": 9,
+   "format": "number",
+   "trend": -0.12,
+   "icon": "truck",
+   "invert": true
+  },
+  {
+   "label": "Açık bayi bakiyesi",
+   "value": 11695556,
+   "format": "money",
+   "trend": 0.04,
+   "icon": "briefcase",
+   "invert": true
+  },
+  {
+   "label": "Onay bekleyen",
+   "value": 14,
+   "format": "number",
+   "trend": 0.2,
+   "icon": "check",
+   "invert": true
+  }
+ ],
+ "sales": [
+  {
+   "label": "Oca",
+   "value": 3217598
+  },
+  {
+   "label": "Şub",
+   "value": 3480006
+  },
+  {
+   "label": "Mar",
+   "value": 3589181
+  },
+  {
+   "label": "Nis",
+   "value": 3386968
+  },
+  {
+   "label": "May",
+   "value": 3716180
+  },
+  {
+   "label": "Haz",
+   "value": 3522330
+  },
+  {
+   "label": "Tem",
+   "value": 3556280
+  },
+  {
+   "label": "Ağu",
+   "value": 3581865
+  },
+  {
+   "label": "Eyl",
+   "value": 3848775
+  },
+  {
+   "label": "Eki",
+   "value": 3865236
+  },
+  {
+   "label": "Kas",
+   "value": 3680326
+  }
+ ],
+ "byGroup": [
+  {
+   "label": "Altın bayi",
+   "value": 17
+  },
+  {
+   "label": "Gümüş bayi",
+   "value": 8
+  },
+  {
+   "label": "Bronz bayi",
+   "value": 5
+  },
+  {
+   "label": "Distribütör",
+   "value": 12
+  },
+  {
+   "label": "Proje müşterisi",
+   "value": 19
+  }
+ ]
+}

@@ -1,0 +1,317 @@
+[
+ {
+  "id": 7,
+  "type": "Arama",
+  "subject": "Keşif ziyareti",
+  "company": "Güney Lojistik A.Ş.",
+  "due": "2026-11-15T15:30",
+  "done": true,
+  "owner": "Ayşe Yılmaz"
+ },
+ {
+  "id": 1,
+  "type": "E-posta",
+  "subject": "Keşif ziyareti",
+  "company": "Çınar Makine Ltd. Şti.",
+  "due": "2026-11-15T16:30",
+  "done": false,
+  "owner": "Murat Kaya"
+ },
+ {
+  "id": 27,
+  "type": "E-posta",
+  "subject": "Teknik toplantı",
+  "company": "Kardelen Enerji Ltd. Şti.",
+  "due": "2026-11-15T18:30",
+  "done": true,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 2,
+  "type": "Görev",
+  "subject": "Teknik toplantı",
+  "company": "Kartal Makine San. Tic.",
+  "due": "2026-11-15T22:30",
+  "done": false,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 16,
+  "type": "E-posta",
+  "subject": "Teklif takibi",
+  "company": "Işık Yapı Ltd. Şti.",
+  "due": "2026-11-16T05:30",
+  "done": true,
+  "owner": "Murat Kaya"
+ },
+ {
+  "id": 20,
+  "type": "E-posta",
+  "subject": "Tahsilat hatırlatma",
+  "company": "Kuzey Yapı Ltd. Şti.",
+  "due": "2026-11-16T07:30",
+  "done": true,
+  "owner": "Selin Demir"
+ },
+ {
+  "id": 23,
+  "type": "Not",
+  "subject": "Demo sunumu",
+  "company": "Kartal Makine Ltd. Şti.",
+  "due": "2026-11-16T12:30",
+  "done": false,
+  "owner": "Selin Demir"
+ },
+ {
+  "id": 22,
+  "type": "E-posta",
+  "subject": "Keşif ziyareti",
+  "company": "Doğu Makine Ltd. Şti.",
+  "due": "2026-11-16T13:30",
+  "done": true,
+  "owner": "Ayşe Yılmaz"
+ },
+ {
+  "id": 17,
+  "type": "E-posta",
+  "subject": "Keşif ziyareti",
+  "company": "Kuzey Lojistik San. Tic.",
+  "due": "2026-11-16T15:30",
+  "done": false,
+  "owner": "Murat Kaya"
+ },
+ {
+  "id": 18,
+  "type": "Görev",
+  "subject": "Tahsilat hatırlatma",
+  "company": "Doğu Makine A.Ş.",
+  "due": "2026-11-16T17:30",
+  "done": false,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 30,
+  "type": "Toplantı",
+  "subject": "Yıllık değerlendirme",
+  "company": "Akdeniz Mühendislik Ltd. Şti.",
+  "due": "2026-11-16T19:30",
+  "done": true,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 5,
+  "type": "Görev",
+  "subject": "Teknik toplantı",
+  "company": "Doğu Endüstri Ltd. Şti.",
+  "due": "2026-11-17T00:30",
+  "done": true,
+  "owner": "Selin Demir"
+ },
+ {
+  "id": 35,
+  "type": "Arama",
+  "subject": "Sözleşme görüşmesi",
+  "company": "Işık Tesisat A.Ş.",
+  "due": "2026-11-17T05:30",
+  "done": true,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 10,
+  "type": "Toplantı",
+  "subject": "Tahsilat hatırlatma",
+  "company": "Mavi Makine Ltd. Şti.",
+  "due": "2026-11-17T08:30",
+  "done": true,
+  "owner": "Ayşe Yılmaz"
+ },
+ {
+  "id": 19,
+  "type": "Arama",
+  "subject": "Fiyat revizyonu",
+  "company": "Akdeniz Mühendislik Ltd. Şti.",
+  "due": "2026-11-17T12:30",
+  "done": false,
+  "owner": "Ayşe Yılmaz"
+ },
+ {
+  "id": 4,
+  "type": "Görev",
+  "subject": "Teklif takibi",
+  "company": "Ege Endüstri San. Tic.",
+  "due": "2026-11-17T21:30",
+  "done": true,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 11,
+  "type": "E-posta",
+  "subject": "Yıllık değerlendirme",
+  "company": "Ege Tesisat San. Tic.",
+  "due": "2026-11-18T04:30",
+  "done": true,
+  "owner": "Selin Demir"
+ },
+ {
+  "id": 28,
+  "type": "Toplantı",
+  "subject": "Teklif takibi",
+  "company": "Ege Otomasyon Ltd. Şti.",
+  "due": "2026-11-18T05:30",
+  "done": false,
+  "owner": "Selin Demir"
+ },
+ {
+  "id": 26,
+  "type": "E-posta",
+  "subject": "Keşif ziyareti",
+  "company": "Akdeniz Otomasyon San. Tic.",
+  "due": "2026-11-18T07:30",
+  "done": false,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 29,
+  "type": "Toplantı",
+  "subject": "Yıllık değerlendirme",
+  "company": "Marmara Enerji Ltd. Şti.",
+  "due": "2026-11-18T16:30",
+  "done": false,
+  "owner": "Murat Kaya"
+ },
+ {
+  "id": 24,
+  "type": "Toplantı",
+  "subject": "Tahsilat hatırlatma",
+  "company": "Yıldız Teknik A.Ş.",
+  "due": "2026-11-19T18:30",
+  "done": false,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 8,
+  "type": "Görev",
+  "subject": "Fiyat revizyonu",
+  "company": "Ege Endüstri San. Tic.",
+  "due": "2026-11-20T10:30",
+  "done": false,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 9,
+  "type": "Toplantı",
+  "subject": "Demo sunumu",
+  "company": "Yıldız Teknik A.Ş.",
+  "due": "2026-11-20T14:30",
+  "done": false,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 21,
+  "type": "E-posta",
+  "subject": "Teklif takibi",
+  "company": "Akdeniz Otomasyon San. Tic.",
+  "due": "2026-11-20T22:30",
+  "done": false,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 15,
+  "type": "E-posta",
+  "subject": "Sözleşme görüşmesi",
+  "company": "Kardelen Lojistik A.Ş.",
+  "due": "2026-11-21T02:30",
+  "done": false,
+  "owner": "Selin Demir"
+ },
+ {
+  "id": 14,
+  "type": "Görev",
+  "subject": "Tahsilat hatırlatma",
+  "company": "Özgür Lojistik Ltd. Şti.",
+  "due": "2026-11-21T06:30",
+  "done": false,
+  "owner": "Emre Çelik"
+ },
+ {
+  "id": 12,
+  "type": "Görev",
+  "subject": "Keşif ziyareti",
+  "company": "Marmara Enerji Ltd. Şti.",
+  "due": "2026-11-21T09:30",
+  "done": false,
+  "owner": "Ayşe Yılmaz"
+ },
+ {
+  "id": 25,
+  "type": "Not",
+  "subject": "Yıllık değerlendirme",
+  "company": "Ege Lojistik San. Tic.",
+  "due": "2026-11-21T11:30",
+  "done": false,
+  "owner": "Murat Kaya"
+ },
+ {
+  "id": 31,
+  "type": "Görev",
+  "subject": "Sözleşme görüşmesi",
+  "company": "Uğur Yapı A.Ş.",
+  "due": "2026-11-21T19:30",
+  "done": false,
+  "owner": "Murat Kaya"
+ },
+ {
+  "id": 13,
+  "type": "Toplantı",
+  "subject": "Tahsilat hatırlatma",
+  "company": "Anadolu Endüstri San. Tic.",
+  "due": "2026-11-22T12:30",
+  "done": false,
+  "owner": "Murat Kaya"
+ },
+ {
+  "id": 3,
+  "type": "Not",
+  "subject": "Fiyat revizyonu",
+  "company": "Kartal Makine Ltd. Şti.",
+  "due": "2026-11-22T19:30",
+  "done": false,
+  "owner": "Selin Demir"
+ },
+ {
+  "id": 34,
+  "type": "Not",
+  "subject": "Tahsilat hatırlatma",
+  "company": "Marmara Endüstri San. Tic.",
+  "due": "2026-11-22T22:30",
+  "done": false,
+  "owner": "Ayşe Yılmaz"
+ },
+ {
+  "id": 6,
+  "type": "Not",
+  "subject": "Yıllık değerlendirme",
+  "company": "Doğu Endüstri A.Ş.",
+  "due": "2026-11-24T03:30",
+  "done": false,
+  "owner": "Ayşe Yılmaz"
+ },
+ {
+  "id": 32,
+  "type": "E-posta",
+  "subject": "Yıllık değerlendirme",
+  "company": "Özgür Lojistik Ltd. Şti.",
+  "due": "2026-11-24T03:30",
+  "done": false,
+  "owner": "Selin Demir"
+ },
+ {
+  "id": 33,
+  "type": "Görev",
+  "subject": "Keşif ziyareti",
+  "company": "Yıldız Makine Ltd. Şti.",
+  "due": "2026-11-24T03:30",
+  "done": false,
+  "owner": "Selin Demir"
+ }
+]

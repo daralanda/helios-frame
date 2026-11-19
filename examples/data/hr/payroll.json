@@ -1,0 +1,44 @@
+[
+ {
+  "period": "2026 Haziran",
+  "employees": 80,
+  "gross": 3414741.67,
+  "net": 2424466.59,
+  "status": "Kapandı"
+ },
+ {
+  "period": "2026 Temmuz",
+  "employees": 77,
+  "gross": 3878466.61,
+  "net": 2753711.29,
+  "status": "Kapandı"
+ },
+ {
+  "period": "2026 Ağustos",
+  "employees": 78,
+  "gross": 3958210.06,
+  "net": 2810329.14,
+  "status": "Kapandı"
+ },
+ {
+  "period": "2026 Eylül",
+  "employees": 77,
+  "gross": 3730147.31,
+  "net": 2648404.59,
+  "status": "Kapandı"
+ },
+ {
+  "period": "2026 Ekim",
+  "employees": 81,
+  "gross": 4000947.65,
+  "net": 2840672.83,
+  "status": "Banka listesi gönderildi"
+ },
+ {
+  "period": "2026 Kasım",
+  "employees": 80,
+  "gross": 3713742.99,
+  "net": 2636757.52,
+  "status": "Hesaplanıyor"
+ }
+]

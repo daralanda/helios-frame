@@ -1,0 +1,226 @@
+[
+ {
+  "no": "HDE2026000001200",
+  "dealer": "Çağdaş Makine Ltd. Şti.",
+  "date": "2026-11-17T23:24",
+  "total": 179747.74,
+  "type": "e-Fatura",
+  "gib": "Kuyrukta"
+ },
+ {
+  "no": "HDE2026000001201",
+  "dealer": "Pınar Endüstri A.Ş.",
+  "date": "2026-11-17T10:04",
+  "total": 141306.02,
+  "type": "e-Fatura",
+  "gib": "Kuyrukta"
+ },
+ {
+  "no": "HDE2026000001202",
+  "dealer": "Atlas Yapı A.Ş.",
+  "date": "2026-11-17T03:51",
+  "total": 109743.56,
+  "type": "e-Fatura",
+  "gib": "Kabul edildi"
+ },
+ {
+  "no": "HDE2026000001203",
+  "dealer": "Doğu Tesisat Ltd. Şti.",
+  "date": "2026-11-16T08:06",
+  "total": 149971.28,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001204",
+  "dealer": "Uğur Mühendislik San. Tic.",
+  "date": "2026-11-16T06:41",
+  "total": 114162.24,
+  "type": "e-Fatura",
+  "gib": "Kuyrukta"
+ },
+ {
+  "no": "HDE2026000001205",
+  "dealer": "Özgür Yapı San. Tic.",
+  "date": "2026-11-12T15:24",
+  "total": 24025.2,
+  "type": "e-Fatura",
+  "gib": "Kabul edildi"
+ },
+ {
+  "no": "HDE2026000001206",
+  "dealer": "Akdeniz Makine San. Tic.",
+  "date": "2026-11-11T04:45",
+  "total": 32749.88,
+  "type": "e-Arşiv",
+  "gib": "Kuyrukta"
+ },
+ {
+  "no": "HDE2026000001207",
+  "dealer": "Akdeniz Makine San. Tic.",
+  "date": "2026-11-09T17:03",
+  "total": 118727.43,
+  "type": "e-Arşiv",
+  "gib": "Kabul edildi"
+ },
+ {
+  "no": "HDE2026000001208",
+  "dealer": "Güney Tesisat Ltd. Şti.",
+  "date": "2026-11-09T14:27",
+  "total": 76440.1,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001209",
+  "dealer": "Demir Mühendislik A.Ş.",
+  "date": "2026-11-09T13:33",
+  "total": 156740.63,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001210",
+  "dealer": "Uğur Endüstri Ltd. Şti.",
+  "date": "2026-11-08T10:22",
+  "total": 164439.98,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001211",
+  "dealer": "Çağdaş Makine Ltd. Şti.",
+  "date": "2026-11-07T20:01",
+  "total": 47075.82,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001212",
+  "dealer": "Güney Tesisat Ltd. Şti.",
+  "date": "2026-11-07T11:04",
+  "total": 69513.05,
+  "type": "e-Fatura",
+  "gib": "Kabul edildi"
+ },
+ {
+  "no": "HDE2026000001213",
+  "dealer": "Akdeniz Otomasyon A.Ş.",
+  "date": "2026-11-06T23:45",
+  "total": 30871.18,
+  "type": "e-Fatura",
+  "gib": "Kabul edildi"
+ },
+ {
+  "no": "HDE2026000001214",
+  "dealer": "Anadolu Enerji San. Tic.",
+  "date": "2026-11-05T18:20",
+  "total": 6667.08,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001215",
+  "dealer": "Ilgaz Otomasyon Ltd. Şti.",
+  "date": "2026-11-04T14:14",
+  "total": 179041.05,
+  "type": "e-Fatura",
+  "gib": "Kuyrukta"
+ },
+ {
+  "no": "HDE2026000001216",
+  "dealer": "Pınar Otomasyon Ltd. Şti.",
+  "date": "2026-11-04T09:22",
+  "total": 23318.28,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001217",
+  "dealer": "Pınar Endüstri A.Ş.",
+  "date": "2026-11-03T23:13",
+  "total": 82449.55,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001218",
+  "dealer": "Pınar Endüstri A.Ş.",
+  "date": "2026-11-03T08:36",
+  "total": 115136.29,
+  "type": "e-Arşiv",
+  "gib": "Kabul edildi"
+ },
+ {
+  "no": "HDE2026000001219",
+  "dealer": "Toros Mühendislik San. Tic.",
+  "date": "2026-11-02T16:12",
+  "total": 162452.77,
+  "type": "e-Fatura",
+  "gib": "Kuyrukta"
+ },
+ {
+  "no": "HDE2026000001220",
+  "dealer": "Toros Mühendislik San. Tic.",
+  "date": "2026-11-02T10:24",
+  "total": 24725.61,
+  "type": "e-Arşiv",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001221",
+  "dealer": "Göktürk Endüstri A.Ş.",
+  "date": "2026-10-31T19:27",
+  "total": 26450.2,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001222",
+  "dealer": "Özgür Yapı San. Tic.",
+  "date": "2026-10-31T11:35",
+  "total": 37341.87,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001223",
+  "dealer": "Göktürk Endüstri A.Ş.",
+  "date": "2026-10-31T01:58",
+  "total": 46142.53,
+  "type": "e-Fatura",
+  "gib": "Kuyrukta"
+ },
+ {
+  "no": "HDE2026000001224",
+  "dealer": "Bereket Lojistik A.Ş.",
+  "date": "2026-10-25T12:24",
+  "total": 14684.35,
+  "type": "e-Arşiv",
+  "gib": "Kuyrukta"
+ },
+ {
+  "no": "HDE2026000001225",
+  "dealer": "Doğu Tesisat Ltd. Şti.",
+  "date": "2026-10-25T01:19",
+  "total": 110205.59,
+  "type": "e-Arşiv",
+  "gib": "Kuyrukta"
+ },
+ {
+  "no": "HDE2026000001226",
+  "dealer": "Çağdaş Makine Ltd. Şti.",
+  "date": "2026-10-22T20:08",
+  "total": 19203.36,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ },
+ {
+  "no": "HDE2026000001227",
+  "dealer": "Uğur Yapı San. Tic.",
+  "date": "2026-10-20T11:26",
+  "total": 13921.0,
+  "type": "e-Fatura",
+  "gib": "Gönderildi"
+ }
+]

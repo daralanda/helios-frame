@@ -79,7 +79,7 @@ test('.htaccess ve web.config güvenlik başlıkları tools/headers.mjs ile ayn�
 });
 
 test('Panel ve ödeme sayfaları arama motorlarına kapalı (noindex)', async () => {
-  for (const p of ['examples/panel/index.html', 'examples/shop/odeme.html', '404.html']) {
+  for (const p of ['examples/b2b/admin/index.html', 'examples/b2b/bayi/index.html', 'examples/crm/index.html', 'examples/hr/index.html', 'examples/shop/odeme.html', '404.html']) {
     const src = await readFile(join(ROOT, p), 'utf8');
     assert.match(src, /<meta name="robots" content="noindex/, p);
   }

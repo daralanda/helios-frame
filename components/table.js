@@ -154,6 +154,7 @@ class HdTable extends HdElement {
           ${cols.map((c) => html`<td data-label="${c.label ?? c.key}" class="${['number', 'money'].includes(c.type) || c.align === 'end' ? 'hf-num' : ''}">${this.cell(c, row)}</td>`)}
         </tr>`)}`
       : html`<tr><td class="hf-table-empty" colspan="${cols.length}">${this.hasAttribute('aria-busy') ? '…' : a.t('table.empty')}</td></tr>`);
+    a.hydrate?.(this.querySelector('tbody')); // hücrelerdeki data-hf-value / data-hf-color
 
     // Sayfalama: ilk, son, aktifin çevresi
     const nums = [...new Set([1, s.page - 1, s.page, s.page + 1, pages])].filter((n) => n >= 1 && n <= pages).sort((x, y) => x - y);

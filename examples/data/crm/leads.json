@@ -1,0 +1,402 @@
+[
+ {
+  "id": 1,
+  "name": "Büşra Güneş",
+  "company": "Kuzey Mühendislik A.Ş.",
+  "source": "Fuar",
+  "status": "İletişime geçildi",
+  "city": "Bursa",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-11-05T03:10"
+ },
+ {
+  "id": 2,
+  "name": "Merve Özdemir",
+  "company": "Kuzey Teknik A.Ş.",
+  "source": "E-posta kampanyası",
+  "status": "Dönüştürüldü",
+  "city": "Kocaeli",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-10-26T05:58"
+ },
+ {
+  "id": 3,
+  "name": "Burak Yılmaz",
+  "company": "Toros Elektrik Ltd. Şti.",
+  "source": "Telefon",
+  "status": "Nitelikli",
+  "city": "Kocaeli",
+  "owner": "Emre Çelik",
+  "created": "2026-10-22T08:30"
+ },
+ {
+  "id": 4,
+  "name": "Gizem Çetin",
+  "company": "Özgür Enerji A.Ş.",
+  "source": "Fuar",
+  "status": "Nitelikli",
+  "city": "Denizli",
+  "owner": "Selin Demir",
+  "created": "2026-10-06T13:18"
+ },
+ {
+  "id": 5,
+  "name": "Büşra Arslan",
+  "company": "Kuzey Yapı Ltd. Şti.",
+  "source": "E-posta kampanyası",
+  "status": "Yeni",
+  "city": "Eskişehir",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-10-11T19:18"
+ },
+ {
+  "id": 6,
+  "name": "Seda Erdoğan",
+  "company": "Doğu Yapı San. Tic.",
+  "source": "LinkedIn",
+  "status": "İletişime geçildi",
+  "city": "Denizli",
+  "owner": "Selin Demir",
+  "created": "2026-10-20T23:38"
+ },
+ {
+  "id": 7,
+  "name": "Mehmet Öztürk",
+  "company": "Demir Teknik A.Ş.",
+  "source": "Fuar",
+  "status": "İletişime geçildi",
+  "city": "İzmir",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-10-05T11:29"
+ },
+ {
+  "id": 8,
+  "name": "Merve Arslan",
+  "company": "Kuzey Teknik San. Tic.",
+  "source": "Referans",
+  "status": "İletişime geçildi",
+  "city": "Konya",
+  "owner": "Emre Çelik",
+  "created": "2026-10-06T22:54"
+ },
+ {
+  "id": 9,
+  "name": "Onur Demir",
+  "company": "Anadolu Tesisat A.Ş.",
+  "source": "Web formu",
+  "status": "Yeni",
+  "city": "Ankara",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-10-07T05:13"
+ },
+ {
+  "id": 10,
+  "name": "Derya Kılıç",
+  "company": "Çınar Makine San. Tic.",
+  "source": "E-posta kampanyası",
+  "status": "İletişime geçildi",
+  "city": "Sakarya",
+  "owner": "Emre Çelik",
+  "created": "2026-10-18T10:52"
+ },
+ {
+  "id": 11,
+  "name": "İbrahim Demir",
+  "company": "Akdeniz Endüstri San. Tic.",
+  "source": "LinkedIn",
+  "status": "Yeni",
+  "city": "İzmir",
+  "owner": "Selin Demir",
+  "created": "2026-11-15T19:07"
+ },
+ {
+  "id": 12,
+  "name": "Emre Yıldırım",
+  "company": "Kuzey Endüstri Ltd. Şti.",
+  "source": "Referans",
+  "status": "İletişime geçildi",
+  "city": "İzmir",
+  "owner": "Selin Demir",
+  "created": "2026-10-18T14:17"
+ },
+ {
+  "id": 13,
+  "name": "Büşra Aksoy",
+  "company": "Çağdaş Otomasyon A.Ş.",
+  "source": "Web formu",
+  "status": "Dönüştürüldü",
+  "city": "Bursa",
+  "owner": "Emre Çelik",
+  "created": "2026-10-22T12:38"
+ },
+ {
+  "id": 14,
+  "name": "Deniz Kaya",
+  "company": "Doğu Elektrik A.Ş.",
+  "source": "Web formu",
+  "status": "Nitelikli",
+  "city": "İstanbul",
+  "owner": "Murat Kaya",
+  "created": "2026-10-27T19:13"
+ },
+ {
+  "id": 15,
+  "name": "Merve Koç",
+  "company": "Çınar Makine A.Ş.",
+  "source": "Telefon",
+  "status": "Yeni",
+  "city": "Kayseri",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-10-15T06:49"
+ },
+ {
+  "id": 16,
+  "name": "Oğuz Yılmaz",
+  "company": "Ilgaz Teknik Ltd. Şti.",
+  "source": "LinkedIn",
+  "status": "Yeni",
+  "city": "İzmir",
+  "owner": "Emre Çelik",
+  "created": "2026-10-29T16:14"
+ },
+ {
+  "id": 17,
+  "name": "Emre Doğan",
+  "company": "Ege Mühendislik San. Tic.",
+  "source": "Fuar",
+  "status": "İletişime geçildi",
+  "city": "Kayseri",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-10-09T16:39"
+ },
+ {
+  "id": 18,
+  "name": "Burak Erdoğan",
+  "company": "Uğur Enerji A.Ş.",
+  "source": "E-posta kampanyası",
+  "status": "İletişime geçildi",
+  "city": "Ankara",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-11-08T06:19"
+ },
+ {
+  "id": 19,
+  "name": "Mehmet Kara",
+  "company": "Şahin Teknik A.Ş.",
+  "source": "Fuar",
+  "status": "Dönüştürüldü",
+  "city": "Ankara",
+  "owner": "Emre Çelik",
+  "created": "2026-11-09T04:12"
+ },
+ {
+  "id": 20,
+  "name": "Hasan Öztürk",
+  "company": "Göktürk Lojistik Ltd. Şti.",
+  "source": "Web formu",
+  "status": "İletişime geçildi",
+  "city": "Bursa",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-11-11T05:32"
+ },
+ {
+  "id": 21,
+  "name": "Zeynep Koç",
+  "company": "Ege Teknik A.Ş.",
+  "source": "Referans",
+  "status": "Nitelikli değil",
+  "city": "Eskişehir",
+  "owner": "Selin Demir",
+  "created": "2026-11-15T11:04"
+ },
+ {
+  "id": 22,
+  "name": "Esra Çetin",
+  "company": "Anadolu Lojistik A.Ş.",
+  "source": "Telefon",
+  "status": "İletişime geçildi",
+  "city": "Eskişehir",
+  "owner": "Murat Kaya",
+  "created": "2026-10-29T06:42"
+ },
+ {
+  "id": 23,
+  "name": "Merve Özkan",
+  "company": "Demir Yapı San. Tic.",
+  "source": "LinkedIn",
+  "status": "Nitelikli",
+  "city": "Gaziantep",
+  "owner": "Murat Kaya",
+  "created": "2026-11-19T02:28"
+ },
+ {
+  "id": 24,
+  "name": "Tuğba Aslan",
+  "company": "Anadolu Yapı San. Tic.",
+  "source": "Telefon",
+  "status": "Nitelikli",
+  "city": "İstanbul",
+  "owner": "Selin Demir",
+  "created": "2026-11-19T07:50"
+ },
+ {
+  "id": 25,
+  "name": "Onur Erdoğan",
+  "company": "Işık Makine A.Ş.",
+  "source": "Fuar",
+  "status": "İletişime geçildi",
+  "city": "Gaziantep",
+  "owner": "Emre Çelik",
+  "created": "2026-10-28T00:00"
+ },
+ {
+  "id": 26,
+  "name": "Mehmet Çelik",
+  "company": "Bereket Makine A.Ş.",
+  "source": "Web formu",
+  "status": "Dönüştürüldü",
+  "city": "Trabzon",
+  "owner": "Emre Çelik",
+  "created": "2026-10-18T11:55"
+ },
+ {
+  "id": 27,
+  "name": "Oğuz Doğan",
+  "company": "Mavi Enerji San. Tic.",
+  "source": "Web formu",
+  "status": "İletişime geçildi",
+  "city": "Denizli",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-10-23T10:55"
+ },
+ {
+  "id": 28,
+  "name": "Burak Kaya",
+  "company": "Göktürk Elektrik A.Ş.",
+  "source": "Telefon",
+  "status": "Yeni",
+  "city": "Mersin",
+  "owner": "Emre Çelik",
+  "created": "2026-10-18T12:03"
+ },
+ {
+  "id": 29,
+  "name": "Kemal Aksoy",
+  "company": "Ilgaz Lojistik Ltd. Şti.",
+  "source": "Telefon",
+  "status": "Yeni",
+  "city": "Antalya",
+  "owner": "Murat Kaya",
+  "created": "2026-10-14T21:32"
+ },
+ {
+  "id": 30,
+  "name": "Onur Özkan",
+  "company": "Yıldız Elektrik A.Ş.",
+  "source": "Fuar",
+  "status": "İletişime geçildi",
+  "city": "Mersin",
+  "owner": "Emre Çelik",
+  "created": "2026-11-13T21:33"
+ },
+ {
+  "id": 31,
+  "name": "Esra Doğan",
+  "company": "Özgür Mühendislik Ltd. Şti.",
+  "source": "Referans",
+  "status": "Yeni",
+  "city": "Bursa",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-11-12T05:16"
+ },
+ {
+  "id": 32,
+  "name": "Derya Erdoğan",
+  "company": "Doğu Tesisat A.Ş.",
+  "source": "Fuar",
+  "status": "Nitelikli değil",
+  "city": "Mersin",
+  "owner": "Murat Kaya",
+  "created": "2026-11-15T05:48"
+ },
+ {
+  "id": 33,
+  "name": "Serkan Öztürk",
+  "company": "Şahin Teknik San. Tic.",
+  "source": "Web formu",
+  "status": "Nitelikli",
+  "city": "Kayseri",
+  "owner": "Murat Kaya",
+  "created": "2026-11-17T23:29"
+ },
+ {
+  "id": 34,
+  "name": "İbrahim Çetin",
+  "company": "Kartal Endüstri A.Ş.",
+  "source": "Web formu",
+  "status": "İletişime geçildi",
+  "city": "Kocaeli",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-11-18T20:22"
+ },
+ {
+  "id": 35,
+  "name": "Mehmet Öztürk",
+  "company": "Kuzey Yapı Ltd. Şti.",
+  "source": "Telefon",
+  "status": "Nitelikli",
+  "city": "İzmir",
+  "owner": "Selin Demir",
+  "created": "2026-10-08T15:21"
+ },
+ {
+  "id": 36,
+  "name": "Kemal Demir",
+  "company": "Anadolu Enerji A.Ş.",
+  "source": "E-posta kampanyası",
+  "status": "İletişime geçildi",
+  "city": "Kocaeli",
+  "owner": "Ayşe Yılmaz",
+  "created": "2026-10-09T04:50"
+ },
+ {
+  "id": 37,
+  "name": "Seda Arslan",
+  "company": "Yıldız Otomasyon Ltd. Şti.",
+  "source": "Web formu",
+  "status": "Yeni",
+  "city": "Sakarya",
+  "owner": "Emre Çelik",
+  "created": "2026-10-27T19:31"
+ },
+ {
+  "id": 38,
+  "name": "Ahmet Kılıç",
+  "company": "Kardelen Teknik A.Ş.",
+  "source": "Telefon",
+  "status": "Yeni",
+  "city": "Konya",
+  "owner": "Selin Demir",
+  "created": "2026-11-06T15:45"
+ },
+ {
+  "id": 39,
+  "name": "Murat Çelik",
+  "company": "Ege Tesisat San. Tic.",
+  "source": "LinkedIn",
+  "status": "Yeni",
+  "city": "Eskişehir",
+  "owner": "Emre Çelik",
+  "created": "2026-10-31T15:25"
+ },
+ {
+  "id": 40,
+  "name": "Oğuz Kurt",
+  "company": "Demir Otomasyon A.Ş.",
+  "source": "Telefon",
+  "status": "İletişime geçildi",
+  "city": "Sakarya",
+  "owner": "Murat Kaya",
+  "created": "2026-10-21T03:29"
+ }
+]

@@ -1,0 +1,317 @@
+[
+ {
+  "id": "OD-5001",
+  "dealer": "Özgür Yapı San. Tic.",
+  "date": "2026-11-15T11:34",
+  "amount": 72317.67,
+  "bank": "Ziraat",
+  "installments": 3,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5002",
+  "dealer": "Kartal Makine San. Tic.",
+  "date": "2026-11-09T10:55",
+  "amount": 76159.11,
+  "bank": "İş Bankası",
+  "installments": 3,
+  "status": "İade edildi"
+ },
+ {
+  "id": "OD-5003",
+  "dealer": "Doğu Makine A.Ş.",
+  "date": "2026-11-07T11:16",
+  "amount": 7999.59,
+  "bank": "Akbank",
+  "installments": 9,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5004",
+  "dealer": "Pınar Endüstri A.Ş.",
+  "date": "2026-11-11T19:32",
+  "amount": 70341.49,
+  "bank": "Garanti BBVA",
+  "installments": 6,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5005",
+  "dealer": "Akdeniz Otomasyon A.Ş.",
+  "date": "2026-11-07T18:55",
+  "amount": 18257.43,
+  "bank": "Akbank",
+  "installments": 1,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5006",
+  "dealer": "Pınar Yapı San. Tic.",
+  "date": "2026-11-17T01:17",
+  "amount": 14033.54,
+  "bank": "İş Bankası",
+  "installments": 1,
+  "status": "İade edildi"
+ },
+ {
+  "id": "OD-5007",
+  "dealer": "Uğur Yapı San. Tic.",
+  "date": "2026-11-02T02:15",
+  "amount": 68564.56,
+  "bank": "Garanti BBVA",
+  "installments": 1,
+  "status": "3D doğrulanamadı"
+ },
+ {
+  "id": "OD-5008",
+  "dealer": "Çağdaş Makine Ltd. Şti.",
+  "date": "2026-11-02T05:24",
+  "amount": 51172.46,
+  "bank": "Ziraat",
+  "installments": 3,
+  "status": "İade edildi"
+ },
+ {
+  "id": "OD-5009",
+  "dealer": "Kuzey Mühendislik A.Ş.",
+  "date": "2026-11-04T22:28",
+  "amount": 88801.34,
+  "bank": "Akbank",
+  "installments": 9,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5010",
+  "dealer": "Uğur Yapı San. Tic.",
+  "date": "2026-11-09T09:15",
+  "amount": 7077.48,
+  "bank": "Yapı Kredi",
+  "installments": 9,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5011",
+  "dealer": "Güney Mühendislik San. Tic.",
+  "date": "2026-11-05T22:26",
+  "amount": 5999.32,
+  "bank": "Ziraat",
+  "installments": 1,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5012",
+  "dealer": "Çağdaş Makine Ltd. Şti.",
+  "date": "2026-11-09T02:37",
+  "amount": 4347.04,
+  "bank": "Akbank",
+  "installments": 1,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5013",
+  "dealer": "Kuzey Mühendislik A.Ş.",
+  "date": "2026-10-30T17:26",
+  "amount": 87985.8,
+  "bank": "Garanti BBVA",
+  "installments": 6,
+  "status": "İade edildi"
+ },
+ {
+  "id": "OD-5014",
+  "dealer": "Atlas Teknik Ltd. Şti.",
+  "date": "2026-11-10T15:27",
+  "amount": 42181.34,
+  "bank": "Ziraat",
+  "installments": 9,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5015",
+  "dealer": "Toros Lojistik Ltd. Şti.",
+  "date": "2026-10-31T23:09",
+  "amount": 51877.45,
+  "bank": "İş Bankası",
+  "installments": 1,
+  "status": "İade edildi"
+ },
+ {
+  "id": "OD-5016",
+  "dealer": "Göktürk Teknik San. Tic.",
+  "date": "2026-11-07T23:37",
+  "amount": 14426.64,
+  "bank": "Garanti BBVA",
+  "installments": 3,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5017",
+  "dealer": "Bereket Enerji Ltd. Şti.",
+  "date": "2026-11-03T03:19",
+  "amount": 8505.29,
+  "bank": "İş Bankası",
+  "installments": 1,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5018",
+  "dealer": "Atlas Elektrik A.Ş.",
+  "date": "2026-11-09T10:21",
+  "amount": 89197.76,
+  "bank": "Ziraat",
+  "installments": 6,
+  "status": "İade edildi"
+ },
+ {
+  "id": "OD-5019",
+  "dealer": "Anadolu Enerji San. Tic.",
+  "date": "2026-11-11T02:41",
+  "amount": 34183.83,
+  "bank": "Akbank",
+  "installments": 3,
+  "status": "3D doğrulanamadı"
+ },
+ {
+  "id": "OD-5020",
+  "dealer": "Bereket Enerji Ltd. Şti.",
+  "date": "2026-11-03T22:39",
+  "amount": 54211.84,
+  "bank": "Akbank",
+  "installments": 1,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5021",
+  "dealer": "Toros Mühendislik San. Tic.",
+  "date": "2026-11-06T16:42",
+  "amount": 61375.76,
+  "bank": "Akbank",
+  "installments": 1,
+  "status": "İade edildi"
+ },
+ {
+  "id": "OD-5022",
+  "dealer": "Uğur Yapı San. Tic.",
+  "date": "2026-11-11T19:22",
+  "amount": 8253.68,
+  "bank": "İş Bankası",
+  "installments": 1,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5023",
+  "dealer": "Kuzey Mühendislik A.Ş.",
+  "date": "2026-11-03T11:58",
+  "amount": 59930.03,
+  "bank": "İş Bankası",
+  "installments": 6,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5024",
+  "dealer": "Göktürk Endüstri A.Ş.",
+  "date": "2026-11-06T16:11",
+  "amount": 34524.46,
+  "bank": "Akbank",
+  "installments": 1,
+  "status": "İade edildi"
+ },
+ {
+  "id": "OD-5025",
+  "dealer": "Kartal Makine San. Tic.",
+  "date": "2026-11-04T16:37",
+  "amount": 60670.59,
+  "bank": "Ziraat",
+  "installments": 1,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5026",
+  "dealer": "Çınar Enerji Ltd. Şti.",
+  "date": "2026-11-12T08:45",
+  "amount": 17043.4,
+  "bank": "İş Bankası",
+  "installments": 1,
+  "status": "3D doğrulanamadı"
+ },
+ {
+  "id": "OD-5027",
+  "dealer": "Özgür Endüstri Ltd. Şti.",
+  "date": "2026-11-14T05:42",
+  "amount": 89997.92,
+  "bank": "İş Bankası",
+  "installments": 1,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5028",
+  "dealer": "Toros Mühendislik San. Tic.",
+  "date": "2026-11-07T20:10",
+  "amount": 69607.85,
+  "bank": "Ziraat",
+  "installments": 1,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5029",
+  "dealer": "Uğur Endüstri Ltd. Şti.",
+  "date": "2026-11-16T09:51",
+  "amount": 54154.93,
+  "bank": "İş Bankası",
+  "installments": 1,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5030",
+  "dealer": "Mavi Tesisat Ltd. Şti.",
+  "date": "2026-11-01T20:18",
+  "amount": 56601.9,
+  "bank": "İş Bankası",
+  "installments": 9,
+  "status": "3D doğrulanamadı"
+ },
+ {
+  "id": "OD-5031",
+  "dealer": "Uğur Mühendislik San. Tic.",
+  "date": "2026-11-10T01:02",
+  "amount": 33422.65,
+  "bank": "İş Bankası",
+  "installments": 3,
+  "status": "İade edildi"
+ },
+ {
+  "id": "OD-5032",
+  "dealer": "Bereket Lojistik A.Ş.",
+  "date": "2026-11-02T06:31",
+  "amount": 67619.75,
+  "bank": "Yapı Kredi",
+  "installments": 1,
+  "status": "İade edildi"
+ },
+ {
+  "id": "OD-5033",
+  "dealer": "Pınar Yapı San. Tic.",
+  "date": "2026-11-12T08:25",
+  "amount": 86938.1,
+  "bank": "Yapı Kredi",
+  "installments": 1,
+  "status": "Başarılı"
+ },
+ {
+  "id": "OD-5034",
+  "dealer": "Doğu Tesisat Ltd. Şti.",
+  "date": "2026-11-06T09:54",
+  "amount": 88615.14,
+  "bank": "Yapı Kredi",
+  "installments": 1,
+  "status": "3D doğrulanamadı"
+ },
+ {
+  "id": "OD-5035",
+  "dealer": "Atlas Teknik Ltd. Şti.",
+  "date": "2026-11-07T09:22",
+  "amount": 38260.81,
+  "bank": "İş Bankası",
+  "installments": 1,
+  "status": "İade edildi"
+ }
+]

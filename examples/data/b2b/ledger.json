@@ -1,0 +1,146 @@
+[
+ {
+  "date": "2026-09-26T09:30",
+  "doc": "HDE2026000001300",
+  "desc": "Satış faturası",
+  "debit": 16921.66,
+  "credit": 0,
+  "balance": 16921.66
+ },
+ {
+  "date": "2026-09-29T09:30",
+  "doc": "HDE2026000001301",
+  "desc": "Satış faturası",
+  "debit": 32312.86,
+  "credit": 0,
+  "balance": 49234.52
+ },
+ {
+  "date": "2026-10-02T09:30",
+  "doc": "TH-802",
+  "desc": "Çek tahsilatı",
+  "debit": 0,
+  "credit": 24146.55,
+  "balance": 25087.97
+ },
+ {
+  "date": "2026-10-05T09:30",
+  "doc": "HDE2026000001303",
+  "desc": "Satış faturası",
+  "debit": 35201.92,
+  "credit": 0,
+  "balance": 60289.89
+ },
+ {
+  "date": "2026-10-08T09:30",
+  "doc": "HDE2026000001304",
+  "desc": "Satış faturası",
+  "debit": 20303.19,
+  "credit": 0,
+  "balance": 80593.08
+ },
+ {
+  "date": "2026-10-11T09:30",
+  "doc": "TH-805",
+  "desc": "Çek tahsilatı",
+  "debit": 0,
+  "credit": 21773.43,
+  "balance": 58819.65
+ },
+ {
+  "date": "2026-10-14T09:30",
+  "doc": "HDE2026000001306",
+  "desc": "Satış faturası",
+  "debit": 20526.25,
+  "credit": 0,
+  "balance": 79345.9
+ },
+ {
+  "date": "2026-10-17T09:30",
+  "doc": "HDE2026000001307",
+  "desc": "Satış faturası",
+  "debit": 31783.44,
+  "credit": 0,
+  "balance": 111129.34
+ },
+ {
+  "date": "2026-10-20T09:30",
+  "doc": "TH-808",
+  "desc": "Çek tahsilatı",
+  "debit": 0,
+  "credit": 53215.35,
+  "balance": 57913.99
+ },
+ {
+  "date": "2026-10-23T09:30",
+  "doc": "HDE2026000001309",
+  "desc": "Satış faturası",
+  "debit": 25191.05,
+  "credit": 0,
+  "balance": 83105.04
+ },
+ {
+  "date": "2026-10-26T09:30",
+  "doc": "HDE2026000001310",
+  "desc": "Satış faturası",
+  "debit": 33729.4,
+  "credit": 0,
+  "balance": 116834.44
+ },
+ {
+  "date": "2026-10-29T09:30",
+  "doc": "TH-811",
+  "desc": "Havale / EFT",
+  "debit": 0,
+  "credit": 45269.43,
+  "balance": 71565.01
+ },
+ {
+  "date": "2026-11-01T09:30",
+  "doc": "HDE2026000001312",
+  "desc": "Satış faturası",
+  "debit": 10334.72,
+  "credit": 0,
+  "balance": 81899.73
+ },
+ {
+  "date": "2026-11-04T09:30",
+  "doc": "HDE2026000001313",
+  "desc": "Satış faturası",
+  "debit": 36719.04,
+  "credit": 0,
+  "balance": 118618.77
+ },
+ {
+  "date": "2026-11-07T09:30",
+  "doc": "TH-814",
+  "desc": "Kredi kartı tahsilat",
+  "debit": 0,
+  "credit": 38307.18,
+  "balance": 80311.59
+ },
+ {
+  "date": "2026-11-10T09:30",
+  "doc": "HDE2026000001315",
+  "desc": "Satış faturası",
+  "debit": 15458.87,
+  "credit": 0,
+  "balance": 95770.46
+ },
+ {
+  "date": "2026-11-13T09:30",
+  "doc": "HDE2026000001316",
+  "desc": "Satış faturası",
+  "debit": 37271.04,
+  "credit": 0,
+  "balance": 133041.5
+ },
+ {
+  "date": "2026-11-16T09:30",
+  "doc": "TH-817",
+  "desc": "Kredi kartı tahsilat",
+  "debit": 0,
+  "credit": 55431.62,
+  "balance": 77609.88
+ }
+]

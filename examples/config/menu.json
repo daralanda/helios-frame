@@ -2,52 +2,110 @@
   "$comment": "Tüm projelerin menüleri tek yerden yönetilir. href'ler framework köküne göredir. roles verilen öğeler yalnızca o rollere görünür (sunucu tarafı yetki kontrolünün yerini TUTMAZ).",
   "menus": {
     "site": [
-      { "label": "Ana sayfa", "href": "examples/", "icon": "home" },
-      { "label": "Bileşenler", "href": "examples/#bilesenler", "icon": "layers" },
-      { "label": "Demolar", "icon": "zap", "children": [
-        { "label": "B2B / CRM Panel", "href": "examples/panel/", "desc": "Dikey menü, tablo, grafik, kanban" },
-        { "label": "E-ticaret Mağaza", "href": "examples/shop/", "desc": "Yatay + mega menü, sepet, SEO" },
-        { "label": "Ödeme formu", "href": "examples/shop/odeme.html", "desc": "Doğrulama ve maskeler" }
-      ]},
-      { "label": "GitHub", "href": "https://github.com/daralanda/helios-frame", "icon": "globe", "external": true }
+      {
+        "label": "Ana sayfa",
+        "href": "examples/",
+        "icon": "home"
+      },
+      {
+        "label": "Bileşenler",
+        "href": "examples/#bilesenler",
+        "icon": "layers"
+      },
+      {
+        "label": "Demolar",
+        "icon": "zap",
+        "children": [
+          {
+            "label": "B2B yönetim paneli",
+            "href": "examples/b2b/admin/",
+            "desc": "HeliosB2b · dikey menü, onay, cari, stok"
+          },
+          {
+            "label": "B2B bayi portalı",
+            "href": "examples/b2b/bayi/",
+            "desc": "Yatay menü, katalog, sepet, hızlı sipariş"
+          },
+          {
+            "label": "Helios CRM",
+            "href": "examples/crm/",
+            "desc": "Huni kanbanı, lead, aktiviteler"
+          },
+          {
+            "label": "Helios HR",
+            "href": "examples/hr/",
+            "desc": "PDKS, puantaj, izin, bordro"
+          },
+          {
+            "label": "E-ticaret mağaza",
+            "href": "examples/shop/",
+            "desc": "SEO uyumlu statik ürün sayfaları"
+          },
+          {
+            "label": "Ödeme formu",
+            "href": "examples/shop/odeme.html",
+            "desc": "Doğrulama ve maskeler"
+          }
+        ],
+        "mega": true
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/daralanda/helios-frame",
+        "icon": "globe",
+        "external": true
+      }
     ],
-
     "shop": [
-      { "label": "Tüm ürünler", "href": "examples/shop/" },
-      { "label": "Kategoriler", "mega": true, "children": [
-        { "label": "Sensörler", "href": "examples/shop/?k=sensor", "desc": "Sıcaklık, nem, hareket" },
-        { "label": "Ağ geçitleri", "href": "examples/shop/?k=gateway", "desc": "LoRaWAN, Wi-Fi, 4G" },
-        { "label": "Röle & kontrol", "href": "examples/shop/?k=kontrol", "desc": "Akıllı röle ve modüller" },
-        { "label": "Enerji", "href": "examples/shop/?k=enerji", "desc": "Sayaç ve izleme" },
-        { "label": "Aksesuar", "href": "examples/shop/?k=aksesuar", "desc": "Montaj ve güç" },
-        { "label": "Yazılım", "href": "examples/shop/?k=yazilim", "desc": "Bulut lisansları" }
-      ]},
-      { "label": "Kampanyalar", "href": "examples/shop/?k=kampanya", "badge": "Yeni" },
-      { "label": "Bayi girişi", "href": "examples/panel/" }
-    ],
-
-    "panel": [
-      { "group": "Genel", "items": [
-        { "label": "Gösterge paneli", "href": "examples/panel/#/", "icon": "dashboard" },
-        { "label": "Raporlar", "href": "examples/panel/#/raporlar", "icon": "chart", "roles": ["admin"] }
-      ]},
-      { "group": "Satış", "items": [
-        { "label": "Müşteriler", "href": "examples/panel/#/musteriler", "icon": "users" },
-        { "label": "Fırsatlar (CRM)", "href": "examples/panel/#/firsatlar", "icon": "briefcase", "badge": 4 },
-        { "label": "Teklifler", "icon": "file", "children": [
-          { "label": "Tüm teklifler", "href": "examples/panel/#/teklifler" },
-          { "label": "Yeni teklif", "href": "examples/panel/#/teklifler/yeni" }
-        ]},
-        { "label": "Siparişler", "href": "examples/panel/#/siparisler", "icon": "cart" }
-      ]},
-      { "group": "Katalog", "roles": ["admin"], "items": [
-        { "label": "Ürünler", "href": "examples/shop/", "icon": "box" },
-        { "label": "Kampanyalar", "href": "examples/shop/?k=kampanya", "icon": "tag" }
-      ]},
-      { "group": "Sistem", "items": [
-        { "label": "Ayarlar", "href": "examples/panel/#/ayarlar", "icon": "settings" },
-        { "label": "Vitrine dön", "href": "examples/", "icon": "home" }
-      ]}
+      {
+        "label": "Tüm ürünler",
+        "href": "examples/shop/"
+      },
+      {
+        "label": "Kategoriler",
+        "mega": true,
+        "children": [
+          {
+            "label": "Sensörler",
+            "href": "examples/shop/?k=sensor",
+            "desc": "Sıcaklık, nem, hareket"
+          },
+          {
+            "label": "Ağ geçitleri",
+            "href": "examples/shop/?k=gateway",
+            "desc": "LoRaWAN, Wi-Fi, 4G"
+          },
+          {
+            "label": "Röle & kontrol",
+            "href": "examples/shop/?k=kontrol",
+            "desc": "Akıllı röle ve modüller"
+          },
+          {
+            "label": "Enerji",
+            "href": "examples/shop/?k=enerji",
+            "desc": "Sayaç ve izleme"
+          },
+          {
+            "label": "Aksesuar",
+            "href": "examples/shop/?k=aksesuar",
+            "desc": "Montaj ve güç"
+          },
+          {
+            "label": "Yazılım",
+            "href": "examples/shop/?k=yazilim",
+            "desc": "Bulut lisansları"
+          }
+        ]
+      },
+      {
+        "label": "Kampanyalar",
+        "href": "examples/shop/?k=kampanya",
+        "badge": "Yeni"
+      },
+      {
+        "label": "Bayi girişi",
+        "href": "examples/b2b/bayi/"
+      }
     ]
   }
 }

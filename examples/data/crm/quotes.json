@@ -1,0 +1,227 @@
+[
+ {
+  "no": "TK-2026-101",
+  "title": "Fabrika enerji izleme",
+  "company": "Mavi Makine Ltd. Şti.",
+  "date": "2026-11-01T06:28",
+  "total": 188975.71,
+  "status": "Reddedildi",
+  "validUntil": "2026-12-11"
+ },
+ {
+  "no": "TK-2026-102",
+  "title": "Kompresör izleme",
+  "company": "Güney Lojistik A.Ş.",
+  "date": "2026-11-08T02:49",
+  "total": 447545.72,
+  "status": "Gönderildi",
+  "validUntil": "2026-12-02"
+ },
+ {
+  "no": "TK-2026-103",
+  "title": "Su kaçak sistemi",
+  "company": "Çınar Makine Ltd. Şti.",
+  "date": "2026-10-09T18:54",
+  "total": 127765.65,
+  "status": "Reddedildi",
+  "validUntil": "2026-12-16"
+ },
+ {
+  "no": "TK-2026-104",
+  "title": "Otopark doluluk",
+  "company": "Doğu Tesisat San. Tic.",
+  "date": "2026-10-19T01:24",
+  "total": 118831.15,
+  "status": "Kabul edildi",
+  "validUntil": "2026-11-14"
+ },
+ {
+  "no": "TK-2026-105",
+  "title": "Depo IoT dönüşümü",
+  "company": "Şahin Endüstri Ltd. Şti.",
+  "date": "2026-10-15T04:58",
+  "total": 46528.41,
+  "status": "Gönderildi",
+  "validUntil": "2026-11-23"
+ },
+ {
+  "no": "TK-2026-106",
+  "title": "Sera iklim kontrolü",
+  "company": "Kartal Makine San. Tic.",
+  "date": "2026-10-25T21:36",
+  "total": 428757.96,
+  "status": "Taslak",
+  "validUntil": "2026-11-09"
+ },
+ {
+  "no": "TK-2026-107",
+  "title": "Su kaçak sistemi",
+  "company": "Marmara Endüstri San. Tic.",
+  "date": "2026-09-21T11:13",
+  "total": 124982.42,
+  "status": "Taslak",
+  "validUntil": "2026-11-23"
+ },
+ {
+  "no": "TK-2026-108",
+  "title": "Depo IoT dönüşümü",
+  "company": "Çınar Makine Ltd. Şti.",
+  "date": "2026-10-22T14:08",
+  "total": 467590.21,
+  "status": "Kabul edildi",
+  "validUntil": "2026-12-06"
+ },
+ {
+  "no": "TK-2026-109",
+  "title": "Kompresör izleme",
+  "company": "Doğu Tesisat San. Tic.",
+  "date": "2026-10-08T14:44",
+  "total": 175019.18,
+  "status": "Reddedildi",
+  "validUntil": "2026-11-28"
+ },
+ {
+  "no": "TK-2026-110",
+  "title": "Otopark doluluk",
+  "company": "Akdeniz Otomasyon San. Tic.",
+  "date": "2026-10-14T05:50",
+  "total": 386149.34,
+  "status": "Taslak",
+  "validUntil": "2026-12-11"
+ },
+ {
+  "no": "TK-2026-111",
+  "title": "Bayi yıllık anlaşması",
+  "company": "Kuzey Yapı Ltd. Şti.",
+  "date": "2026-09-21T11:17",
+  "total": 392045.56,
+  "status": "Kabul edildi",
+  "validUntil": "2026-11-28"
+ },
+ {
+  "no": "TK-2026-112",
+  "title": "Soğuk oda sensör ağı",
+  "company": "Kardelen Lojistik A.Ş.",
+  "date": "2026-11-13T13:58",
+  "total": 228540.12,
+  "status": "Kabul edildi",
+  "validUntil": "2026-12-19"
+ },
+ {
+  "no": "TK-2026-113",
+  "title": "Bayi yıllık anlaşması",
+  "company": "Çınar Teknik Ltd. Şti.",
+  "date": "2026-10-26T14:56",
+  "total": 431635.95,
+  "status": "Kabul edildi",
+  "validUntil": "2026-11-21"
+ },
+ {
+  "no": "TK-2026-114",
+  "title": "Bina otomasyonu",
+  "company": "Özgür Lojistik Ltd. Şti.",
+  "date": "2026-10-28T12:29",
+  "total": 586301.27,
+  "status": "Reddedildi",
+  "validUntil": "2026-11-29"
+ },
+ {
+  "no": "TK-2026-115",
+  "title": "Bina otomasyonu",
+  "company": "Şahin Endüstri Ltd. Şti.",
+  "date": "2026-09-20T17:41",
+  "total": 330831.75,
+  "status": "Kabul edildi",
+  "validUntil": "2026-11-25"
+ },
+ {
+  "no": "TK-2026-116",
+  "title": "Kompresör izleme",
+  "company": "Ege Endüstri San. Tic.",
+  "date": "2026-10-15T01:14",
+  "total": 482824.88,
+  "status": "Gönderildi",
+  "validUntil": "2026-11-30"
+ },
+ {
+  "no": "TK-2026-117",
+  "title": "Sera iklim kontrolü",
+  "company": "Şahin Endüstri Ltd. Şti.",
+  "date": "2026-09-22T07:00",
+  "total": 513409.63,
+  "status": "Kabul edildi",
+  "validUntil": "2026-12-11"
+ },
+ {
+  "no": "TK-2026-118",
+  "title": "Depo IoT dönüşümü",
+  "company": "Kuzey Lojistik San. Tic.",
+  "date": "2026-09-20T12:51",
+  "total": 571574.19,
+  "status": "Gönderildi",
+  "validUntil": "2026-11-27"
+ },
+ {
+  "no": "TK-2026-119",
+  "title": "Soğuk oda sensör ağı",
+  "company": "Kardelen Lojistik A.Ş.",
+  "date": "2026-11-07T17:56",
+  "total": 485483.5,
+  "status": "Gönderildi",
+  "validUntil": "2026-11-30"
+ },
+ {
+  "no": "TK-2026-120",
+  "title": "Soğuk oda sensör ağı",
+  "company": "Mavi Elektrik San. Tic.",
+  "date": "2026-10-18T01:18",
+  "total": 156813.23,
+  "status": "Kabul edildi",
+  "validUntil": "2026-12-05"
+ },
+ {
+  "no": "TK-2026-121",
+  "title": "Bayi yıllık anlaşması",
+  "company": "Mavi Makine Ltd. Şti.",
+  "date": "2026-10-26T16:13",
+  "total": 386837.39,
+  "status": "Reddedildi",
+  "validUntil": "2026-11-16"
+ },
+ {
+  "no": "TK-2026-122",
+  "title": "Su kaçak sistemi",
+  "company": "Işık Tesisat A.Ş.",
+  "date": "2026-09-22T15:34",
+  "total": 385569.88,
+  "status": "Taslak",
+  "validUntil": "2026-12-09"
+ },
+ {
+  "no": "TK-2026-123",
+  "title": "Sera iklim kontrolü",
+  "company": "Işık Yapı Ltd. Şti.",
+  "date": "2026-11-08T11:41",
+  "total": 565861.07,
+  "status": "Reddedildi",
+  "validUntil": "2026-12-12"
+ },
+ {
+  "no": "TK-2026-124",
+  "title": "Depo IoT dönüşümü",
+  "company": "Mavi Tesisat A.Ş.",
+  "date": "2026-11-14T11:19",
+  "total": 567989.21,
+  "status": "Gönderildi",
+  "validUntil": "2026-11-17"
+ },
+ {
+  "no": "TK-2026-125",
+  "title": "Sera iklim kontrolü",
+  "company": "Ege Otomasyon Ltd. Şti.",
+  "date": "2026-10-13T03:32",
+  "total": 641866.67,
+  "status": "Reddedildi",
+  "validUntil": "2026-11-18"
+ }
+]

@@ -226,7 +226,9 @@ ${urls.map((u) => `  <url><loc>${escapeHTML(u.loc)}</loc><priority>${u.priority}
 `);
 await writeFile(join(ROOT, 'robots.txt'), `User-agent: *
 Allow: /
-Disallow: /examples/panel/
+Disallow: /examples/b2b/
+Disallow: /examples/crm/
+Disallow: /examples/hr/
 
 Sitemap: ${abs('examples/sitemap.xml')}
 `);

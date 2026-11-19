@@ -1,0 +1,573 @@
+[
+ {
+  "id": 1,
+  "name": "Doğu Endüstri Ltd. Şti.",
+  "city": "Adana",
+  "sector": "Lojistik",
+  "phone": "0212 971 92 34",
+  "owner": "Selin Demir",
+  "tags": [
+   "Sıcak"
+  ],
+  "openDeals": 2,
+  "active": true,
+  "vkn": "5667652775"
+ },
+ {
+  "id": 2,
+  "name": "Şahin Endüstri Ltd. Şti.",
+  "city": "İzmir",
+  "sector": "İnşaat",
+  "phone": "0312 280 65 87",
+  "owner": "Murat Kaya",
+  "tags": [
+   "Bayi adayı",
+   "Yeni"
+  ],
+  "openDeals": 0,
+  "active": false,
+  "vkn": "4479627574"
+ },
+ {
+  "id": 3,
+  "name": "Ege Lojistik San. Tic.",
+  "city": "Sakarya",
+  "sector": "Lojistik",
+  "phone": "0262 258 19 95",
+  "owner": "Emre Çelik",
+  "tags": [
+   "İhracatçı"
+  ],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "2970213554"
+ },
+ {
+  "id": 4,
+  "name": "Işık Tesisat A.Ş.",
+  "city": "Kocaeli",
+  "sector": "İnşaat",
+  "phone": "0312 579 57 66",
+  "owner": "Ayşe Yılmaz",
+  "tags": [
+   "VIP",
+   "İhracatçı"
+  ],
+  "openDeals": 2,
+  "active": true,
+  "vkn": "4310278680"
+ },
+ {
+  "id": 5,
+  "name": "Yıldız Makine Ltd. Şti.",
+  "city": "Manisa",
+  "sector": "Enerji",
+  "phone": "0224 492 98 72",
+  "owner": "Murat Kaya",
+  "tags": [],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "7271551889"
+ },
+ {
+  "id": 6,
+  "name": "Doğu Makine A.Ş.",
+  "city": "Konya",
+  "sector": "Sağlık",
+  "phone": "0232 720 38 25",
+  "owner": "Murat Kaya",
+  "tags": [],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "0589578290"
+ },
+ {
+  "id": 7,
+  "name": "Marmara Enerji Ltd. Şti.",
+  "city": "Denizli",
+  "sector": "İnşaat",
+  "phone": "0262 690 77 62",
+  "owner": "Emre Çelik",
+  "tags": [
+   "Sıcak",
+   "VIP"
+  ],
+  "openDeals": 2,
+  "active": true,
+  "vkn": "7785289220"
+ },
+ {
+  "id": 8,
+  "name": "Göktürk Endüstri A.Ş.",
+  "city": "Bursa",
+  "sector": "Tarım",
+  "phone": "0216 511 31 30",
+  "owner": "Selin Demir",
+  "tags": [
+   "VIP",
+   "Bayi adayı"
+  ],
+  "openDeals": 4,
+  "active": true,
+  "vkn": "1438424988"
+ },
+ {
+  "id": 9,
+  "name": "Marmara Endüstri San. Tic.",
+  "city": "Konya",
+  "sector": "Tarım",
+  "phone": "0224 357 31 94",
+  "owner": "Selin Demir",
+  "tags": [
+   "Sıcak",
+   "Yeni"
+  ],
+  "openDeals": 0,
+  "active": false,
+  "vkn": "9439690784"
+ },
+ {
+  "id": 10,
+  "name": "Doğu Makine Ltd. Şti.",
+  "city": "Gaziantep",
+  "sector": "Sağlık",
+  "phone": "0262 615 48 68",
+  "owner": "Ayşe Yılmaz",
+  "tags": [
+   "Sıcak",
+   "VIP"
+  ],
+  "openDeals": 3,
+  "active": true,
+  "vkn": "7359255560"
+ },
+ {
+  "id": 11,
+  "name": "Kuzey Lojistik San. Tic.",
+  "city": "Bursa",
+  "sector": "Lojistik",
+  "phone": "0216 677 25 44",
+  "owner": "Emre Çelik",
+  "tags": [],
+  "openDeals": 1,
+  "active": false,
+  "vkn": "4696325954"
+ },
+ {
+  "id": 12,
+  "name": "Özgür Elektrik Ltd. Şti.",
+  "city": "Trabzon",
+  "sector": "Perakende",
+  "phone": "0312 515 73 12",
+  "owner": "Ayşe Yılmaz",
+  "tags": [
+   "İhracatçı"
+  ],
+  "openDeals": 3,
+  "active": true,
+  "vkn": "3950047972"
+ },
+ {
+  "id": 13,
+  "name": "Doğu Endüstri A.Ş.",
+  "city": "Bursa",
+  "sector": "Perakende",
+  "phone": "0216 470 56 61",
+  "owner": "Selin Demir",
+  "tags": [],
+  "openDeals": 3,
+  "active": false,
+  "vkn": "8358416873"
+ },
+ {
+  "id": 14,
+  "name": "Kartal Makine San. Tic.",
+  "city": "Bursa",
+  "sector": "Enerji",
+  "phone": "0212 603 57 53",
+  "owner": "Selin Demir",
+  "tags": [],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "6800025787"
+ },
+ {
+  "id": 15,
+  "name": "Mavi Elektrik San. Tic.",
+  "city": "Trabzon",
+  "sector": "Enerji",
+  "phone": "0232 827 50 30",
+  "owner": "Emre Çelik",
+  "tags": [
+   "Yeni",
+   "Bayi adayı"
+  ],
+  "openDeals": 4,
+  "active": true,
+  "vkn": "8879470553"
+ },
+ {
+  "id": 16,
+  "name": "Kardelen Enerji Ltd. Şti.",
+  "city": "Eskişehir",
+  "sector": "Sağlık",
+  "phone": "0262 904 90 13",
+  "owner": "Emre Çelik",
+  "tags": [
+   "Yeni"
+  ],
+  "openDeals": 4,
+  "active": true,
+  "vkn": "0972896231"
+ },
+ {
+  "id": 17,
+  "name": "Ege Tesisat San. Tic.",
+  "city": "Bursa",
+  "sector": "Enerji",
+  "phone": "0212 651 50 63",
+  "owner": "Murat Kaya",
+  "tags": [
+   "Yeni"
+  ],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "9702838578"
+ },
+ {
+  "id": 18,
+  "name": "Çınar Teknik Ltd. Şti.",
+  "city": "Konya",
+  "sector": "Perakende",
+  "phone": "0224 550 79 55",
+  "owner": "Selin Demir",
+  "tags": [
+   "Kamu",
+   "VIP"
+  ],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "4344375754"
+ },
+ {
+  "id": 19,
+  "name": "Kartal Makine Ltd. Şti.",
+  "city": "Bursa",
+  "sector": "Tarım",
+  "phone": "0262 756 58 60",
+  "owner": "Selin Demir",
+  "tags": [],
+  "openDeals": 2,
+  "active": false,
+  "vkn": "1574733840"
+ },
+ {
+  "id": 20,
+  "name": "Kartal Makine A.Ş.",
+  "city": "Bursa",
+  "sector": "Tarım",
+  "phone": "0262 800 40 41",
+  "owner": "Ayşe Yılmaz",
+  "tags": [
+   "İhracatçı",
+   "VIP"
+  ],
+  "openDeals": 1,
+  "active": false,
+  "vkn": "6571208269"
+ },
+ {
+  "id": 21,
+  "name": "Akdeniz Mühendislik Ltd. Şti.",
+  "city": "Antalya",
+  "sector": "Sağlık",
+  "phone": "0232 528 46 92",
+  "owner": "Ayşe Yılmaz",
+  "tags": [],
+  "openDeals": 4,
+  "active": true,
+  "vkn": "0262067242"
+ },
+ {
+  "id": 22,
+  "name": "Ege Otomasyon Ltd. Şti.",
+  "city": "Bursa",
+  "sector": "Lojistik",
+  "phone": "0232 665 92 79",
+  "owner": "Emre Çelik",
+  "tags": [],
+  "openDeals": 4,
+  "active": true,
+  "vkn": "3152742054"
+ },
+ {
+  "id": 23,
+  "name": "Doğu Tesisat San. Tic.",
+  "city": "Antalya",
+  "sector": "Enerji",
+  "phone": "0224 854 61 64",
+  "owner": "Selin Demir",
+  "tags": [],
+  "openDeals": 3,
+  "active": true,
+  "vkn": "2275304633"
+ },
+ {
+  "id": 24,
+  "name": "Mavi Makine Ltd. Şti.",
+  "city": "Eskişehir",
+  "sector": "Tarım",
+  "phone": "0262 786 11 43",
+  "owner": "Selin Demir",
+  "tags": [
+   "VIP",
+   "Sıcak"
+  ],
+  "openDeals": 0,
+  "active": true,
+  "vkn": "2684145936"
+ },
+ {
+  "id": 25,
+  "name": "Çağdaş Elektrik Ltd. Şti.",
+  "city": "Kocaeli",
+  "sector": "Perakende",
+  "phone": "0262 820 57 63",
+  "owner": "Emre Çelik",
+  "tags": [
+   "Yeni",
+   "VIP"
+  ],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "9187851918"
+ },
+ {
+  "id": 26,
+  "name": "Ege Endüstri San. Tic.",
+  "city": "Antalya",
+  "sector": "Tarım",
+  "phone": "0224 353 31 51",
+  "owner": "Emre Çelik",
+  "tags": [],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "7187072861"
+ },
+ {
+  "id": 27,
+  "name": "Mavi Tesisat A.Ş.",
+  "city": "Manisa",
+  "sector": "İnşaat",
+  "phone": "0232 940 12 60",
+  "owner": "Selin Demir",
+  "tags": [],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "0651801700"
+ },
+ {
+  "id": 28,
+  "name": "Doğu Teknik A.Ş.",
+  "city": "Kocaeli",
+  "sector": "Sağlık",
+  "phone": "0262 946 92 63",
+  "owner": "Selin Demir",
+  "tags": [
+   "Kamu"
+  ],
+  "openDeals": 3,
+  "active": true,
+  "vkn": "8251286829"
+ },
+ {
+  "id": 29,
+  "name": "Uğur Yapı A.Ş.",
+  "city": "İstanbul",
+  "sector": "Lojistik",
+  "phone": "0312 889 79 64",
+  "owner": "Emre Çelik",
+  "tags": [],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "2431069037"
+ },
+ {
+  "id": 30,
+  "name": "Özgür Enerji A.Ş.",
+  "city": "Ankara",
+  "sector": "Perakende",
+  "phone": "0224 888 16 41",
+  "owner": "Ayşe Yılmaz",
+  "tags": [
+   "Kamu"
+  ],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "0284395998"
+ },
+ {
+  "id": 31,
+  "name": "Kardelen Lojistik A.Ş.",
+  "city": "Eskişehir",
+  "sector": "Enerji",
+  "phone": "0262 733 38 62",
+  "owner": "Selin Demir",
+  "tags": [
+   "Sıcak"
+  ],
+  "openDeals": 4,
+  "active": true,
+  "vkn": "2687056853"
+ },
+ {
+  "id": 32,
+  "name": "Bereket Teknik Ltd. Şti.",
+  "city": "Kocaeli",
+  "sector": "Lojistik",
+  "phone": "0312 388 78 70",
+  "owner": "Murat Kaya",
+  "tags": [],
+  "openDeals": 2,
+  "active": true,
+  "vkn": "2708668822"
+ },
+ {
+  "id": 33,
+  "name": "Işık Yapı Ltd. Şti.",
+  "city": "Antalya",
+  "sector": "Lojistik",
+  "phone": "0262 280 67 57",
+  "owner": "Ayşe Yılmaz",
+  "tags": [
+   "Yeni",
+   "VIP"
+  ],
+  "openDeals": 0,
+  "active": true,
+  "vkn": "9901398372"
+ },
+ {
+  "id": 34,
+  "name": "Özgür Lojistik Ltd. Şti.",
+  "city": "İstanbul",
+  "sector": "Enerji",
+  "phone": "0216 959 25 71",
+  "owner": "Murat Kaya",
+  "tags": [
+   "İhracatçı",
+   "VIP"
+  ],
+  "openDeals": 3,
+  "active": true,
+  "vkn": "8546785447"
+ },
+ {
+  "id": 35,
+  "name": "Şahin Endüstri Ltd. Şti.",
+  "city": "Manisa",
+  "sector": "Üretim",
+  "phone": "0262 680 50 36",
+  "owner": "Selin Demir",
+  "tags": [
+   "Kamu"
+  ],
+  "openDeals": 0,
+  "active": true,
+  "vkn": "3204899646"
+ },
+ {
+  "id": 36,
+  "name": "Kuzey Yapı Ltd. Şti.",
+  "city": "Gaziantep",
+  "sector": "Perakende",
+  "phone": "0224 451 73 80",
+  "owner": "Selin Demir",
+  "tags": [
+   "Kamu"
+  ],
+  "openDeals": 3,
+  "active": true,
+  "vkn": "5228728080"
+ },
+ {
+  "id": 37,
+  "name": "Ege Enerji San. Tic.",
+  "city": "Ankara",
+  "sector": "Sağlık",
+  "phone": "0212 622 27 90",
+  "owner": "Murat Kaya",
+  "tags": [],
+  "openDeals": 1,
+  "active": false,
+  "vkn": "8750997700"
+ },
+ {
+  "id": 38,
+  "name": "Anadolu Endüstri San. Tic.",
+  "city": "Sakarya",
+  "sector": "Üretim",
+  "phone": "0212 742 45 78",
+  "owner": "Selin Demir",
+  "tags": [],
+  "openDeals": 4,
+  "active": true,
+  "vkn": "6211823395"
+ },
+ {
+  "id": 39,
+  "name": "Çınar Makine Ltd. Şti.",
+  "city": "Kayseri",
+  "sector": "Sağlık",
+  "phone": "0312 280 57 61",
+  "owner": "Emre Çelik",
+  "tags": [
+   "VIP",
+   "Yeni"
+  ],
+  "openDeals": 2,
+  "active": true,
+  "vkn": "1016668702"
+ },
+ {
+  "id": 40,
+  "name": "Akdeniz Otomasyon San. Tic.",
+  "city": "Konya",
+  "sector": "Üretim",
+  "phone": "0312 644 92 52",
+  "owner": "Ayşe Yılmaz",
+  "tags": [
+   "Sıcak",
+   "VIP"
+  ],
+  "openDeals": 1,
+  "active": true,
+  "vkn": "9740148900"
+ },
+ {
+  "id": 41,
+  "name": "Güney Lojistik A.Ş.",
+  "city": "Antalya",
+  "sector": "Tarım",
+  "phone": "0216 970 60 19",
+  "owner": "Selin Demir",
+  "tags": [],
+  "openDeals": 4,
+  "active": true,
+  "vkn": "6856218507"
+ },
+ {
+  "id": 42,
+  "name": "Yıldız Teknik A.Ş.",
+  "city": "İzmir",
+  "sector": "Lojistik",
+  "phone": "0224 987 88 86",
+  "owner": "Emre Çelik",
+  "tags": [
+   "Sıcak"
+  ],
+  "openDeals": 2,
+  "active": true,
+  "vkn": "7735866292"
+ }
+]

@@ -1,0 +1,130 @@
+[
+ {
+  "code": "SE-101",
+  "name": "Nordtek Sıcaklık sensörü",
+  "unit": "Adet",
+  "price": 3130.32,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "SE-102",
+  "name": "Ardem Nem sensörü",
+  "unit": "Adet",
+  "price": 569.15,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "SE-103",
+  "name": "Sentra Hareket sensörü",
+  "unit": "Adet",
+  "price": 91.81,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "SE-104",
+  "name": "Ardem Kapı sensörü",
+  "unit": "Adet",
+  "price": 83.44,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "SE-105",
+  "name": "Voltix CO₂ sensörü",
+  "unit": "Adet",
+  "price": 2244.93,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "SE-106",
+  "name": "Sentra Su kaçak sensörü",
+  "unit": "Adet",
+  "price": 595.81,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "AG-107",
+  "name": "Ardem LoRaWAN ağ geçidi",
+  "unit": "Adet",
+  "price": 12461.78,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "AG-108",
+  "name": "Ardem Zigbee hub",
+  "unit": "Adet",
+  "price": 406.36,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "AG-109",
+  "name": "Voltix 4G modem",
+  "unit": "Adet",
+  "price": 89.93,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "AG-110",
+  "name": "Voltix Endüstriyel switch",
+  "unit": "Adet",
+  "price": 147.85,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "RO-111",
+  "name": "Ardem Akıllı röle 2 kanal",
+  "unit": "Adet",
+  "price": 2379.5,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "RO-112",
+  "name": "Sentra Akıllı röle 4 kanal",
+  "unit": "Adet",
+  "price": 11933.56,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "RO-113",
+  "name": "Sentra Dimmer modülü",
+  "unit": "Adet",
+  "price": 386.63,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "RO-114",
+  "name": "Helios PLC giriş modülü",
+  "unit": "Adet",
+  "price": 422.91,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "EN-115",
+  "name": "Nordtek Trifaze analizör",
+  "unit": "Adet",
+  "price": 622.18,
+  "vat": 20,
+  "active": true
+ },
+ {
+  "code": "EN-116",
+  "name": "Nordtek Monofaze sayaç",
+  "unit": "Adet",
+  "price": 3289.35,
+  "vat": 20,
+  "active": true
+ }
+]

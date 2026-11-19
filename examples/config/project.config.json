@@ -49,8 +49,8 @@
     "loginUrl": null,
     "logoutUrl": "examples/",
     "userLinks": [
-      { "label": "Profilim", "href": "examples/panel/#/ayarlar", "icon": "user" },
-      { "label": "Ayarlar", "href": "examples/panel/#/ayarlar", "icon": "settings" }
+      { "label": "Profilim", "href": "examples/", "icon": "user" },
+      { "label": "Ayarlar", "href": "examples/", "icon": "settings" }
     ]
   },
 

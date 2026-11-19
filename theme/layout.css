@@ -69,6 +69,10 @@
   .hf-topbar__nav { flex: 1; min-width: 0; }
   .hf-topbar__actions { display: flex; align-items: center; gap: var(--hf-space-1); margin-inline-start: auto; }
   .hf-topbar__search { flex: 1; max-width: 520px; }
+  /* Yatay menüde menü doğal genişliğini alır, arama kalan alana sığar */
+  .hf-app[data-nav="horizontal"] .hf-topbar__nav { flex: 0 1 auto; }
+  .hf-app[data-nav="horizontal"] .hf-topbar__search { flex: 1 1 180px; max-width: 360px; min-width: 160px; }
+  @media (max-width: 1279.98px) { .hf-app[data-nav="horizontal"] .hf-topbar__search { display: none; } }
 
   /* ---------------- İçerik ---------------- */
   .hf-main { grid-area: main; min-width: 0; min-height: calc(100dvh - var(--hf-topbar-height)); padding-block: var(--hf-space-6) var(--hf-space-12); }

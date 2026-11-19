@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="tr" data-theme-default="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Helios HR · PDKS, İK ve bordro</title>
+  <!-- Giriş gerektiren uygulama: arama motorlarına kapalı -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="hf-config" content="examples/hr/config.json">
+  <link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="../../theme/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../theme/tokens.css">
+  <link rel="stylesheet" href="../../theme/base.css">
+  <link rel="stylesheet" href="../../theme/layout.css">
+  <link rel="stylesheet" href="../../theme/components.css">
+  <link rel="stylesheet" href="../../theme/utilities.css">
+  <link rel="stylesheet" href="../../examples/demo.css">
+  <script src="../../core/theme-boot.js"></script>
+  <link rel="modulepreload" href="../../core/app.js">
+  <script type="module" src="../../core/app.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+<hd-shell nav="vertical" menu="hr" search>
+  <div id="view">
+    <div class="hf-stack" aria-hidden="true">
+      <div class="hf-skeleton hf-skeleton--title"></div>
+      <div class="hf-grid hf-grid--kpi"><div class="hf-skeleton hf-skeleton--card"></div><div class="hf-skeleton hf-skeleton--card"></div><div class="hf-skeleton hf-skeleton--card"></div><div class="hf-skeleton hf-skeleton--card"></div></div>
+    </div>
+  </div>
+</hd-shell>
+</body>
+</html>

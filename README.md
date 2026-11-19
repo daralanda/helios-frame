@@ -29,9 +29,16 @@ node tools/serve.mjs          # http://localhost:8080 (canlıdaki CSP başlıkla
 |---|---|---|
 | Başlangıç şablonu | `/` | Yeni projenin ilk sayfası (sade) |
 | Vitrin | `/examples/` | Tema stüdyosu, tüm bileşenler, yatay menü |
-| B2B / CRM panel | `/examples/panel/` | Dikey menü, rol filtresi, tablo, grafik, kanban, teklif formu (SPA) |
+| B2B yönetim paneli | `/examples/b2b/admin/` | HeliosB2b Admin menüsü (13 grup), onaylar, bayi cari/risk, sipariş, stok, fatura |
+| B2B bayi portalı | `/examples/b2b/bayi/` | Yatay + mega menü, bayi fiyatlı katalog, sepet + limit kontrolü, hızlı sipariş, cari ekstre, 3D ödeme |
+| Helios CRM | `/examples/crm/` | Satış hunisi kanbanı, lead dönüştürme, aktiviteler, firmalar, kişiler, teklifler |
+| Helios HR | `/examples/hr/` | PDKS paneli, kim içeride, puantaj ızgarası, vardiya, izin onayı, bordro, çalışan self-servis |
 | Mağaza | `/examples/shop/` | Yatay + mega menü, filtre, sepet, statik ürün sayfaları (SEO) |
 | Ödeme | `/examples/shop/odeme.html` | Doğrulama (TCKN, telefon), maskeler, sepet özeti |
+
+### Demo uygulamalar nasıl kuruldu?
+
+Her demo üç dosyayla ayağa kalkar: bir `config.json` (marka, yerleşim, kullanıcı rolleri), bir `menu.json` (projenin gerçek menüsü) ve sayfaların listelendiği `app.js`. Menüde olup ekranı yazılmamış her bağlantı otomatik olarak "demoda yer almıyor" sayfasına düşer; böylece projenin tüm menüsü gezilebilir. Sıradan liste ekranları `examples/_shared/ui.js` içindeki `listPage()` ile birkaç satırda tanımlanır.
 
 ### Çekirdek ve örnekler ayrı
 
@@ -75,7 +82,9 @@ helios-frame/
 ├─ index.html            Başlangıç şablonu
 ├─ examples/             Örnekler (canlıda gerekmez)
 │  ├─ index.html         Vitrin + tema stüdyosu
-│  ├─ panel/ · shop/     B2B/CRM panel, mağaza, ödeme
+│  ├─ b2b/ · crm/ · hr/  Demo uygulamalar (HeliosB2b, HeliosCrm, HeliosHr ekranları)
+│  ├─ shop/              SEO uyumlu mağaza ve ödeme
+│  ├─ _shared/           Demo SPA başlatıcı, hazır liste sayfası, KPI kartı
 │  ├─ config/ · data/ · img/   Örneklere ait ayar, veri ve görseller
 ├─ tools/                serve.mjs · prerender-shop.mjs · headers.mjs (yalnızca geliştirme)
 ├─ .gitattributes        Sade paket: examples/tools/tests arşive girmez

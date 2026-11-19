@@ -1,0 +1,303 @@
+{
+ "$comment": "HeliosHr menülerinden uyarlandı (Views/Shared/Menus/_AdminMenu.cshtml, _EmployeeMenu.cshtml).",
+ "menus": {
+  "hr": [
+   {
+    "group": "Ana menü",
+    "items": [
+     {
+      "label": "Özet",
+      "href": "examples/hr/#/",
+      "icon": "dashboard"
+     },
+     {
+      "label": "Onay bekleyenler",
+      "href": "examples/hr/#/onaylar",
+      "icon": "check",
+      "badge": 7
+     },
+     {
+      "label": "Vekâletlerim",
+      "href": "examples/hr/#/vekalet",
+      "icon": "user"
+     }
+    ]
+   },
+   {
+    "group": "Çalışan",
+    "items": [
+     {
+      "label": "Özetim",
+      "href": "examples/hr/#/benim",
+      "icon": "user"
+     },
+     {
+      "label": "Puantajım",
+      "href": "examples/hr/#/benim/puantaj",
+      "icon": "clock"
+     },
+     {
+      "label": "İzinlerim",
+      "href": "examples/hr/#/benim/izinler",
+      "icon": "calendar"
+     },
+     {
+      "label": "Pusulalarım",
+      "href": "examples/hr/#/benim/pusulalar",
+      "icon": "file"
+     }
+    ]
+   },
+   {
+    "group": "PDKS",
+    "items": [
+     {
+      "label": "PDKS paneli",
+      "href": "examples/hr/#/pdks",
+      "icon": "dashboard"
+     },
+     {
+      "label": "Kim içeride",
+      "href": "examples/hr/#/kim-iceride",
+      "icon": "users"
+     },
+     {
+      "label": "Puantaj",
+      "href": "examples/hr/#/puantaj",
+      "icon": "calendar"
+     },
+     {
+      "label": "Vardiya planı",
+      "href": "examples/hr/#/vardiya",
+      "icon": "clock"
+     },
+     {
+      "label": "Fazla mesai",
+      "href": "examples/hr/#/fazla-mesai",
+      "icon": "clock"
+     },
+     {
+      "label": "Vardiya tanımları",
+      "href": "examples/hr/#/vardiya-tanimlari",
+      "icon": "settings"
+     },
+     {
+      "label": "Tatil takvimi",
+      "href": "examples/hr/#/tatiller",
+      "icon": "calendar"
+     },
+     {
+      "label": "Ham hareketler",
+      "href": "examples/hr/#/hareketler",
+      "icon": "layers"
+     },
+     {
+      "label": "Anomali inceleme",
+      "href": "examples/hr/#/anomali",
+      "icon": "alert"
+     }
+    ],
+    "roles": [
+     "admin",
+     "hr"
+    ]
+   },
+   {
+    "group": "İnsan kaynakları",
+    "items": [
+     {
+      "label": "Personel",
+      "href": "examples/hr/#/personel",
+      "icon": "users"
+     },
+     {
+      "label": "İzin yönetimi",
+      "href": "examples/hr/#/izinler",
+      "icon": "calendar",
+      "badge": 5
+     },
+     {
+      "label": "Süresi dolan belgeler",
+      "href": "examples/hr/#/belgeler",
+      "icon": "alert"
+     },
+     {
+      "label": "SGK bildirgeleri",
+      "href": "examples/hr/#/sgk",
+      "icon": "file"
+     },
+     {
+      "label": "Disiplin",
+      "href": "examples/hr/#/disiplin",
+      "icon": "shield"
+     },
+     {
+      "label": "İSG",
+      "href": "examples/hr/#/isg",
+      "icon": "shield"
+     },
+     {
+      "label": "İşe alım",
+      "href": "examples/hr/#/ise-alim",
+      "icon": "user"
+     }
+    ],
+    "roles": [
+     "admin",
+     "hr"
+    ]
+   },
+   {
+    "group": "Bordro",
+    "items": [
+     {
+      "label": "Bordro dönemleri",
+      "href": "examples/hr/#/bordro",
+      "icon": "wallet"
+     },
+     {
+      "label": "Bordro kalemleri",
+      "href": "examples/hr/#/bordro-kalemleri",
+      "icon": "layers"
+     },
+     {
+      "label": "Bordro parametreleri",
+      "href": "examples/hr/#/bordro-parametreleri",
+      "icon": "settings"
+     },
+     {
+      "label": "Maliyet simülasyonu",
+      "href": "examples/hr/#/simulasyon",
+      "icon": "chart"
+     },
+     {
+      "label": "Pusula itirazları",
+      "href": "examples/hr/#/itirazlar",
+      "icon": "alert"
+     }
+    ],
+    "roles": [
+     "admin",
+     "payroll"
+    ]
+   },
+   {
+    "group": "Organizasyon",
+    "items": [
+     {
+      "label": "Organizasyon şeması",
+      "href": "examples/hr/#/organizasyon",
+      "icon": "layers"
+     },
+     {
+      "label": "Kadro ve pozisyonlar",
+      "href": "examples/hr/#/kadro",
+      "icon": "briefcase"
+     },
+     {
+      "label": "Cihazlar",
+      "href": "examples/hr/#/cihazlar",
+      "icon": "cpu"
+     },
+     {
+      "label": "Tablet kiosklar",
+      "href": "examples/hr/#/kiosk",
+      "icon": "cpu"
+     }
+    ],
+    "roles": [
+     "admin"
+    ]
+   },
+   {
+    "group": "Geçiş ve tesis",
+    "items": [
+     {
+      "label": "Ziyaretçiler",
+      "href": "examples/hr/#/ziyaretciler",
+      "icon": "user"
+     },
+     {
+      "label": "Taşeronlar",
+      "href": "examples/hr/#/taseronlar",
+      "icon": "building"
+     },
+     {
+      "label": "Yemekhane",
+      "href": "examples/hr/#/yemekhane",
+      "icon": "building"
+     },
+     {
+      "label": "Araçlar",
+      "href": "examples/hr/#/araclar",
+      "icon": "truck"
+     },
+     {
+      "label": "Otopark",
+      "href": "examples/hr/#/otopark",
+      "icon": "map-pin"
+     }
+    ],
+    "roles": [
+     "admin"
+    ]
+   },
+   {
+    "group": "KVKK",
+    "items": [
+     {
+      "label": "Aydınlatma ve rıza",
+      "href": "examples/hr/#/kvkk",
+      "icon": "shield"
+     },
+     {
+      "label": "Veri envanteri",
+      "href": "examples/hr/#/veri-envanteri",
+      "icon": "layers"
+     },
+     {
+      "label": "Saklama ve imha",
+      "href": "examples/hr/#/imha",
+      "icon": "trash"
+     }
+    ],
+    "roles": [
+     "admin"
+    ]
+   },
+   {
+    "group": "Kullanıcılar ve erişim",
+    "items": [
+     {
+      "label": "Kullanıcılar",
+      "href": "examples/hr/#/kullanicilar",
+      "icon": "users"
+     },
+     {
+      "label": "Roller ve izinler",
+      "href": "examples/hr/#/roller",
+      "icon": "shield"
+     },
+     {
+      "label": "Lisans",
+      "href": "examples/hr/#/lisans",
+      "icon": "award"
+     },
+     {
+      "label": "Entegrasyon API",
+      "href": "examples/hr/#/api",
+      "icon": "zap"
+     },
+     {
+      "label": "Vitrine dön",
+      "href": "examples/",
+      "icon": "home"
+     }
+    ],
+    "roles": [
+     "admin"
+    ]
+   }
+  ]
+ }
+}

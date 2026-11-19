@@ -1,0 +1,542 @@
+[
+ {
+  "id": 1,
+  "name": "Ayşe Şimşek",
+  "company": "Çağdaş Elektrik Ltd. Şti.",
+  "title": "Teknik müdür",
+  "email": "ayse.simsek@ornek.com.tr",
+  "phone": "0555 352 19 20",
+  "consent": true
+ },
+ {
+  "id": 2,
+  "name": "Serkan Polat",
+  "company": "Çağdaş Elektrik Ltd. Şti.",
+  "title": "Genel müdür",
+  "email": "serkan.polat@ornek.com.tr",
+  "phone": "0553 498 50 56",
+  "consent": false
+ },
+ {
+  "id": 3,
+  "name": "Elif Çetin",
+  "company": "Doğu Endüstri Ltd. Şti.",
+  "title": "Teknik müdür",
+  "email": "elif.cetin@ornek.com.tr",
+  "phone": "0554 376 23 26",
+  "consent": false
+ },
+ {
+  "id": 4,
+  "name": "Murat Kurt",
+  "company": "Doğu Teknik A.Ş.",
+  "title": "Finans uzmanı",
+  "email": "murat.kurt@ornek.com.tr",
+  "phone": "0546 517 23 13",
+  "consent": false
+ },
+ {
+  "id": 5,
+  "name": "Ayşe Şimşek",
+  "company": "Kuzey Yapı Ltd. Şti.",
+  "title": "Finans uzmanı",
+  "email": "ayse.simsek@ornek.com.tr",
+  "phone": "0555 432 59 11",
+  "consent": true
+ },
+ {
+  "id": 6,
+  "name": "Onur Demir",
+  "company": "Çağdaş Elektrik Ltd. Şti.",
+  "title": "İşletme müdürü",
+  "email": "onur.demir@ornek.com.tr",
+  "phone": "0558 672 41 83",
+  "consent": true
+ },
+ {
+  "id": 7,
+  "name": "Emine Çelik",
+  "company": "Çağdaş Elektrik Ltd. Şti.",
+  "title": "Teknik müdür",
+  "email": "emine.celik@ornek.com.tr",
+  "phone": "0539 374 73 28",
+  "consent": false
+ },
+ {
+  "id": 8,
+  "name": "Hüseyin Aslan",
+  "company": "Doğu Teknik A.Ş.",
+  "title": "Teknik müdür",
+  "email": "huseyin.aslan@ornek.com.tr",
+  "phone": "0545 901 19 56",
+  "consent": true
+ },
+ {
+  "id": 9,
+  "name": "Ceren Polat",
+  "company": "Kardelen Enerji Ltd. Şti.",
+  "title": "Proje mühendisi",
+  "email": "ceren.polat@ornek.com.tr",
+  "phone": "0549 731 35 68",
+  "consent": false
+ },
+ {
+  "id": 10,
+  "name": "Ahmet Kılıç",
+  "company": "Kartal Makine A.Ş.",
+  "title": "Teknik müdür",
+  "email": "ahmet.kilic@ornek.com.tr",
+  "phone": "0556 735 58 52",
+  "consent": true
+ },
+ {
+  "id": 11,
+  "name": "Kemal Polat",
+  "company": "Doğu Teknik A.Ş.",
+  "title": "Finans uzmanı",
+  "email": "kemal.polat@ornek.com.tr",
+  "phone": "0534 407 51 87",
+  "consent": true
+ },
+ {
+  "id": 12,
+  "name": "Selin Arslan",
+  "company": "Doğu Endüstri A.Ş.",
+  "title": "Genel müdür",
+  "email": "selin.arslan@ornek.com.tr",
+  "phone": "0542 426 47 98",
+  "consent": true
+ },
+ {
+  "id": 13,
+  "name": "Derya Öztürk",
+  "company": "Ege Enerji San. Tic.",
+  "title": "Teknik müdür",
+  "email": "derya.ozturk@ornek.com.tr",
+  "phone": "0542 387 60 56",
+  "consent": false
+ },
+ {
+  "id": 14,
+  "name": "Ali Özkan",
+  "company": "Ege Enerji San. Tic.",
+  "title": "Finans uzmanı",
+  "email": "ali.ozkan@ornek.com.tr",
+  "phone": "0535 798 80 13",
+  "consent": true
+ },
+ {
+  "id": 15,
+  "name": "Serkan Yıldırım",
+  "company": "Özgür Enerji A.Ş.",
+  "title": "Proje mühendisi",
+  "email": "serkan.yildirim@ornek.com.tr",
+  "phone": "0555 398 98 18",
+  "consent": true
+ },
+ {
+  "id": 16,
+  "name": "Gizem Kara",
+  "company": "Mavi Tesisat A.Ş.",
+  "title": "Genel müdür",
+  "email": "gizem.kara@ornek.com.tr",
+  "phone": "0550 410 40 42",
+  "consent": true
+ },
+ {
+  "id": 17,
+  "name": "Derya Kılıç",
+  "company": "Doğu Teknik A.Ş.",
+  "title": "Satın alma müdürü",
+  "email": "derya.kilic@ornek.com.tr",
+  "phone": "0544 712 71 84",
+  "consent": true
+ },
+ {
+  "id": 18,
+  "name": "Tuğba Güneş",
+  "company": "Işık Yapı Ltd. Şti.",
+  "title": "Proje mühendisi",
+  "email": "tugba.gunes@ornek.com.tr",
+  "phone": "0547 137 56 99",
+  "consent": true
+ },
+ {
+  "id": 19,
+  "name": "Deniz Polat",
+  "company": "Şahin Endüstri Ltd. Şti.",
+  "title": "Satın alma müdürü",
+  "email": "deniz.polat@ornek.com.tr",
+  "phone": "0533 887 41 94",
+  "consent": true
+ },
+ {
+  "id": 20,
+  "name": "Can Şimşek",
+  "company": "Kuzey Lojistik San. Tic.",
+  "title": "Satın alma müdürü",
+  "email": "can.simsek@ornek.com.tr",
+  "phone": "0548 760 96 92",
+  "consent": true
+ },
+ {
+  "id": 21,
+  "name": "Derya Aslan",
+  "company": "Ege Otomasyon Ltd. Şti.",
+  "title": "Satın alma müdürü",
+  "email": "derya.aslan@ornek.com.tr",
+  "phone": "0530 200 43 38",
+  "consent": true
+ },
+ {
+  "id": 22,
+  "name": "Esra Özkan",
+  "company": "Özgür Lojistik Ltd. Şti.",
+  "title": "İşletme müdürü",
+  "email": "esra.ozkan@ornek.com.tr",
+  "phone": "0548 326 67 57",
+  "consent": true
+ },
+ {
+  "id": 23,
+  "name": "Serkan Koç",
+  "company": "Anadolu Endüstri San. Tic.",
+  "title": "Genel müdür",
+  "email": "serkan.koc@ornek.com.tr",
+  "phone": "0541 125 71 23",
+  "consent": true
+ },
+ {
+  "id": 24,
+  "name": "Fatma Aksoy",
+  "company": "Doğu Makine A.Ş.",
+  "title": "Genel müdür",
+  "email": "fatma.aksoy@ornek.com.tr",
+  "phone": "0541 419 53 68",
+  "consent": true
+ },
+ {
+  "id": 25,
+  "name": "Selin Doğan",
+  "company": "Özgür Lojistik Ltd. Şti.",
+  "title": "Proje mühendisi",
+  "email": "selin.dogan@ornek.com.tr",
+  "phone": "0533 548 99 67",
+  "consent": true
+ },
+ {
+  "id": 26,
+  "name": "Mehmet Güneş",
+  "company": "Kartal Makine A.Ş.",
+  "title": "Satın alma müdürü",
+  "email": "mehmet.gunes@ornek.com.tr",
+  "phone": "0530 969 53 92",
+  "consent": false
+ },
+ {
+  "id": 27,
+  "name": "Tuğba Aksoy",
+  "company": "Kuzey Lojistik San. Tic.",
+  "title": "Genel müdür",
+  "email": "tugba.aksoy@ornek.com.tr",
+  "phone": "0546 278 80 30",
+  "consent": true
+ },
+ {
+  "id": 28,
+  "name": "Murat Öztürk",
+  "company": "Doğu Teknik A.Ş.",
+  "title": "Proje mühendisi",
+  "email": "murat.ozturk@ornek.com.tr",
+  "phone": "0550 288 33 91",
+  "consent": true
+ },
+ {
+  "id": 29,
+  "name": "Ahmet Aksoy",
+  "company": "Ege Endüstri San. Tic.",
+  "title": "Finans uzmanı",
+  "email": "ahmet.aksoy@ornek.com.tr",
+  "phone": "0558 302 67 85",
+  "consent": true
+ },
+ {
+  "id": 30,
+  "name": "Serkan Yıldırım",
+  "company": "Doğu Endüstri Ltd. Şti.",
+  "title": "Genel müdür",
+  "email": "serkan.yildirim@ornek.com.tr",
+  "phone": "0538 870 18 83",
+  "consent": false
+ },
+ {
+  "id": 31,
+  "name": "Emine Doğan",
+  "company": "Şahin Endüstri Ltd. Şti.",
+  "title": "Teknik müdür",
+  "email": "emine.dogan@ornek.com.tr",
+  "phone": "0536 568 24 43",
+  "consent": true
+ },
+ {
+  "id": 32,
+  "name": "Emre Polat",
+  "company": "Bereket Teknik Ltd. Şti.",
+  "title": "Teknik müdür",
+  "email": "emre.polat@ornek.com.tr",
+  "phone": "0549 497 88 60",
+  "consent": true
+ },
+ {
+  "id": 33,
+  "name": "Merve Çetin",
+  "company": "Doğu Tesisat San. Tic.",
+  "title": "Finans uzmanı",
+  "email": "merve.cetin@ornek.com.tr",
+  "phone": "0535 933 96 48",
+  "consent": true
+ },
+ {
+  "id": 34,
+  "name": "Ayşe Erdoğan",
+  "company": "Anadolu Endüstri San. Tic.",
+  "title": "Genel müdür",
+  "email": "ayse.erdogan@ornek.com.tr",
+  "phone": "0540 220 40 49",
+  "consent": false
+ },
+ {
+  "id": 35,
+  "name": "Serkan Çelik",
+  "company": "Mavi Makine Ltd. Şti.",
+  "title": "Finans uzmanı",
+  "email": "serkan.celik@ornek.com.tr",
+  "phone": "0542 528 86 27",
+  "consent": true
+ },
+ {
+  "id": 36,
+  "name": "Emine Kara",
+  "company": "Doğu Teknik A.Ş.",
+  "title": "İşletme müdürü",
+  "email": "emine.kara@ornek.com.tr",
+  "phone": "0547 810 92 32",
+  "consent": true
+ },
+ {
+  "id": 37,
+  "name": "Elif Çelik",
+  "company": "Bereket Teknik Ltd. Şti.",
+  "title": "Genel müdür",
+  "email": "elif.celik@ornek.com.tr",
+  "phone": "0540 962 67 89",
+  "consent": false
+ },
+ {
+  "id": 38,
+  "name": "Ahmet Kara",
+  "company": "Doğu Tesisat San. Tic.",
+  "title": "Genel müdür",
+  "email": "ahmet.kara@ornek.com.tr",
+  "phone": "0536 934 59 81",
+  "consent": true
+ },
+ {
+  "id": 39,
+  "name": "Büşra Erdoğan",
+  "company": "Bereket Teknik Ltd. Şti.",
+  "title": "Proje mühendisi",
+  "email": "busra.erdogan@ornek.com.tr",
+  "phone": "0543 827 66 72",
+  "consent": false
+ },
+ {
+  "id": 40,
+  "name": "Ahmet Öztürk",
+  "company": "Ege Enerji San. Tic.",
+  "title": "Teknik müdür",
+  "email": "ahmet.ozturk@ornek.com.tr",
+  "phone": "0531 381 38 78",
+  "consent": true
+ },
+ {
+  "id": 41,
+  "name": "Burak Aksoy",
+  "company": "Özgür Enerji A.Ş.",
+  "title": "Proje mühendisi",
+  "email": "burak.aksoy@ornek.com.tr",
+  "phone": "0547 623 24 83",
+  "consent": false
+ },
+ {
+  "id": 42,
+  "name": "Kemal Doğan",
+  "company": "Şahin Endüstri Ltd. Şti.",
+  "title": "Finans uzmanı",
+  "email": "kemal.dogan@ornek.com.tr",
+  "phone": "0556 874 15 66",
+  "consent": true
+ },
+ {
+  "id": 43,
+  "name": "Fatma Aksoy",
+  "company": "Doğu Teknik A.Ş.",
+  "title": "İşletme müdürü",
+  "email": "fatma.aksoy@ornek.com.tr",
+  "phone": "0554 353 48 14",
+  "consent": true
+ },
+ {
+  "id": 44,
+  "name": "Seda Demir",
+  "company": "Doğu Tesisat San. Tic.",
+  "title": "Proje mühendisi",
+  "email": "seda.demir@ornek.com.tr",
+  "phone": "0557 220 40 36",
+  "consent": true
+ },
+ {
+  "id": 45,
+  "name": "Serkan Doğan",
+  "company": "Anadolu Endüstri San. Tic.",
+  "title": "İşletme müdürü",
+  "email": "serkan.dogan@ornek.com.tr",
+  "phone": "0549 747 64 31",
+  "consent": true
+ },
+ {
+  "id": 46,
+  "name": "Kemal Yıldırım",
+  "company": "Kartal Makine San. Tic.",
+  "title": "Satın alma müdürü",
+  "email": "kemal.yildirim@ornek.com.tr",
+  "phone": "0548 459 78 45",
+  "consent": true
+ },
+ {
+  "id": 47,
+  "name": "Hasan Güneş",
+  "company": "Kuzey Lojistik San. Tic.",
+  "title": "Teknik müdür",
+  "email": "hasan.gunes@ornek.com.tr",
+  "phone": "0539 686 44 75",
+  "consent": true
+ },
+ {
+  "id": 48,
+  "name": "Mustafa Aslan",
+  "company": "Marmara Enerji Ltd. Şti.",
+  "title": "Satın alma müdürü",
+  "email": "mustafa.aslan@ornek.com.tr",
+  "phone": "0538 987 93 26",
+  "consent": true
+ },
+ {
+  "id": 49,
+  "name": "Zeynep Çelik",
+  "company": "Marmara Endüstri San. Tic.",
+  "title": "İşletme müdürü",
+  "email": "zeynep.celik@ornek.com.tr",
+  "phone": "0540 948 41 96",
+  "consent": true
+ },
+ {
+  "id": 50,
+  "name": "Burak Polat",
+  "company": "Doğu Makine Ltd. Şti.",
+  "title": "Teknik müdür",
+  "email": "burak.polat@ornek.com.tr",
+  "phone": "0550 524 58 67",
+  "consent": false
+ },
+ {
+  "id": 51,
+  "name": "İbrahim Koç",
+  "company": "Doğu Makine A.Ş.",
+  "title": "İşletme müdürü",
+  "email": "i̇brahim.koc@ornek.com.tr",
+  "phone": "0538 811 57 68",
+  "consent": true
+ },
+ {
+  "id": 52,
+  "name": "Burak Yılmaz",
+  "company": "Akdeniz Mühendislik Ltd. Şti.",
+  "title": "İşletme müdürü",
+  "email": "burak.yilmaz@ornek.com.tr",
+  "phone": "0532 848 68 91",
+  "consent": true
+ },
+ {
+  "id": 53,
+  "name": "Seda Demir",
+  "company": "Doğu Tesisat San. Tic.",
+  "title": "Finans uzmanı",
+  "email": "seda.demir@ornek.com.tr",
+  "phone": "0542 323 64 37",
+  "consent": true
+ },
+ {
+  "id": 54,
+  "name": "Kemal Özdemir",
+  "company": "Akdeniz Mühendislik Ltd. Şti.",
+  "title": "Teknik müdür",
+  "email": "kemal.ozdemir@ornek.com.tr",
+  "phone": "0547 691 26 82",
+  "consent": true
+ },
+ {
+  "id": 55,
+  "name": "Oğuz Erdoğan",
+  "company": "Ege Otomasyon Ltd. Şti.",
+  "title": "Satın alma müdürü",
+  "email": "oguz.erdogan@ornek.com.tr",
+  "phone": "0531 201 90 68",
+  "consent": false
+ },
+ {
+  "id": 56,
+  "name": "Murat Çetin",
+  "company": "Kuzey Lojistik San. Tic.",
+  "title": "Satın alma müdürü",
+  "email": "murat.cetin@ornek.com.tr",
+  "phone": "0543 307 98 26",
+  "consent": true
+ },
+ {
+  "id": 57,
+  "name": "Emine Aydın",
+  "company": "Kartal Makine A.Ş.",
+  "title": "Satın alma müdürü",
+  "email": "emine.aydin@ornek.com.tr",
+  "phone": "0550 469 42 20",
+  "consent": true
+ },
+ {
+  "id": 58,
+  "name": "Emine Kaya",
+  "company": "Yıldız Teknik A.Ş.",
+  "title": "Proje mühendisi",
+  "email": "emine.kaya@ornek.com.tr",
+  "phone": "0550 412 99 39",
+  "consent": true
+ },
+ {
+  "id": 59,
+  "name": "Serkan Şahin",
+  "company": "Doğu Makine A.Ş.",
+  "title": "Satın alma müdürü",
+  "email": "serkan.sahin@ornek.com.tr",
+  "phone": "0536 588 19 26",
+  "consent": true
+ },
+ {
+  "id": 60,
+  "name": "Gizem Çetin",
+  "company": "Özgür Lojistik Ltd. Şti.",
+  "title": "Satın alma müdürü",
+  "email": "gizem.cetin@ornek.com.tr",
+  "phone": "0530 812 53 25",
+  "consent": true
+ }
+]

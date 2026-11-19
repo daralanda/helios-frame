@@ -36,11 +36,16 @@ async function loadUser(config, http) {
   return config.auth?.demoUser ?? null;
 }
 
-/** data-hf-value="3.5" -> CSS değişkeni --_v (CSP: style="" özniteliği kullanılmaz) */
+/** data-hf-value / data-hf-color -> CSS değişkenleri (CSP: style="" özniteliği kullanılmaz) */
 function hydrate(root, app) {
   for (const el of $$('[data-hf-value]', root)) {
     const v = el.dataset.hfValue;
     setVar(el, '--_v', el.classList.contains('hf-progress') || el.closest('.hf-progress') ? `${parseFloat(v)}%` : v);
+  }
+  // data-hf-color="#2b8a3e" -> --_c (etiket, aşama, durum renkleri; yalnızca geçerli CSS rengi)
+  for (const el of $$('[data-hf-color]', root)) {
+    const c = el.dataset.hfColor;
+    if (globalThis.CSS?.supports?.('color', c)) setVar(el, '--_c', c);
   }
   for (const form of $$('form[data-hf-validate]', root)) {
     if (!form.__hf) { form.__hf = true; enhanceForm(form, { t: app.t }); }

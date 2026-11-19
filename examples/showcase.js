@@ -3,7 +3,7 @@ import { ready } from '../core/app.js';
 import { html, render, $, on } from '../core/dom.js';
 import { applyTheme, setMode, setWidth, getWidth } from '../core/theme.js';
 import { toast, confirmDialog } from '../components/overlay.js';
-import { kpiCard } from './kpi.js';
+import { kpiCard } from './_shared/ui.js';
 
 const app = await ready;
 

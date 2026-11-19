@@ -1,0 +1,65 @@
+[
+ {
+  "name": "A kapısı turnike",
+  "type": "ZKTeco SpeedFace",
+  "location": "Merkez fabrika",
+  "ip": "10.0.4.37",
+  "status": "Çevrimiçi",
+  "last": "2026-11-19T09:09",
+  "events": 229
+ },
+ {
+  "name": "B kapısı turnike",
+  "type": "ZKTeco SpeedFace",
+  "location": "Merkez fabrika",
+  "ip": "10.0.1.205",
+  "status": "Çevrimiçi",
+  "last": "2026-11-19T08:07",
+  "events": 671
+ },
+ {
+  "name": "Personel girişi",
+  "type": "Hikvision DS-K1T",
+  "location": "Merkez fabrika",
+  "ip": "10.0.5.165",
+  "status": "Çevrimiçi",
+  "last": "2026-11-19T08:13",
+  "events": 667
+ },
+ {
+  "name": "Yükleme alanı",
+  "type": "Hikvision DS-K1T",
+  "location": "Bölge depo",
+  "ip": "10.0.4.162",
+  "status": "Çevrimdışı",
+  "last": "2026-11-19T01:30",
+  "events": 276
+ },
+ {
+  "name": "Genel müdürlük lobi",
+  "type": "ZKTeco ProFace X",
+  "location": "Genel müdürlük",
+  "ip": "10.0.1.101",
+  "status": "Çevrimiçi",
+  "last": "2026-11-19T09:15",
+  "events": 744
+ },
+ {
+  "name": "Yemekhane",
+  "type": "Tablet kiosk",
+  "location": "Merkez fabrika",
+  "ip": "10.0.8.44",
+  "status": "Çevrimiçi",
+  "last": "2026-11-19T08:21",
+  "events": 659
+ },
+ {
+  "name": "Otopark bariyeri",
+  "type": "UHF okuyucu",
+  "location": "Merkez fabrika",
+  "ip": "10.0.8.192",
+  "status": "Bakımda",
+  "last": "2026-11-18T11:15",
+  "events": 422
+ }
+]

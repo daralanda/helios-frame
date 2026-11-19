@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /examples/panel/
+Disallow: /examples/b2b/
+Disallow: /examples/crm/
+Disallow: /examples/hr/
 
 Sitemap: https://heliosdiji.com/examples/sitemap.xml
